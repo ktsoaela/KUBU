@@ -1,0 +1,207 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/kubu.css">
+    <title>Kubu Framework - Papers</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+    <nav class="navigation">
+        <ul class="unordered-list horizontal">
+            <li class="navigation-list ">
+                <a class="" href="index.html">
+                    <span><img class="logo" src="assets/img/hippo.png" alt="logo"></span>
+                    <b>KUBU</b>
+                </a>
+            </li>
+            <li class="navigation-list"><a class="active" href="papers.html">Papers</a></li>
+            <li class="navigation-list"><a class="" href="cases.html">Use Cases</a></li>
+            <li class="navigation-list"><a class="" href="icons.html">Icon Packs</a></li>
+            <li class="navigation-list"><a class="" href="showcase.html">Showcases</a></li>
+            <li class="navigation-list"><a class="" href="news.html">News</a></li>
+
+            <!-- <div class="socials">
+            <li><a href="#">github</a></li>
+            <li><a href="#">twitter</a></li>
+            <li><a href="#">linkedin</a></li>
+        </div> -->
+
+            <li class="navigation-list"><a class="" href="installation.html">Download</a></li>
+
+            <div class="form-part">
+                <input type="text" id="search" name="search" required minlength="4" maxlength="8" size="10" />
+            </div>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h2>why would a person want to use a 13 column css framework instead of 12 column?</h2>
+        <p>The choice between a 12-column and a 13-column CSS framework depends on the specific design requirements and
+            preferences of the developer or designer. Here are a few reasons why someone might choose a 13-column CSS
+            framework over a 12-column one:</p>
+
+
+        <ul>
+            <li>
+                <h3 class="heading">Granularity:</h3>
+
+                <p>A 13-column grid provides slightly more granularity in layout options compared to a 12-column grid.
+                    This can be beneficial when trying to achieve precise and fine-tuned designs.</p>
+            </li>
+            <li>
+                <h3 class="heading">Increased Flexibility:</h3>
+
+                <p>The additional column in a 13-column grid allows for more flexibility in creating asymmetrical
+                    layouts. Designers have an extra column to play with, giving them more control over the placement of
+                    elements.</p>
+            </li>
+            <li>
+                <h3 class="heading">Better Alignment:</h3>
+
+                <p>In certain designs, an odd number of columns can be advantageous for centering elements. For example,
+                    when centering a single element, having an odd number of columns ensures the element is perfectly
+                    centered.</p>
+            </li>
+            <li>
+                <h3 class="heading">Unique Design Choices:</h3>
+
+                <p>Some designers may prefer the unique opportunities and challenges that come with an odd number of
+                    columns. It can lead to more creative and distinctive layouts that stand out from more traditional
+                    designs.</p>
+            </li>
+            <li>
+                <h3 class="heading">Avoiding Repetition:</h3>
+
+                <p>In some cases, designers may find that a 13-column grid helps avoid repetitive patterns in their
+                    layouts, providing a more dynamic and visually interesting result.</p>
+            </li>
+            <li>
+                <p>While a 12-column grid is a standard choice and works well for many designs, a 13-column grid is an
+                    option for those who desire a bit more flexibility and creativity in their layout options.
+                    Ultimately, the choice between a 12-column and a 13-column grid depends on the specific needs and
+                    aesthetic goals of the project.</p>
+            </li>
+        </ul>
+
+
+
+
+
+        <h3>what about a navbar placing an logo in the center in a 12 column and 13 column</h3>
+        <p>Let's consider a simple example to illustrate the difference between a 12-column and a 13-column layout.
+            We'll create a basic layout with two content sections using both grid systems.</p>
+
+
+
+        <div class="code-section">
+            <div class="header">12-Column Layout:</div>
+            <pre><code class="language-html">
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                &lt;div class="col-6"&gt;Content Section 1&lt;/div&gt;
+                &lt;div class="col-6"&gt;Content Section 2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </pre></code>
+        </div>
+
+
+        <p>In a 12-column layout, each content section takes up half of the available width (col-6).</p>
+        <div class="code-section">
+            <div class="header">13-Column Layout:</div>
+            <pre><code class="language-html">
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                &lt;div class="col-5"&gt;Content Section 1&lt;/div&gt;
+                &lt;div class="col-8"&gt;Content Section 2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </pre></code>
+        </div>
+
+        <p>In a 13-column layout, we have more flexibility. The first content section takes up approximately 38.46% of
+            the width (5 out of 13 columns), and the second content section takes up approximately 61.54% of the width
+            (8 out of 13 columns).</p>
+
+        <p>This example demonstrates how a 13-column layout can offer more nuanced control over the distribution of
+            content within the grid. The specific column widths and distribution would, of course, depend on the design
+            requirements and preferences of the project.</p>
+
+
+        what about a navbar placing an logo in the center in a 12 column and 13 column
+
+
+
+        <p>Certainly! Let's consider a navigation bar example with a logo placed in the center for both a 12-column and
+            a 13-column layout.</p>
+
+
+        <div class="code-section">
+            <div class="header">12-Column Layout:</div>
+            <pre><code class="language-html">
+            &lt;div class="navbar"&gt;
+                &lt;div class="row"&gt;
+                &lt;div class="col-4"&gt;Menu 1&lt;/div&gt;
+                &lt;div class="col-4 text-center"&gt;&lt;img src="logo.png" alt="Logo"&gt;&lt;/div&gt;
+                &lt;div class="col-4"&gt;Menu 2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </pre></code>
+        </div>
+
+        <p>In a 12-column layout, the logo is placed in the center by using a column size of 4 for both the left and
+            right menus, and a column size of 4 for the logo itself.</p>
+
+
+        <div class="code-section">
+            <div class="header">13-Column Layout:</div>
+            <pre><code class="language-html">
+            &lt;div class="navbar"&gt;
+                &lt;div class="row"&gt;
+                &lt;div class="col-3"&gt;Menu 1&lt;/div&gt;
+                &lt;div class="col-7 text-center"&gt;&lt;img src="logo.png" alt="Logo"&gt;&lt;/div&gt;
+                &lt;div class="col-3"&gt;Menu 2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            </pre></code>
+        </div>
+
+        <p>In a 13-column layout, the logo is also placed in the center, but with a bit more width for a more balanced
+            layout. The left and right menus are assigned column sizes of 3, and the logo is placed in a column size of
+            7.</p>
+
+        <p>These examples demonstrate how adjusting the column sizes in a grid system can influence the positioning and
+            width of elements within a layout. The specific column sizes chosen would depend on the overall design
+            requirements and preferences.</p>
+
+
+     
+ 
+    </div>
+
+    <div class="footer">
+        <p class="part">Built using <span class="version"></span> <span class="current-year"></span></p>
+    </div>
+
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
