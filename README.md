@@ -1,50 +1,53 @@
 # Kubu CSS Framework
-### A 13 column CSS Framework -for the designers who want more options
+##### A 13 column CSS Framework - for the designers who want more options
 
 Kubu is a versatile and responsive CSS framework designed for designers who crave more options and flexibility in their projects. With a focus on providing a robust set of features, Kubu empowers designers to create stunning and responsive web layouts effortlessly.
 
 
 
 
-Features
-Grid System
-Kubu comes with a flexible 13-column grid system, providing designers the freedom to create intricate and responsive layouts. The grid system includes classes for various column sizes, ensuring adaptability to different screen sizes.
+### Features
+#### Cool Features
+Flexible Grid System
+Kubu's grid system is designed to be highly flexible, allowing for intricate layout structures. With classes for various column sizes and responsive behavior, designers can create visually appealing and dynamic designs.
 
-Typography
-Define a consistent and visually appealing typography system with Kubu. Styles for headings, paragraphs, lists, and other text elements have been carefully crafted to maintain a cohesive and professional look throughout your design.
+#### Consistent Typography
+Define a consistent typography system with Kubu. Carefully crafted styles for headings, paragraphs, and lists ensure a cohesive and professional look across your entire project.
 
-Buttons
-Create visually appealing and interactive buttons with Kubu. The framework offers styles for different states, including normal, hover, and active, allowing for customization to suit your design needs.
+#### Stylish Buttons
+Create visually appealing buttons with Kubu. The framework offers styles for different states, allowing for customization to suit your design needs. Choose from full, outlined, or rounded button styles.
 
-Forms
+#### Seamless Forms
 Style form elements seamlessly using Kubu. Input fields, checkboxes, radio buttons, and select boxes are designed to ensure a cohesive and user-friendly look and feel.
 
-Navigation
-Design sleek and responsive navigation components with Kubu. The framework provides styles for both horizontal and vertical navigation, giving designers the flexibility they need.
+#### Sleek Navigation
+Design sleek and responsive navigation components with Kubu. The framework provides styles for both horizontal and vertical navigation, giving designers the flexibility they need to create intuitive navigation structures.
 
-Utilities
+#### Powerful Utilities
 Enhance layout and styling flexibility with Kubu's utility classes. Easily apply common styles such as margin, padding, and text alignment to streamline the design process.
 
-Responsive Design
+#### Responsive Design
 Kubu is built with responsiveness in mind. Ensure a consistent and visually pleasing experience across different screen sizes with Kubu's responsive classes and components.
 
-Icons
+#### Icon Integration
 Consider including stylish and consistent iconography with Kubu. The framework integrates seamlessly with popular icon libraries, allowing for easy integration of commonly used icons.
 
-Modular Components
+#### Modular Components
 Encourage code reusability with Kubu's modular components. Break down your design into cards, modals, alerts, and more, making it easy to maintain and update your projects.
 
-Documentation
+#### Comprehensive Documentation
 Explore the comprehensive documentation provided with Kubu. Clear examples and guidelines ensure that both new and experienced users can make the most of the framework's features.
 
-Customization Options
+#### Easy Customization
 Tailor Kubu to your design preferences. The framework allows users to easily customize the look and feel, whether through variables or by selecting different themes.
 
-Browser Compatibility
+#### Cross-Browser Compatibility
 Rest assured that Kubu has been thoroughly tested for compatibility with major browsers. Your users will enjoy a consistent and reliable experience, no matter their choice of browser.
 
-Getting Started
-Visit the Kubu Documentation to get started with Kubu and unlock its full potential in your design projects.
+
+
+#### Getting Started
+<!-- Visit the Kubu Documentation to get started with Kubu and unlock its full potential in your design projects. -->
 
 
 ### Install Sass globally using npm
