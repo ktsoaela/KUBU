@@ -1,9 +1,143 @@
-// kubu.scss
+// KUBU.scss
+
+@import url(kubu-fonts.scss);
+@import url(kubu-icons.scss);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // Columns & Rows
-$no-of-columns: 13;
-$column-width: 7.6923076923076923076923076923077%; // 100% / 13
+$no-of-columns: 26;
+$column-width: 3.846153846153846%; // 100% / 26
+
+// Media query breakpoints for responsiveness
+$breakpoint-ss: 320px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+$breakpoint-sl: 1440px;
+
+// Responsive column widths
+$column-width-ss: 11.538461538461538%; // 100% / 26 for extra small screens
+$column-width-sm: 7.692307692307692%; // 100% / 26 for small screens
+$column-width-md: 5.769230769230769%; // 100% / 26 for medium screens
+$column-width-lg: 3.846153846153846%; // 100% / 26 for large screens
+$column-width-xl: 3.205128205128205%; // 100% / 26 for extra-large screens
+$column-width-sl: 2.777777777777778%; // 100% / 26 for super large screens
+
+// Mixin for generating responsive column styles
+@mixin generate-columns($column-width) {
+  width: $column-width;
+  float: left;
+  box-sizing: border-box;
+}
+
+// Create columns for default width
+@for $i from 1 through $no-of-columns {
+  .col-#{$i} {
+    @include generate-columns($column-width);
+  }
+}
+
+// Responsive styles using media queries
+@media screen and (max-width: $breakpoint-ss) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-ss);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-ss) and (max-width: $breakpoint-sm) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-sm);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-md);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-lg);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-xl);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) and (max-width: $breakpoint-sl) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-sl);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sl) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-sl);
+    }
+  }
+}
+
+
+.content {
+  width: 100%;
+  overflow: hidden; // Clearfix
+  margin: 0 auto; // Center the container
+
+  // Nest the columns inside the section
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      margin: 0; // Remove default margin from columns
+      padding: 0; // Remove default padding from columns
+      box-sizing: border-box;
+    }
+  }
+}
+
 
 // =======================================
 // FONT & SIZING
@@ -12,10 +146,10 @@ $column-width: 7.6923076923076923076923076923077%; // 100% / 13
 
 
 // Font Variables
-$serif-font: 'Didot', 'Baskerville','Palatino', 'Georgia', 'Times New Roman', serif;
-$sans-serif-font: 'Verdana', 'Helvetica', 'Arial', sans-serif;
+$serif-font: 'Gowun Batang','Noto Serif', 'Didot', 'Baskerville','Palatino', 'Georgia', 'Times New Roman', serif;
+$sans-serif-font:  'Inter', 'Bebas Neue', 'Verdana', 'Helvetica', 'Arial', sans-serif;
 $mono-font: 'Monaco', 'Lucida Console','Courier New', 'Andalé Mono', monospace;
-$cursive-font: 'Brush Script MT', 'Bradley Hand', cursive;
+$cursive-font: 'Playfair Display' ,'Brush Script MT', 'Bradley Hand', cursive;
 
 
 $default-font-family: $sans-serif-font;
@@ -27,6 +161,7 @@ $default-line-height: 1.5;
       font-family: $default-font-family;
       line-height: $default-line-height;
       font-size: calculate-font-size(7 - $i);
+      margin: 0px;
     }
 }
 
@@ -37,6 +172,29 @@ p{
 }
 
 
+
+
+
+// Typography
+// $font-size-normal: normal;
+// $font-weight-bold: bold;
+// $font-size-large: 10rem;
+
+// $padding-values: (1, 2, 3, 4, 5, 6);
+
+// @each $heading-size in 1 through 6 {
+//   h#{$heading-size} {
+//     &.text-normal {
+//       font-weight: $font-size-normal;
+//     }
+//     &.text-bold {
+//       font-weight: $font-weight-bold;
+//     }
+//     &.text-large {
+      
+//     }
+//   }
+// }
 
 // =======================================
 // COLORS
@@ -186,6 +344,20 @@ $rectangle-colors: (
 }
 
 
+// ==========================================================================================
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+
+
+
+
+
+
 ul {
     padding: 0;
     margin: 0;
@@ -300,24 +472,67 @@ ul {
     margin: 0;
   }
   
+
+
   .heading-1{
-    font-size: 4rem;
+    font-size: 7rem;
+    font-family: $sans-serif-font;
   }
 
 
   .heading-2{
-    font-size: 3rem;
+    font-size: 6rem;
   }
 
 
   .heading-3{
-    font-size: 2rem;
+    font-size: 5rem;
   }
 
 
   .heading-4{
-    font-size: 1rem;
+    font-size: 4rem;
+    font-family: $sans-serif-font;
   }
+
+
+  .heading-5{
+    font-size: 3rem;
+  }
+
+
+
+  .paragraph-1{
+    font-size: 7rem;
+  }
+
+
+  .paragraph-2{
+    font-size: 6rem;
+  }
+
+
+  .paragraph-3{
+    font-size: 5rem;
+  }
+
+
+  .paragraph-4{
+    font-size: 4rem;
+  }
+
+
+  .paragraph-5{
+    font-size: 3rem;
+  }
+
+
+  .paragraph-6{
+    font-size: 2rem;
+  }
+
+
+
 
 
   .padding-5{
@@ -418,7 +633,7 @@ nav{
 
 .button-full,
 .button-outlined,
-.button-round {
+.button-rounded {
   display: inline-block;
   padding: 10px 20px;
   font-size: 1rem;
@@ -440,7 +655,7 @@ nav{
   border: 2px solid $dominant-color;
 }
 
-.button-round {
+.button-rounded {
   background-color: $dominant-color;
   color: $white-color;
   border: 2px solid $dominant-color;
@@ -450,7 +665,7 @@ nav{
 /* Hover state */
 .button-full:hover,
 .button-outlined:hover,
-.button-round:hover {
+.button-rounded:hover {
   background-color: darken($dominant-color, 10%);
   color: lighten($white-color, 10%);
   border-color: darken($dominant-color, 10%);
@@ -475,7 +690,7 @@ nav{
 /* Focus state (optional) */
 .button-full:focus,
 .button-outlined:focus,
-.button-round:focus {
+.button-rounded:focus {
   outline: none;
   box-shadow: 0 0 5px rgba(0, 45, 76, 0.5);
 }
@@ -484,10 +699,7 @@ nav{
 
 // banner
 
-.content{
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
+
 
 
 .code-section {
@@ -529,5 +741,53 @@ footer{
     padding: 10px;
     
   }
+}
+
+
+
+.content{
+
+}
+
+// Extra Small devices (phones)
+@media only screen and (max-width: 400px) {
+}
+
+
+// Small devices (phones)
+@media only screen and (max-width: 600px) {
+}
+
+// Medium devices (tablets)
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  $column-width: 100%
+}
+
+// Large devices (desktops)
+@media only screen and (min-width: 1025px) {
+}
+
+// Extra-large devices (large desktops)
+@media only screen and (min-width: 1200px) {
+}
+
+// Landscape orientation
+@media only screen and (orientation: landscape) {
+}
+
+// Portrait orientation
+@media only screen and (orientation: portrait) {
+}
+
+// High-resolution devices (Retina displays)
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+}
+
+// Touch devices
+@media only screen and (pointer: coarse) {
+}
+
+// Hover-enabled devices (non-touch devices or devices with hover capability)
+@media only screen and (hover: hover) {
 }
 

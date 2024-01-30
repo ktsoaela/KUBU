@@ -50,6 +50,10 @@ Rest assured that Kubu has been thoroughly tested for compatibility with major b
 <!-- Visit the Kubu Documentation to get started with Kubu and unlock its full potential in your design projects. -->
 
 
+#### Run Docker File
+`docker build -t vue-docker-image .`
+
+
 ### Install Sass globally using npm
 `sudo npm install -g sass`
 
