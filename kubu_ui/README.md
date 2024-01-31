@@ -1,4 +1,4 @@
-# kubu-ui
+# kubu_ui
 
 > A Vue.js project
 

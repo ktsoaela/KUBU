@@ -1,8 +1,8 @@
 {
-  "name": "kubu-ui",
+  "name": "kubu_ui",
   "version": "1.0.0",
   "description": "A Vue.js project",
-  "author": "Khotso Tsoaela <khotso.s.tsoaela@gmail.com>",
+  "author": "Khotso Tsoaela<khotso.s.tsoaela@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.6.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
