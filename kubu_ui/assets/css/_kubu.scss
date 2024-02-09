@@ -1,0 +1,766 @@
+// KUBU.scss
+
+@import url(kubu-fonts.scss);
+@import url(kubu-icons.scss);
+
+
+// Columns & Rows
+$no-of-columns: 26;
+$column-width: 3.846153846153846%; // 100% / 26
+
+// Media query breakpoints for responsiveness
+$breakpoint-ss: 320px;
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1200px;
+$breakpoint-sl: 1440px;
+
+// Responsive column widths
+$column-width-ss: 11.538461538461538%; // 100% / 26 for extra small screens
+$column-width-sm: 7.692307692307692%; // 100% / 26 for small screens
+$column-width-md: 5.769230769230769%; // 100% / 26 for medium screens
+$column-width-lg: 3.846153846153846%; // 100% / 26 for large screens
+$column-width-xl: 3.205128205128205%; // 100% / 26 for extra-large screens
+$column-width-sl: 2.777777777777778%; // 100% / 26 for super large screens
+
+// Mixin for generating responsive column styles
+@mixin generate-columns($column-width) {
+  width: $column-width;
+  float: left;
+  box-sizing: border-box;
+}
+
+// Create columns for default width
+@for $i from 1 through $no-of-columns {
+  .col-#{$i} {
+    @include generate-columns($column-width);
+  }
+}
+
+// Responsive styles using media queries
+@media screen and (max-width: $breakpoint-ss) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-ss);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-ss) and (max-width: $breakpoint-sm) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-sm);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-md);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-lg);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg) and (max-width: $breakpoint-xl) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-xl);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-xl) and (max-width: $breakpoint-sl) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-sl);
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-sl) {
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      @include generate-columns($column-width-sl);
+    }
+  }
+}
+
+
+.content {
+  width: 100%;
+  overflow: hidden; // Clearfix
+  margin: 0 auto; // Center the container
+
+  // Nest the columns inside the section
+  @for $i from 1 through $no-of-columns {
+    .col-#{$i} {
+      margin: 0; // Remove default margin from columns
+      padding: 0; // Remove default padding from columns
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+// =======================================
+// FONT & SIZING
+// =======================================
+// Typography
+
+
+// Font Variables
+$serif-font: 'Gowun Batang','Noto Serif', 'Didot', 'Baskerville','Palatino', 'Georgia', 'Times New Roman', serif;
+$sans-serif-font:  'Inter', 'Bebas Neue', 'Verdana', 'Helvetica', 'Arial', sans-serif;
+$mono-font: 'Monaco', 'Lucida Console','Courier New', 'Andalé Mono', monospace;
+$cursive-font: 'Playfair Display' ,'Brush Script MT', 'Bradley Hand', cursive;
+
+
+$default-font-family: $sans-serif-font;
+$default-font-size: 16px;
+$default-line-height: 1.5;
+
+@for $i from 1 through 6 {
+    h#{$i} {
+      font-family: $default-font-family;
+      line-height: $default-line-height;
+      font-size: calculate-font-size(7 - $i);
+      margin: 0px;
+    }
+}
+
+p{
+  font-family: $sans-serif-font;
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+}
+
+
+
+
+
+// Typography
+// $font-size-normal: normal;
+// $font-weight-bold: bold;
+// $font-size-large: 10rem;
+
+// $padding-values: (1, 2, 3, 4, 5, 6);
+
+// @each $heading-size in 1 through 6 {
+//   h#{$heading-size} {
+//     &.text-normal {
+//       font-weight: $font-size-normal;
+//     }
+//     &.text-bold {
+//       font-weight: $font-weight-bold;
+//     }
+//     &.text-large {
+      
+//     }
+//   }
+// }
+
+// =======================================
+// COLORS
+// =======================================
+$dominant-color: #002d4c;
+$complementary-color: #b66508;
+$accent-color: #CBCBD4;
+$black-color: #000000;
+$white-color: #EEEEEE;
+
+// Kubu Colors
+$theme-colors: (
+    "dominant": #002d4c,
+    "complementary": #b66508,
+    "accent": #3ce7a0,
+    "primary": #626ED4,
+    "secondary": #343549,
+    "success": #2AA39A,
+    "danger": #EC4561,
+    "warning": #F8B425,
+    "info": #38A5F8,
+    "light": #f8f8fa,
+    "dark": #575c62,
+    "muted": #EDECF1
+);
+
+// =======================================
+// COLOR SCHEMES
+// =======================================
+// Monochromatic
+$monochromatic-colors: (
+    "hue": $dominant-color,
+    "tint": lighten($dominant-color, 20%),
+    "tone": $dominant-color,
+    "shade": darken($dominant-color, 20%)
+);
+
+// Analogous
+$analogous-colors: (
+    "main": $dominant-color,
+    "left": adjust-hue($dominant-color, -30),
+    "right": adjust-hue($dominant-color, 30),
+    "additional-left": adjust-hue($dominant-color, -60),
+    "additional-right": adjust-hue($dominant-color, 60)
+);
+
+// Complementary
+$complementary-colors: (
+    "main": $dominant-color,
+    "complement": complement($dominant-color),
+    "tint": lighten(complement($dominant-color), 20%),
+    "shade": darken(complement($dominant-color), 20%)
+);
+
+// Split Complementary
+$split-complementary-colors: (
+    "main": $dominant-color,
+    "left": adjust-hue(complement($dominant-color), -30),
+    "right": adjust-hue(complement($dominant-color), 30),
+    "additional": complement($dominant-color)
+);
+
+// Triadic
+$triadic-colors: (
+    "first": $dominant-color,
+    "second": adjust-hue($dominant-color, 120),
+    "third": adjust-hue($dominant-color, 240)
+);
+
+// Square
+$square-colors: (
+    "first": $dominant-color,
+    "second": adjust-hue($dominant-color, 90),
+    "third": adjust-hue($dominant-color, 180),
+    "fourth": adjust-hue($dominant-color, 270)
+);
+
+// Rectangle
+$rectangle-colors: (
+    "main": $dominant-color,
+    "left": adjust-hue($dominant-color, 60),
+    "right": adjust-hue($dominant-color, -60),
+    "additional-left": adjust-hue($dominant-color, 120),
+    "additional-right": adjust-hue($dominant-color, -120)
+);
+
+// =======================================
+// UTILITIES
+// =======================================
+// Function to get text color based on background color brightness
+@function get-text-color($background-color) {
+    @if (lightness($background-color) > 70) {
+        @return $black-color;
+    }
+
+    @else {
+        @return $white-color;
+    }
+}
+
+// Example usage:
+// $text-color: get-text-color($dominant-color);
+
+// =======================================
+// EXAMPLE USAGE
+// =======================================
+// Usage of Monochromatic colors
+.monochromatic-container {
+    background-color: map-get($monochromatic-colors, "shade");
+    color: get-text-color(map-get($monochromatic-colors, "shade"));
+}
+
+// Usage of Analogous colors
+.analogous-container {
+    background-color: map-get($analogous-colors, "main");
+    color: get-text-color(map-get($analogous-colors, "main"));
+}
+
+// Usage of Complementary colors
+.complementary-container {
+    background-color: map-get($complementary-colors, "complement");
+    color: get-text-color(map-get($complementary-colors, "complement"));
+}
+
+// Usage of Split Complementary colors
+.split-complementary-container {
+    background-color: map-get($split-complementary-colors, "main");
+    color: get-text-color(map-get($split-complementary-colors, "main"));
+}
+
+// Usage of Triadic colors
+.triadic-container {
+    background-color: map-get($triadic-colors, "third");
+    color: get-text-color(map-get($triadic-colors, "third"));
+}
+
+// Usage of Square colors
+.square-container {
+    background-color: map-get($square-colors, "third");
+    color: get-text-color(map-get($square-colors, "third"));
+}
+
+// Usage of Rectangle colors
+.rectangle-container {
+    background-color: map-get($rectangle-colors, "additional-right");
+    color: get-text-color(map-get($rectangle-colors, "additional-right"));
+}
+
+
+// ==========================================================================================
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+
+
+
+
+
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+// Orientation
+.horizontal {
+    list-style: none;
+    padding: 0;
+}
+
+.horizontal li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+
+
+
+.verticla {
+    list-style: none;
+}
+
+// Lists
+.orderd-list {
+    list-style: none;
+}
+
+.unorderd-list {
+    list-style: none;
+}
+
+.numbered-list {
+    list-style: none;
+}
+
+  /* Style for the horizontal navigation */
+  .horizontal {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .horizontal li {
+    margin-right: 15px;
+    color: $white-color;
+  }
+
+  .horizontal .socials {
+    display: flex;
+    margin-right: 15px;
+  }
+
+  .horizontal .socials li {
+    margin-right: 10px;
+  }
+
+  .horizontal a {
+    text-decoration: none;
+    color: $white-color;
+  }
+
+
+// =======================================
+// LAYERED IMAGE
+// =======================================
+
+.layered-image {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+  
+    .layered-column {
+      width: 100%;
+    }
+  }
+  
+  @for $i from 1 through $no-of-columns {
+    .layered-#{$i} {
+      position: absolute;
+      top: 0;
+      left: #{($i - 1) * $column-width};
+      width: $column-width;
+      height: 100%;
+    }
+  }
+  
+  .layered-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(10%);
+  }
+  
+  .layered-1 {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Text color */
+    width: 100%;
+  }
+  
+  .layered-1 h1{
+    font-size: calculate-font-size(3);
+    margin: 0;
+  }
+  
+
+
+  .heading-1{
+    font-size: 7rem;
+    font-family: $sans-serif-font;
+  }
+
+
+  .heading-2{
+    font-size: 6rem;
+  }
+
+
+  .heading-3{
+    font-size: 5rem;
+  }
+
+
+  .heading-4{
+    font-size: 4rem;
+    font-family: $sans-serif-font;
+  }
+
+
+  .heading-5{
+    font-size: 3rem;
+  }
+
+
+
+  .paragraph-1{
+    font-size: 7rem;
+  }
+
+
+  .paragraph-2{
+    font-size: 6rem;
+  }
+
+
+  .paragraph-3{
+    font-size: 5rem;
+  }
+
+
+  .paragraph-4{
+    font-size: 4rem;
+  }
+
+
+  .paragraph-5{
+    font-size: 3rem;
+  }
+
+
+  .paragraph-6{
+    font-size: 2rem;
+  }
+
+
+
+
+
+  .padding-5{
+    padding: 15px;
+  }
+  .padding-4{
+    padding: 12px;
+  }
+  .padding-3{
+    padding: 9px;
+  }
+  .padding-2{
+    padding: 6px;
+  }
+  .padding-1{
+    padding: 3px;
+  }
+
+
+  .margin-5{
+    margin: 15px;
+  }
+  .margin-4{
+    margin: 12px;
+  }
+  .margin-3{
+    margin: 9px;
+  }
+  .margin-2{
+    margin: 6px;
+  }
+  .margin-1{
+    margin: 3px;
+  }
+// LOGO
+
+
+
+// 
+nav{
+    padding: 0px;
+    margin: 0px;
+    font-family: $sans-serif-font;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.navigation{
+    background-color: $dominant-color;
+    padding: 15px 10px 15px;
+}
+
+
+.navigation ul {
+    padding: 0px;
+}
+
+.navigation .navigation-list{
+    padding: 10px 5px 10px;
+    
+}
+
+.navigation .active{
+    // padding: 10px 5px 10px;
+    color: $complementary-color;
+    // text-decoration: underline;
+    font-weight: bold;
+  
+}
+
+.navigation .logo{
+    height: 12px;
+    width: auto; 
+    padding:0px 10px 0px;
+}  
+
+.navigation .icons{
+    padding: 0px;
+}
+
+.navigation .form{
+    padding: 0px;
+}
+
+
+
+//   /* Socials */
+//   .socials {
+//     list-style: none;
+//     padding: 0;
+//   }
+
+//   .socials li {
+//     display: inline-block;
+//     margin-right: 10px;
+//   }
+
+
+.button-full,
+.button-outlined,
+.button-rounded {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.button-full {
+  background-color: $dominant-color;
+  color: $white-color;
+  border: none;
+}
+
+.button-outlined {
+  background-color: transparent;
+  color: $dominant-color;
+  border: 2px solid $dominant-color;
+}
+
+.button-rounded {
+  background-color: $dominant-color;
+  color: $white-color;
+  border: 2px solid $dominant-color;
+  border-radius: 50px;
+}
+
+/* Hover state */
+.button-full:hover,
+.button-outlined:hover,
+.button-rounded:hover {
+  background-color: darken($dominant-color, 10%);
+  color: lighten($white-color, 10%);
+  border-color: darken($dominant-color, 10%);
+}
+
+/* Active state */
+// .button-full:active,
+// .button-outlined:active,
+// .button-round:active {
+//   background-color: darken($dominant-color, 20%);
+//   color: lighten($white-color, 20%);
+//   border-color: darken($dominant-color, 20%);
+// }
+
+// /* Visited state */
+// .button-full:visited,
+// .button-outlined:visited,
+// .button-round:visited {
+//   color: darken($dominant-color, 20%);
+// }
+
+/* Focus state (optional) */
+.button-full:focus,
+.button-outlined:focus,
+.button-rounded:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 45, 76, 0.5);
+}
+
+
+
+// banner
+
+
+
+
+.code-section {
+    background-color: $black-color;
+    color: white;
+  
+    .header {
+      background-color: $accent-color;
+      color: $black-color;
+      padding: 4px;
+    }
+  
+    code {
+      // Add your code styling here if needed
+    }
+  
+    .footer {
+      // Add your footer styling here if needed
+    }
+  }
+  
+
+footer{
+  margin: 0px;
+  padding: 0px;
+  background-color: $dominant-color;
+  text-align: center;
+} 
+
+.footer{
+  margin: 0px;
+  padding: 0px;
+  background-color: $dominant-color;
+  color: $white-color;
+  text-align: center;
+
+  .part{
+    margin: 0px;
+    padding: 10px;
+    
+  }
+}
+
+
+
+.content{
+
+}
+
+// Extra Small devices (phones)
+@media only screen and (max-width: 400px) {
+}
+
+
+// Small devices (phones)
+@media only screen and (max-width: 600px) {
+}
+
+// Medium devices (tablets)
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  $column-width: 100%
+}
+
+// Large devices (desktops)
+@media only screen and (min-width: 1025px) {
+}
+
+// Extra-large devices (large desktops)
+@media only screen and (min-width: 1200px) {
+}
+
+// Landscape orientation
+@media only screen and (orientation: landscape) {
+}
+
+// Portrait orientation
+@media only screen and (orientation: portrait) {
+}
+
+// High-resolution devices (Retina displays)
+@media only screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+}
+
+// Touch devices
+@media only screen and (pointer: coarse) {
+}
+
+// Hover-enabled devices (non-touch devices or devices with hover capability)
+@media only screen and (hover: hover) {
+}
+
