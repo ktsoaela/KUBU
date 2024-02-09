@@ -1,5 +1,21 @@
+`
+<u>Project Structure</u>
+
+project/
+├── frontend/
+│   ├── Dockerfile
+│   └── (Vue.js files)
+├── backend/
+│   ├── Dockerfile
+│   └── (Django files)
+└── docker-compose.yml
+`
+
+
 # Commands
 docker-compose up --build
+
+
 
 
 # images 
