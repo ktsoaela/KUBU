@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  postgres:
+    container_name: db
+    image: postgres:16.0-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: einstein
+      POSTGRES_PASSWORD: relativity
+      POSTGRES_DB: einstein
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+    volumes:
+      - ./backend/:/app
+      - ./backend/.env.docker:/app/.env
+      - ./backend/logs:/app/logs
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:
+  media:
+  static:

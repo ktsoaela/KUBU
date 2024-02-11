@@ -1,0 +1,6 @@
+{
+    "scripts": {
+      "dev:docker": "vite --host"
+    }
+  }
+  
