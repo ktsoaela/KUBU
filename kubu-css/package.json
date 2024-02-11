@@ -1,0 +1,37 @@
+{
+    "name": "kubu-css",
+    "version": "1.0.0",
+    "description": "A lightweight and flexible CSS framework for building responsive web interfaces.",
+    "main": "dist/kubu.min.css",
+    "keywords": [
+      "css",
+      "framework",
+      "responsive",
+      "web development"
+    ],
+    "author": "Your Name or Organization",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yourusername/kubu-css.git"
+    },
+    "bugs": {
+      "url": "https://github.com/yourusername/kubu-css/issues"
+    },
+    "homepage": "https://github.com/yourusername/kubu-css#readme",
+    "dependencies": {
+        
+    },
+    "devDependencies": {
+        
+    },
+    "scripts": {
+        
+    },
+    "files": [
+      "dist/*",
+      "LICENSE",
+      "README.md"
+    ]
+  }
+  
