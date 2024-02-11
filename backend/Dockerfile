@@ -1,22 +1,17 @@
-# Use the official Python image as base
-FROM python:3.9-slim
+# Use the official Python image
+FROM python:3.10
 
-# Set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Set working directory
+# Set the working directory inside the container
 WORKDIR /app
 
-# Install dependencies
-COPY ./requirements.txt .
-RUN pip install -r requirements.txt
+# Copy the requirements file
+COPY requirements.txt /app/
 
-# Copy the rest of the backend code
-COPY backend/ .
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port 8000
 EXPOSE 8000
 
-# Start the Django server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Start the Django app using Gunicorn
+CMD ["gunicorn", "backend.wsgi:application", "--config", "gunicorn.py"]
