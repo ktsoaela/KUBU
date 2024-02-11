@@ -12,9 +12,76 @@ project/
 `
 
 
-# Commands
-docker-compose up --build
 
+## Features
+
+### Layout Components
+
+- **Grid System**: Responsive grid system for creating layout structures.
+- **Containers**: Wrappers to control content width and alignment.
+- **Flexbox Utilities**: Classes for flexbox layout control.
+- **Spacing Utilities**: Margin and padding classes for precise spacing control.
+- **Responsive Breakpoints**: Media query breakpoints for responsive design.
+
+### Typography
+
+- **Headings**: Styled headings (h1-h6) with consistent typography.
+- **Text Utilities**: Classes for text alignment, weight, size, and color.
+- **Links**: Styled links with hover effects and states.
+- **Lists**: Styled unordered and ordered lists.
+
+### Buttons and Forms
+
+- **Buttons**: Button styles for various purposes (primary, secondary, success, danger, etc.).
+- **Forms**: Styled form elements with validation states.
+- **Checkboxes and Radios**: Styled checkboxes and radio buttons.
+- **Form Validation**: Validation states for form inputs.
+
+### Navigation
+
+- **Navbar**: Responsive navigation bar component with dropdowns and branding.
+- **Tabs**: Tab navigation component for switching between content sections.
+- **Pagination**: Pagination component for splitting long lists or tables.
+- **Breadcrumbs**: Breadcrumb navigation for displaying hierarchical links.
+
+### Alerts and Messages
+
+- **Alerts**: Dismissible alert messages for conveying important information.
+- **Tooltips and Popovers**: Small overlays for displaying additional information.
+- **Modals**: Dialog windows for displaying content or requiring user interaction.
+- **Toast Notifications**: Non-disruptive notifications that appear and fade away.
+
+### Cards and Panels
+
+- **Cards**: Flexible content containers with headers, footers, and optional image.
+- **Panels**: Panel components for organizing content with headers and footers.
+
+### Miscellaneous
+
+- **Icons**: Icon library or utilities for adding icons to elements.
+- **Badges**: Badge components for indicating status or count.
+- **Tables**: Styled tables with hover effects and stripes.
+- **Progress Bars**: Progress bar components for showing completion status.
+
+### Utilities
+
+- **Spacing Utilities**: Margin, padding, and spacing control classes.
+- **Color Utilities**: Text color, background color, and border color classes.
+- **Border Utilities**: Border styling classes for elements.
+- **Visibility Utilities**: Classes for controlling element visibility.
+- **Responsive Utilities**: Show/hide classes based on screen size.
+
+### Customization
+
+- **Configuration**: Options for customizing colors, typography, and styles.
+- **Extensibility**: Hooks or APIs for extending and customizing components.
+- **Theme Support**: Ability to create and apply custom themes.
+
+### Documentation and Examples
+
+- **Comprehensive Documentation**: Detailed documentation with usage examples and guidelines.
+- **Starter Templates**: Pre-built templates showcasing component usage and layouts.
+- **Code Samples**: Code snippets and examples for quick reference.
 
 
 
