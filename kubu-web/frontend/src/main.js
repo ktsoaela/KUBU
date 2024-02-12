@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// CSS
+import './assets/css/kubu.css'
 
 Vue.config.productionTip = false
 
