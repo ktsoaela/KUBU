@@ -10,6 +10,8 @@ import Icons from '@/components/Icons'
 import News from '@/components/News'
 import Showcase from '@/components/Showcase'
 import Downloads from '@/components/Downloads'
+import Contributors from '@/components/Contributors'
+
 
 Vue.use(Router)
 
@@ -21,6 +23,7 @@ export default new Router({
     { path: '/icons', name: 'Icons', component: Icons },
     { path: '/news', name: 'News', component: News },
     { path: '/showcase', name: 'Showcase', component: Showcase },
-    { path: '/downloads', name: 'Downloads', component: Downloads }
+    { path: '/downloads', name: 'Downloads', component: Downloads },
+    { path: '/contributors', name: 'Contributors', component: Contributors }
   ]
 })

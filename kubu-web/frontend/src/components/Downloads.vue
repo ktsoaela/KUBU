@@ -1,5 +1,5 @@
 <template>
-  <div class='download'>
+  <div class='download container'>
     <h2>Downloads</h2>
     <p>Download Kubu CSS and related files.</p>
     <div class='download-links'>

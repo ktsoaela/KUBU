@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style scoped>
-/* Add Kubu CSS styles here to match the design */
+Add Kubu CSS styles here to match the design
 .container {
   padding: 20px;
 }

@@ -61,8 +61,8 @@ select {
 /* Containers */
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
   margin-right: auto;
   margin-left: auto;
 
@@ -920,27 +920,28 @@ ol {
 /* UTILITIES */
 /* ==================================================================== */
 /* Spacing Utilities */
-.m-0 {
-  margin: 0 !important;
+
+@mixin margin-utilities($prefix: "m") {
+  @for $i from 0 through 6 {
+    .#{$prefix}-#{$i} {
+      margin: #{$i * 10}px !important;
+    }
+    .#{$prefix}t-#{$i} {
+      margin-top: #{$i * 10}px !important;
+    }
+    .#{$prefix}r-#{$i} {
+      margin-right: #{$i * 10}px !important;
+    }
+    .#{$prefix}b-#{$i} {
+      margin-bottom: #{$i * 10}px !important;
+    }
+    .#{$prefix}l-#{$i} {
+      margin-left: #{$i * 10}px !important;
+    }
+  }
 }
 
-.mt-0 {
-  margin-top: 0 !important;
-}
-
-.mr-0 {
-  margin-right: 0 !important;
-}
-
-.mb-0 {
-  margin-bottom: 0 !important;
-}
-
-.ml-0 {
-  margin-left: 0 !important;
-}
-
-/* Similar classes for padding can be added */
+@include margin-utilities;
 
 /* Color Utilities */
 .text-primary {
@@ -1002,29 +1003,114 @@ ol {
 /* CUSTOMIZATION */
 /* ==================================================================== */
 
-article {
+header {
+  font-family: $default-font-family;
+  background-color: $dominant-color;
+  font-size: $default-font-size;
+  color: $white-color;
+  padding: 0px;
+  margin: 0px;
+
+  .announcement {
+    background-color: $complementary-color;
+    text-align: center;
+    padding: 8px;
+    font-weight: bold;
+  }
+
+  .utility {
+    text-align: right;
+    padding: 5px 20px;
+    font-size: 12px;
+  }
+
+  .utility a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+  }
+
+  .logo{
+    height: auto;
+    width: 30px;
+    justify-content: start!important;
+
+    .logo-img{
+      fill: $white-color
+    }
+
+    .logo-text{
+      fill: $white-color
+    }
+
+  }
+
+
+
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
-figure {
-}
+// article {
+// }
 
-figcaption {
-}
+// figure {
+// }
 
-main {
-}
+// figcaption {
+// }
 
-nav {
-}
+// main {
+// }
 
-section {
-}
+// section {
+// }
 
 footer {
 }
 
-header {
+// header {
+// }
+
+// aside {
+// }
+
+footer {
+  margin: 0px;
+  padding: 0px;
+  background-color: $dominant-color;
+  font-family: $default-font-family;
+  text-align: center;
 }
 
-aside {
+.copyright {
+  /* position: fixed; */
+  /* bottom: 0; */
+  margin: 0px;
+  padding: 0px;
+  background-color: $dominant-color;
+  font-family: $default-font-family;
+  text-align: center;
+
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
