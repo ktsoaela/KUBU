@@ -1,6 +1,6 @@
 <!-- Papers.vue -->
 <template>
-  <div class="container">
+  <div class='main-container'>
     <h1>Kubu CSS Documentation</h1>
 
     <h2>Installation</h2>

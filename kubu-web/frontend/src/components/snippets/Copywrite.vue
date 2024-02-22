@@ -22,5 +22,9 @@ export default {
 </script>
 
 <style scoped>
+.copyright{
+  position: relative;
+  bottom: 0px;
+}
 
 </style>

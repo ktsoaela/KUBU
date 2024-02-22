@@ -1,5 +1,5 @@
 <template>
-  <div class='container mx-auto'>
+  <div class='main-container mx-auto'>
     <h2 class='text-3xl font-semibold mb-6'>Showcase</h2>
     <div class='grid grid-cols-3 gap-6'>
       <div
@@ -55,8 +55,8 @@ export default {
 </script>
 
 <style scoped>
-Add Kubu CSS styles here to match the design
-.container {
+/* Add Kubu CSS styles here to match the design */
+/* .container {
   padding: 20px;
 }
 
@@ -110,5 +110,5 @@ Add Kubu CSS styles here to match the design
 
 .object-cover {
   object-fit: cover;
-}
+} */
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class='download container'>
-    <h2>Downloads</h2>
+  <div class='download main-container'>
+    <h2 class="pb-1">Downloads</h2>
     <p>Download Kubu CSS and related files.</p>
     <div class='download-links'>
       <div class='download-link'>
@@ -13,7 +13,7 @@
       <thead>
         <tr>
           <th>Version</th>
-          <th>Flavor Name</th>
+          <th>Number</th>
           <th>Release Date</th>
         </tr>
       </thead>
@@ -36,19 +36,19 @@ export default {
         {
           id: 1,
           version: '1.0',
-          flavorName: 'Vanilla',
+          flavorName: 'nngwe',
           releaseDate: '2023-01-01'
         },
         {
           id: 2,
           version: '1.1',
-          flavorName: 'Chocolate',
+          flavorName: 'pedi',
           releaseDate: '2023-02-15'
         },
         {
           id: 3,
           version: '1.2',
-          flavorName: 'Strawberry',
+          flavorName: 'tharu',
           releaseDate: '2023-04-10'
         }
       ]

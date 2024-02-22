@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Header />
     <router-view />
-    <Footer />
-    <Copywrite />
+    <!-- <Footer />
+    <Copywrite /> -->
   </div>
 </template>
 
 <script>
 // Snippets
-import Navbar from '@/components/snippets/Navbar'
+import Header from '@/components/snippets/Header'
 // import Sidebar from '@/components/snippets/Sidebar'
 import Footer from '@/components/snippets/Footer'
 import Copywrite from '@/components/snippets/Copywrite'
@@ -17,7 +17,7 @@ import Copywrite from '@/components/snippets/Copywrite'
 export default {
   name: 'App',
   components: {
-    Navbar,
+    Header,
     Footer,
     Copywrite
   }

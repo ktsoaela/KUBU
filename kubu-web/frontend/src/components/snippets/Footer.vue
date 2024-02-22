@@ -62,9 +62,9 @@ export default {
 </script>
 
 <style scoped>
-.footer {
-  /* position: fixed; */
-  /* bottom: 70px; */
+footer {
+  position: relative;
+  bottom: 0px;
   width: 100%;
   background-color: #f8f8f8;
   padding: 30px 0;

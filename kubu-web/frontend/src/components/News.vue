@@ -1,6 +1,6 @@
 <!-- News.vue -->
 <template>
-  <div class="container">
+  <div class='main-container'>
     <h1>Kubu CSS News</h1>
 
     <div class="article">

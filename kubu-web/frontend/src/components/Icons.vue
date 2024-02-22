@@ -1,6 +1,6 @@
 <!-- Icons.vue -->
 <template>
-  <div class="container">
+  <div class='main-container'>
     <h1>Kubu CSS Icons</h1>
 
     <h2>Font Awesome Icons</h2>
