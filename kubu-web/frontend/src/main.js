@@ -4,7 +4,10 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 // CSS
-import './assets/css/kubu.css'
+import '@/assets/css/kubu.css'
+import '@/assets/css/kubu-font.css'
+// Icons
+import 'boxicons'
 
 Vue.config.productionTip = false
 
