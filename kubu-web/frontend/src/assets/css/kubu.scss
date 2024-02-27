@@ -117,6 +117,17 @@ select {
 
 
 /* Flexbox Utilities */
+.flex-container{
+  display: flex;
+}
+
+.flex-item{
+  width: 200px;
+  margin: 10px;
+  border: 3px solid $complementary-color;
+  background-color: $dominant-color;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -135,15 +146,15 @@ select {
   flex-wrap: nowrap;
 }
 
-.justify-content-start {
+.jc-start {
   justify-content: flex-start;
 }
 
-.justify-content-end {
+.jc--end {
   justify-content: flex-end;
 }
 
-.justify-content-center {
+.jc-center {
   justify-content: center;
 }
 
@@ -158,6 +169,13 @@ select {
 .align-items-center {
   align-items: center;
 }
+
+// /* Spacing Utilities */
+// @for $i from 1 through 6 {
+//   .flex-box-{$i} {
+//     min-height: 100px;
+//   }
+// }
 
 /* Spacing Utilities */
 @for $i from 1 through 6 {
