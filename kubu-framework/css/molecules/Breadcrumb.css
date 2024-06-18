@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     padding: 0.75rem 1rem;
     list-style: none;
-    /*background-color: var(--background);*/
     border-radius: 0.25rem;
     margin-left: 0px;
 }
@@ -31,4 +30,17 @@
 .breadcrumb__item--active {
     color: var(--secondary);
     pointer-events: none;
+}
+
+/* Different Divider Styles */
+.breadcrumb--slash .breadcrumb__item + .breadcrumb__item::before {
+    content: "/";
+}
+
+.breadcrumb--dot .breadcrumb__item + .breadcrumb__item::before {
+    content: "•";
+}
+
+.breadcrumb--arrow .breadcrumb__item + .breadcrumb__item::before {
+    content: "➔";
 }
