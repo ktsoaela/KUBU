@@ -4,7 +4,6 @@
 @import url("css/atoms/Buttons.css");
 @import url("css/atoms/Close.css");
 @import url("css/atoms/colors.css");
-
 @import url("css/atoms/spacing.css");
 @import url("css/atoms/Spinners.css");
 @import url("css/atoms/typography.css");
@@ -47,6 +46,7 @@
 @import url("css/utilities/EventDelegation.css");
 @import url("css/utilities/Helpers.css");
 @import url("css/utilities/Notifications.css");
+@import url("css/utilities/Flexbox.css");
 
 /* Importing all pages */
 @import url("css/pages/HomePage.css");

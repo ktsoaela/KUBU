@@ -16,3 +16,50 @@
 .demo_code pre {
     overflow-x: auto;
 }
+
+
+.border_left{
+    border-left: 6px solid var(--primary);
+    /*background-color: var(--primary);*/
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.border_right{
+    border-right: 6px solid var(--primary);
+    /*background-color: var(--primary);*/
+    padding: 10px;
+    margin: 5px;
+
+}
+
+
+.border_top{
+    border-top: 6px solid var(--primary);
+    /*background-color: var(--primary);*/
+    padding: 10px;
+    margin: 5px;
+}
+
+.border_bottom{
+    border-bottom: 6px solid var(--primary);
+    /*background-color: var(--primary);*/
+    padding: 10px;
+    margin: 5px;
+
+
+}
+
+
+.border-hr {
+    background-color: var(--primary);
+    border-radius: 9999px;
+    height: .25rem;
+    margin: 1em auto;
+    width: 4em;
+}
+
+.section{
+    margin: 30px 0px 30px;
+}

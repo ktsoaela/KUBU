@@ -3,8 +3,9 @@
     flex-wrap: wrap;
     padding: 0.75rem 1rem;
     list-style: none;
-    background-color: var(--background);
+    /*background-color: var(--background);*/
     border-radius: 0.25rem;
+    margin-left: 0px;
 }
 
 .breadcrumb__item {
