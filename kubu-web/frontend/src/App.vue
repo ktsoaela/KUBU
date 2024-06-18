@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <router-view />
-    <!-- <Footer />
+    <!-- <Footer.css />
     <Copywrite /> -->
   </div>
 </template>
@@ -12,7 +12,7 @@ import 'boxicons/css/boxicons.min.css'
 
 // Snippets
 import Header from '@/components/snippets/Header'
-import Footer from '@/components/snippets/Footer'
+import Footer from '@/components/snippets/Footer.css'
 import Copywrite from '@/components/snippets/Copywrite'
 
 export default {

@@ -121,7 +121,7 @@ Define a consistent typography system with Kubu. Carefully crafted styles for he
 #### Stylish Buttons
 Create visually appealing buttons with Kubu. The framework offers styles for different states, allowing for customization to suit your design needs. Choose from full, outlined, or rounded button styles.
 
-#### Seamless Forms
+#### Seamless Forms.css
 Style form elements seamlessly using Kubu. Input fields, checkboxes, radio buttons, and select boxes are designed to ensure a cohesive and user-friendly look and feel.
 
 #### Sleek Navigation

@@ -1,0 +1,7 @@
+:root {
+    --primary: #227093;
+    --secondary: #ff5252;
+    --background: #eee;
+    --highlight: #ffda79;
+    --theme: var(--primary);
+}
