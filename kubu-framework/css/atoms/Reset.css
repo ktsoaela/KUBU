@@ -1,3 +1,48 @@
-*, *::before, *::after {
+html {
     box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    /*box-sizing: inherit;*/
+    box-sizing: border-box;
+
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, figure, hr {
+    margin: 0;
+    padding: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }

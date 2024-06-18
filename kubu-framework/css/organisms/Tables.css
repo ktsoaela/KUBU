@@ -1,0 +1,36 @@
+/* Table styles */
+
+/* Table container */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Table header */
+.table thead {
+    background-color: #f0f0f0;
+}
+
+/* Table header row */
+.table thead th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Table body */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Table body row */
+.table tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}

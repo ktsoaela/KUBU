@@ -1,0 +1,45 @@
+/* organisms/alerts.css */
+
+/* Alert Container */
+.alert-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+/* Alert */
+.alert {
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Success Alert */
+.alert-success {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+/* Danger Alert */
+.alert-danger {
+    background-color: #f44336;
+    color: #FFFFFF;
+}
+
+/* Close Button */
+.alert-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}

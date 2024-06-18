@@ -1,0 +1,44 @@
+/* Form Group */
+.form-group {
+    margin-bottom: 1rem; /* Adjust margin as needed */
+}
+
+/* Label */
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem; /* Adjust margin as needed */
+    font-weight: bold; /* Make labels bold */
+}
+
+/* Input Field */
+.form-input {
+    width: 100%; /* Make input fields full width */
+    padding: 0.5rem; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Basic border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Textarea */
+.form-textarea {
+    width: 100%; /* Make textarea full width */
+    padding: 0.5rem; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Basic border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Select Box */
+.form-select {
+    width: 100%; /* Make select box full width */
+    padding: 0.5rem; /* Adjust padding as needed */
+    border: 1px solid #ccc; /* Basic border */
+    border-radius: 0.25rem; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+    appearance: none; /* Remove default styles */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Add custom dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.25rem;
+    cursor: pointer; /* Show pointer on hover */
+}

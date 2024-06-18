@@ -1,0 +1,57 @@
+/* Importing color variables */
+@import url("above.css");
+
+:root {
+    --button-primary-bg: var(--primary);
+    --button-primary-color: var(--white);
+    --button-secondary-bg: var(--secondary);
+    --button-secondary-color: var(--white);
+}
+
+.button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button--primary {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-color);
+    border: 1px solid var(--button-primary-bg);
+}
+
+.button--primary:hover {
+    background-color: darken(var(--button-primary-bg), 10%);
+}
+
+.button--secondary {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-color);
+    border: 1px solid var(--button-secondary-bg);
+}
+
+.button--secondary:hover {
+    background-color: darken(var(--button-secondary-bg), 10%);
+}
+
+.button--outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.button--outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}

@@ -1,0 +1,39 @@
+/* List Group */
+.list-group {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item:hover {
+    background-color: #f4f4f4;
+}
+
+.list-group-item .list-group-icon {
+    margin-right: 1rem;
+}
+
+.list-group-item .list-group-content {
+    flex: 1;
+}
+
+.list-group-item .list-group-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+.list-group-item .list-group-text {
+    margin: 0;
+    color: #666;
+}

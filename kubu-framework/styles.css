@@ -1,20 +1,23 @@
 /* Importing all atoms */
+/*@import url("css/atoms/Reset.css");*/
+@import url("css/atoms/Badge.css");
 @import url("css/atoms/Buttons.css");
 @import url("css/atoms/Close.css");
-@import url("css/atoms/Badge.css");
-@import url("css/atoms/Spinners.css");
 @import url("css/atoms/colors.css");
+
+@import url("css/atoms/spacing.css");
+@import url("css/atoms/Spinners.css");
 @import url("css/atoms/typography.css");
 
 /* Importing all molecules */
+@import url("css/molecules/Breadcrumb.css");
 @import url("css/molecules/ButtonGroups.css");
+@import url("css/molecules/Dropdowns.css");
 @import url("css/molecules/FormGroups.css");
 @import url("css/molecules/ListGroups.css");
 @import url("css/molecules/Navbar.css");
 @import url("css/molecules/Navs.css");
 @import url("css/molecules/Pagination.css");
-@import url("css/molecules/Dropdowns.css");
-@import url("css/molecules/Breadcrumb.css");
 
 /* Importing all organisms */
 @import url("css/organisms/Accordion.css");

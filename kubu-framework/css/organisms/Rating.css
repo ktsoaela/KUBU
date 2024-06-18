@@ -1,0 +1,54 @@
+/* Rating */
+.rating {
+    display: inline-block;
+    unicode-bidi: bidi-override;
+    color: #888888;
+    font-size: 20px;
+    height: 1em;
+    width: auto;
+    margin: 0;
+    position: relative;
+}
+
+/* Hide radio buttons */
+.rating input {
+    display: none;
+}
+
+/* Star symbol */
+.rating label {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Star outline */
+.rating label:before {
+    content: '\2605';
+}
+
+/* Star fill */
+.rating label:after {
+    content: '\2605';
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.2s;
+    color: #f7d703;
+}
+
+/* Hover effect */
+.rating input:hover + label:after,
+.rating input:checked + label:after {
+    opacity: 1;
+}
+
+/* Selected state */
+.rating:not(:hover) input:checked + label:after {
+    opacity: 1;
+}

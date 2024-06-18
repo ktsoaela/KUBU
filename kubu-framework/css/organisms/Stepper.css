@@ -1,0 +1,41 @@
+/* Steppers */
+.stepper {
+    display: flex;
+    align-items: center;
+}
+
+.stepper__step {
+    flex: 1;
+    text-align: center;
+}
+
+.stepper__step.active .stepper__number {
+    background-color: var(--primary);
+    color: white;
+}
+
+.stepper__number {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.stepper__label {
+    font-size: 0.9rem;
+}
+
+.stepper__connector {
+    flex: 1;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.stepper__connector:last-child {
+    display: none; /* Hide connector after last step */
+}

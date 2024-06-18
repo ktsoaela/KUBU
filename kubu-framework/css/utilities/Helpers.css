@@ -1,0 +1,18 @@
+.demo_product{
+    background-color: #ff88001f;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+
+.demo_code {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.demo_code pre {
+    overflow-x: auto;
+}

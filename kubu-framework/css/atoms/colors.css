@@ -1,0 +1,51 @@
+:root {
+    /*-primary: #227093;*/
+    /*--secondary: #ff5252;*/
+    /*--background: #eee;*/
+    /*--highlight: #ffda79;*/
+    /*--theme: var(--primary);*/
+
+
+
+    /* Light and dark shades */
+    --dark: #000000;
+    --light: #ffffff;
+
+    /* Primary colors */
+    --primary: #227093;;
+    --primary-light: #3498db;
+    --primary-dark: #1b5e83;
+
+    /* Secondary colors */
+    --secondary: #ff5252;
+    --secondary-light: #ff7b7b;
+    --secondary-dark: #c41c1c;
+
+    /* Background colors */
+    --background: #eee;
+    --background-light: #f5f5f5;
+    --background-dark: #cccccc;
+
+    /* Highlight colors */
+    --highlight: #ffda79;
+    --highlight-light: #ffefb3;
+    --highlight-dark: #e6bf59;
+
+    /* Neutral colors */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-light: #d3d3d3;
+    --gray-dark: #888888;
+
+    /* Theme color */
+    --theme: var(--primary);
+
+    /* Additional colors */
+    --danger: #930709;
+    --hazard: #FFFF00;
+    --risk: #FFFF00;
+    --safe: #008000;
+    --info: #0000FF;
+    --radiation-light: #800080;
+    --earth: #A52A2A;
+}

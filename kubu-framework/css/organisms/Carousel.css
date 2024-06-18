@@ -1,0 +1,31 @@
+/* organisms/cards.css */
+
+/* Card container */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Card title */
+.card__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Card image */
+.card__image {
+    width: 100%;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Card content */
+.card__content {
+    font-size: 1rem;
+    line-height: 1.5;
+}
