@@ -1,5 +1,3 @@
-/* Importing color variables */
-@import url("above.css");
 
 :root {
     --button-primary-bg: var(--primary);
@@ -54,4 +52,156 @@
 .button--outline:hover {
     background-color: var(--primary);
     color: var(--white);
+}
+
+/* Additional Button Styles */
+.button--danger {
+    background-color: var(--danger);
+    color: var(--white);
+    border: 1px solid var(--danger);
+}
+
+.button--hazard {
+    background-color: var(--hazard);
+    color: black;
+    border: 1px solid var(--hazard);
+}
+
+.button--risk {
+    background-color: var(--risk);
+    color: black;
+    border: 1px solid var(--risk);
+}
+
+.button--safe {
+    background-color: var(--safe);
+    color: var(--white);
+    border: 1px solid var(--safe);
+}
+
+.button--info {
+    background-color: var(--info);
+    color: var(--white);
+    border: 1px solid var(--info);
+}
+
+.button--radiation {
+    background-color: var(--radiation-light);
+    color: var(--white);
+    border: 1px solid var(--radiation-light);
+}
+
+.button--earth {
+    background-color: var(--earth);
+    color: var(--white);
+    border: 1px solid var(--earth);
+}
+
+/* Rounded Buttons */
+.button--rounded-2 {
+    border-radius: 2px;
+}
+
+.button--rounded-4 {
+    border-radius: 4px;
+}
+
+.button--rounded-8 {
+    border-radius: 8px;
+}
+
+.button--rounded-12 {
+    border-radius: 12px;
+}
+
+.button--rounded-circle {
+    border-radius: 50%;
+    padding: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Plain Buttons */
+.button--plain {
+    background-color: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.button--plain:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Shadow Buttons */
+.button--shadow {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button--shadow:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Disabled Button */
+.button--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Button Sizes */
+.button--small {
+    font-size: 12px;
+    padding: 10px 24px;
+}
+
+.button--medium {
+    font-size: 16px;
+    padding: 14px 40px;
+}
+
+.button--large {
+    font-size: 20px;
+    padding: 16px 48px;
+}
+
+.button--xlarge {
+    font-size: 24px;
+    padding: 18px 56px;
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+}
+
+.button-group .button {
+    margin: 0;
+}
+
+.button-group .button:not(:last-child) {
+    border-right: none;
+}
+
+.button-group .button--outline:not(:last-child) {
+    border-right: 1px solid var(--primary);
+}
+
+/* Button Groups */
+.button-group {
+    display: flex;
+}
+
+.button-group .button {
+    margin: 0;
+}
+
+.button-group .button:not(:last-child) {
+    border-right: none;
+}
+
+.button-group .button--outline:not(:last-child) {
+    border-right: 1px solid var(--primary);
 }
