@@ -1,0 +1,18 @@
+.close-button {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    color: white;
+    background: var(--theme);
+    cursor: pointer;
+}
+
+.close-button::before {
+    content: "\00D7";
+    font-size: 1rem;
+}
+
+.close-button:hover {
+    background: var(--secondary);
+}

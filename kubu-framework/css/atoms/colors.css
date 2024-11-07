@@ -1,0 +1,51 @@
+:root {
+    /*-primary: #227093;*/
+    /*--secondary: #ff5252;*/
+    /*--background: #eee;*/
+    /*--highlight: #ffda79;*/
+    /*--theme: var(--primary);*/
+
+
+
+    /* Light and dark shades */
+    --dark: #000000;
+    --light: #ffffff;
+
+    /* Primary colors */
+    --primary: #227093;;
+    --primary-light: #3498db;
+    --primary-dark: #1b5e83;
+
+    /* Secondary colors */
+    --secondary: #ff5252;
+    --secondary-light: #ff7b7b;
+    --secondary-dark: #c41c1c;
+
+    /* Background colors */
+    --background: #eee;
+    --background-light: #f5f5f5;
+    --background-dark: #cccccc;
+
+    /* Highlight colors */
+    --highlight: #ffda79;
+    --highlight-light: #ffefb3;
+    --highlight-dark: #e6bf59;
+
+    /* Neutral colors */
+    --white: #ffffff;
+    --black: #000000;
+    --gray-light: #d3d3d3;
+    --gray-dark: #888888;
+
+    /* Theme color */
+    --theme: var(--primary);
+
+    /* Additional colors */
+    --danger: #b21a21; /* Adjusted to match the tone of secondary */
+    --hazard: #f4d03f; /* Adjusted to match the tone of primary */
+    --risk: #f4ac3f; /* Adjusted to match the tone of primary */
+    --safe: #27ae60; /* Adjusted to match the tone of primary */
+    --info: #2980b9; /* Adjusted to match the tone of primary */
+    --radiation-light: #9b59b6; /* Adjusted to match the tone of primary */
+    --earth: #884c2e; /* Adjusted to match the tone of primary */
+}

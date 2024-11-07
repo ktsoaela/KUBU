@@ -1,0 +1,87 @@
+/* Datepicker container */
+.datepicker {
+    position: relative;
+}
+
+/* Datepicker input field */
+.datepicker__input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}
+
+/* Datepicker calendar container */
+.datepicker__calendar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+/* Datepicker calendar table */
+.datepicker__calendar table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Datepicker calendar table headings */
+.datepicker__calendar th {
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Datepicker calendar table cells */
+.datepicker__calendar td {
+    padding: 0.5rem;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Datepicker calendar table cells for selected dates */
+.datepicker__calendar td.selected {
+    background-color: #227093;
+    color: #fff;
+}
+
+/* Datepicker calendar table cells for today's date */
+.datepicker__calendar td.today {
+    background-color: #ffda79;
+}
+
+/* Datepicker calendar table cells for disabled dates */
+.datepicker__calendar td.disabled {
+    color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Datepicker calendar navigation buttons */
+.datepicker__nav-btn {
+    cursor: pointer;
+    padding: 0.25rem;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+/* Datepicker calendar navigation buttons icons */
+.datepicker__nav-icon {
+    vertical-align: middle;
+}
+
+/* Datepicker calendar navigation button for previous month */
+.datepicker__prev-month {
+    float: left;
+}
+
+/* Datepicker calendar navigation button for next month */
+.datepicker__next-month {
+    float: right;
+}

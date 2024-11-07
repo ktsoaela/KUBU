@@ -1,0 +1,64 @@
+/* Importing all atoms */
+/*@import url("css/atoms/Reset.css");*/
+@import url("css/atoms/Badge.css");
+@import url("css/atoms/Buttons.css");
+@import url("css/atoms/Close.css");
+@import url("css/atoms/colors.css");
+@import url("css/atoms/spacing.css");
+@import url("css/atoms/Spinners.css");
+@import url("css/atoms/typography.css");
+
+/* Importing all molecules */
+@import url("css/molecules/Breadcrumb.css");
+@import url("css/molecules/ButtonGroups.css");
+@import url("css/molecules/Dropdowns.css");
+@import url("css/molecules/FormGroups.css");
+@import url("css/molecules/ListGroups.css");
+@import url("css/molecules/Navbar.css");
+@import url("css/molecules/Navs.css");
+@import url("css/molecules/Pagination.css");
+
+/* Importing all organisms */
+@import url("css/organisms/Accordion.css");
+@import url("css/organisms/Alerts.css");
+@import url("css/organisms/Card.css");
+@import url("css/organisms/Carousel.css");
+@import url("css/organisms/Collapse.css");
+@import url("css/organisms/DatePicker.css");
+@import url("css/organisms/FileUpload.css");
+@import url("css/organisms/Forms.css");
+@import url("css/organisms/ListGroups.css");
+@import url("css/organisms/Modal.css");
+@import url("css/organisms/Offcanvas.css");
+@import url("css/organisms/Popovers.css");
+@import url("css/organisms/Progress.css");
+@import url("css/organisms/Scrollspy.css");
+@import url("css/organisms/Stepper.css");
+@import url("css/organisms/Tables.css");
+@import url("css/organisms/Tabs.css");
+@import url("css/organisms/Toasts.css");
+@import url("css/organisms/Tooltips.css");
+@import url("css/organisms/Rating.css");
+
+/* Importing all utilities */
+@import url("css/utilities/Ajax.css");
+@import url("css/utilities/Animations.css");
+@import url("css/utilities/EventDelegation.css");
+@import url("css/utilities/Helpers.css");
+@import url("css/utilities/Notifications.css");
+@import url("css/utilities/Flexbox.css");
+
+/* Importing all pages */
+@import url("css/pages/HomePage.css");
+@import url("css/pages/AboutPage.css");
+@import url("css/pages/ProductPage.css");
+@import url("css/pages/ContactPage.css");
+
+/* Importing snippets */
+@import url("css/snippets/Forms.css");
+@import url("css/snippets/Navbar.css");
+@import url("css/snippets/Footer.css");
+
+/* Importing templates */
+@import url("css/templates/main-template.css");
+

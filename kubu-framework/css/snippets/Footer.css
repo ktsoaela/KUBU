@@ -1,0 +1,22 @@
+/* Footer styles */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer__links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer__link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: #ff5252;
+}

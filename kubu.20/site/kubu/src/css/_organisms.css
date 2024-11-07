@@ -1,0 +1,137 @@
+Accordion
+Card
+Carousel
+Collapse
+Modal
+Navbar
+Navs
+Tabs
+Offcanvas
+Popover
+Scrollspy
+Toast
+
+
+.alert {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.alert-info {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.alert-close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: inherit;
+    cursor: pointer;
+}
+
+.breadcrumb {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: flex;
+}
+
+.breadcrumb-item {
+    margin-right: 0.5rem;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+}
+
+
+.button-group {
+    display: flex;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff; /* Default button color */
+    color: white;
+}
+
+.btn.active {
+    background-color: #0056b3; /* Active button color */
+    border-color: #004085; /* Border color for active button */
+}
+
+.list-group {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.list-group-item {
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    margin-bottom: -1px; /* Prevents double borders */
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.list-group-item.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#toggleButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#toggleButton.btn-active {
+    background-color: #28a745;
+    color: white;
+}

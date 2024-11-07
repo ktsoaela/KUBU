@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>Flexbox Documentation</title>
+    <style>
+        /* Styles specific to documentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /*.section {*/
+        /*    margin-bottom: 40px;*/
+        /*}*/
+
+        /*.section h2 {*/
+        /*    margin-bottom: 10px;*/
+        /*}*/
+
+        /*.demo_code pre {*/
+        /*    overflow-x: auto;*/
+        /*}*/
+
+        /*.demo_code {*/
+        /*    background-color: #f4f4f4;*/
+        /*    padding: 10px;*/
+        /*    border-radius: 5px;*/
+        /*    margin-bottom: 20px;*/
+        /*}*/
+
+        /*pre {*/
+        /*    margin: 0;*/
+        /*}*/
+
+
+
+        /*!* Accessibility *!*/
+        /*.tab__label {*/
+        /*    cursor: pointer;*/
+        /*}*/
+
+        /*!* CSS Variables *!*/
+        /*:root {*/
+        /*    --primary-color: #227093;*/
+        /*    --secondary-color: #ff5252;*/
+        /*    --background-color: #eee;*/
+        /*    --highlight-color: #ffda79;*/
+        /*}*/
+
+        /*!* Sass Variables *!*/
+        /*$primary-color: #227093;*/
+        /*$secondary-color: #ff5252;*/
+        /*$background-color: #eee;*/
+        /*$highlight-color: #ffda79;*/
+    </style>
+</head>
+<body>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Components</a></li>
+        <li class="breadcrumb__item breadcrumb__item--active">Flexbox</li>
+    </ol>
+</nav>
+
+
+<div class="section">
+    <h1 class="title">Flexbox</h1>
+    <p>The Flexbox component allows you to toggle the visibility of content sections. It is commonly used to present information in a collapsible format.</p>
+</div>
+
+
+<div class="section">
+    <h2 class="subtitle">Flexbox Variations</h2>
+    <p>There are different variations of the Flexbox component:</p>
+    <ul>
+        <li>Flexbox with checkboxes</li>
+        <li>Flexbox with radio buttons</li>
+    </ul>
+    <p>Each variation has specific HTML structure and styling.</p>
+</div>
+
+<div class="section">
+    <h2>Usage</h2>
+    <p>To use the Flexbox component, follow these steps:</p>
+    <ol>
+        <li>Add the HTML structure for the Flexbox.</li>
+        <li>Style the Flexbox using CSS.</li>
+        <li>Add JavaScript if necessary for dynamic behavior.</li>
+    </ol>
+</div>
+
+<div class="demo_product">
+<section class="Flexbox">
+    <div class="tab">
+        <input type="checkbox" name="Flexbox-1" id="cb1" checked>
+        <label for="cb1" class="tab__label">Checkbox</label>
+        <div class="tab__content">
+            <p>Pure CSS Flexbox based on the "input:checked + label" style trick.</p>
+        </div>
+    </div>
+    <div class="tab">
+        <input type="checkbox" name="Flexbox-1" id="cb2">
+        <label for="cb2" class="tab__label">Open multiple</label>
+        <div class="tab__content">
+            <p>Using <code>&lt;input type="checkbox"&gt;</code> allows to have several tabs open at the same time.</p>
+        </div>
+    </div>
+</section>
+
+<br />
+
+<section class="Flexbox Flexbox--radio">
+    <div class="tab">
+        <input type="radio" name="Flexbox-2" id="rd1">
+        <label for="rd1" class="tab__label">Radio</label>
+        <div class="tab__content">
+            <p>If you want to have only one tab open, you can use <code>&lt;input type="checkbox"&gt;</code>.</p>
+        </div>
+    </div>
+    <div class="tab">
+        <input type="radio" name="Flexbox-2" id="rd2">
+        <label for="rd2" class="tab__label">Open single</label>
+        <div class="tab__content">
+            <p>But if you wanna close the opened tab, you must add a "close" button somewhere, like the one below, that is just another styled radio input.</p>
+        </div>
+    </div>
+    <div class="tab">
+        <input type="radio" name="Flexbox-2" id="rd3">
+        <label for="rd3" class="tab__close">Close open tab &times;</label>
+    </div>
+</section>
+
+</div>
+
+
+<div class="section">
+    <h2>HTML Structure</h2>
+    <p>Below is the HTML structure for a basic Flexbox:</p>
+    <div class="demo_code">
+        <pre>
+&lt;section class="Flexbox">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="Flexbox-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Content goes here&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+        </pre>
+    </div>
+</div>
+
+
+<div class="section">
+    <h2>Example</h2>
+    <p>Here's an example of an Flexbox with checkboxes and radio buttons:</p>
+    <div class="demo_code"><code>
+        <pre>
+&lt;section class="Flexbox">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="Flexbox-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Pure CSS Flexbox based on the "input:checked + label" style trick.&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+
+&lt;section class="Flexbox Flexbox--radio">
+    &lt;div class="tab">
+        &lt;input type="radio" name="Flexbox-2" id="rd1">
+        &lt;label for="rd1" class="tab__label">Radio&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>If you want to have only one tab open, you can use &lt;code>&lt;input type="checkbox">&lt;/code>.&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+        </pre></code>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+/* Core styles/functionality */
+.collapse {
+    display: none;
+    transition: height 0.3s ease-out;
+    overflow: hidden;
+}
+
+.collapse.open {
+    display: block;
+}
+
+/* Visual styles */
+.collapse__header {
+    cursor: pointer;
+}
+
+.collapse__body {
+    padding: 10px;
+    background-color: #f0f0f0;
+}

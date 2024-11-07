@@ -1,0 +1,37 @@
+/* Toast container */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+/* Individual toast */
+.toast {
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+    padding: 10px 20px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Margin between toasts */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+}
+
+/* Success toast */
+.toast-success {
+    background-color: #28a745; /* Green background color */
+}
+
+/* Error toast */
+.toast-error {
+    background-color: #dc3545; /* Red background color */
+}
+
+/* Info toast */
+.toast-info {
+    background-color: #17a2b8; /* Blue background color */
+}
+
+/* Warning toast */
+.toast-warning {
+    background-color: #ffc107; /* Yellow background color */
+}

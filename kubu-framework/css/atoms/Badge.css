@@ -1,0 +1,18 @@
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-primary {
+    color: white;
+    background-color: var(--primary);
+}
+
+.badge-secondary {
+    color: white;
+    background-color: var(--secondary);
+}

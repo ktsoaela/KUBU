@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>Flexbox Documentation</title>
+    <style>
+        /* Styles specific to documentation */
+        body {
+            font-family: Arial, sans-serif;
+            /*margin: 20px;*/
+            /*padding: 20px;*/
+            line-height: 1.6;
+        }
+
+        /* Basic reset for layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Alert styling */
+        .alert {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* Layout container with Flexbox */
+        .page-layout {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 1rem;
+        }
+
+        /* Left sidebar specific styling */
+        .left-sidebar {
+            order: 1;
+        }
+
+        /* Main content styling */
+        .main-content {
+            flex: 2; /* Main content takes up twice the space */
+            background-color: #ffffff;
+            padding: 1rem;
+            order: 2;
+        }
+
+        /* Right sidebar styling */
+        .right-sidebar {
+            order: 3;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Copyright styling */
+        .copyright {
+            background-color: #6c757d;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <div class="alert">
+        <p>Important update: This is an alert message.</p>
+    </div>
+    <header class="header">
+        <h1>Website Header</h1>
+    </header>
+    <div class="page-layout">
+<!--        <aside class="sidebar left-sidebar">-->
+<!--            <p>Left Sidebar Content</p>-->
+<!--        </aside>-->
+        <main class="main-content">
+            <p>Main Content Area</p>
+        </main>
+<!--        <aside class="sidebar right-sidebar">-->
+<!--            <p>Right Sidebar Content</p>-->
+<!--        </aside>-->
+    </div>
+    <footer class="footer">
+        <p>Footer Information</p>
+    </footer>
+    <div class="copyright">
+        <p>&copy; 2024 My Website</p>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+
+/* Button Group Container */
+.button-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* Remove the margin between buttons in the group */
+.button-group .button {
+    flex: 1;
+    margin: 0;
+}
+
+.button-group .button + .button {
+    margin-left: -1px; /* To remove double borders between buttons */
+}
+
+/* First Button in the Group */
+.button-group .button:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Middle Buttons in the Group */
+.button-group .button:not(:first-child):not(:last-child) {
+    border-radius: 0;
+}
+
+/* Last Button in the Group */
+.button-group .button:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

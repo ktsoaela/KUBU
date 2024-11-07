@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles.css">
+    <title>Buttons Documentation</title>
+    <style>
+        /* Styles specific to documentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            margin-bottom: 10px;
+        }
+
+        .demo_code pre {
+            overflow-x: auto;
+        }
+
+        .demo_code {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Components</a></li>
+        <li class="breadcrumb__item breadcrumb__item--active">Buttons</li>
+    </ol>
+</nav>
+
+<div class="section">
+    <h1 class="title">Buttons</h1>
+    <p>The button component is used to trigger actions or events. It can have different styles and states.</p>
+</div>
+
+
+
+<div class="section">
+    <h2 class="subtitle">Basic Buttons</h2>
+    <button class="button button--primary">Primary Button</button>
+    <button class="button button--secondary">Secondary Button</button>
+    <button class="button button--outline">Outline Button</button>
+    <button class="button button--primary button--disabled" disabled>Disabled Button</button>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Rounded Buttons</h2>
+    <button class="button button--primary button--rounded-2">2px Rounded</button>
+    <button class="button button--primary button--rounded-4">4px Rounded</button>
+    <button class="button button--primary button--rounded-8">8px Rounded</button>
+    <button class="button button--primary button--rounded-12">12px Rounded</button>
+    <button class="button button--primary button--rounded-circle">Circle</button>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Plain Buttons</h2>
+    <button class="button button--plain">Plain Button</button>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Shadow Buttons</h2>
+    <button class="button button--primary button--shadow">Shadow Button</button>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Button Sizes</h2>
+    <button class="button button--primary button--small">Small Button</button>
+    <button class="button button--primary button--medium">Medium Button</button>
+    <button class="button button--primary button--large">Large Button</button>
+    <button class="button button--primary button--xlarge">Extra Large Button</button>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Additional Buttons</h2>
+    <button class="button button--danger">Danger Button</button>
+    <button class="button button--hazard">Hazard Button</button>
+    <button class="button button--risk">Risk Button</button>
+    <button class="button button--safe">Safe Button</button>
+    <button class="button button--info">Info Button</button>
+    <button class="button button--radiation">Radiation Button</button>
+    <button class="button button--earth">Earth Button</button>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Button Groups</h2>
+    <div class="button-group">
+        <button class="button button--primary">Button 1</button>
+        <button class="button button--primary">Button 2</button>
+        <button class="button button--primary">Button 3</button>
+    </div>
+</div>
+
+<div class="section">
+    <h2 class="subtitle">Button Variations</h2>
+    <p>There are different variations of the button component:</p>
+    <ul>
+        <li>Primary Button</li>
+        <li>Secondary Button</li>
+        <li>Outline Button</li>
+    </ul>
+    <p>Each variation has specific HTML structure and styling.</p>
+</div>
+
+<div class="section">
+    <h2>Usage</h2>
+    <p>To use the button component, follow these steps:</p>
+    <ol>
+        <li>Add the HTML structure for the button.</li>
+        <li>Style the button using CSS.</li>
+        <li>Add JavaScript if necessary for dynamic behavior.</li>
+    </ol>
+</div>
+
+<div class="demo_product">
+    <h2>Demo</h2>
+    <a href="#" class="button button--primary">Primary Button</a>
+    <a href="#" class="button button--secondary">Secondary Button</a>
+    <a href="#" class="button button--outline">Outline Button</a>
+</div>
+
+<div class="section">
+    <h2>HTML Structure</h2>
+    <p>Below is the HTML structure for a basic button:</p>
+    <div class="demo_code">
+        <pre>
+&lt;a href="#" class="button button--primary">Primary Button&lt;/a>
+&lt;a href="#" class="button button--secondary">Secondary Button&lt;/a>
+&lt;a href="#" class="button button--outline">Outline Button&lt;/a>
+        </pre>
+    </div>
+</div>
+
+<div class="section">
+    <h2>CSS Code</h2>
+    <p>Here is the CSS code for the button component:</p>
+    <div class="demo_code">
+        <pre>
+/* Importing color variables */
+@import url("above.css");
+
+:root {
+    --button-primary-bg: var(--primary);
+    --button-primary-color: var(--white);
+    --button-secondary-bg: var(--secondary);
+    --button-secondary-color: var(--white);
+}
+
+.button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.button--primary {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-color);
+    border: 1px solid var(--button-primary-bg);
+}
+
+.button--primary:hover {
+    background-color: darken(var(--button-primary-bg), 10%);
+}
+
+.button--secondary {
+    background-color: var(--button-secondary-bg);
+    color: var(--button-secondary-color);
+    border: 1px solid var(--button-secondary-bg);
+}
+
+.button--secondary:hover {
+    background-color: darken(var(--button-secondary-bg), 10%);
+}
+
+.button--outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.button--outline:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+        </pre>
+    </div>
+</div>
+
+<div class="section">
+    <h2>SCSS Variables</h2>
+    <p>Here are the SCSS variables used for the button component:</p>
+    <div class="demo_code">
+        <pre>
+$primary: #227093;
+$secondary: #ff5252;
+$white: #fff;
+
+$button-primary-bg: $primary;
+$button-primary-color: $white;
+$button-secondary-bg: $secondary;
+$button-secondary-color: $white;
+        </pre>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="stylesheet" href="../../styles.css">-->
+<!--    <title>Button Styles Documentation</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--            margin: 20px;-->
+<!--            padding: 20px;-->
+<!--            line-height: 1.6;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<nav aria-label="breadcrumb">-->
+<!--    <ol class="breadcrumb">-->
+<!--        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>-->
+<!--        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Components</a></li>-->
+<!--        <li class="breadcrumb__item breadcrumb__item&#45;&#45;active">Buttons</li>-->
+<!--    </ol>-->
+<!--</nav>-->
+
+<!--<div class="section">-->
+<!--    <h1 class="title">Buttons</h1>-->
+<!--    <p>This documentation provides examples of various button styles using CSS.</p>-->
+<!--</div>-->
+
+<!--<div class="section">-->
+<!--    <h2 class="subtitle">Basic Buttons</h2>-->
+<!--    <button class="button button&#45;&#45;primary">Primary Button</button>-->
+<!--    <button class="button button&#45;&#45;secondary">Secondary Button</button>-->
+<!--    <button class="button button&#45;&#45;outline">Outline Button</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;disabled" disabled>Disabled Button</button>-->
+<!--</div>-->
+
+<!--<div class="section">-->
+<!--    <h2 class="subtitle">Rounded Buttons</h2>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;rounded-2">2px Rounded</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;rounded-4">4px Rounded</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;rounded-8">8px Rounded</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;rounded-12">12px Rounded</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;rounded-circle">Circle</button>-->
+<!--</div>-->
+
+<!--<div class="section">-->
+<!--    <h2 class="subtitle">Plain Buttons</h2>-->
+<!--    <button class="button button&#45;&#45;plain">Plain Button</button>-->
+<!--</div>-->
+
+<!--<div class="section">-->
+<!--    <h2 class="subtitle">Shadow Buttons</h2>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;shadow">Shadow Button</button>-->
+<!--</div>-->
+
+<!--<div class="section">-->
+<!--    <h2 class="subtitle">Button Sizes</h2>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;small">Small Button</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;medium">Medium Button</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;large">Large Button</button>-->
+<!--    <button class="button button&#45;&#45;primary button&#45;&#45;xlarge">Extra Large Button</button>-->
+<!--</div>-->
+
+<!--<div class="section">-->
+<!--    <h2 class="subtitle">Button Groups</h2>-->
+<!--    <div class="button-group">-->
+<!--        <button class="button button&#45;&#45;primary">Button 1</button>-->
+<!--        <button class="button button&#45;&#45;primary">Button 2</button>-->
+<!--        <button class="button button&#45;&#45;primary">Button 3</button>-->
+<!--    </div>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
