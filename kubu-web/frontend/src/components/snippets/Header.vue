@@ -11,7 +11,7 @@
     <nav class='navbar container row'>
       <router-link to='/' class='logo'>
         <img src='@/assets/img/hippo-white.svg' class='logo-img'>
-        <!-- <span class='navbrand'>KUBU</span> -->
+<!--         <span class='navbrand'>KUBU</span>-->
       </router-link>
       <div class='nav-links'>
         <router-link to='/'>Home</router-link>
