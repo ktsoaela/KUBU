@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>KUBU</title>
+    <style>
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="announcement" >
+    <span>Version 2 in BETA.</span>
+</div>
+<header class="header">
+    <div class='utility container'>
+        <a href="#" onclick="handleSearch()">Search</a>
+        <a href="/contributors">Contribute</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <nav class='navbar container row'>
+        <a href="index.html" class="logo">
+            <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+            <!--      <span class="navbar-brand">KUBU</span>-->
+        </a>
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="papers.html" class="nav-link">Papers</a>
+            <a href="/showcase" class="nav-link">Use Cases</a>
+            <a href="/icons" class="nav-link">Icon Pack</a>
+            <a href="/showcase" class="nav-link">Showcases</a>
+            <a href="/news" class="nav-link">News</a>
+            <a href="downloads.html" class="nav-link">Download</a>
+        </div>
+    </nav>
+</header>
+<div class="page-layout">
+    <aside class="sidebar left-sidebar">
+        <h2>Categories</h2>
+
+        <!--    <ul class="list-unstyled">-->
+        <!--      <li>Item without bullet</li>-->
+        <!--      <li>Another item</li>-->
+        <!--      <li>Yet another item</li>-->
+        <!--    </ul>-->
+
+        <!--    <ul class="list-inline">-->
+        <!--      <li>Home</li>-->
+        <!--      <li>About</li>-->
+        <!--      <li>Services</li>-->
+        <!--      <li>Contact</li>-->
+        <!--    </ul>-->
+
+        <!--    <dl class="description-list">-->
+        <!--      <dt class="description-term">HTML</dt>-->
+        <!--      <dd class="description-definition">The standard markup language for documents designed to be displayed in a web browser.</dd>-->
+        <!--      <dt class="description-term">CSS</dt>-->
+        <!--      <dd class="description-definition">A style sheet language used for describing the presentation of a document written in HTML.</dd>-->
+        <!--    </dl>-->
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Jumping In</li>
+            <li><a href="#" class="list-item">Intro</a></li>
+            <li><a href="#" class="list-item">Download</a></li>
+            <li><a href="#" class="list-item">Contents</a></li>
+            <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+            <li><a href="#" class="list-item">JavaScript</a></li>
+            <!--      <li><a href="#" class="list-item">Webpack</a></li>-->
+            <!--      <li><a href="#" class="list-item">Parcel</a></li>-->
+            <!--      <li><a href="#" class="list-item">Accessibility</a></li>-->
+            <!--      <li><a href="#" class="list-item">RFS</a></li>-->
+            <!--      <li><a href="#" class="list-item">RTL</a></li>-->
+            <!--      <li><a href="#" class="list-item">Contribute</a></li>-->
+        </ul>
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Atoms</li>
+            <li><a href="#" class="list-item">Reset</a></li>
+            <li><a href="#" class="list-item">Badge</a></li>
+            <li><a href="#" class="list-item">Buttons</a></li>
+            <li><a href="#" class="list-item">Close</a></li>
+            <li><a href="#" class="list-item">colors</a></li>
+            <li><a href="#" class="list-item">spacing</a></li>
+            <li><a href="#" class="list-item">Spinners</a></li>
+            <li><a href="#" class="list-item">typography</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Molecules</li>
+            <li><a href="#" class="list-item">Announcements</a></li>
+            <li><a href="#" class="list-item">Breadcrumb</a></li>
+            <li><a href="#" class="list-item">ButtonGroups</a></li>
+            <li><a href="#" class="list-item">Dropdowns</a></li>
+            <li><a href="#" class="list-item">FormGroups</a></li>
+            <li><a href="#" class="list-item">ListGroups</a></li>
+            <li><a href="#" class="list-item">Navbar</a></li>
+            <li><a href="#" class="list-item">Navs</a></li>
+            <li><a href="#" class="list-item">Pagination</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Organisms</li>
+            <li><a href="#" class="list-item">Accordion</a></li>
+            <li><a href="#" class="list-item">Alerts</a></li>
+            <li><a href="#" class="list-item">Card</a></li>
+            <li><a href="#" class="list-item">Carousel</a></li>
+            <li><a href="#" class="list-item">Collapse</a></li>
+            <li><a href="#" class="list-item">DatePicker</a></li>
+            <li><a href="#" class="list-item">FileUpload</a></li>
+            <li><a href="#" class="list-item">Forms</a></li>
+            <li><a href="#" class="list-item">ListGroups</a></li>
+            <li><a href="#" class="list-item">Modal</a></li>
+            <li><a href="#" class="list-item">Offcanvas</a></li>
+            <li><a href="#" class="list-item">Popovers</a></li>
+            <li><a href="#" class="list-item">Progress</a></li>
+            <li><a href="#" class="list-item">Scrollspy</a></li>
+            <li><a href="#" class="list-item">Stepper</a></li>
+            <li><a href="#" class="list-item">Tables</a></li>
+            <li><a href="#" class="list-item">Tabs</a></li>
+            <li><a href="#" class="list-item">Toasts</a></li>
+            <li><a href="#" class="list-item">Tooltips</a></li>
+            <li><a href="#" class="list-item">Rating</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Utilities</li>
+            <li><a href="#" class="list-item">Ajax</a></li>
+            <li><a href="#" class="list-item">Animations</a></li>
+            <li><a href="#" class="list-item">EventDelegation</a></li>
+            <li><a href="#" class="list-item">Helpers</a></li>
+            <li><a href="#" class="list-item">Notifications</a></li>
+            <li><a href="#" class="list-item">Flexbox</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Pages</li>
+            <li><a href="#" class="list-item">HomePage</a></li>
+            <li><a href="#" class="list-item">AboutPage</a></li>
+            <li><a href="#" class="list-item">ProductPage</a></li>
+            <li><a href="#" class="list-item">ContactPage</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Snippets</li>
+            <li><a href="#" class="list-item">Forms</a></li>
+            <li><a href="#" class="list-item">Navbar</a></li>
+            <li><a href="#" class="list-item">Footer</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Templates</li>
+            <li><a href="#" class="list-item">main-template</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Papers</a></li>
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Organisms</a></li>
+                <li class="breadcrumb__item breadcrumb__item--active">Card</li>
+            </ol>
+        </nav>
+
+
+        <div class="section">
+            <h1 class="title">Cards</h1>
+            <p>
+                Forms are essential for gathering user input and data on your website.<br/>
+                Kubu provides a wide variety of components and styles to create user-friendly forms.<br/>
+                This page will guide you through the available form elements, customization options, and best practices for building accessible forms.
+            </p>
+        </div>
+
+
+
+        <div class="section">
+            <h2 class="subtitle">Card Variations</h2>
+            <p>There are different variations of the form components:</p>
+            <ul>
+                <li>Form Control</li>
+                <li>Selection</li>
+                <li>CheckBoxes &amp; RadioButtons</li>
+                <li>Range</li>
+                <li>Input Group</li>
+                <li>floating labels</li>
+                <li>layout</li>
+                <li>Validation</li>
+            </ul>
+            <p>Each variation has specific HTML structure and styling.</p>
+        </div>
+
+        <div class="section">
+            <h2>Usage</h2>
+            <p>To use the accordion component, follow these steps:</p>
+            <ol>
+                <li>Add the HTML structure for the accordion.</li>
+                <li>Style the accordion using CSS.</li>
+                <li>Add JavaScript if necessary for dynamic behavior.</li>
+            </ol>
+        </div>
+
+
+
+        <div class="demo_product demo_product--flex-row">
+
+
+            <div class="card card--light">
+                <img class="card__image" src="https://unsplash.it/300" alt="image">
+                <h2 class="card__title">This is a card</h2>
+                </p class="card__body">And here is would be the content of the card</p>
+                <a href="#" class="card__footer">
+                    <span class="button button--plain"> This is a button link</span>
+                </a>
+            </div>
+
+            <div class="card card--light">
+                <img class="card__image" src="https://unsplash.it/300" alt="image">
+
+            </div>
+
+            <div class="card card--dark">
+                <img class="card__image" src="https://unsplash.it/300" alt="image">
+                <h2 class="card__title">This is a card</h2>
+                </p class="card__body">And here is would be the content of the card</p>
+                <a href="#" class="card__footer">
+                    <span class="button button--plain button--dark"> This is a button link</span>
+                </a>
+            </div>
+
+
+
+        </div>
+
+
+
+
+<!--        2. Form Control-->
+<!--        Different input types in a single form to demonstrate control variety.-->
+
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="text-input" class="form-label">Text Input</label>-->
+<!--                    <input type="text" id="text-input" class="form-input" placeholder="Text">-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    <label for="password" class="form-label">Password</label>-->
+<!--                    <input type="password" id="password" class="form-input" placeholder="Password">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        3. Select-->
+<!--        Using a select dropdown styled by your .form-select class.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="select-example" class="form-label">Select Option</label>-->
+<!--                    <select id="select-example" class="form-select">-->
+<!--                        <option value="">Choose an option</option>-->
+<!--                        <option value="1">Option 1</option>-->
+<!--                        <option value="2">Option 2</option>-->
+<!--                        <option value="3">Option 3</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        4. Checks & Radios-->
+<!--        Checkbox and radio button group with custom styles.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="form-label">Checkbox Options</label>-->
+<!--                    <input type="checkbox" id="check1" class="form-input">-->
+<!--                    <label for="check1">Option 1</label>-->
+<!--                    <input type="checkbox" id="check2" class="form-input">-->
+<!--                    <label for="check2">Option 2</label>-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="form-label">Radio Options</label>-->
+<!--                    <input type="radio" id="radio1" name="radio-group" class="form-input">-->
+<!--                    <label for="radio1">Option 1</label>-->
+<!--                    <input type="radio" id="radio2" name="radio-group" class="form-input">-->
+<!--                    <label for="radio2">Option 2</label>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        5. Range-->
+<!--        Range input styled with default browser styles, which can be modified further.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="range" class="form-label">Range Input</label>-->
+<!--                    <input type="range" id="range" class="form-input">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        6. Input Group-->
+<!--        Example of an input group with prepend and append sections.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group" style="display: flex; align-items: center;">-->
+<!--                    <span style="padding: 0.5rem; background-color: #ccc; border: 1px solid #ccc; border-right: none; border-radius: 4px 0 0 4px;">@</span>-->
+<!--                    <input type="text" class="form-input" placeholder="Username" style="border-left: none; border-radius: 0;">-->
+<!--                    <span style="padding: 0.5rem; background-color: #ccc; border: 1px solid #ccc; border-left: none; border-radius: 0 4px 4px 0;">.com</span>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        7. Floating Labels-->
+<!--        Simulating floating labels using placeholder text and active styles.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group" style="position: relative;">-->
+<!--                    <input type="text" class="form-input" placeholder=" " id="floating-input">-->
+<!--                    <label for="floating-input" class="form-label" style="position: absolute; top: 0.5rem; left: 0.75rem; font-size: 0.875rem; color: #666; transition: 0.3s;">-->
+<!--                        Floating Label-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        8. Layout-->
+<!--        A simple two-column layout.-->
+<!--        <div class="form-container">-->
+<!--            <form style="display: flex; flex-wrap: wrap; gap: 1rem;">-->
+<!--                <div class="form-group" style="flex: 1 1 48%;">-->
+<!--                    <label for="first-name" class="form-label">First Name</label>-->
+<!--                    <input type="text" id="first-name" class="form-input">-->
+<!--                </div>-->
+<!--                <div class="form-group" style="flex: 1 1 48%;">-->
+<!--                    <label for="last-name" class="form-label">Last Name</label>-->
+<!--                    <input type="text" id="last-name" class="form-input">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        9. Validation-->
+<!--        Simple validation example with .form-error for error messages.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="username" class="form-label">Username</label>-->
+<!--                    <input type="text" id="username" class="form-input" placeholder="Enter username">-->
+<!--                    <p class="form-error">Username is required</p>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        10. Multiple Selection-->
+        <!--        <div class="multi-select">-->
+        <!--            <input type="checkbox" id="toggle" class="multi-select-toggle">-->
+        <!--            <label for="toggle" class="multi-select-label">Select Options</label>-->
+
+        <!--            <div class="multi-select-options">-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 1">-->
+        <!--                    <span>Option 1</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 2">-->
+        <!--                    <span>Option 2</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 3">-->
+        <!--                    <span>Option 3</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 4">-->
+        <!--                    <span>Option 4</span>-->
+        <!--                </label>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+
+        <!--        <div class="form-control">-->
+        <!--            <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">-->
+        <!--            <label for="dropdown-toggle" class="dropdown-label">Select Name</label>-->
+
+        <!--            <div class="dropdown-options">-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Oliver Hansen">-->
+        <!--                    <span>Oliver Hansen</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Van Henry">-->
+        <!--                    <span>Van Henry</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="April Tucker">-->
+        <!--                    <span>April Tucker</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Ralph Hubbard">-->
+        <!--                    <span>Ralph Hubbard</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Omar Alexander">-->
+        <!--                    <span>Omar Alexander</span>-->
+        <!--                </label>-->
+        <!--                &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+<!--        <div class="multi-select">-->
+<!--            <input type="checkbox" id="multi-select-toggle" class="multi-select-toggle">-->
+<!--            <label for="multi-select-toggle" class="multi-select-label">Select Options</label>-->
+
+<!--            <div class="multi-select-options">-->
+<!--                <label data-value="Option 1">-->
+<!--                    <input type="checkbox" name="option" value="Option 1">-->
+<!--                    <span>Option 1</span>-->
+<!--                </label>-->
+<!--                <label data-value="Option 2">-->
+<!--                    <input type="checkbox" name="option" value="Option 2">-->
+<!--                    <span>Option 2</span>-->
+<!--                </label>-->
+<!--                <label data-value="Option 3">-->
+<!--                    <input type="checkbox" name="option" value="Option 3">-->
+<!--                    <span>Option 3</span>-->
+<!--                </label>-->
+<!--                <label data-value="Option 4">-->
+<!--                    <input type="checkbox" name="option" value="Option 4">-->
+<!--                    <span>Option 4</span>-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="custom-multiselect" tabindex="0">-->
+<!--            &lt;!&ndash; Selected options display area &ndash;&gt;-->
+<!--            <div class="selected-options">-->
+<!--                Select options...-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Dropdown options list &ndash;&gt;-->
+<!--            <div class="options">-->
+<!--                <input type="checkbox" id="option1" />-->
+<!--                <label for="option1" data-value="Option 1">Option 1</label>-->
+
+<!--                <input type="checkbox" id="option2" />-->
+<!--                <label for="option2" data-value="Option 2">Option 2</label>-->
+
+<!--                <input type="checkbox" id="option3" />-->
+<!--                <label for="option3" data-value="Option 3">Option 3</label>-->
+
+<!--                <input type="checkbox" id="option4" />-->
+<!--                <label for="option4" data-value="Option 4">Option 4</label>-->
+
+<!--                <input type="checkbox" id="option5" />-->
+<!--                <label for="option5" data-value="Option 5">Option 5</label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    </main>
+    <aside class="sidebar right-sidebar">
+        <ul class="list-unstyled">
+            <li class="list-title">Quick Links</li>
+            <li><a href="#" class="list-item">Form Control</a></li>
+            <li><a href="#" class="list-item">Selection</a></li>
+            <li><a href="#" class="list-item">CheckBoxes &amp; RadioButtons</a></li>
+            <li><a href="#" class="list-item">Range</a></li>
+            <li><a href="#" class="list-item">Input Group</a></li>
+            <li><a href="#" class="list-item">floating labels</a></li>
+            <li><a href="#" class="list-item">layout</a></li>
+            <li><a href="#" class="list-item">Validation</a></li>
+        </ul>
+    </aside>
+</div>
+<footer class="footer">
+    <span>Footer Information</span>
+</footer>
+<div class="copyright">
+    <span>&copy; 2024 Product of Tsoaela Industries </span>
+</div>
+
+
+</body>
+</html>

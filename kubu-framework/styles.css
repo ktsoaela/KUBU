@@ -9,6 +9,7 @@
 @import url("css/atoms/typography.css");
 
 /* Importing all molecules */
+@import url("css/molecules/Announcements.css");
 @import url("css/molecules/Breadcrumb.css");
 @import url("css/molecules/ButtonGroups.css");
 @import url("css/molecules/Dropdowns.css");
@@ -47,6 +48,7 @@
 @import url("css/utilities/Helpers.css");
 @import url("css/utilities/Notifications.css");
 @import url("css/utilities/Flexbox.css");
+@import url("css/utilities/Darkmode.css");
 
 /* Importing all pages */
 @import url("css/pages/HomePage.css");
@@ -56,9 +58,11 @@
 
 /* Importing snippets */
 @import url("css/snippets/Forms.css");
-@import url("css/snippets/Navbar.css");
+@import url("css/snippets/Header.css");
 @import url("css/snippets/Footer.css");
 
 /* Importing templates */
 @import url("css/templates/main-template.css");
+
+
 

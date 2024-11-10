@@ -1,44 +1,88 @@
 /* Dropdown toggle button styles */
-.dropdown-toggle {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #227093;
-    color: #fff;
-    border: none;
-    border-radius: 0.25rem;
-    cursor: pointer;
+/*.dropdown-toggle {*/
+/*    display: inline-block;*/
+/*    padding: 0.5rem 1rem;*/
+/*    background-color: var(--color-primary);*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*    border-radius: 0.25rem;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*.dropdown-toggle:hover {*/
+/*    background-color: #1a5769;*/
+/*}*/
+
+/*!* Dropdown menu styles *!*/
+/*.dropdown-menu {*/
+/*    display: none;*/
+/*    position: absolute;*/
+/*    top: 100%;*/
+/*    left: 0;*/
+/*    min-width: 10rem;*/
+/*    padding: 0.5rem 0;*/
+/*    background-color: var(--color-light);*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 0.25rem;*/
+/*    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);*/
+/*    z-index: 1000;*/
+/*}*/
+
+/*.dropdown-menu.show {*/
+/*    display: block;*/
+/*}*/
+
+/*.dropdown-item {*/
+/*    display: block;*/
+/*    padding: 0.5rem 1rem;*/
+/*    color: #333;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*.dropdown-item:hover {*/
+/*    background-color: #f0f0f0;*/
+/*}*/
+
+
+.dropdown {
+    list-style: none;
+    position: relative;
+    margin: 0px;
 }
 
-.dropdown-toggle:hover {
-    background-color: #1a5769;
-}
 
-/* Dropdown menu styles */
-.dropdown-menu {
-    display: none;
+/* Dropdown content */
+.dropdown-content {
+    display: none; /* Hidden by default */
     position: absolute;
     top: 100%;
-    left: 0;
-    min-width: 10rem;
-    padding: 0.5rem 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.dropdown-menu.show {
-    display: block;
+    right: 0;
+    background-color: var(--theme-color-primary);
+    color: var(--color-light);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 0;
 }
 
 .dropdown-item {
-    display: block;
-    padding: 0.5rem 1rem;
-    color: #333;
+    color: var(--color-light);
     text-decoration: none;
+    padding: 10px;
+    display: block;
 }
 
 .dropdown-item:hover {
-    background-color: #f0f0f0;
+    /*background-color: #eeeeee;*/
+}
+
+/* Display the dropdown when the parent list item is focused (clicked) */
+.dropdown-item-container:focus-within .dropdown-content {
+    display: block;
+}
+
+/* Optionally, style for clicked link */
+.dropdown-item-container a:focus {
+    outline: none;
+    /*background-color: #eeeeee;*/
 }

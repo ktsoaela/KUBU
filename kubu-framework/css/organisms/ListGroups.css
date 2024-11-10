@@ -2,6 +2,7 @@
 .list-group {
     display: flex;
     flex-direction: column;
+
 }
 
 /* List Group Item */
@@ -30,7 +31,7 @@
 /* List Group Item: Disabled */
 .list-group-item.disabled {
     background-color: #f8f9fa;
-    color: #6c757d;
+    color: var(--color-neutral-gray-dark);
     pointer-events: none;
 }
 

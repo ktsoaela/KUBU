@@ -2,8 +2,8 @@
     display: flex;
     justify-content: flex-end;
     padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    color: white;
+    font-size: var(--font-size-xs);;
+    color: var(--color-light);
     background: var(--theme);
     cursor: pointer;
 }
@@ -14,5 +14,5 @@
 }
 
 .close-button:hover {
-    background: var(--secondary);
+    background: var(--color-secondary);
 }

@@ -1,10 +1,21 @@
 /* Footer styles */
 
 .footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--theme-color-primary);
+    color: var(--color-light);
     padding: 20px;
+    text-align: center;
 }
+
+/* Copyright styling */
+.copyright {
+    background-color: var(--theme-color-primary);
+    color: var(--color-light);
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
 
 .footer__links {
     display: flex;
@@ -12,11 +23,11 @@
 }
 
 .footer__link {
-    color: #fff;
+    color: var(--color-light);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer__link:hover {
-    color: #ff5252;
+    color: var(--color-dark);
 }

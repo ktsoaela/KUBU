@@ -1,0 +1,7 @@
+.announcement {
+    background-color: var(--theme-color-secondary);
+    color:  var(--color-light);
+    text-align: center;
+    padding-top: 8px;
+    font-weight: bold;
+}

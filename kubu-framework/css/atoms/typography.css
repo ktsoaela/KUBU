@@ -40,8 +40,8 @@
     --letter-spacing-wide: 0.1em;
 
     /* Text colors */
-    --text-color-primary: var(--primary);
-    --text-color-secondary:var(--primary);
+    --text-color-primary: var(--color-primary);
+    --text-color-secondary:var(--color-primary);
     --text-color-light: #aaa;
     --text-color-inverse: #fff;
 
@@ -110,7 +110,7 @@ h6 {
 /* Paragraphs */
 p {
     margin: 0 0 1em 0;
-    line-height: var(--line-height-md);
+    line-height: var(--line-height-lg);
     color: var(--text-color-secondary);
 }
 
@@ -151,4 +151,110 @@ li {
     margin-bottom: 0.5em;
 }
 
+.list-title {
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-bold);
+    font-size: inherit;
+    letter-spacing: var(--letter-spacing-sqush);
+    margin-bottom: 0px;
+}
 
+/* Unstyled List */
+.list-unstyled {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    padding-bottom: .5rem !important;
+    padding-top: .5rem !important;
+}
+
+.list-unstyled li {
+    /*margin-bottom: 0.5em;*/
+    margin-bottom: 0px;
+    padding: 0px;
+}
+
+/* Inline List */
+.list-inline {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 0.5em;
+}
+
+.list-inline li {
+    display: inline;
+    margin-right: 0.5em;
+}
+
+/* Description List with Alignment */
+.description-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description-term {
+    font-weight: bold;
+    flex-basis: 30%;
+    padding-right: 1em;
+}
+
+.description-definition {
+    flex-basis: 70%;
+    margin-bottom: 0.5em;
+}
+
+/* Optional: Spacing adjustments for better readability */
+.description-list dt, .description-list dd {
+    margin: 0;
+    padding: 0;
+}
+
+/* List Link */
+.list-link {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.list-link li {
+    margin-bottom: 0.5em;
+}
+
+.list-link li a {
+    color: #007bff; /* Primary color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.list-link li a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+/* List Item */
+.list-item {
+    font-size: var(--font-size-xs);
+    padding: 0.5em 1em;
+    margin: 0.25em 0;
+    /*background-color: #f8f9fa;*/
+    /*border: 1px solid #dee2e6;*/
+    /*border-radius: 0.25rem;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+}
+
+.list-item:hover {
+    background-color: #e9ecef;
+}
+
+/* Example: Active List Item */
+.list-item.active {
+    background-color: #007bff;
+    color: var(--color-light);
+}
+
+.list-item.active:hover {
+    background-color: #0056b3;
+}

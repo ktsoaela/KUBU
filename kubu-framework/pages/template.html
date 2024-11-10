@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>KUBU</title>
+  <style>
+    /* Styles specific to documentation */
+    body {
+      font-family: Arial, sans-serif;
+      /*margin: 20px;*/
+      /*padding: 20px;*/
+      line-height: 1.6;
+      /*color:white!important;*/
+      /*background-color: lavenderblush;*/
+    }
+
+
+
+    /* Basic reset for layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /*color:white!important;*/
+    }
+
+    /* Header styling */
+    .header {
+      background-color: #002d4c;
+      color: white;
+      /*padding: 1.5rem;*/
+      text-align: center;
+      color:white!important;
+    }
+
+    header .utility {
+      text-align: right;
+      padding: 5px 20px;
+      font-size: 12px;
+    }
+
+    header .utility a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    header .navbar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 5px 20px;
+    }
+    .navbar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #002d4c;
+      color: #eeeeee;
+    }
+
+    .navbar {
+      background-color: #002d4c!important;
+    }
+
+    /*.button-outlined {*/
+    /*  background-color: transparent;*/
+    /*  color: #002d4c;*/
+    /*  border: 2px solid #002d4c;*/
+    /*}*/
+    /*.button-full, .button-outlined, .button-rounded {*/
+    /*  display: inline-block;*/
+    /*  padding: 15px 20px;*/
+    /*  font-family: "Verdana", "Helvetica", "Arial", sans-serif;*/
+    /*  font-size: 16px;*/
+    /*  text-align: center;*/
+    /*  text-decoration: none;*/
+    /*  cursor: pointer;*/
+    /*  -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
+    /*  transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
+    /*}*/
+
+    .logo .logo-img {
+      fill: #eeeeee;
+    }
+
+    header .logo {
+      height: auto;
+      width: 30px;
+      -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+      justify-content: start !important;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .page-layout {
+      display: flex;
+      /*gap: 1rem;*/
+      /*padding: 1rem;*/
+      /*background-color: #000f19;*/
+    }
+
+    /*!* Sidebar styling *!*/
+    /*.sidebar {*/
+    /*  flex: 1;*/
+    /*  background-color: #f0f0f0;*/
+    /*  padding: 1rem;*/
+    /*}*/
+
+    /*!* Left sidebar specific styling *!*/
+    /*.left-sidebar {*/
+    /*  order: 1;*/
+    /*}*/
+
+    /* Main content styling */
+    .main-content {
+      flex: 2; /* Main content takes up twice the space */
+      background-color: #ffffff;
+      padding: 1rem;
+      order: 2;
+    }
+    .page-layout {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      flex: 1;
+      background-color: #f0f0f0;
+      padding: 1rem 2rem 1rem;
+    }
+
+    /* Left sidebar specific styling */
+    .left-sidebar {
+      order: 1;
+      max-width: 300px;
+    }
+
+    /* Main content styling */
+    .main-content {
+      flex: 2; /* Main content takes up twice the space */
+      background-color: #ffffff;
+      padding: 1rem;
+      order: 2;
+    }
+
+    /* Right sidebar styling */
+    .right-sidebar {
+      order: 3;
+      text-align: left;
+      max-width: 300px;
+    }
+
+    /* Footer styling */
+    .footer {
+      /*background-color: #23373E;*/
+      /*background-color: #734D1F;*/
+      /*background-color: #012840;*/
+      background-color: #012840;
+
+      color:white!important;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Copyright styling */
+    .copyright {
+      /*background-color: #A08E72;*/
+      /*background-color: #34403E;*/
+      background-color: #012840;
+      color:white!important;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="announcement" >
+  <span></span>
+</div>
+<header class="header">
+  <div class='utility container'>
+    <a href="#" onclick="handleSearch()">Search</a>
+    <a href="#">News</a>
+    <a href="#">Others</a>
+  </div>
+  <nav class='navbar container row'>
+    <a href="index.html" class="logo">
+      <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+<!--      <span class="navbar-brand">KUBU</span>-->
+    </a>
+    <div class="navbar-nav">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">About</a>
+        <a href="#" class="nav-link">Products</a>
+        <a href="#" class="nav-link">Services</a>
+        <a href="#" class="nav-link">Contact</a>
+    </div>
+  </nav>
+</header>
+<div class="page-layout">
+  <aside class="sidebar left-sidebar">
+
+  </aside>
+  <main class="main-content">
+
+  </main>
+  <aside class="sidebar right-sidebar">
+
+  </aside>
+</div>
+<footer class="footer">
+  <span>Footer Details</span>
+</footer>
+<div class="copyright">
+  <span>&copy; 2024 </span>
+</div>
+
+
+</body>
+</html>

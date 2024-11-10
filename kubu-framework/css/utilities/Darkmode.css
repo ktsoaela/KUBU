@@ -1,0 +1,67 @@
+/* Base Theme Variables */
+body {
+    --background-color: white;
+    --text-color: black;
+    background-color: var(--background-color);
+    color: var(--text-color-primary);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode Variables */
+body:has(#dark-mode:checked) {
+    --background-color: #121212;
+    --text-color: #ffffff;
+}
+
+/* Light Mode Variables */
+body:has(#light-mode:checked) {
+    --background-color: white;
+    --text-color: black;
+}
+
+/* Auto Mode Variables (based on system preference) */
+@media (prefers-color-scheme: dark) {
+    body:has(#auto-mode:checked) {
+        --background-color: #121212;
+        --text-color: #ffffff;
+    }
+}
+@media (prefers-color-scheme: light) {
+    body:has(#auto-mode:checked) {
+        --background-color: white;
+        --text-color: black;
+    }
+}
+
+/* Style for the Theme Switch List */
+.theme-switch-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Hide Radio Buttons */
+.theme-switch-list input[type="radio"] {
+    display: none;
+}
+
+/* Custom Labels */
+.theme-switch-list label {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active State Styling */
+#light-mode:checked + label[for="light-mode"],
+#dark-mode:checked + label[for="dark-mode"],
+#auto-mode:checked + label[for="auto-mode"] {
+    background-color: #333;
+    color: #ffffff;
+}

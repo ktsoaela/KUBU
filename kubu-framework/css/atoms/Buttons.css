@@ -1,19 +1,19 @@
 
 :root {
-    --button-primary-bg: var(--primary);
-    --button-primary-color: var(--white);
-    --button-secondary-bg: var(--secondary);
-    --button-secondary-color: var(--white);
+    --button-primary-bg: var(--theme-color-primary);
+    --button-primary-color: var(--color-light);
+    --button-secondary-bg: var(--theme-color-secondary);
+    --button-secondary-color: var(--color-light);
 }
 
 .button {
     display: inline-block;
     padding: var(--space-sm) var(--space-md);
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
     text-align: center;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: var(--space-xs);
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
 }
@@ -45,78 +45,78 @@
 
 .button--outline {
     background-color: transparent;
-    color: var(--primary);
-    border: 1px solid var(--primary);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 .button--outline:hover {
-    background-color: var(--primary);
-    color: var(--white);
+    background-color: var(--color-primary);
+    color: var(--color-light);
 }
 
 /* Additional Button Styles */
 .button--danger {
-    background-color: var(--danger);
-    color: var(--white);
-    border: 1px solid var(--danger);
+    background-color: var(--color-danger);
+    color: var(--color-light);
+    border: 1px solid var(--color-danger);
 }
 
 .button--hazard {
-    background-color: var(--hazard);
+    background-color: var(--color-hazard);
     color: black;
-    border: 1px solid var(--hazard);
+    border: 1px solid var(--color-hazard);
 }
 
 .button--risk {
-    background-color: var(--risk);
+    background-color: var(--color-risk);
     color: black;
-    border: 1px solid var(--risk);
+    border: 1px solid var(--color-risk);
 }
 
 .button--safe {
-    background-color: var(--safe);
-    color: var(--white);
-    border: 1px solid var(--safe);
+    background-color: var(--color-safe);
+    color: var(--color-light);
+    border: 1px solid var(--color-safe);
 }
 
 .button--info {
-    background-color: var(--info);
-    color: var(--white);
-    border: 1px solid var(--info);
+    background-color: var(--color-info);
+    color: var(--color-light);
+    border: 1px solid var(--color-info);
 }
 
 .button--radiation {
-    background-color: var(--radiation-light);
-    color: var(--white);
-    border: 1px solid var(--radiation-light);
+    background-color: var(--color-radiation-light);
+    color: var(--color-light);
+    border: 1px solid var(--color-radiation-light);
 }
 
 .button--earth {
-    background-color: var(--earth);
-    color: var(--white);
-    border: 1px solid var(--earth);
+    background-color: var(--color-earth);
+    color: var(--color-light);
+    border: 1px solid var(--color-earth);
 }
 
 /* Rounded Buttons */
 .button--rounded-2 {
-    border-radius: 2px;
+    border-radius: var(--space-ss);
 }
 
 .button--rounded-4 {
-    border-radius: 4px;
+    border-radius: var(--space-xs);
 }
 
 .button--rounded-8 {
-    border-radius: 8px;
+    border-radius: var(--space-sm);
 }
 
 .button--rounded-12 {
-    border-radius: 12px;
+    border-radius: var(--space-md);
 }
 
 .button--rounded-circle {
     border-radius: 50%;
-    padding: 15px;
+    padding: var(--space-3);
     width: 50px;
     height: 50px;
     display: flex;
@@ -127,12 +127,12 @@
 /* Plain Buttons */
 .button--plain {
     background-color: white;
-    color: var(--primary);
-    border: 1px solid var(--primary);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
 }
 
 .button--plain:hover {
-    background-color: var(--primary);
+    background-color: var(--color-primary);
     color: white;
 }
 
@@ -186,7 +186,7 @@
 }
 
 .button-group .button--outline:not(:last-child) {
-    border-right: 1px solid var(--primary);
+    border-right: 1px solid var(--color-primary);
 }
 
 /* Button Groups */
@@ -203,5 +203,72 @@
 }
 
 .button-group .button--outline:not(:last-child) {
-    border-right: 1px solid var(--primary);
+    border-right: 1px solid var(--color-primary);
+}
+
+
+/* Themes */
+.button--light {
+    background-color: var(--color-light);
+}
+
+.button--dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+}
+
+
+/* functionality Buttons */
+.copy-checkbox {
+    display: none;
+}
+
+.copy-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+    color: #227093;
+    background-color: transparent;
+    border: 1px solid #227093;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.copy-btn::after {
+    content: "Copied!";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #227093;
+    color: white;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #227093;
+    color: white;
+}
+
+.copy-checkbox:checked + .copy-btn::after {
+    opacity: 1;
+    transform: translateY(0);
+    animation: revertCopy 2s ease forwards;
+}
+
+/* Revert back to "Copy Code" after the animation */
+@keyframes revertCopy {
+    0%, 80% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(100%); opacity: 0; }
+}
+
+.copy-btn:hover {
+    background-color: #227093;
+    color: white;
 }

@@ -35,3 +35,59 @@
 .nav-link:hover {
     color: #ffda79;
 }
+
+
+/* Dropdown as a list */
+.nav-dropdown {
+    list-style: none;
+    position: relative;
+    margin: 0px;
+}
+
+.navbar .dropdown-content {
+    right: 0;
+    left: auto;
+}
+
+
+
+/*!*snippets\Navbar*!*/
+
+/*!* Navbar *!*/
+/*.navbar {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    padding: 1rem;*/
+/*    background-color: #333;*/
+/*    background-color:blue!important;*/
+/*    color: #fff;*/
+/*}*/
+
+/*.navbar-brand {*/
+/*    font-size: 1.5rem;*/
+/*    font-weight: bold;*/
+/*    text-decoration: none;*/
+/*    color: #fff;*/
+/*}*/
+
+/*.navbar-nav {*/
+/*    display: flex;*/
+/*    list-style: none;*/
+/*}*/
+
+/*.nav-item {*/
+/*    margin-right: 1rem;*/
+/*}*/
+
+/*.nav-link {*/
+/*    text-decoration: none;*/
+/*    color: #fff;*/
+/*}*/
+
+/*.nav-link:hover {*/
+/*    text-decoration: underline;*/
+/*}*/
+
+
+/*!* navbar-utility *!*/

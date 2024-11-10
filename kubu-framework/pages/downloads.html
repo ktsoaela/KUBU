@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>KUBU</title>
+    <style>
+        /* Basic styling for the navbar and items */
+
+
+
+        .code-container {
+            position: relative;
+            padding: 1rem;
+            background-color: #f7f7f9;
+            border: 1px solid #e1e1e8;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* Fake "Copy" button */
+        .code-container::before {
+            content: "Copy";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.2rem 0.5rem;
+            background-color: #227093;
+            color: white;
+            font-size: 0.8rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect for button */
+        .code-container:hover::before {
+            background-color: #ffda79;
+        }
+
+        /* Highlight effect when selecting */
+        .code-container:active::before {
+            content: "Copied!";
+        }
+
+    </style>
+</head>
+<body>
+
+
+<!-- Theme Selection List -->
+<!--<ul class="theme-switch-list">-->
+<!--    <li>-->
+<!--        <input class="theme-switch-list" type="radio" id="light-mode" name="theme" checked>-->
+<!--        <label for="light-mode">Light</label>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <input type="radio" id="dark-mode" name="theme">-->
+<!--        <label for="dark-mode">Dark</label>-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        <input type="radio" id="auto-mode" name="theme">-->
+<!--        <label for="auto-mode">Auto</label>-->
+<!--    </li>-->
+<!--</ul>-->
+
+<div class="announcement" >
+    <span>Version 2 in BETA.</span>
+</div>
+<header class="header">
+    <div class='utility'>
+        <a href="#" onclick="handleSearch()">Search</a>
+        <a href="/contributors">Contribute</a>
+        <a href="/contact">Contact</a>
+
+
+    </div>
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+        </a>
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="papers.html" class="nav-link">Papers</a>
+            <a href="/showcase" class="nav-link">Use Cases</a>
+            <a href="/icons" class="nav-link">Icon Pack</a>
+            <a href="/showcase" class="nav-link">Showcases</a>
+            <a href="/news" class="nav-link">News</a>
+            <a href="downloads.html" class="nav-link">Download</a>
+
+            <!-- Dropdown menu -->
+            <ul class="nav-link dropdown">
+                <li class="dropdown-item-container">
+                    <a href="#" class="nav-link">Theme Mode</a>
+                    <ul class="dropdown-content">
+                        <li><a href="" class="dropdown-item">
+                            <input type="radio" id="light-mode" name="theme">
+                            Light Mode</a></li>
+                        <li><a href="" class="dropdown-item">
+                            <input type="radio" id="dark-mode" name="theme">
+                            Dark Mode</a></li>
+                        <li><a href="" class="dropdown-item">
+                            <input type="radio" id="auto-mode" name="theme" checked>
+                            Auto Detect</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Dark Mode Option in Dropdown -->
+
+            <!-- Dropdown menu -->
+            <ul class="nav-link dropdown">
+                <li class="dropdown-item-container">
+                    <a href="#" class="nav-link">Other List</a>
+                    <ul class="dropdown-content">
+                        <li><a href="/showcase/case1" class="dropdown-item">Case Study 1</a></li>
+                        <li><a href="/showcase/case2" class="dropdown-item">Case Study 2</a></li>
+                        <li><a href="/showcase/case3" class="dropdown-item">Case Study 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+        </div>
+    </nav>
+
+</header>
+<div class="page-layout">
+    <aside class="sidebar left-sidebar">
+        <h2>Categories</h2>
+
+        <!--    <ul class="list-unstyled">-->
+        <!--      <li>Item without bullet</li>-->
+        <!--      <li>Another item</li>-->
+        <!--      <li>Yet another item</li>-->
+        <!--    </ul>-->
+
+        <!--    <ul class="list-inline">-->
+        <!--      <li>Home</li>-->
+        <!--      <li>About</li>-->
+        <!--      <li>Services</li>-->
+        <!--      <li>Contact</li>-->
+        <!--    </ul>-->
+
+        <!--    <dl class="description-list">-->
+        <!--      <dt class="description-term">HTML</dt>-->
+        <!--      <dd class="description-definition">The standard markup language for documents designed to be displayed in a web browser.</dd>-->
+        <!--      <dt class="description-term">CSS</dt>-->
+        <!--      <dd class="description-definition">A style sheet language used for describing the presentation of a document written in HTML.</dd>-->
+        <!--    </dl>-->
+
+
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Jumping In</li>
+            <li><a href="#" class="list-item">Intro</a></li>
+            <li><a href="#" class="list-item">Download</a></li>
+            <li><a href="#" class="list-item">Contents</a></li>
+            <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+            <li><a href="#" class="list-item">JavaScript</a></li>
+            <!--      <li><a href="#" class="list-item">Webpack</a></li>-->
+            <!--      <li><a href="#" class="list-item">Parcel</a></li>-->
+            <!--      <li><a href="#" class="list-item">Accessibility</a></li>-->
+            <!--      <li><a href="#" class="list-item">RFS</a></li>-->
+            <!--      <li><a href="#" class="list-item">RTL</a></li>-->
+            <!--      <li><a href="#" class="list-item">Contribute</a></li>-->
+        </ul>
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Atoms</li>
+            <li><a href="#" class="list-item">Reset</a></li>
+            <li><a href="#" class="list-item">Badge</a></li>
+            <li><a href="#" class="list-item">Buttons</a></li>
+            <li><a href="#" class="list-item">Close</a></li>
+            <li><a href="#" class="list-item">colors</a></li>
+            <li><a href="#" class="list-item">spacing</a></li>
+            <li><a href="#" class="list-item">Spinners</a></li>
+            <li><a href="#" class="list-item">typography</a></li>
+        </ul>
+
+        <!--    <h3>Molecules</h3>-->
+        <!--    <ul>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Announcements</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Breadcrumb</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">ButtonGroups</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Dropdowns</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">FormGroups</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">ListGroups</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Navbar</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Navs</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Pagination</a></li>-->
+        <!--    </ul>-->
+
+        <!--    <h3>Organisms</h3>-->
+        <!--    <ul>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Accordion</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Alerts</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Card</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Carousel</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Collapse</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">DatePicker</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">FileUpload</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Forms</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">ListGroups</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Modal</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Offcanvas</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Popovers</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Progress</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Scrollspy</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Stepper</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Tables</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Tabs</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Toasts</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Tooltips</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Rating</a></li>-->
+        <!--    </ul>-->
+
+        <!--    <h3>Utilities</h3>-->
+        <!--    <ul>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Ajax</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Animations</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">EventDelegation</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Helpers</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Notifications</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Flexbox</a></li>-->
+        <!--    </ul>-->
+
+        <!--    <h3>Pages</h3>-->
+        <!--    <ul>-->
+        <!--      <li><a href="#" class="nav-link nav-item">HomePage</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">AboutPage</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">ProductPage</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">ContactPage</a></li>-->
+        <!--    </ul>-->
+
+        <!--    <h3>Snippets</h3>-->
+        <!--    <ul>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Forms</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Navbar</a></li>-->
+        <!--      <li><a href="#" class="nav-link nav-item">Footer</a></li>-->
+        <!--    </ul>-->
+
+        <!--    <h3>Templates</h3>-->
+        <!--    <ul>-->
+        <!--      <li><a href="#" class="nav-link nav-item">main-template</a></li>-->
+        <!--    </ul>-->
+    </aside>
+
+    <main class="main-content">
+        <!--    <div class='color-wrapper'>-->
+
+        <!--    <span>-->
+        <!--      <img class="logo" src="../img/hippo-white.svg" style="height: 100%; width:10%;" alt="logo">-->
+        <!--    </span>-->
+        <!--      <h1 class="py-1"> KUBU UI</h1>-->
+        <!--      <h4 class="py-1">Building Responsive Web Design</h4>-->
+
+        <!--      <router-link class="btn button-full m-1" to='/papers'>Papers</router-link>-->
+        <!--      <router-link class="btn button-outlined m-1" to='/downloads'>Download</router-link>-->
+
+        <!--    </div>-->
+
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Components</a></li>
+                <li class="breadcrumb__item breadcrumb__item--active">Accordion</li>
+            </ol>
+        </nav>
+
+
+        <div class="section">
+            <h1 class="title">Accordion</h1>
+            <p>The accordion component allows you to toggle the visibility of content sections. It is commonly used to present information in a collapsible format.</p>
+        </div>
+
+
+        <div class="section">
+            <h2 class="subtitle">Accordion Variations</h2>
+            <p>There are different variations of the accordion component:</p>
+            <ul>
+                <li>Accordion with checkboxes</li>
+                <li>Accordion with radio buttons</li>
+            </ul>
+            <p>Each variation has specific HTML structure and styling.</p>
+        </div>
+
+        <div class="section">
+            <h2>Usage</h2>
+            <p>To use the accordion component, follow these steps:</p>
+            <ol>
+                <li>Add the HTML structure for the accordion.</li>
+                <li>Style the accordion using CSS.</li>
+                <li>Add JavaScript if necessary for dynamic behavior.</li>
+            </ol>
+        </div>
+
+
+        <div class="card--demo_product">
+            <div class="card__header">
+                <span>html</span>
+                <button class="copy-btn" title="Copy Code">Copy Code</button>
+            </div>
+            <div class="card__body pt-6">
+                <div class="demo_product">
+                    <section class="accordion">
+                        <div class="tab">
+                            <input type="checkbox" name="accordion-1" id="cb1" checked>
+                            <label for="cb1" class="tab__label">Checkbox</label>
+                            <div class="tab__content">
+                                <p>Pure CSS accordion based on the "input:checked + label" style trick.</p>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="checkbox" name="accordion-1" id="cb2">
+                            <label for="cb2" class="tab__label">Open multiple</label>
+                            <div class="tab__content">
+                                <p>Using <code>&lt;input type="checkbox"&gt;</code> allows to have several tabs open at the same time.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <br />
+
+                    <section class="accordion accordion--radio">
+                        <div class="tab">
+                            <input type="radio" name="accordion-2" id="rd1">
+                            <label for="rd1" class="tab__label">Radio</label>
+                            <div class="tab__content">
+                                <p>If you want to have only one tab open, you can use <code>&lt;input type="checkbox"&gt;</code>.</p>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="radio" name="accordion-2" id="rd2">
+                            <label for="rd2" class="tab__label">Open single</label>
+                            <div class="tab__content">
+                                <p>But if you wanna close the opened tab, you must add a "close" button somewhere, like the one below, that is just another styled radio input.</p>
+                            </div>
+                        </div>
+                        <div class="tab">
+                            <input type="radio" name="accordion-2" id="rd3">
+                            <label for="rd3" class="tab__close">Close open tab &times;</label>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <h2>HTML Structure</h2>
+            <p>Below is the HTML structure for a basic accordion:</p>
+            <div class="demo_code">
+        <pre>
+&lt;section class="accordion">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="accordion-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Content goes here&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+        </pre>
+            </div>
+        </div>
+
+        <div class="card card--demo_product">
+            <div class="card__header">
+                <span>html</span>
+<!--                <input type="checkbox" id="copy-checkbox" class="copy-checkbox">-->
+<!--                <label for="copy-checkbox" class="copy-btn" title="Copy Code">Copy Code</label>-->
+            </div>
+            <div class="card__body pt-6">
+                <div class="demo_code">
+                    <code>
+                        <pre>
+&lt;section class="accordion">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="accordion-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Content goes here&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+                        </pre>
+                    </code>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Example</h2>
+            <p>Here's an example of an accordion with checkboxes and radio buttons:</p>
+            <div class="demo_code"><code>
+        <pre>
+&lt;section class="accordion">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="accordion-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Pure CSS accordion based on the "input:checked + label" style trick.&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+
+&lt;section class="accordion accordion--radio">
+    &lt;div class="tab">
+        &lt;input type="radio" name="accordion-2" id="rd1">
+        &lt;label for="rd1" class="tab__label">Radio&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>If you want to have only one tab open, you can use &lt;code>&lt;input type="checkbox">&lt;/code>.&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+        </pre></code>
+            </div>
+        </div>
+
+    </main>
+    <aside class="sidebar right-sidebar">
+        <p>Right Sidebar Content</p>
+    </aside>
+</div>
+<footer class="footer">
+    <span>Footer Information</span>
+</footer>
+<div class="copyright">
+    <span>&copy; 2024 Product of Tsoaela Industries </span>
+</div>
+
+
+</body>
+</html>

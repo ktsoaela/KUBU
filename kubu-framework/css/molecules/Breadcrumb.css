@@ -8,27 +8,27 @@
 }
 
 .breadcrumb__item {
-    color: var(--primary);
+    color: var(--color-primary);
 }
 
 .breadcrumb__item + .breadcrumb__item::before {
     content: "/";
     padding: 0 0.5rem;
-    color: var(--primary);
+    color: var(--color-primary);
 }
 
 .breadcrumb__link {
     text-decoration: none;
-    color: var(--primary);
+    color: var(--color-primary);
 }
 
 .breadcrumb__link:hover {
     text-decoration: underline;
-    color: var(--highlight);
+    color: var(--color-kubu-primary);
 }
 
 .breadcrumb__item--active {
-    color: var(--secondary);
+    color: var(--color-kubu-secondary);
     font-weight: bold;
     pointer-events: none;
 }

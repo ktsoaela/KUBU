@@ -10,14 +10,14 @@
 }
 
 .stepper__step.active .stepper__number {
-    background-color: var(--primary);
+    background-color: var(--color-primary);
     color: white;
 }
 
 .stepper__number {
     width: 2rem;
     height: 2rem;
-    border: 2px solid var(--primary);
+    border: 2px solid var(--color-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -33,7 +33,7 @@
 .stepper__connector {
     flex: 1;
     height: 2px;
-    background-color: var(--primary);
+    background-color: var(--color-primary);
 }
 
 .stepper__connector:last-child {

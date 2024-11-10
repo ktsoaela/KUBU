@@ -12,14 +12,15 @@ header {
     padding: 10px;
 }
 
-.top-bar {
+
+.page-layout {
     display: flex;
-    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem;
 }
 
-.user-settings, .user-profile, .messages {
-    margin-right: 10px;
-    cursor: pointer;
+.page-layout--disabled{
+
 }
 
 .main-container {
@@ -28,15 +29,31 @@ header {
 }
 
 .sidebar {
-    flex: 0 0 200px;
-    background-color: #f4f4f4;
-    padding: 20px;
+    flex: 1;
+    padding: 1rem 2rem 1rem;
+    border-radius: 15px;
 }
 
-.main-content {
-    flex: 1;
-    /*padding: 20px;*/
+/* Left sidebar specific styling */
+.left-sidebar {
+    order: 1;
+    max-width: 300px;
 }
+
+/* Main content styling */
+.main-content {
+    flex: 2; /* Main content takes up twice the space */
+    padding: 0rem 3rem 0rem;
+    order: 2;
+}
+
+/* Right sidebar styling */
+.right-sidebar {
+    order: 3;
+    text-align: left;
+    max-width: 300px;
+}
+
 
 .nav-item {
     list-style: none;

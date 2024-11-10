@@ -1,36 +1,63 @@
-/* Table styles */
-
-/* Table container */
-.table-container {
-    overflow-x: auto;
-}
-
-/* Table */
+/* Table Block */
 .table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-/* Table header */
-.table thead {
+/* Table container as a separate Block */
+.table-container {
+    overflow-x: auto;
+}
+
+/* Table Header */
+.table__header {
     background-color: #f0f0f0;
 }
 
-/* Table header row */
-.table thead th {
+.table__header-cell {
     padding: 12px;
     text-align: left;
     border-bottom: 2px solid #ddd;
 }
 
-/* Table body */
-.table tbody tr:nth-child(even) {
+/* Table Body */
+.table__row {
+    /* Default row styling */
+}
+
+.table__row--even {
     background-color: #f2f2f2;
 }
 
-/* Table body row */
-.table tbody td {
+.table__cell {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+}
+
+
+/* Table Footer */
+.table__footer {
+    background-color: inherit;
+}
+
+.table__footer-cell {
+    padding: 8px;
+    /*padding: 12px;*/
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #dddddd;
+
+}
+
+/* General cell styling */
+.table__cell,
+.table__header-cell {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+/* Alternating row styling */
+.table__row--highlight {
+    background-color: #dddddd;
 }

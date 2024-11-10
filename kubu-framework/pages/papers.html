@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>KUBU</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+<div class="announcement">
+    <span>Version 2 in BETA.</span>
+</div>
+<header class="header">
+    <div class='utility container'>
+        <a href="#" onclick="handleSearch()">Search</a>
+        <a href="/contributors">Contribute</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <nav class='navbar container row'>
+        <a href="index.html" class="logo">
+            <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+            <!--      <span class="navbar-brand">KUBU</span>-->
+        </a>
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="papers.html" class="nav-link">Papers</a>
+            <a href="/showcase" class="nav-link">Use Cases</a>
+            <a href="/icons" class="nav-link">Icon Pack</a>
+            <a href="/showcase" class="nav-link">Showcases</a>
+            <a href="/news" class="nav-link">News</a>
+          <a href="downloads.html" class="nav-link">Download</a>
+        </div>
+    </nav>
+</header>
+<div class="page-layout">
+    <aside class="sidebar left-sidebar">
+        <h2>Categories</h2>
+
+        <!--    <ul class="list-unstyled">-->
+        <!--      <li>Item without bullet</li>-->
+        <!--      <li>Another item</li>-->
+        <!--      <li>Yet another item</li>-->
+        <!--    </ul>-->
+
+        <!--    <ul class="list-inline">-->
+        <!--      <li>Home</li>-->
+        <!--      <li>About</li>-->
+        <!--      <li>Services</li>-->
+        <!--      <li>Contact</li>-->
+        <!--    </ul>-->
+
+        <!--    <dl class="description-list">-->
+        <!--      <dt class="description-term">HTML</dt>-->
+        <!--      <dd class="description-definition">The standard markup language for documents designed to be displayed in a web browser.</dd>-->
+        <!--      <dt class="description-term">CSS</dt>-->
+        <!--      <dd class="description-definition">A style sheet language used for describing the presentation of a document written in HTML.</dd>-->
+        <!--    </dl>-->
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Jumping In</li>
+            <li><a href="#" class="list-item">Intro</a></li>
+            <li><a href="#" class="list-item">Download</a></li>
+            <li><a href="#" class="list-item">Contents</a></li>
+            <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+            <li><a href="#" class="list-item">JavaScript</a></li>
+            <!--      <li><a href="#" class="list-item">Webpack</a></li>-->
+            <!--      <li><a href="#" class="list-item">Parcel</a></li>-->
+            <!--      <li><a href="#" class="list-item">Accessibility</a></li>-->
+            <!--      <li><a href="#" class="list-item">RFS</a></li>-->
+            <!--      <li><a href="#" class="list-item">RTL</a></li>-->
+            <!--      <li><a href="#" class="list-item">Contribute</a></li>-->
+        </ul>
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Atoms</li>
+            <li><a href="#" class="list-item">Reset</a></li>
+            <li><a href="#" class="list-item">Badge</a></li>
+            <li><a href="#" class="list-item">Buttons</a></li>
+            <li><a href="#" class="list-item">Close</a></li>
+            <li><a href="#" class="list-item">colors</a></li>
+            <li><a href="#" class="list-item">spacing</a></li>
+            <li><a href="#" class="list-item">Spinners</a></li>
+            <li><a href="#" class="list-item">typography</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+          <li class="list-title">Molecules</li>
+            <li><a href="#" class="list-item">Announcements</a></li>
+            <li><a href="#" class="list-item">Breadcrumb</a></li>
+            <li><a href="#" class="list-item">ButtonGroups</a></li>
+            <li><a href="#" class="list-item">Dropdowns</a></li>
+            <li><a href="#" class="list-item">FormGroups</a></li>
+            <li><a href="#" class="list-item">ListGroups</a></li>
+            <li><a href="#" class="list-item">Navbar</a></li>
+            <li><a href="#" class="list-item">Navs</a></li>
+            <li><a href="#" class="list-item">Pagination</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Organisms</li>
+            <li><a href="#" class="list-item">Accordion</a></li>
+            <li><a href="#" class="list-item">Alerts</a></li>
+            <li><a href="#" class="list-item">Card</a></li>
+            <li><a href="#" class="list-item">Carousel</a></li>
+            <li><a href="#" class="list-item">Collapse</a></li>
+            <li><a href="#" class="list-item">DatePicker</a></li>
+            <li><a href="#" class="list-item">FileUpload</a></li>
+            <li><a href="#" class="list-item">Forms</a></li>
+            <li><a href="#" class="list-item">ListGroups</a></li>
+            <li><a href="#" class="list-item">Modal</a></li>
+            <li><a href="#" class="list-item">Offcanvas</a></li>
+            <li><a href="#" class="list-item">Popovers</a></li>
+            <li><a href="#" class="list-item">Progress</a></li>
+            <li><a href="#" class="list-item">Scrollspy</a></li>
+            <li><a href="#" class="list-item">Stepper</a></li>
+            <li><a href="#" class="list-item">Tables</a></li>
+            <li><a href="#" class="list-item">Tabs</a></li>
+            <li><a href="#" class="list-item">Toasts</a></li>
+            <li><a href="#" class="list-item">Tooltips</a></li>
+            <li><a href="#" class="list-item">Rating</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Utilities</li>
+            <li><a href="#" class="list-item">Ajax</a></li>
+            <li><a href="#" class="list-item">Animations</a></li>
+            <li><a href="#" class="list-item">EventDelegation</a></li>
+            <li><a href="#" class="list-item">Helpers</a></li>
+            <li><a href="#" class="list-item">Notifications</a></li>
+            <li><a href="#" class="list-item">Flexbox</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Pages</li>
+            <li><a href="#" class="list-item">HomePage</a></li>
+            <li><a href="#" class="list-item">AboutPage</a></li>
+            <li><a href="#" class="list-item">ProductPage</a></li>
+            <li><a href="#" class="list-item">ContactPage</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Snippets</li>
+            <li><a href="#" class="list-item">Forms</a></li>
+            <li><a href="#" class="list-item">Navbar</a></li>
+            <li><a href="#" class="list-item">Footer</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Templates</li>
+            <li><a href="#" class="list-item">main-template</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Papers</a></li>
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Jumping In</a></li>
+                <li class="breadcrumb__item breadcrumb__item--active">Intro</li>
+            </ol>
+        </nav>
+
+
+        <div class="section">
+            <h1 class="title">Welcome to Kubu</h1>
+            <p><b>Kubu</b> is a CSS-focused frontend framework that uses pure CSS for styling and animations, with no reliance on JavaScript. It adopts BEM (Block Element Modifier) and Atomic Design principles to create modular, reusable, and scalable components. For example, the accordion component, built entirely with CSS, allows you to toggle the visibility of content sections in a collapsible format. By leveraging Atomic Design, <b>Kubu</b> structures UI components as atoms, molecules, and organisms, ensuring clear, manageable, and highly reusable code. BEM further enhances this by providing a consistent naming convention for components, their elements, and their variations.</p>
+        </div>
+
+
+
+
+        <div class="section">
+            <h2>How BEM and Atomic Design Can Work Together</h2>
+
+            <ol>
+              <li>
+                <strong>Atomic Design as the Component Hierarchy:</strong>
+                <p>Atomic Design structures UI into a hierarchy of components: <strong>atoms</strong> (smallest elements), <strong>molecules</strong> (combinations of atoms), <strong>organisms</strong> (complex UI structures), <strong>templates</strong> (overall layouts), and <strong>pages</strong> (final user views). This structure allows you to categorize components based on their reusability and function within the design system.</p>
+              </li>
+              <li>
+                <strong>BEM for Naming and Structure:</strong>
+                <p>BEM's naming convention ensures clear relationships between components and their variations, aiding readability and reusability. Each component in Atomic Design can be named according to BEM’s structure:</p>
+                <ul>
+                  <li><strong>Block</strong>: represents a standalone component (e.g., <code>card</code>, <code>button</code>).</li>
+                  <li><strong>Element</strong>: parts within a component (e.g., <code>card__image</code>, <code>button__icon</code>).</li>
+                  <li><strong>Modifier</strong>: represents variations of a component or element (e.g., <code>button--primary</code>, <code>card--compact</code>).</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Example Integration:</strong>
+                <p>For an <strong>Accordion component</strong> (a molecule), the naming could look like this:</p>
+                <div class="demo_code">
+                <pre><code>
+.accordion {
+  /* Base styles for the accordion molecule */
+}
+
+.accordion__header {
+  /* Header element inside the accordion */
+}
+
+.accordion__header--expanded {
+  /* Modified state for an expanded accordion header */
+}
+
+.accordion__content {
+  /* Content element inside the accordion */
+}
+      </code></pre>
+                </div>
+                <p>By organizing CSS like this, each component’s elements and modifiers remain distinct, clear, and manageable. This approach works well in Atomic Design since each level of component hierarchy (atoms, molecules, etc.) can have its own BEM naming structure.</p>
+              </li>
+              <li>
+                <strong>Advantages:</strong>
+                <ul>
+                  <li><strong>Scalability</strong>: Both BEM and Atomic Design promote a scalable system where changes at any level won’t disrupt the entire project.</li>
+                  <li><strong>Clarity and Consistency</strong>: Each part of the UI has a clear naming pattern and position in the hierarchy.</li>
+                  <li><strong>Reusability</strong>: Components and styles are highly reusable, with variations handled cleanly through BEM modifiers.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h3>Applying this Combination</h3>
+            <p>Using BEM and Atomic Design together in a CSS framework like <strong>Kubu</strong> would mean each component is organized by functionality and styled with clear, consistent class names. For instance, in a project where button styles are reused across multiple contexts, creating button atoms with BEM names (<code>button--primary</code>, <code>button--secondary</code>) ensures that they can be easily customized without duplicating code.</p>
+          </section>
+
+
+        </div>
+
+        <!-- CDN Links Section -->
+        <section class="cdn-links">
+          <h2 class="section-title">CDN Links</h2>
+          <div class="demo_code">
+        <pre>
+https://cdn.example.com/kubu.min.css                                                           - CSS only
+https://cdn.example.com/kubu.min.js                                                            - JavaScript components
+        </pre>
+          </div>
+        </section>
+
+
+      <div class="section">
+        <h2>HTML Structure</h2>
+        <p>Below is the HTML structure for a starting a basic template:</p>
+        <div class="demo_code">
+        <pre>
+&lt;div class="announcement" style="background-color:#b66508;color:white!important;">
+  &lt;span></span>
+&lt;/div>
+&lt;header class="header">
+  &lt;div class='utility container'>
+    &lt;a href="#" onclick="handleSearch()">Search</a>
+    &lt;a href="#">News</a>
+    &lt;a href="#">Others</a>
+  &lt;/div>
+  &lt;nav class='navbar container row'>
+    &lt;a href="index.html" class="logo">
+      &lt;img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+      <!--      <span class="navbar-brand">KUBU</span>-->
+    &lt;/a>
+    &lt;div class="navbar-nav">
+        &lt;a href="#" class="nav-link">Home</a>
+        &lt;a href="#" class="nav-link">About</a>
+        &lt;a href="#" class="nav-link">Products</a>
+        &lt;a href="#" class="nav-link">Services</a>
+        &lt;a href="#" class="nav-link">Contact</a>
+    &lt;/div>
+  &lt;/nav>
+&lt;/header>
+&lt;div class="page-layout">
+  &lt;aside class="sidebar left-sidebar">
+
+  &lt;/aside>
+  &lt;main class="main-content">
+
+  &lt;/main>
+  &lt;aside class="sidebar right-sidebar">
+
+  &lt;/aside>
+&lt;/div>
+&lt;footer class="footer">
+  &lt;span>Footer Details</span>
+&lt;/footer>
+&lt;div class="copyright">
+  &lt;span>&copy; 2024 </span>
+&lt;/div>
+        </pre>
+        </div>
+      </div>
+
+
+      <!-- Next Steps Section -->
+        <section class="next-steps">
+          <h2 class="section-title">Next Steps</h2>
+          <p>Explore Kubu's components and utilities for buttons, layout, and more. Check the <a href="#docs">documentation</a> for detailed examples and guides.</p>
+        </section>
+
+
+
+
+    </main>
+    <aside class="sidebar right-sidebar">
+        <ul class="list-unstyled">
+            <li class="list-title">Quick Links</li>
+            <li><a href="#" class="list-item">Intro</a></li>
+            <li><a href="#" class="list-item">Download</a></li>
+            <li><a href="#" class="list-item">Contents</a></li>
+            <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+            <li><a href="#" class="list-item">JavaScript</a></li>
+        </ul>
+    </aside>
+</div>
+<footer class="footer">
+    <span>Footer Information</span>
+</footer>
+<div class="copyright">
+    <span>&copy; 2024 Product of Tsoaela Industries </span>
+</div>
+
+
+</body>
+</html>

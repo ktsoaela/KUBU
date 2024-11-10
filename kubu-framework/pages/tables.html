@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <title>KUBU</title>
+    <style>
+        /* Styles specific to documentation */
+        body {
+            font-family: Arial, sans-serif;
+            /*margin: 20px;*/
+            /*padding: 20px;*/
+            line-height: 1.6;
+            /*color:white!important;*/
+            /*background-color: lavenderblush;*/
+        }
+
+
+        /* Basic reset for layout */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            /*color:white!important;*/
+        }
+
+        /* Header styling */
+        .header {
+            background-color: #002d4c;
+            color: white;
+            /*padding: 1.5rem;*/
+            text-align: center;
+            color: white !important;
+        }
+
+        header .utility {
+            text-align: right;
+            padding: 5px 20px;
+            font-size: 12px;
+        }
+
+        header .utility a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        header .navbar {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 5px 20px;
+        }
+
+        .navbar {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #002d4c;
+            color: #eeeeee;
+        }
+
+        .navbar {
+            background-color: #002d4c !important;
+        }
+
+        /*.button-outlined {*/
+        /*  background-color: transparent;*/
+        /*  color: #002d4c;*/
+        /*  border: 2px solid #002d4c;*/
+        /*}*/
+        /*.button-full, .button-outlined, .button-rounded {*/
+        /*  display: inline-block;*/
+        /*  padding: 15px 20px;*/
+        /*  font-family: "Verdana", "Helvetica", "Arial", sans-serif;*/
+        /*  font-size: 16px;*/
+        /*  text-align: center;*/
+        /*  text-decoration: none;*/
+        /*  cursor: pointer;*/
+        /*  -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
+        /*  transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
+        /*}*/
+
+        .logo .logo-img {
+            fill: #eeeeee;
+        }
+
+        header .logo {
+            height: auto;
+            width: 30px;
+            -webkit-box-pack: start !important;
+            -ms-flex-pack: start !important;
+            justify-content: start !important;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .page-layout {
+            display: flex;
+            /*gap: 1rem;*/
+            /*padding: 1rem;*/
+            /*background-color: #000f19;*/
+        }
+
+        /*!* Sidebar styling *!*/
+        /*.sidebar {*/
+        /*  flex: 1;*/
+        /*  background-color: #f0f0f0;*/
+        /*  padding: 1rem;*/
+        /*}*/
+
+        /*!* Left sidebar specific styling *!*/
+        /*.left-sidebar {*/
+        /*  order: 1;*/
+        /*}*/
+
+        /*!* Main content styling *!*/
+        /*.main-content {*/
+        /*    flex: 2; !* Main content takes up twice the space *!*/
+        /*    background-color: #ffffff;*/
+        /*    !*padding: 1rem;*!*/
+        /* */
+        /*  order: 2;*/
+        /*}*/
+
+        .page-layout {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 1rem 2rem 1rem;
+        }
+
+        /* Left sidebar specific styling */
+        .left-sidebar {
+            order: 1;
+            max-width: 300px;
+        }
+
+        /* Main content styling */
+        .main-content {
+            flex: 2; /* Main content takes up twice the space */
+            background-color: #ffffff;
+            /*padding: 1rem;*/
+            padding: 0rem 3rem 0rem;
+            order: 2;
+        }
+
+        /* Right sidebar styling */
+        .right-sidebar {
+            order: 3;
+            text-align: left;
+            max-width: 300px;
+        }
+
+        /* Footer styling */
+        .footer {
+            /*background-color: #23373E;*/
+            /*background-color: #734D1F;*/
+            /*background-color: #012840;*/
+            background-color: #012840;
+
+            color: white !important;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        /* Copyright styling */
+        .copyright {
+            /*background-color: #A08E72;*/
+            /*background-color: #34403E;*/
+            background-color: #012840;
+            color: white !important;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+
+        /*!* Multi-select container *!*/
+        /*.multi-select {*/
+        /*    position: relative;*/
+        /*    width: 200px;*/
+        /*    font-family: Arial, sans-serif;*/
+        /*}*/
+
+        /*!* Hidden toggle checkbox to show/hide options *!*/
+        /*.multi-select-toggle {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*!* Label for multi-select dropdown *!*/
+        /*.multi-select-label {*/
+        /*    display: block;*/
+        /*    padding: 0.5rem;*/
+        /*    background-color: #f0f0f0;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 4px;*/
+        /*    cursor: pointer;*/
+        /*    position: relative;*/
+        /*    color: #333;*/
+        /*}*/
+
+        /*!* Dropdown arrow using pseudo-element *!*/
+        /*.multi-select-label::after {*/
+        /*    content: "▼";*/
+        /*    position: absolute;*/
+        /*    right: 10px;*/
+        /*    color: #666;*/
+        /*    transition: transform 0.3s ease;*/
+        /*}*/
+
+        /*!* Rotate arrow when options are visible *!*/
+        /*.multi-select-toggle:checked + .multi-select-label::after {*/
+        /*    transform: rotate(180deg);*/
+        /*}*/
+
+        /*!* Options container *!*/
+        /*.multi-select-options {*/
+        /*    display: none;*/
+        /*    position: absolute;*/
+        /*    width: 100%;*/
+        /*    top: calc(100% + 0.25rem);*/
+        /*    left: 0;*/
+        /*    background-color: #fff;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 4px;*/
+        /*    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);*/
+        /*    max-height: 150px;*/
+        /*    overflow-y: auto;*/
+        /*    z-index: 100;*/
+        /*}*/
+
+        /*!* Show options when toggle is checked *!*/
+        /*.multi-select-toggle:checked ~ .multi-select-options {*/
+        /*    display: block;*/
+        /*}*/
+
+        /*!* Option styling *!*/
+        /*.multi-select-options label {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    padding: 0.5rem;*/
+        /*    cursor: pointer;*/
+        /*    font-size: 0.9rem;*/
+        /*}*/
+
+        /*.multi-select-options label:hover {*/
+        /*    background-color: #f7f7f7;*/
+        /*}*/
+
+        /*!* Checkboxes within options *!*/
+        /*.multi-select-options input[type="checkbox"] {*/
+        /*    margin-right: 0.5rem;*/
+        /*}*/
+
+        /*!* Display selected options as tags *!*/
+        /*.multi-select input[type="checkbox"]:checked + .multi-select-label::before {*/
+        /*    content: attr(data-selected-options);*/
+        /*    display: inline-block;*/
+        /*    margin-right: 0.5rem;*/
+        /*    padding: 0.25rem 0.5rem;*/
+        /*    background-color: #007bff;*/
+        /*    color: #fff;*/
+        /*    border-radius: 2px;*/
+        /*    font-size: 0.8rem;*/
+        /*}*/
+
+        /*!* Base styling for the form control *!*/
+        /*.form-control {*/
+        /*    position: relative;*/
+        /*    max-width: 300px;*/
+        /*    font-family: Arial, sans-serif;*/
+        /*}*/
+
+        /*.dropdown-toggle {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*!* Label styling for dropdown *!*/
+        /*.dropdown-label {*/
+        /*    display: block;*/
+        /*    padding: 10px;*/
+        /*    font-size: 16px;*/
+        /*    color: #333;*/
+        /*    background-color: #f0f0f0;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 4px;*/
+        /*    cursor: pointer;*/
+        /*    position: relative;*/
+        /*}*/
+
+        /*!* Dropdown arrow icon using pseudo-element *!*/
+        /*.dropdown-label::after {*/
+        /*    content: "▼";*/
+        /*    position: absolute;*/
+        /*    right: 10px;*/
+        /*    transition: transform 0.3s;*/
+        /*    color: #666;*/
+        /*}*/
+
+        /*!* Rotate arrow when dropdown is open *!*/
+        /*.dropdown-toggle:checked + .dropdown-label::after {*/
+        /*    transform: rotate(180deg);*/
+        /*}*/
+
+        /*!* Options container *!*/
+        /*.dropdown-options {*/
+        /*    display: none;*/
+        /*    position: absolute;*/
+        /*    top: 100%;*/
+        /*    left: 0;*/
+        /*    width: 100%;*/
+        /*    background-color: white;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 4px;*/
+        /*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+        /*    max-height: 200px;*/
+        /*    overflow-y: auto;*/
+        /*    z-index: 100;*/
+        /*    padding: 8px 0;*/
+        /*}*/
+
+        /*!* Show options when dropdown toggle is checked *!*/
+        /*.dropdown-toggle:checked ~ .dropdown-options {*/
+        /*    display: block;*/
+        /*}*/
+
+        /*!* Styling each option label *!*/
+        /*.dropdown-options label {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    padding: 8px 16px;*/
+        /*    cursor: pointer;*/
+        /*    font-size: 14px;*/
+        /*}*/
+
+        /*.dropdown-options label:hover {*/
+        /*    background-color: #f7f7f7;*/
+        /*}*/
+
+        /*.dropdown-options input[type="checkbox"] {*/
+        /*    margin-right: 8px;*/
+        /*    accent-color: #007bff;*/
+        /*}*/
+
+        /*!* Styles for selected option labels displayed above *!*/
+        /*.form-control input[type="checkbox"]:checked + .dropdown-label::before {*/
+        /*    content: attr(data-selected-options);*/
+        /*    display: inline-block;*/
+        /*    margin-right: 8px;*/
+        /*    background-color: #007bff;*/
+        /*    color: white;*/
+        /*    padding: 2px 6px;*/
+        /*    border-radius: 12px;*/
+        /*    font-size: 0.8rem;*/
+        /*    max-width: 250px;*/
+        /*    white-space: nowrap;*/
+        /*    overflow: hidden;*/
+        /*    text-overflow: ellipsis;*/
+        /*}*/
+
+
+        /*!* Base styling *!*/
+        /*.multi-select {*/
+        /*    position: relative;*/
+        /*    width: 200px;*/
+        /*    font-family: Arial, sans-serif;*/
+        /*}*/
+
+        /*.multi-select-toggle {*/
+        /*    display: none;*/
+        /*}*/
+
+        /*!* Label for dropdown *!*/
+        /*.multi-select-label {*/
+        /*    display: block;*/
+        /*    padding: 0.5rem;*/
+        /*    background-color: #f0f0f0;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 4px;*/
+        /*    cursor: pointer;*/
+        /*    color: #333;*/
+        /*    position: relative;*/
+        /*}*/
+
+        /*.multi-select-label::after {*/
+        /*    content: "▼";*/
+        /*    position: absolute;*/
+        /*    right: 10px;*/
+        /*    color: #666;*/
+        /*    transition: transform 0.3s ease;*/
+        /*}*/
+
+        /*.multi-select-toggle:checked + .multi-select-label::after {*/
+        /*    transform: rotate(180deg);*/
+        /*}*/
+
+        /*.multi-select-options {*/
+        /*    display: none;*/
+        /*    position: absolute;*/
+        /*    width: 100%;*/
+        /*    top: calc(100% + 0.25rem);*/
+        /*    background-color: #fff;*/
+        /*    border: 1px solid #ccc;*/
+        /*    border-radius: 4px;*/
+        /*    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);*/
+        /*    max-height: 150px;*/
+        /*    overflow-y: auto;*/
+        /*    z-index: 100;*/
+        /*}*/
+
+        /*.multi-select-toggle:checked ~ .multi-select-options {*/
+        /*    display: block;*/
+        /*}*/
+
+        /*.multi-select-options label {*/
+        /*    display: flex;*/
+        /*    align-items: center;*/
+        /*    padding: 0.5rem;*/
+        /*    cursor: pointer;*/
+        /*}*/
+
+        /*.multi-select-options label:hover {*/
+        /*    background-color: #f7f7f7;*/
+        /*}*/
+
+        /*.multi-select-options input[type="checkbox"] {*/
+        /*    margin-right: 0.5rem;*/
+        /*}*/
+
+        /*!* Attempting to show selected options on label *!*/
+        /*.multi-select input[type="checkbox"]:checked + .multi-select-label::before {*/
+        /*    content: "Selected: Option 1, Option 2"; !* Static placeholder due to CSS limitations *!*/
+        /*    color: #007bff;*/
+        /*}*/
+
+        .custom-multiselect {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Display area for selected items */
+        .selected-options {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #666;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            background-color: #fff;
+        }
+
+        /* Styling for each selected item chip */
+        .selected-options span {
+            background-color: #007bff;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 14px;
+        }
+
+        /* Hidden checkbox inputs for accessibility */
+        .options input[type="checkbox"] {
+            display: none;
+        }
+
+        /* Dropdown options */
+        .options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        /* Style for each option */
+        .options label {
+            display: block;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        /* Option hover effect */
+        .options label:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Show options when the container is focused */
+        .custom-multiselect:focus-within .options {
+            display: block;
+        }
+
+        /* Add selected options as chips */
+        .options input[type="checkbox"]:checked + label::before {
+            content: attr(data-value);
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 12px;
+            padding: 4px 8px;
+            margin: 0 4px 4px 0;
+            display: inline-block;
+            font-size: 12px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="announcement" >
+    <span>Version 2 in BETA.</span>
+</div>
+<header class="header">
+    <div class='utility container'>
+        <a href="#" onclick="handleSearch()">Search</a>
+        <a href="/contributors">Contribute</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <nav class='navbar container row'>
+        <a href="index.html" class="logo">
+            <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+            <!--      <span class="navbar-brand">KUBU</span>-->
+        </a>
+        <div class="navbar-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="papers.html" class="nav-link">Papers</a>
+            <a href="/showcase" class="nav-link">Use Cases</a>
+            <a href="/icons" class="nav-link">Icon Pack</a>
+            <a href="/showcase" class="nav-link">Showcases</a>
+            <a href="/news" class="nav-link">News</a>
+            <a href="/downloads" class="nav-link">Download</a>
+        </div>
+    </nav>
+</header>
+<div class="page-layout">
+    <aside class="sidebar left-sidebar">
+        <h2>Categories</h2>
+
+        <!--    <ul class="list-unstyled">-->
+        <!--      <li>Item without bullet</li>-->
+        <!--      <li>Another item</li>-->
+        <!--      <li>Yet another item</li>-->
+        <!--    </ul>-->
+
+        <!--    <ul class="list-inline">-->
+        <!--      <li>Home</li>-->
+        <!--      <li>About</li>-->
+        <!--      <li>Services</li>-->
+        <!--      <li>Contact</li>-->
+        <!--    </ul>-->
+
+        <!--    <dl class="description-list">-->
+        <!--      <dt class="description-term">HTML</dt>-->
+        <!--      <dd class="description-definition">The standard markup language for documents designed to be displayed in a web browser.</dd>-->
+        <!--      <dt class="description-term">CSS</dt>-->
+        <!--      <dd class="description-definition">A style sheet language used for describing the presentation of a document written in HTML.</dd>-->
+        <!--    </dl>-->
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Jumping In</li>
+            <li><a href="#" class="list-item">Intro</a></li>
+            <li><a href="#" class="list-item">Download</a></li>
+            <li><a href="#" class="list-item">Contents</a></li>
+            <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+            <li><a href="#" class="list-item">JavaScript</a></li>
+            <!--      <li><a href="#" class="list-item">Webpack</a></li>-->
+            <!--      <li><a href="#" class="list-item">Parcel</a></li>-->
+            <!--      <li><a href="#" class="list-item">Accessibility</a></li>-->
+            <!--      <li><a href="#" class="list-item">RFS</a></li>-->
+            <!--      <li><a href="#" class="list-item">RTL</a></li>-->
+            <!--      <li><a href="#" class="list-item">Contribute</a></li>-->
+        </ul>
+
+
+        <ul class="list-unstyled">
+            <li class="list-title">Atoms</li>
+            <li><a href="#" class="list-item">Reset</a></li>
+            <li><a href="#" class="list-item">Badge</a></li>
+            <li><a href="#" class="list-item">Buttons</a></li>
+            <li><a href="#" class="list-item">Close</a></li>
+            <li><a href="#" class="list-item">colors</a></li>
+            <li><a href="#" class="list-item">spacing</a></li>
+            <li><a href="#" class="list-item">Spinners</a></li>
+            <li><a href="#" class="list-item">typography</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Molecules</li>
+            <li><a href="#" class="list-item">Announcements</a></li>
+            <li><a href="#" class="list-item">Breadcrumb</a></li>
+            <li><a href="#" class="list-item">ButtonGroups</a></li>
+            <li><a href="#" class="list-item">Dropdowns</a></li>
+            <li><a href="#" class="list-item">FormGroups</a></li>
+            <li><a href="#" class="list-item">ListGroups</a></li>
+            <li><a href="#" class="list-item">Navbar</a></li>
+            <li><a href="#" class="list-item">Navs</a></li>
+            <li><a href="#" class="list-item">Pagination</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Organisms</li>
+            <li><a href="#" class="list-item">Accordion</a></li>
+            <li><a href="#" class="list-item">Alerts</a></li>
+            <li><a href="#" class="list-item">Card</a></li>
+            <li><a href="#" class="list-item">Carousel</a></li>
+            <li><a href="#" class="list-item">Collapse</a></li>
+            <li><a href="#" class="list-item">DatePicker</a></li>
+            <li><a href="#" class="list-item">FileUpload</a></li>
+            <li><a href="#" class="list-item">Forms</a></li>
+            <li><a href="#" class="list-item">ListGroups</a></li>
+            <li><a href="#" class="list-item">Modal</a></li>
+            <li><a href="#" class="list-item">Offcanvas</a></li>
+            <li><a href="#" class="list-item">Popovers</a></li>
+            <li><a href="#" class="list-item">Progress</a></li>
+            <li><a href="#" class="list-item">Scrollspy</a></li>
+            <li><a href="#" class="list-item">Stepper</a></li>
+            <li><a href="#" class="list-item">Tables</a></li>
+            <li><a href="#" class="list-item">Tabs</a></li>
+            <li><a href="#" class="list-item">Toasts</a></li>
+            <li><a href="#" class="list-item">Tooltips</a></li>
+            <li><a href="#" class="list-item">Rating</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Utilities</li>
+            <li><a href="#" class="list-item">Ajax</a></li>
+            <li><a href="#" class="list-item">Animations</a></li>
+            <li><a href="#" class="list-item">EventDelegation</a></li>
+            <li><a href="#" class="list-item">Helpers</a></li>
+            <li><a href="#" class="list-item">Notifications</a></li>
+            <li><a href="#" class="list-item">Flexbox</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Pages</li>
+            <li><a href="#" class="list-item">HomePage</a></li>
+            <li><a href="#" class="list-item">AboutPage</a></li>
+            <li><a href="#" class="list-item">ProductPage</a></li>
+            <li><a href="#" class="list-item">ContactPage</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Snippets</li>
+            <li><a href="#" class="list-item">Forms</a></li>
+            <li><a href="#" class="list-item">Navbar</a></li>
+            <li><a href="#" class="list-item">Footer</a></li>
+        </ul>
+
+        <ul class="list-unstyled">
+            <li class="list-title">Templates</li>
+            <li><a href="#" class="list-item">main-template</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Papers</a></li>
+                <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Organisms</a></li>
+                <li class="breadcrumb__item breadcrumb__item--active">Tables</li>
+            </ol>
+        </nav>
+
+
+        <div class="section">
+            <h1 class="title">Tables</h1>
+            <p>
+                Forms are essential for gathering user input and data on your website.<br/>
+                Kubu provides a wide variety of components and styles to create user-friendly forms.<br/>
+                This page will guide you through the available form elements, customization options, and best practices for building accessible forms.
+            </p>
+        </div>
+
+
+
+        <div class="section">
+            <h2 class="subtitle">Table Variations</h2>
+            <p>There are different variations of the form components:</p>
+            <ul>
+                <li>Form Control</li>
+                <li>Selection</li>
+                <li>CheckBoxes &amp; RadioButtons</li>
+                <li>Range</li>
+                <li>Input Group</li>
+                <li>floating labels</li>
+                <li>layout</li>
+                <li>Validation</li>
+            </ul>
+            <p>Each variation has specific HTML structure and styling.</p>
+        </div>
+
+        <div class="section">
+            <h2>Usage</h2>
+            <p>To use the accordion component, follow these steps:</p>
+            <ol>
+                <li>Add the HTML structure for the accordion.</li>
+                <li>Style the accordion using CSS.</li>
+                <li>Add JavaScript if necessary for dynamic behavior.</li>
+            </ol>
+        </div>
+
+
+
+        <div class="demo_product">
+
+
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__header">
+                    <tr class="table__row">
+                        <th class="table__header-cell">#</th>
+                        <th class="table__header-cell">Item</th>
+                        <th class="table__header-cell">Country</th>
+                        <th class="table__header-cell">Qty</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="table__row">
+                        <td class="table__cell">1</td>
+                        <td class="table__cell">Yellow Maize</td>
+                        <td class="table__cell">Mexico</td>
+                        <td class="table__cell">3</td>
+                    </tr>
+                    <tr class="table__row table__row--even">
+                        <td class="table__cell">2</td>
+                        <td class="table__cell">Barley</td>
+                        <td class="table__cell">Germany</td>
+                        <td class="table__cell">3</td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">3</td>
+                        <td class="table__cell">Coffee</td>
+                        <td class="table__cell">Mexico</td>
+                        <td class="table__cell">3</td>
+                    </tr>
+                    <!-- Additional rows... -->
+                    </tbody>
+                    <tfoot class="table__footer">
+                    <tr class="table__row">
+                        <td class="table__footer-cell" colspan="3">Total</td>
+                        <td class="table__footer-cell">9</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+
+
+        </div>
+
+
+
+
+<!--        2. Form Control-->
+<!--        Different input types in a single form to demonstrate control variety.-->
+
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="text-input" class="form-label">Text Input</label>-->
+<!--                    <input type="text" id="text-input" class="form-input" placeholder="Text">-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    <label for="password" class="form-label">Password</label>-->
+<!--                    <input type="password" id="password" class="form-input" placeholder="Password">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        3. Select-->
+<!--        Using a select dropdown styled by your .form-select class.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="select-example" class="form-label">Select Option</label>-->
+<!--                    <select id="select-example" class="form-select">-->
+<!--                        <option value="">Choose an option</option>-->
+<!--                        <option value="1">Option 1</option>-->
+<!--                        <option value="2">Option 2</option>-->
+<!--                        <option value="3">Option 3</option>-->
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        4. Checks & Radios-->
+<!--        Checkbox and radio button group with custom styles.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label class="form-label">Checkbox Options</label>-->
+<!--                    <input type="checkbox" id="check1" class="form-input">-->
+<!--                    <label for="check1">Option 1</label>-->
+<!--                    <input type="checkbox" id="check2" class="form-input">-->
+<!--                    <label for="check2">Option 2</label>-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    <label class="form-label">Radio Options</label>-->
+<!--                    <input type="radio" id="radio1" name="radio-group" class="form-input">-->
+<!--                    <label for="radio1">Option 1</label>-->
+<!--                    <input type="radio" id="radio2" name="radio-group" class="form-input">-->
+<!--                    <label for="radio2">Option 2</label>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        5. Range-->
+<!--        Range input styled with default browser styles, which can be modified further.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="range" class="form-label">Range Input</label>-->
+<!--                    <input type="range" id="range" class="form-input">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        6. Input Group-->
+<!--        Example of an input group with prepend and append sections.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group" style="display: flex; align-items: center;">-->
+<!--                    <span style="padding: 0.5rem; background-color: #ccc; border: 1px solid #ccc; border-right: none; border-radius: 4px 0 0 4px;">@</span>-->
+<!--                    <input type="text" class="form-input" placeholder="Username" style="border-left: none; border-radius: 0;">-->
+<!--                    <span style="padding: 0.5rem; background-color: #ccc; border: 1px solid #ccc; border-left: none; border-radius: 0 4px 4px 0;">.com</span>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        7. Floating Labels-->
+<!--        Simulating floating labels using placeholder text and active styles.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group" style="position: relative;">-->
+<!--                    <input type="text" class="form-input" placeholder=" " id="floating-input">-->
+<!--                    <label for="floating-input" class="form-label" style="position: absolute; top: 0.5rem; left: 0.75rem; font-size: 0.875rem; color: #666; transition: 0.3s;">-->
+<!--                        Floating Label-->
+<!--                    </label>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        8. Layout-->
+<!--        A simple two-column layout.-->
+<!--        <div class="form-container">-->
+<!--            <form style="display: flex; flex-wrap: wrap; gap: 1rem;">-->
+<!--                <div class="form-group" style="flex: 1 1 48%;">-->
+<!--                    <label for="first-name" class="form-label">First Name</label>-->
+<!--                    <input type="text" id="first-name" class="form-input">-->
+<!--                </div>-->
+<!--                <div class="form-group" style="flex: 1 1 48%;">-->
+<!--                    <label for="last-name" class="form-label">Last Name</label>-->
+<!--                    <input type="text" id="last-name" class="form-input">-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        9. Validation-->
+<!--        Simple validation example with .form-error for error messages.-->
+<!--        <div class="form-container">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="username" class="form-label">Username</label>-->
+<!--                    <input type="text" id="username" class="form-input" placeholder="Enter username">-->
+<!--                    <p class="form-error">Username is required</p>-->
+<!--                </div>-->
+<!--            </form>-->
+<!--        </div>-->
+
+<!--        10. Multiple Selection-->
+        <!--        <div class="multi-select">-->
+        <!--            <input type="checkbox" id="toggle" class="multi-select-toggle">-->
+        <!--            <label for="toggle" class="multi-select-label">Select Options</label>-->
+
+        <!--            <div class="multi-select-options">-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 1">-->
+        <!--                    <span>Option 1</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 2">-->
+        <!--                    <span>Option 2</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 3">-->
+        <!--                    <span>Option 3</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="option" value="Option 4">-->
+        <!--                    <span>Option 4</span>-->
+        <!--                </label>-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+
+        <!--        <div class="form-control">-->
+        <!--            <input type="checkbox" id="dropdown-toggle" class="dropdown-toggle">-->
+        <!--            <label for="dropdown-toggle" class="dropdown-label">Select Name</label>-->
+
+        <!--            <div class="dropdown-options">-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Oliver Hansen">-->
+        <!--                    <span>Oliver Hansen</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Van Henry">-->
+        <!--                    <span>Van Henry</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="April Tucker">-->
+        <!--                    <span>April Tucker</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Ralph Hubbard">-->
+        <!--                    <span>Ralph Hubbard</span>-->
+        <!--                </label>-->
+        <!--                <label>-->
+        <!--                    <input type="checkbox" name="person" value="Omar Alexander">-->
+        <!--                    <span>Omar Alexander</span>-->
+        <!--                </label>-->
+        <!--                &lt;!&ndash; Add more options as needed &ndash;&gt;-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+<!--        <div class="multi-select">-->
+<!--            <input type="checkbox" id="multi-select-toggle" class="multi-select-toggle">-->
+<!--            <label for="multi-select-toggle" class="multi-select-label">Select Options</label>-->
+
+<!--            <div class="multi-select-options">-->
+<!--                <label data-value="Option 1">-->
+<!--                    <input type="checkbox" name="option" value="Option 1">-->
+<!--                    <span>Option 1</span>-->
+<!--                </label>-->
+<!--                <label data-value="Option 2">-->
+<!--                    <input type="checkbox" name="option" value="Option 2">-->
+<!--                    <span>Option 2</span>-->
+<!--                </label>-->
+<!--                <label data-value="Option 3">-->
+<!--                    <input type="checkbox" name="option" value="Option 3">-->
+<!--                    <span>Option 3</span>-->
+<!--                </label>-->
+<!--                <label data-value="Option 4">-->
+<!--                    <input type="checkbox" name="option" value="Option 4">-->
+<!--                    <span>Option 4</span>-->
+<!--                </label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="custom-multiselect" tabindex="0">-->
+<!--            &lt;!&ndash; Selected options display area &ndash;&gt;-->
+<!--            <div class="selected-options">-->
+<!--                Select options...-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Dropdown options list &ndash;&gt;-->
+<!--            <div class="options">-->
+<!--                <input type="checkbox" id="option1" />-->
+<!--                <label for="option1" data-value="Option 1">Option 1</label>-->
+
+<!--                <input type="checkbox" id="option2" />-->
+<!--                <label for="option2" data-value="Option 2">Option 2</label>-->
+
+<!--                <input type="checkbox" id="option3" />-->
+<!--                <label for="option3" data-value="Option 3">Option 3</label>-->
+
+<!--                <input type="checkbox" id="option4" />-->
+<!--                <label for="option4" data-value="Option 4">Option 4</label>-->
+
+<!--                <input type="checkbox" id="option5" />-->
+<!--                <label for="option5" data-value="Option 5">Option 5</label>-->
+<!--            </div>-->
+<!--        </div>-->
+
+
+    </main>
+    <aside class="sidebar right-sidebar">
+        <ul class="list-unstyled">
+            <li class="list-title">Quick Links</li>
+            <li><a href="#" class="list-item">Form Control</a></li>
+            <li><a href="#" class="list-item">Selection</a></li>
+            <li><a href="#" class="list-item">CheckBoxes &amp; RadioButtons</a></li>
+            <li><a href="#" class="list-item">Range</a></li>
+            <li><a href="#" class="list-item">Input Group</a></li>
+            <li><a href="#" class="list-item">floating labels</a></li>
+            <li><a href="#" class="list-item">layout</a></li>
+            <li><a href="#" class="list-item">Validation</a></li>
+        </ul>
+    </aside>
+</div>
+<footer class="footer">
+    <span>Footer Information</span>
+</footer>
+<div class="copyright">
+    <span>&copy; 2024 Product of Tsoaela Industries </span>
+</div>
+
+
+</body>
+</html>

@@ -18,20 +18,20 @@
 
 /* Success toast */
 .toast-success {
-    background-color: #28a745; /* Green background color */
+    background-color: var(--color-safe); /* Green background color */
 }
 
 /* Error toast */
 .toast-error {
-    background-color: #dc3545; /* Red background color */
+    background-color: var(--color-danger); /* Red background color */
 }
 
 /* Info toast */
 .toast-info {
-    background-color: #17a2b8; /* Blue background color */
+    background-color: var(--color-info); /* Blue background color */
 }
 
 /* Warning toast */
 .toast-warning {
-    background-color: #ffc107; /* Yellow background color */
+    background-color:var(--color-risk); /* Yellow background color */
 }

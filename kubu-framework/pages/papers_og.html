@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../styles.css">
+  <title>KUBU</title>
+  <style>
+    /* Styles specific to documentation */
+    body {
+      font-family: Arial, sans-serif;
+      /*margin: 20px;*/
+      /*padding: 20px;*/
+      line-height: 1.6;
+      /*color:white!important;*/
+      /*background-color: lavenderblush;*/
+    }
+
+
+
+    /* Basic reset for layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      /*color:white!important;*/
+    }
+
+    /* Header styling */
+    .header {
+      background-color: #002d4c;
+      color: white;
+      /*padding: 1.5rem;*/
+      text-align: center;
+      color:white!important;
+    }
+
+    header .utility {
+      text-align: right;
+      padding: 5px 20px;
+      font-size: 12px;
+    }
+
+    header .utility a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    header .navbar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 5px 20px;
+    }
+    .navbar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #002d4c;
+      color: #eeeeee;
+    }
+
+    .navbar {
+      background-color: #002d4c!important;
+    }
+
+    /*.button-outlined {*/
+    /*  background-color: transparent;*/
+    /*  color: #002d4c;*/
+    /*  border: 2px solid #002d4c;*/
+    /*}*/
+    /*.button-full, .button-outlined, .button-rounded {*/
+    /*  display: inline-block;*/
+    /*  padding: 15px 20px;*/
+    /*  font-family: "Verdana", "Helvetica", "Arial", sans-serif;*/
+    /*  font-size: 16px;*/
+    /*  text-align: center;*/
+    /*  text-decoration: none;*/
+    /*  cursor: pointer;*/
+    /*  -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
+    /*  transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
+    /*}*/
+
+    .logo .logo-img {
+      fill: #eeeeee;
+    }
+
+    header .logo {
+      height: auto;
+      width: 30px;
+      -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+      justify-content: start !important;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .page-layout {
+      display: flex;
+      /*gap: 1rem;*/
+      /*padding: 1rem;*/
+      /*background-color: #000f19;*/
+    }
+
+    /*!* Sidebar styling *!*/
+    /*.sidebar {*/
+    /*  flex: 1;*/
+    /*  background-color: #f0f0f0;*/
+    /*  padding: 1rem;*/
+    /*}*/
+
+    /*!* Left sidebar specific styling *!*/
+    /*.left-sidebar {*/
+    /*  order: 1;*/
+    /*}*/
+
+    /* Main content styling */
+    .main-content {
+      flex: 2; /* Main content takes up twice the space */
+      background-color: #ffffff;
+      padding: 1rem;
+      order: 2;
+    }
+    .page-layout {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      flex: 1;
+      background-color: #f0f0f0;
+      padding: 1rem 2rem 1rem;
+    }
+
+    /* Left sidebar specific styling */
+    .left-sidebar {
+      order: 1;
+      max-width: 300px;
+    }
+
+    /* Main content styling */
+    .main-content {
+      flex: 2; /* Main content takes up twice the space */
+      background-color: #ffffff;
+      padding: 1rem;
+      order: 2;
+    }
+
+    /* Right sidebar styling */
+    .right-sidebar {
+      order: 3;
+      text-align: left;
+      max-width: 300px;
+    }
+
+    /* Footer styling */
+    .footer {
+      /*background-color: #23373E;*/
+      /*background-color: #734D1F;*/
+      /*background-color: #012840;*/
+      background-color: #012840;
+
+      color:white!important;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Copyright styling */
+    .copyright {
+      /*background-color: #A08E72;*/
+      /*background-color: #34403E;*/
+      background-color: #012840;
+      color:white!important;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="announcement" >
+  <span>Version 2 in BETA.</span>
+</div>
+<header class="header">
+  <div class='utility container'>
+    <a href="#" onclick="handleSearch()">Search</a>
+    <a href="/contributors">Contribute</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <nav class='navbar container row'>
+    <a href="index.html" class="logo">
+      <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+<!--      <span class="navbar-brand">KUBU</span>-->
+    </a>
+    <div class="navbar-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="papers.html" class="nav-link">Papers</a>
+      <a href="/showcase" class="nav-link">Use Cases</a>
+      <a href="/icons" class="nav-link">Icon Pack</a>
+      <a href="/showcase" class="nav-link">Showcases</a>
+      <a href="/news" class="nav-link">News</a>
+        <a href="downloads.html" class="nav-link">Download</a>
+    </div>
+  </nav>
+</header>
+<div class="page-layout">
+  <aside class="sidebar left-sidebar">
+    <h2>Categories</h2>
+
+<!--    <ul class="list-unstyled">-->
+<!--      <li>Item without bullet</li>-->
+<!--      <li>Another item</li>-->
+<!--      <li>Yet another item</li>-->
+<!--    </ul>-->
+
+<!--    <ul class="list-inline">-->
+<!--      <li>Home</li>-->
+<!--      <li>About</li>-->
+<!--      <li>Services</li>-->
+<!--      <li>Contact</li>-->
+<!--    </ul>-->
+
+<!--    <dl class="description-list">-->
+<!--      <dt class="description-term">HTML</dt>-->
+<!--      <dd class="description-definition">The standard markup language for documents designed to be displayed in a web browser.</dd>-->
+<!--      <dt class="description-term">CSS</dt>-->
+<!--      <dd class="description-definition">A style sheet language used for describing the presentation of a document written in HTML.</dd>-->
+<!--    </dl>-->
+
+
+
+
+    <ul class="list-unstyled">
+      <li class="list-title">Jumping In</li>
+      <li><a href="#" class="list-item">Intro</a></li>
+      <li><a href="#" class="list-item">Download</a></li>
+      <li><a href="#" class="list-item">Contents</a></li>
+      <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+      <li><a href="#" class="list-item">JavaScript</a></li>
+<!--      <li><a href="#" class="list-item">Webpack</a></li>-->
+<!--      <li><a href="#" class="list-item">Parcel</a></li>-->
+<!--      <li><a href="#" class="list-item">Accessibility</a></li>-->
+<!--      <li><a href="#" class="list-item">RFS</a></li>-->
+<!--      <li><a href="#" class="list-item">RTL</a></li>-->
+<!--      <li><a href="#" class="list-item">Contribute</a></li>-->
+    </ul>
+
+
+    <ul class="list-unstyled">
+      <li class="list-title">Atoms</li>
+      <li><a href="#" class="list-item">Reset</a></li>
+      <li><a href="#" class="list-item">Badge</a></li>
+      <li><a href="#" class="list-item">Buttons</a></li>
+      <li><a href="#" class="list-item">Close</a></li>
+      <li><a href="#" class="list-item">colors</a></li>
+      <li><a href="#" class="list-item">spacing</a></li>
+      <li><a href="#" class="list-item">Spinners</a></li>
+      <li><a href="#" class="list-item">typography</a></li>
+    </ul>
+
+<!--    <h3>Molecules</h3>-->
+<!--    <ul>-->
+<!--      <li><a href="#" class="nav-link nav-item">Announcements</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Breadcrumb</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">ButtonGroups</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Dropdowns</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">FormGroups</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">ListGroups</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Navbar</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Navs</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Pagination</a></li>-->
+<!--    </ul>-->
+
+<!--    <h3>Organisms</h3>-->
+<!--    <ul>-->
+<!--      <li><a href="#" class="nav-link nav-item">Accordion</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Alerts</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Card</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Carousel</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Collapse</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">DatePicker</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">FileUpload</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Forms</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">ListGroups</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Modal</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Offcanvas</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Popovers</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Progress</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Scrollspy</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Stepper</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Tables</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Tabs</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Toasts</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Tooltips</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Rating</a></li>-->
+<!--    </ul>-->
+
+<!--    <h3>Utilities</h3>-->
+<!--    <ul>-->
+<!--      <li><a href="#" class="nav-link nav-item">Ajax</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Animations</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">EventDelegation</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Helpers</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Notifications</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Flexbox</a></li>-->
+<!--    </ul>-->
+
+<!--    <h3>Pages</h3>-->
+<!--    <ul>-->
+<!--      <li><a href="#" class="nav-link nav-item">HomePage</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">AboutPage</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">ProductPage</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">ContactPage</a></li>-->
+<!--    </ul>-->
+
+<!--    <h3>Snippets</h3>-->
+<!--    <ul>-->
+<!--      <li><a href="#" class="nav-link nav-item">Forms</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Navbar</a></li>-->
+<!--      <li><a href="#" class="nav-link nav-item">Footer</a></li>-->
+<!--    </ul>-->
+
+<!--    <h3>Templates</h3>-->
+<!--    <ul>-->
+<!--      <li><a href="#" class="nav-link nav-item">main-template</a></li>-->
+<!--    </ul>-->
+  </aside>
+
+  <main class="main-content">
+<!--    <div class='color-wrapper'>-->
+
+<!--    <span>-->
+<!--      <img class="logo" src="../img/hippo-white.svg" style="height: 100%; width:10%;" alt="logo">-->
+<!--    </span>-->
+<!--      <h1 class="py-1"> KUBU UI</h1>-->
+<!--      <h4 class="py-1">Building Responsive Web Design</h4>-->
+
+<!--      <router-link class="btn button-full m-1" to='/papers'>Papers</router-link>-->
+<!--      <router-link class="btn button-outlined m-1" to='/downloads'>Download</router-link>-->
+
+<!--    </div>-->
+
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Home</a></li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Components</a></li>
+        <li class="breadcrumb__item breadcrumb__item--active">Accordion</li>
+      </ol>
+    </nav>
+
+
+    <div class="section">
+      <h1 class="title">Accordion</h1>
+      <p>The accordion component allows you to toggle the visibility of content sections. It is commonly used to present information in a collapsible format.</p>
+    </div>
+
+
+    <div class="section">
+      <h2 class="subtitle">Accordion Variations</h2>
+      <p>There are different variations of the accordion component:</p>
+      <ul>
+        <li>Accordion with checkboxes</li>
+        <li>Accordion with radio buttons</li>
+      </ul>
+      <p>Each variation has specific HTML structure and styling.</p>
+    </div>
+
+    <div class="section">
+      <h2>Usage</h2>
+      <p>To use the accordion component, follow these steps:</p>
+      <ol>
+        <li>Add the HTML structure for the accordion.</li>
+        <li>Style the accordion using CSS.</li>
+        <li>Add JavaScript if necessary for dynamic behavior.</li>
+      </ol>
+    </div>
+
+    <div class="demo_product">
+      <section class="accordion">
+        <div class="tab">
+          <input type="checkbox" name="accordion-1" id="cb1" checked>
+          <label for="cb1" class="tab__label">Checkbox</label>
+          <div class="tab__content">
+            <p>Pure CSS accordion based on the "input:checked + label" style trick.</p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="checkbox" name="accordion-1" id="cb2">
+          <label for="cb2" class="tab__label">Open multiple</label>
+          <div class="tab__content">
+            <p>Using <code>&lt;input type="checkbox"&gt;</code> allows to have several tabs open at the same time.</p>
+          </div>
+        </div>
+      </section>
+
+      <br />
+
+      <section class="accordion accordion--radio">
+        <div class="tab">
+          <input type="radio" name="accordion-2" id="rd1">
+          <label for="rd1" class="tab__label">Radio</label>
+          <div class="tab__content">
+            <p>If you want to have only one tab open, you can use <code>&lt;input type="checkbox"&gt;</code>.</p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="accordion-2" id="rd2">
+          <label for="rd2" class="tab__label">Open single</label>
+          <div class="tab__content">
+            <p>But if you wanna close the opened tab, you must add a "close" button somewhere, like the one below, that is just another styled radio input.</p>
+          </div>
+        </div>
+        <div class="tab">
+          <input type="radio" name="accordion-2" id="rd3">
+          <label for="rd3" class="tab__close">Close open tab &times;</label>
+        </div>
+      </section>
+
+    </div>
+
+
+    <div class="section">
+      <h2>HTML Structure</h2>
+      <p>Below is the HTML structure for a basic accordion:</p>
+      <div class="demo_code">
+        <pre>
+&lt;section class="accordion">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="accordion-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Content goes here&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+        </pre>
+      </div>
+    </div>
+
+
+    <div class="section">
+      <h2>Example</h2>
+      <p>Here's an example of an accordion with checkboxes and radio buttons:</p>
+      <div class="demo_code"><code>
+        <pre>
+&lt;section class="accordion">
+    &lt;div class="tab">
+        &lt;input type="checkbox" name="accordion-1" id="cb1" checked>
+        &lt;label for="cb1" class="tab__label">Checkbox&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>Pure CSS accordion based on the "input:checked + label" style trick.&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+
+&lt;section class="accordion accordion--radio">
+    &lt;div class="tab">
+        &lt;input type="radio" name="accordion-2" id="rd1">
+        &lt;label for="rd1" class="tab__label">Radio&lt;/label>
+        &lt;div class="tab__content">
+            &lt;p>If you want to have only one tab open, you can use &lt;code>&lt;input type="checkbox">&lt;/code>.&lt;/p>
+        &lt;/div>
+    &lt;/div>
+    &lt;!-- More tabs... -->
+&lt;/section>
+        </pre></code>
+      </div>
+    </div>
+
+  </main>
+          <aside class="sidebar right-sidebar">
+              <p>Right Sidebar Content</p>
+          </aside>
+</div>
+<footer class="footer">
+  <span>Footer Information</span>
+</footer>
+<div class="copyright">
+  <span>&copy; 2024 Product of Tsoaela Industries </span>
+</div>
+
+
+</body>
+</html>

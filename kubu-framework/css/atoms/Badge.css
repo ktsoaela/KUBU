@@ -1,18 +1,80 @@
 .badge {
     display: inline-block;
-    padding: 0.25em 0.5em;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-    font-weight: bold;
+    /*padding: 0.25em 0.5em;*/
+    /*border-radius: 0.25rem;*/
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--space-xs);
+
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
     text-transform: uppercase;
 }
 
-.badge-primary {
-    color: white;
-    background-color: var(--primary);
+/* Modifier for different badge types */
+.badge--primary {
+    color: var(--color-light);
+    background-color: var(--color-primary);
 }
 
-.badge-secondary {
-    color: white;
-    background-color: var(--secondary);
+.badge--secondary {
+    color: var(--color-light);
+    background-color: var(--color-secondary);
+}
+
+
+.badge--danger {
+    color: var(--color-light);
+    background-color: var(--color-danger);
+}
+
+.badge--hazard {
+    color: var(--color-light);
+    background-color: var(--color-hazard);
+}
+
+.badge--risk {
+    color: var(--color-light);
+    background-color: var(--color-risk);
+}
+
+.badge--safe {
+    color: var(--color-light);
+    background-color: var(--color-safe);
+}
+
+.badge--info {
+    color: var(--color-light);
+    background-color: var(--color-info);
+}
+
+.badge--radiation {
+    color: var(--color-light);
+    background-color: var(--color-radiation-light);
+}
+
+.badge--earth {
+    color: var(--color-light);
+    background-color: var(--color-earth);
+}
+
+
+.badge__label {
+    font-weight: var(--font-weight-normal);
+}
+
+
+.badge__label--bold {
+    font-weight: var(--font-weight-bold);
+}
+
+
+
+/* Themes */
+.badge--light {
+    background-color: var(--color-light);
+}
+
+.badge--dark {
+    background-color: var(--color-dark);
+    color: var(--color-light);
 }

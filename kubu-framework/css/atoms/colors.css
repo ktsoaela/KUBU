@@ -1,51 +1,54 @@
 :root {
-    /*-primary: #227093;*/
-    /*--secondary: #ff5252;*/
-    /*--background: #eee;*/
-    /*--highlight: #ffda79;*/
-    /*--theme: var(--primary);*/
+    --color-dark:#000000;
+    --color-light:#ffffff;
 
+    /* Block - Primary color */
+    --color-primary: #227093;
+    --color-primary-light: #3498db;
+    --color-primary-dark: #1b5e83;
 
+    /* Block - Secondary color */
+    --color-secondary: #ff5252;
+    --color-secondary-light: #ff7b7b;
+    --color-secondary-dark: #c41c1c;
 
-    /* Light and dark shades */
-    --dark: #000000;
-    --light: #ffffff;
+    /* Block - Background colors */
+    --color-background: #eee;
+    --color-background-light: #f5f5f5;
+    --color-background-dark: #cccccc;
 
-    /* Primary colors */
-    --primary: #227093;;
-    --primary-light: #3498db;
-    --primary-dark: #1b5e83;
+    /* Block - Highlight colors */
+    --color-highlight: #ffda79;
+    --color-highlight-light: #ffefb3;
+    --color-highlight-dark: #e6bf59;
 
-    /* Secondary colors */
-    --secondary: #ff5252;
-    --secondary-light: #ff7b7b;
-    --secondary-dark: #c41c1c;
+    /* Block - Neutral colors */
+    --color-neutral-white: #ffffff;
+    --color-neutral-black: #000000;
+    --color-neutral-gray-light: #d3d3d3;
+    --color-neutral-gray-dark: #888888;
+    --color-neutral-gray-darker: #333333;
 
-    /* Background colors */
-    --background: #eee;
-    --background-light: #f5f5f5;
-    --background-dark: #cccccc;
+    /* Block - Theme */
+    --color-theme: var(--color-primary);
 
-    /* Highlight colors */
-    --highlight: #ffda79;
-    --highlight-light: #ffefb3;
-    --highlight-dark: #e6bf59;
+    /* Modifier - Danger/Alert colors */
+    /*--color-danger: #b21a21;*/
+    --color-danger: #dc3545;
+    --color-hazard: #ffc107;
+    --color-risk: #f4ac3f;
+    /*--color-safe: #27ae60;*/
+    --color-safe: #28a745;
+    --color-info: #2980b9;
+    --color-radiation-light: #9b59b6;
+    --color-earth: #884c2e;
 
-    /* Neutral colors */
-    --white: #ffffff;
-    --black: #000000;
-    --gray-light: #d3d3d3;
-    --gray-dark: #888888;
+    /* Block - Kubu theme */
+    --color-kubu-primary: #002d4c;
+    --color-kubu-secondary: #b66508;
+    --color-kubu-tertiary: #b66508;
 
-    /* Theme color */
-    --theme: var(--primary);
-
-    /* Additional colors */
-    --danger: #b21a21; /* Adjusted to match the tone of secondary */
-    --hazard: #f4d03f; /* Adjusted to match the tone of primary */
-    --risk: #f4ac3f; /* Adjusted to match the tone of primary */
-    --safe: #27ae60; /* Adjusted to match the tone of primary */
-    --info: #2980b9; /* Adjusted to match the tone of primary */
-    --radiation-light: #9b59b6; /* Adjusted to match the tone of primary */
-    --earth: #884c2e; /* Adjusted to match the tone of primary */
+    --theme-color-primary: #002d4c;
+    --theme-color-secondary: #b66508;
+    --theme-color-tertiary: #002d4c;
 }
