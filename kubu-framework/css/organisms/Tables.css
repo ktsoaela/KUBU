@@ -1,16 +1,20 @@
-/* Table Block */
+/* Base Table Block */
 .table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
 }
 
-/* Table container as a separate Block */
+.table--small {
+    font-size: var(--font-size-sm);
+}
+
+/* Responsive Wrapper */
 .table-container {
     overflow-x: auto;
 }
 
-/* Table Header */
+/* Header Styles */
 .table__header {
     background-color: #f0f0f0;
 }
@@ -21,43 +25,108 @@
     border-bottom: 2px solid #ddd;
 }
 
-/* Table Body */
+/* Row Variants */
 .table__row {
     /* Default row styling */
 }
 
-.table__row--even {
-    background-color: #f2f2f2;
+.table__row--striped {
+    background-color: #f9f9f9;
 }
 
+.table__row--hoverable:hover {
+    background-color: #e9ecef;
+}
+
+.table__row--active {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+}
+
+/* Cell Styles */
 .table__cell {
     padding: 12px;
     border-bottom: 1px solid #ddd;
 }
 
+.table__cell--highlight {
+    background-color: var(--color-secondary-light);
+}
 
-/* Table Footer */
+/* Footer Styles */
 .table__footer {
-    background-color: inherit;
+    background-color: #f8f9fa;
 }
 
 .table__footer-cell {
     padding: 8px;
-    /*padding: 12px;*/
     text-align: left;
     font-weight: bold;
-    border: 1px solid #dddddd;
-
+    border-top: 2px solid #ddd;
 }
 
-/* General cell styling */
-.table__cell,
-.table__header-cell {
-    border: 1px solid #dddddd;
-    padding: 8px;
+/* Striped Columns */
+.table__cell--striped:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-/* Alternating row styling */
-.table__row--highlight {
-    background-color: #dddddd;
+/* Table Borders */
+.table--bordered .table__cell,
+.table--bordered .table__header-cell {
+    border: 1px solid #ddd;
+}
+
+.table--borderless .table__cell,
+.table--borderless .table__header-cell {
+    border: none;
+}
+
+/* Accented Tables */
+.table--accented .table__header {
+    background-color: var(--color-primary-light);
+    color: var(--color-light);
+}
+
+.table--accented .table__footer {
+    background-color: var(--color-secondary-light);
+}
+
+/* Alignment */
+.table__cell--align-center {
+    text-align: center;
+}
+
+.table__cell--align-right {
+    text-align: right;
+}
+
+/* Nesting */
+.table__nested {
+    margin: 16px 0;
+    border: 1px solid var(--color-neutral-light);
+}
+
+/* Captions */
+.table__caption {
+    caption-side: top;
+    text-align: left;
+    font-weight: bold;
+    font-size: var(--font-size-md);
+    margin-bottom: 8px;
+    color: var(--text-color-secondary);
+}
+
+/* Responsive Table */
+.table--responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.table--responsive-md {
+    @media (max-width: 768px) {
+        display: block;
+        overflow-x: auto;
+    }
 }

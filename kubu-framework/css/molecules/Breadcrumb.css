@@ -24,7 +24,7 @@
 
 .breadcrumb__link:hover {
     text-decoration: underline;
-    color: var(--color-kubu-primary);
+    color: var(--theme-color-secondary);
 }
 
 .breadcrumb__item--active {

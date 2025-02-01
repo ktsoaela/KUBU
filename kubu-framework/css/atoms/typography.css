@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
@@ -8,7 +7,7 @@
 :root {
     /* Font families */
     --font-family-sans: Raleway, Montserrat, Helvetica, sans-serif;
-    --font-family-serif: 'Lora','Playfair Display','Georgia', Times, 'Times New Roman', serif;
+    --font-family-serif: 'Lora', 'Playfair Display', 'Georgia', Times, 'Times New Roman', serif;
     --font-family-mono: 'Courier New', Courier, monospace;
 
 
@@ -41,8 +40,8 @@
 
     /* Text colors */
     --text-color-primary: var(--color-primary);
-    --text-color-secondary:var(--color-primary);
-    --text-color-light: #aaa;
+    --text-color-secondary: var(--color-primary);
+    --text-color-light: white;
     --text-color-inverse: #fff;
 
 }
@@ -66,12 +65,17 @@ body {
 
 .subtitle {
     font-family: var(--font-family-sans);
-    font-size:  var(--font-size-xxl);
+    font-size: var(--font-size-xxl);
     margin-bottom: 0px;
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0 0 0.5em 0;
     line-height: var(--line-height-lg);
     color: var(--text-color-primary);
@@ -142,7 +146,8 @@ em {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
     margin: 0 0 1em 1.5em;
     padding: 0;
 }
@@ -157,6 +162,8 @@ li {
     font-size: inherit;
     letter-spacing: var(--letter-spacing-sqush);
     margin-bottom: 0px;
+    padding:10px !important;
+
 }
 
 /* Unstyled List */
@@ -164,8 +171,8 @@ li {
     list-style-type: none;
     padding-left: 0;
     margin: 0;
-    padding-bottom: .5rem !important;
-    padding-top: .5rem !important;
+    padding-bottom: .5rem;
+    padding-top: .5rem;
 }
 
 .list-unstyled li {
@@ -206,7 +213,8 @@ li {
 }
 
 /* Optional: Spacing adjustments for better readability */
-.description-list dt, .description-list dd {
+.description-list dt,
+.description-list dd {
     margin: 0;
     padding: 0;
 }
@@ -223,13 +231,15 @@ li {
 }
 
 .list-link li a {
-    color: #007bff; /* Primary color */
+    color: #007bff;
+    /* Primary color */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .list-link li a:hover {
-    color: #0056b3; /* Darker shade on hover */
+    color: #0056b3;
+    /* Darker shade on hover */
 }
 
 /* List Item */
@@ -237,16 +247,20 @@ li {
     font-size: var(--font-size-xs);
     padding: 0.5em 1em;
     margin: 0.25em 0;
-    /*background-color: #f8f9fa;*/
-    /*border: 1px solid #dee2e6;*/
-    /*border-radius: 0.25rem;*/
-    /*display: flex;*/
-    /*align-items: center;*/
-    /*justify-content: space-between;*/
+    background-color: inherit;
+    border: 1px solid #ffffff00;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 1.25;
 }
 
 .list-item:hover {
-    background-color: #e9ecef;
+    background-color: var(--theme-color-secondary);
+    color: var(--text-color-light);
+    border-radius: 5px;
+    text-decoration: none;
 }
 
 /* Example: Active List Item */

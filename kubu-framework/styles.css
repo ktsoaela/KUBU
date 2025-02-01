@@ -1,5 +1,5 @@
 /* Importing all atoms */
-/*@import url("css/atoms/Reset.css");*/
+@import url("css/atoms/Reset.css");
 @import url("css/atoms/Badge.css");
 @import url("css/atoms/Buttons.css");
 @import url("css/atoms/Close.css");
