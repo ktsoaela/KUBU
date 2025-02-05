@@ -1,111 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUBU CSS FRAMEWORK</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>KUBU</title>
+
+  
+  <style>
+    /* Styles specific to documentation */
+    body {
+      font-family: Arial, sans-serif;
+      /*margin: 20px;*/
+      /*padding: 20px;*/
+      line-height: 1.6;
+      color:white!important;
+    }
+
+    /* Basic reset for layout */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      color:white!important;
+    }
+
+    /* Alert styling */
+    .alert {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Header styling */
+    .header {
+      background-color: #002d4c;
+      color: white;
+      /*padding: 1.5rem;*/
+      text-align: center;
+    }
+
+    /* Layout container with Flexbox */
+    .page-layout {
+      /*display: flex;*/
+      /*gap: 1rem;*/
+      /*padding: 1rem;*/
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      flex: 1;
+      background-color: #f0f0f0;
+      padding: 1rem;
+    }
+
+    /* Left sidebar specific styling */
+    .left-sidebar {
+      order: 1;
+    }
+
+    /* Main content styling */
+    .main-content {
+      /*flex: 2; !* Main content takes up twice the space *!*/
+      background-color: #ffffff;
+      /*padding: 1rem;*/
+      order: 2;
+    }
+
+    /* Right sidebar styling */
+    .right-sidebar {
+      order: 3;
+    }
+
+    /* Footer styling */
+    .footer {
+      /*background-color: #23373E;*/
+      /*background-color: #734D1F;*/
+      /*background-color: #012840;*/
+      background-color: #012840;
+
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    /* Copyright styling */
+    .copyright {
+      /*background-color: #A08E72;*/
+      /*background-color: #34403E;*/
+      background-color: #012840;
+      color: white;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .color-wrapper {
+      color: white !important;
+    }
+
+    header .utility {
+      text-align: right;
+      padding: 5px 20px;
+      font-size: 12px;
+    }
+
+    header .utility a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+
+    header .navbar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 5px 20px;
+    }
+    .navbar {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #002d4c;
+      color: #eeeeee;
+    }
+
+    .color-wrapper[data-v-8dc7cce2] {
+      color: white !important;
+    }
+    .color-wrapper {
+      color: #333;
+      padding: 10%;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      /* position: absolute; */
+      background: linear-gradient(45deg, #002d4c, #b66508, #24AADB, #27DBB1, #FFDC18, #FF3706);
+      background-size: 600% 100%;
+      /* animation: gradient 16s linear infinite; */
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate;
+    }
+
+    .button-full:visited, .button-outlined:visited, .button-round:visited {
+      color: #eeeeee;
+    }
+    .m-1 {
+      margin: 10px !important;
+    }
+    .button-full {
+      background-color: #002d4c;
+      color: #eeeeee;
+      border: 2px solid #002d4c;
+    }
+    .button-full, .button-outlined, .button-rounded {
+      display: inline-block;
+      padding: 15px 20px;
+      font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .button-full:visited, .button-outlined:visited, .button-round:visited {
+      color: #eeeeee;
+    }
+    .m-1 {
+      margin: 10px !important;
+    }
+    .button-outlined {
+      background-color: transparent;
+      color: #002d4c;
+      border: 2px solid #002d4c;
+    }
+    .button-full, .button-outlined, .button-rounded {
+      display: inline-block;
+      padding: 15px 20px;
+      font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    element.style {
+    }
+    .color-wrapper h1 {
+      font-size: 80px;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+    .py-1 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+      line-height: 1.5;
+      margin: 5px 0px;
+    }
+
+    lement.style {
+    }
+    .color-wrapper h4 {
+      font-size: 40px;
+      font-weight: normal;
+      margin-bottom: 10px;
+    }
+    .py-1 {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+      line-height: 1.5;
+      margin: 5px 0px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+    }
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .navbar {
+      background-color: #002d4c!important;
+    }
+
+    .button-outlined {
+      background-color: transparent;
+      color: #002d4c;
+      border: 2px solid #002d4c;
+    }
+    .button-full, .button-outlined, .button-rounded {
+      display: inline-block;
+      padding: 15px 20px;
+      font-family: "Verdana", "Helvetica", "Arial", sans-serif;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .logo .logo-img {
+      fill: #eeeeee;
+    }
+
+    header .logo {
+      height: auto;
+      width: 30px;
+      -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+      justify-content: start !important;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-<header>
-    <div class="top-bar">
-        <div class="nav-item user-settings">User Settings</div>
-        <div class="nav-item user-profile">User Profile</div>
-        <div class="nav-item messages">Messages</div>
+<div class="announcement">
+        <span>Version 2 in BETA.</span>
     </div>
-</header>
-
-<div class="main-container">
-    <aside class="sidebar">
-        <nav>
-            <ul>
-                <li class="nav-item">Dashboard</li>
-                <li class="nav-item">Analytics</li>
-                <li class="nav-item">Reports</li>
-                <li class="nav-item">Settings</li>
-            </ul>
+    <header class="header">
+        <div class='utility container'>
+            <a href="#" onclick="handleSearch()">Search</a>
+            <a href="/contributors">Contribute</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <nav class='navbar container row'>
+            <a href="index.html" class="logo">
+                <img src="img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+            </a>
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="papers.html" class="nav-link">Papers</a>
+                <a href="/showcase" class="nav-link">Use Cases</a>
+                <a href="/icons" class="nav-link">Icon Pack</a>
+                <a href="/showcase" class="nav-link">Showcases</a>
+                <a href="/news" class="nav-link">News</a>
+                <a href="downloads.html" class="nav-link">Download</a>
+            </div>
         </nav>
-    </aside>
+    </header>
+<div class="page-layout--disabled">
+  <!--        <aside class="sidebar left-sidebar">-->
+  <!--            <p>Left Sidebar Content</p>-->
+  <!--        </aside>-->
+  <main class="main-content--disabled">
+    <div class='color-wrapper'>
 
-    <main class="main-content">
-        <div class="selected-nav-item">Dashboard</div>
-    </main>
+    <span>
+      <img class="logo" src="img/hippo-white.svg" style="height: 100%; width:10%;" alt="logo">
+    </span>
+      <h1 class="py-1"> KUBU UI</h1>
+      <h4 class="py-1">Building Responsive Web Design</h4>
+
+      <a class="btn button-full m-1" href='papers.html'>Papers</a>
+      <router-link class="btn button-outlined m-1" to='/downloads'>Download</router-link>
+
+    </div>
+  </main>
+  <!--        <aside class="sidebar right-sidebar">-->
+  <!--            <p>Right Sidebar Content</p>-->
+  <!--        </aside>-->
+</div>
+<footer class="footer">
+  <!-- <span>Footer Information</span> -->
+</footer>
+<div class="copyright">
+  <span>&copy; 2024 Product of Tsoaela Industries </span>
 </div>
 
-<footer class="footer">
-    <p>Tiny Footer</p>
-</footer>
-
 <script src="script.js"></script>
-<!--</body>-->
-<!--</html>-->
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--    <title>KUBU CSS Documentation</title>-->
-<!--    <link rel="stylesheet" href="styles.css">-->
-<!--</head>-->
-<!--<body>-->
-
-<!--&lt;!&ndash; Navbar &ndash;&gt;-->
-<!--<nav class="navbar">-->
-<!--    <div class="container">-->
-<!--        <a href="#" class="navbar__brand">KUBU CSS</a>-->
-<!--        <ul class="navbar__menu">-->
-<!--            <li><a href="#overview">Overview</a></li>-->
-<!--            <li><a href="#components">Components</a></li>-->
-<!--            <li><a href="#utilities">Utilities</a></li>-->
-<!--            <li><a href="#theming">Theming</a></li>-->
-<!--            <li><a href="#customization">Customization</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</nav>-->
-
-<!--&lt;!&ndash; Overview &ndash;&gt;-->
-<!--<section id="overview" class="section">-->
-<!--    <div class="container">-->
-<!--        <h2>Overview</h2>-->
-<!--        <p>Welcome to the documentation for KUBU CSS, a modular CSS framework based on Atomic Design principles. KUBU CSS provides a collection of components and utilities to help you build responsive and customizable web interfaces.</p>-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--&lt;!&ndash; Components &ndash;&gt;-->
-<!--<section id="components" class="section">-->
-<!--    <div class="container">-->
-<!--        <h2>Components</h2>-->
-<!--        <p>Explore the collection of components offered by KUBU CSS.</p>-->
-<!--        &lt;!&ndash; Include component descriptions and examples &ndash;&gt;-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--&lt;!&ndash; Utilities &ndash;&gt;-->
-<!--<section id="utilities" class="section">-->
-<!--    <div class="container">-->
-<!--        <h2>Utilities</h2>-->
-<!--        <p>Discover the utility classes available in KUBU CSS for quick styling and layout adjustments.</p>-->
-<!--        &lt;!&ndash; Include utility class descriptions and examples &ndash;&gt;-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--&lt;!&ndash; Theming &ndash;&gt;-->
-<!--<section id="theming" class="section">-->
-<!--    <div class="container">-->
-<!--        <h2>Theming</h2>-->
-<!--        <p>Learn how to customize the theme colors and styles of KUBU CSS to match your brand.</p>-->
-<!--        &lt;!&ndash; Include theming documentation and examples &ndash;&gt;-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--&lt;!&ndash; Customization &ndash;&gt;-->
-<!--<section id="customization" class="section">-->
-<!--    <div class="container">-->
-<!--        <h2>Customization</h2>-->
-<!--        <p>Discover how to extend and customize components in KUBU CSS to fit your specific needs.</p>-->
-<!--        &lt;!&ndash; Include customization guides and examples &ndash;&gt;-->
-<!--    </div>-->
-<!--</section>-->
-
-<!--</body>-->
-<!--</html>-->
+</body>
+</html>

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
   <title>KUBU</title>
+  
   <style>
     /* Styles specific to documentation */
     body {
@@ -290,34 +291,33 @@
     }
   </style>
 </head>
-<body>
+<body hx-get="index.html" hx-target=".main-content" hx-swap="innerHTML" hx-trigger="load">
 
 
 <div class="announcement">
-  <span>Version 2 in BETA.</span>
-</div>
-<header class="header">
-  <div class='utility container'>
-    <a href="#" onclick="handleSearch()">Search</a>
-    <a href="/contributors">Contribute</a>
-    <a href="/contact">Contact</a>
-  </div>
-  <nav class='navbar container row'>
-    <a href="index.html" class="logo">
-      <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
-<!--      <span class="navbar-brand">KUBU</span>-->
-    </a>
-    <div class="navbar-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="papers.html" class="nav-link">Papers</a>
-      <a href="/showcase" class="nav-link">Use Cases</a>
-      <a href="/icons" class="nav-link">Icon Pack</a>
-      <a href="/showcase" class="nav-link">Showcases</a>
-      <a href="/news" class="nav-link">News</a>
-      <a href="downloads.html" class="nav-link">Download</a>
+        <span>Version 2 in BETA.</span>
     </div>
-  </nav>
-</header>
+    <header class="header">
+        <div class='utility container'>
+            <a href="#" onclick="handleSearch()">Search</a>
+            <a href="/contributors">Contribute</a>
+            <a href="/contact">Contact</a>
+        </div>
+        <nav class='navbar container row'>
+            <a href="index.html" class="logo">
+                <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+            </a>
+            <div class="navbar-nav">
+              <a href="#home" onclick="changeContent('home')" class="nav-link">Home</a>
+        <a href="papers.html" class="nav-link">Papers</a>
+        <a href="usecase.html" class="nav-link">Use Cases</a>
+        <a href="icons.html" class="nav-link">Icon Pack</a>
+        <a href="showcase.html" class="nav-link">Showcases</a>
+        <a href="news.html" class="nav-link">News</a>
+        <a href="downloads.html" class="nav-link">Download</a>
+            </div>
+        </nav>
+    </header>
 <div class="page-layout--disabled">
   <!--        <aside class="sidebar left-sidebar">-->
   <!--            <p>Left Sidebar Content</p>-->
@@ -347,6 +347,6 @@
   <span>&copy; 2024 Product of Tsoaela Industries </span>
 </div>
 
-
+<script src="../script.js"></script>
 </body>
 </html>

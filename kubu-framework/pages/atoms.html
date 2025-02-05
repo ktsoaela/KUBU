@@ -1,247 +1,274 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../styles.css">
   <title>KUBU</title>
   <style>
-    /* Styles specific to documentation */
-    body {
-      font-family: Arial, sans-serif;
-      /*margin: 20px;*/
-      /*padding: 20px;*/
-      line-height: 1.6;
-      /*color:white!important;*/
-      /*background-color: lavenderblush;*/
-    }
-
-
-
-    /* Basic reset for layout */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      /*color:white!important;*/
-    }
-
-    /* Header styling */
-    .header {
-      background-color: #002d4c;
-      color: white;
-      /*padding: 1.5rem;*/
-      text-align: center;
-      color:white!important;
-    }
-
-    header .utility {
-      text-align: right;
-      padding: 5px 20px;
-      font-size: 12px;
-    }
-
-    header .utility a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 10px;
-    }
-
-    header .navbar {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: 5px 20px;
-    }
-    .navbar {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #002d4c;
-      color: #eeeeee;
-    }
-
-    .navbar {
-      background-color: #002d4c!important;
-    }
-
-    /*.button-outlined {*/
-    /*  background-color: transparent;*/
-    /*  color: #002d4c;*/
-    /*  border: 2px solid #002d4c;*/
-    /*}*/
-    /*.button-full, .button-outlined, .button-rounded {*/
-    /*  display: inline-block;*/
-    /*  padding: 15px 20px;*/
-    /*  font-family: "Verdana", "Helvetica", "Arial", sans-serif;*/
-    /*  font-size: 16px;*/
-    /*  text-align: center;*/
-    /*  text-decoration: none;*/
-    /*  cursor: pointer;*/
-    /*  -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
-    /*  transition: background-color 0.3s, color 0.3s, border-color 0.3s;*/
-    /*}*/
-
-    .logo .logo-img {
-      fill: #eeeeee;
-    }
-
-    header .logo {
-      height: auto;
-      width: 30px;
-      -webkit-box-pack: start !important;
-      -ms-flex-pack: start !important;
-      justify-content: start !important;
-    }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .page-layout {
-      display: flex;
-      /*gap: 1rem;*/
-      /*padding: 1rem;*/
-      /*background-color: #000f19;*/
-    }
-
-    /*!* Sidebar styling *!*/
-    /*.sidebar {*/
-    /*  flex: 1;*/
-    /*  background-color: #f0f0f0;*/
-    /*  padding: 1rem;*/
-    /*}*/
-
-    /*!* Left sidebar specific styling *!*/
-    /*.left-sidebar {*/
-    /*  order: 1;*/
-    /*}*/
-
-    /* Main content styling */
-    .main-content {
-      flex: 2; /* Main content takes up twice the space */
-      background-color: #ffffff;
-      padding: 1rem;
-      order: 2;
-    }
-    .page-layout {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem;
-    }
-
-    /* Sidebar styling */
-    .sidebar {
-      flex: 1;
-      background-color: #f0f0f0;
-      padding: 1rem 2rem 1rem;
-    }
-
-    /* Left sidebar specific styling */
-    .left-sidebar {
-      order: 1;
-      max-width: 300px;
-    }
-
-    /* Main content styling */
-    .main-content {
-      flex: 2; /* Main content takes up twice the space */
-      background-color: #ffffff;
-      padding: 1rem;
-      order: 2;
-    }
-
-    /* Right sidebar styling */
-    .right-sidebar {
-      order: 3;
-      text-align: left;
-      max-width: 300px;
-    }
-
-    /* Footer styling */
-    .footer {
-      /*background-color: #23373E;*/
-      /*background-color: #734D1F;*/
-      /*background-color: #012840;*/
-      background-color: #012840;
-
-      color:white!important;
-      padding: 1rem;
-      text-align: center;
-    }
-
-    /* Copyright styling */
-    .copyright {
-      /*background-color: #A08E72;*/
-      /*background-color: #34403E;*/
-      background-color: #012840;
-      color:white!important;
-      text-align: center;
-      padding: 0.5rem;
-      font-size: 0.9rem;
-    }
 
   </style>
 </head>
+
 <body>
 
 
-<div class="announcement" >
-  <span></span>
-</div>
-<header class="header">
-  <div class='utility container'>
-    <a href="#" onclick="handleSearch()">Search</a>
-    <a href="#">News</a>
-    <a href="#">Others</a>
+  <div class="announcement">
+    <span>Version 2 in BETA.</span>
   </div>
-  <nav class='navbar container row'>
-    <a href="index.html" class="logo">
-      <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
-<!--      <span class="navbar-brand">KUBU</span>-->
-    </a>
-    <div class="navbar-nav">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">About</a>
-        <a href="#" class="nav-link">Products</a>
-        <a href="#" class="nav-link">Services</a>
-        <a href="#" class="nav-link">Contact</a>
+  <header class="header">
+    <div class='utility container'>
+      <a href="#" onclick="handleSearch()">Search</a>
+      <a href="/contributors">Contribute</a>
+      <a href="/contact">Contact</a>
     </div>
-  </nav>
-</header>
-<div class="page-layout">
-  <aside class="sidebar left-sidebar">
+    <nav class='navbar container row'>
+      <a href="index.html" class="logo">
+        <img src="../img/hippo-white.svg" class="logo-img" alt="KUBU Logo">
+        <!--      <span class="navbar-brand">KUBU</span>-->
+      </a>
+      <div class="navbar-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="papers.html" class="nav-link">Papers</a>
+        <a href="/showcase" class="nav-link">Use Cases</a>
+        <a href="/icons" class="nav-link">Icon Pack</a>
+        <a href="/showcase" class="nav-link">Showcases</a>
+        <a href="/news" class="nav-link">News</a>
+        <a href="downloads.html" class="nav-link">Download</a>
+      </div>
+    </nav>
+  </header>
+  <div class="page-layout">
+    <aside class="sidebar left-sidebar">
+      <h2>Categories</h2>
 
-  </aside>
-  <main class="main-content">
+      <!--    <ul class="list-unstyled">-->
+      <!--      <li>Item without bullet</li>-->
+      <!--      <li>Another item</li>-->
+      <!--      <li>Yet another item</li>-->
+      <!--    </ul>-->
 
-  </main>
-  <aside class="sidebar right-sidebar">
+      <!--    <ul class="list-inline">-->
+      <!--      <li>Home</li>-->
+      <!--      <li>About</li>-->
+      <!--      <li>Services</li>-->
+      <!--      <li>Contact</li>-->
+      <!--    </ul>-->
 
-  </aside>
-</div>
-<footer class="footer">
-  <span>Footer Details</span>
-</footer>
-<div class="copyright">
-  <span>&copy; 2024 </span>
-</div>
+      <!--    <dl class="description-list">-->
+      <!--      <dt class="description-term">HTML</dt>-->
+      <!--      <dd class="description-definition">The standard markup language for documents designed to be displayed in a web browser.</dd>-->
+      <!--      <dt class="description-term">CSS</dt>-->
+      <!--      <dd class="description-definition">A style sheet language used for describing the presentation of a document written in HTML.</dd>-->
+      <!--    </dl>-->
+
+
+      <ul class="list-unstyled">
+        <li class="list-title">Jumping In</li>
+        <li><a href="#" class="list-item">Intro</a></li>
+        <li><a href="#" class="list-item">Download</a></li>
+        <li><a href="#" class="list-item">Contents</a></li>
+        <li><a href="#" class="list-item">Browser &amp; Devices</a></li>
+        <li><a href="#" class="list-item">JavaScript</a></li>
+        <!--      <li><a href="#" class="list-item">Webpack</a></li>-->
+        <!--      <li><a href="#" class="list-item">Parcel</a></li>-->
+        <!--      <li><a href="#" class="list-item">Accessibility</a></li>-->
+        <!--      <li><a href="#" class="list-item">RFS</a></li>-->
+        <!--      <li><a href="#" class="list-item">RTL</a></li>-->
+        <!--      <li><a href="#" class="list-item">Contribute</a></li>-->
+      </ul>
+
+
+      <ul class="list-unstyled">
+        <li class="list-title">Atoms</li>
+        <li><a href="#" class="list-item">Reset</a></li>
+        <li><a href="#" class="list-item">Badge</a></li>
+        <li><a href="#" class="list-item">Buttons</a></li>
+        <li><a href="#" class="list-item">Close</a></li>
+        <li><a href="#" class="list-item">colors</a></li>
+        <li><a href="#" class="list-item">spacing</a></li>
+        <li><a href="#" class="list-item">Spinners</a></li>
+        <li><a href="#" class="list-item">typography</a></li>
+      </ul>
+
+      <ul class="list-unstyled">
+        <li class="list-title">Molecules</li>
+        <li><a href="#" class="list-item">Announcements</a></li>
+        <li><a href="#" class="list-item">Breadcrumb</a></li>
+        <li><a href="#" class="list-item">ButtonGroups</a></li>
+        <li><a href="#" class="list-item">Dropdowns</a></li>
+        <li><a href="#" class="list-item">FormGroups</a></li>
+        <li><a href="#" class="list-item">ListGroups</a></li>
+        <li><a href="#" class="list-item">Navbar</a></li>
+        <li><a href="#" class="list-item">Navs</a></li>
+        <li><a href="#" class="list-item">Pagination</a></li>
+      </ul>
+
+      <ul class="list-unstyled">
+        <li class="list-title">Organisms</li>
+        <li><a href="#" class="list-item">Accordion</a></li>
+        <li><a href="#" class="list-item">Alerts</a></li>
+        <li><a href="#" class="list-item">Card</a></li>
+        <li><a href="#" class="list-item">Carousel</a></li>
+        <li><a href="#" class="list-item">Collapse</a></li>
+        <li><a href="#" class="list-item">DatePicker</a></li>
+        <li><a href="#" class="list-item">FileUpload</a></li>
+        <li><a href="#" class="list-item">Forms</a></li>
+        <li><a href="#" class="list-item">ListGroups</a></li>
+        <li><a href="#" class="list-item">Modal</a></li>
+        <li><a href="#" class="list-item">Offcanvas</a></li>
+        <li><a href="#" class="list-item">Popovers</a></li>
+        <li><a href="#" class="list-item">Progress</a></li>
+        <li><a href="#" class="list-item">Scrollspy</a></li>
+        <li><a href="#" class="list-item">Stepper</a></li>
+        <li><a href="#" class="list-item">Tables</a></li>
+        <li><a href="#" class="list-item">Tabs</a></li>
+        <li><a href="#" class="list-item">Toasts</a></li>
+        <li><a href="#" class="list-item">Tooltips</a></li>
+        <li><a href="#" class="list-item">Rating</a></li>
+      </ul>
+
+      <ul class="list-unstyled">
+        <li class="list-title">Utilities</li>
+        <li><a href="#" class="list-item">Ajax</a></li>
+        <li><a href="#" class="list-item">Animations</a></li>
+        <li><a href="#" class="list-item">EventDelegation</a></li>
+        <li><a href="#" class="list-item">Helpers</a></li>
+        <li><a href="#" class="list-item">Notifications</a></li>
+        <li><a href="#" class="list-item">Flexbox</a></li>
+      </ul>
+
+      <ul class="list-unstyled">
+        <li class="list-title">Pages</li>
+        <li><a href="#" class="list-item">HomePage</a></li>
+        <li><a href="#" class="list-item">AboutPage</a></li>
+        <li><a href="#" class="list-item">ProductPage</a></li>
+        <li><a href="#" class="list-item">ContactPage</a></li>
+      </ul>
+
+      <ul class="list-unstyled">
+        <li class="list-title">Snippets</li>
+        <li><a href="#" class="list-item">Forms</a></li>
+        <li><a href="#" class="list-item">Navbar</a></li>
+        <li><a href="#" class="list-item">Footer</a></li>
+      </ul>
+
+      <ul class="list-unstyled">
+        <li class="list-title">Templates</li>
+        <li><a href="#" class="list-item">main-template</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Papers</a></li>
+          <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Design Patterns</a></li>
+          <li class="breadcrumb__item breadcrumb__item--active">Atoms</li>
+        </ol>
+      </nav>
+    
+      <section id="intro" class="section">
+        <h1 class="title">Atoms of Kubu</h1>
+        <p class="text">
+          Atoms are the smallest building blocks of a design system. They represent the foundational elements such as buttons, typography, colors, and spacing. These elements are combined to create more complex components (molecules and organisms) in the Atomic Design methodology.
+        </p>
+      </section>
+    
+      <div class="section">
+        <h2>How BEM and Atomic Design Work Together</h2>
+        <p class="text">
+          BEM (Block, Element, Modifier) is a naming convention that helps create reusable and maintainable CSS. When combined with Atomic Design, BEM ensures that each atom, molecule, and organism is clearly defined and easy to understand. For example, a button (an atom) can be styled using BEM classes like <code>.button</code> (block), <code>.button__icon</code> (element), and <code>.button--primary</code> (modifier).
+        </p>
+      </div>
+    
+      <section id="atoms" class="section">
+        <h2 class="title">Atoms Overview</h2>
+        <p class="text">
+          Below is a detailed breakdown of the atoms used in Kubu:
+        </p>
+    
+        <div class="atom">
+          <h3 class="atom__title">Reset</h3>
+          <p class="atom__description">
+            The reset atom ensures consistent styling across all browsers by removing default margins, paddings, and other browser-specific styles. It acts as a clean slate for your design system.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Badge</h3>
+          <p class="atom__description">
+            Badges are small, visual indicators used to highlight status, notifications, or counts. They are often used in navigation bars, buttons, or cards.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Buttons</h3>
+          <p class="atom__description">
+            Buttons are interactive elements that allow users to perform actions. They come in various styles, such as primary, secondary, and outline, and can include icons or text.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Close</h3>
+          <p class="atom__description">
+            The close atom is used to dismiss or close components like modals, alerts, or notifications. It typically appears as an "X" icon.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Colors</h3>
+          <p class="atom__description">
+            Colors define the visual identity of your design system. They include primary, secondary, and accent colors, as well as semantic colors for success, warning, and error states.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Spacing</h3>
+          <p class="atom__description">
+            Spacing atoms define the consistent use of margins and paddings throughout the design system. They ensure a balanced and harmonious layout.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Spinners</h3>
+          <p class="atom__description">
+            Spinners are used to indicate loading states. They provide visual feedback to users while content is being fetched or processed.
+          </p>
+        </div>
+    
+        <div class="atom">
+          <h3 class="atom__title">Typography</h3>
+          <p class="atom__description">
+            Typography atoms define the font families, sizes, weights, and line heights used in the design system. They ensure readability and consistency across all text elements.
+          </p>
+        </div>
+      </section>
+    
+    </main>
+    <aside class="sidebar right-sidebar">
+      <ul class="list-unstyled">
+        <li class="list-title">Quick Links</li>
+        <li><a href="#intro" class="list-item">Intro</a></li>
+        <li><a href="#download" class="list-item">Download</a></li>
+        <li><a href="atoms.html" class="list-item">Atoms</a></li>
+        <li><a href="molecules.html" class="list-item">Molecules</a></li>
+        <li><a href="organisms.html" class="list-item">Organisms</a></li>
+        <li><a href="#browser-devices" class="list-item">Browser &amp; Devices</a></li>
+        <li><a href="#javascript" class="list-item">JavaScript</a></li>
+      </ul>
+    </aside>
+  </div>
+  <footer class="footer">
+    <span>Footer Information</span>
+  </footer>
+  <div class="copyright">
+    <span>&copy; 2024 Product of Tsoaela Industries </span>
+  </div>
 
 
 </body>
+
 </html>

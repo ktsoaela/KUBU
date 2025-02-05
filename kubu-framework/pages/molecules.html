@@ -229,8 +229,96 @@
 
   </aside>
   <main class="main-content">
-
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Papers</a></li>
+        <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Molecules</a></li>
+      </ol>
+    </nav>
+  
+    <section id="intro" class="section">
+      <h1 class="title">Molecules of Kubu</h1>
+      <p class="text">
+        Molecules are composed of multiple atoms working together to create functional components. They form the building blocks for more complex structures, ensuring reusability and maintainability within the Kubu design system.
+      </p>
+    </section>
+  
+    <div class="section">
+      <h2>How BEM and Atomic Design Work Together</h2>
+      <p class="text">
+        Molecules in Kubu follow the BEM methodology for structured and modular CSS. A molecule consists of multiple atoms structured using BEM classes to maintain clarity. For example, a breadcrumb (a molecule) combines links (atoms) using <code>.breadcrumb</code> (block), <code>.breadcrumb__item</code> (element), and <code>.breadcrumb--active</code> (modifier).
+      </p>
+    </div>
+  
+    <section id="molecules" class="section">
+      <h2 class="title">Molecules Overview</h2>
+      <p class="text">Below is a breakdown of the molecules used in Kubu:</p>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Announcements</h3>
+        <p class="molecule__description">
+          Announcement components display important messages such as alerts, warnings, or success notifications. They typically include a title, message, and a close button.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Breadcrumb</h3>
+        <p class="molecule__description">
+          Breadcrumbs help users navigate hierarchical structures by providing a clear path back to previous sections. They consist of multiple links (atoms) within a breadcrumb container.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Button Groups</h3>
+        <p class="molecule__description">
+          Button groups allow multiple buttons to be grouped together, providing a compact and organized layout for related actions.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Dropdowns</h3>
+        <p class="molecule__description">
+          Dropdowns provide a way to display additional options in a compact menu. They typically include a toggle button (atom) and a dropdown menu containing list items.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Form Groups</h3>
+        <p class="molecule__description">
+          Form groups organize form elements such as labels, input fields, and validation messages. They ensure consistent spacing and alignment across form sections.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">List Groups</h3>
+        <p class="molecule__description">
+          List groups provide a way to display a structured list of items, often used for menus, notifications, or selection-based components.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Navbar</h3>
+        <p class="molecule__description">
+          The navbar molecule provides a structured layout for navigation menus. It includes branding, links, and optional dropdowns.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Navs</h3>
+        <p class="molecule__description">
+          Navs are navigation elements used for switching between different sections within a page or application. They are commonly found in tabbed interfaces.
+        </p>
+      </div>
+  
+      <div class="molecule">
+        <h3 class="molecule__title">Pagination</h3>
+        <p class="molecule__description">
+          Pagination components help users navigate through large sets of content by breaking it into pages. They consist of page links and navigation controls.
+        </p>
+      </div>
+    </section>
   </main>
+  
   <aside class="sidebar right-sidebar">
 
   </aside>
