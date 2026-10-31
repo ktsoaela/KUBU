@@ -23,7 +23,7 @@ Vue example, matching `kubu-web/frontend`:
       <span class="badge" :class="order.paid ? 'badge--safe' : 'badge--hazard'">{{ order.paid ? 'Paid' : 'Pending' }}</span>
     </header>
     <div class="card__body"><p>{{ order.total }}</p></div>
-    <footer class="card__footer"><RouterLink class="button button--primary" :to="`/orders/${order.id}`">View order</RouterLink></footer>
+    <footer class="card__footer"><a class="button button--primary" :href="`/orders/${order.id}`">View order</a></footer>
   </article>
 </template>
 ```
