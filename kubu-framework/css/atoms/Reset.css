@@ -56,6 +56,16 @@ body {
     color: var(--kubu-text);
 }
 
+/* Browsers give form controls the system font. Use the page's, so a <button class="button">
+   matches an <a class="button"> and fields match their labels. */
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: inherit;
+}
+
 img,
 svg {
     max-width: 100%;
