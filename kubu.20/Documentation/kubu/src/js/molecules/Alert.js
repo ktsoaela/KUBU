@@ -16,7 +16,7 @@ export class Alert {
     render() {
         // Create the alert box
         this.alertElement.innerHTML = `
-            <div class="alert alert-${this.type === 'error' ? 'danger' : this.type}" role="alert">
+            <div class="alert alert--${this.type === 'error' ? 'danger' : this.type}" role="alert">
                 <span class="alert-message">${this.message}</span>
                 ${this.dismissible ? '<button class="alert-close" aria-label="Dismiss">&times;</button>' : ''}
             </div>
