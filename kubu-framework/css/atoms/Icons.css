@@ -1,0 +1,19 @@
+/* Icons: line icons from img/icons.svg, coloured with currentColor so they follow the text and the theme.
+   <svg class="icon" aria-hidden="true"><use href="img/icons.svg#home"></use></svg>
+   Give an icon-only control an aria-label; the icon itself stays aria-hidden. */
+
+.icon {
+    display: inline-block;
+    width: 1.25em;
+    height: 1.25em;
+    vertical-align: -0.25em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon--sm { width: 1em; height: 1em; }
+.icon--lg { width: 2em; height: 2em; }
+.icon--xl { width: 3em; height: 3em; stroke-width: 1.5; }
