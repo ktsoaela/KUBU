@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your site</title>
+    <meta name="description" content="A starter site built from KUBU components and htmx.">
+    <link rel="icon" href="../../img/hippo-black.svg">
+    <!-- The one stylesheet. In your own project: <link rel="stylesheet" href="/static/kubu.min.css"> -->
+    <link rel="stylesheet" href="../../dist/kubu.min.css">
+    <!-- Optional. Without it every link is a normal page load. -->
+    <script src="../../js/htmx.min.js" defer></script>
+</head>
+<!-- hx-boost: a link fetches the next page, htmx keeps the header and swaps #content, then pushes the URL.
+     hx-select-oob moves the aria-current highlight in the header. -->
+<body hx-boost="true" hx-target="#content" hx-select="#content" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-nav">
+<a class="visually-hidden visually-hidden--focusable" href="#content">Skip to content</a>
+<header class="header">
+    <nav class="navbar" aria-label="Main">
+        <a class="logo" href="index.html"><img src="../../img/hippo-white.svg" alt="" width="30" height="30"> Your site</a>
+        <input class="header__toggle" type="checkbox" id="site-menu">
+        <label class="header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav" id="site-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container section" id="content" tabindex="-1">
+    <section aria-labelledby="home-title">
+        <h1 class="title" id="home-title">A site from one stylesheet.</h1>
+        <p>Every page here is a plain HTML file. Link <code>kubu.min.css</code>, write the BEM class names, and the browser does the rest.</p>
+        <a class="button button--primary button--large" href="contact.html">Get in touch</a>
+    </section>
+    <div class="grid grid--auto section">
+        <article class="card">
+            <h2 class="card__title">Pages are endpoints</h2>
+            <p class="card__body">Each file is a complete page. Your server can render the same HTML from a template.</p>
+            <footer class="card__footer"><a href="about.html">How the pages fit together</a></footer>
+        </article>
+        <article class="card">
+            <h2 class="card__title">htmx is optional</h2>
+            <p class="card__body">With htmx, links swap only the content. Without it, the same links load the whole page.</p>
+            <footer class="card__footer"><a href="../../pages/start-javascript.html" hx-boost="false">What htmx adds</a></footer>
+        </article>
+        <article class="card">
+            <h2 class="card__title">Dark and light</h2>
+            <p class="card__body">Colours follow the visitor's system setting. Override the <code>--kubu-*</code> tokens to theme it.</p>
+            <footer class="card__footer"><a href="../../pages/start-theming.html" hx-boost="false">Theme your site</a></footer>
+        </article>
+    </div>
+</main>
+<footer class="footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="about.html">About</a>
+        <a class="footer__link" href="contact.html">Contact</a>
+        <a class="footer__link" href="../../pages/index.html" hx-boost="false">KUBU docs</a>
+    </nav>
+    <p class="copyright">Built with KUBU: one CSS file and plain HTML.</p>
+</footer>
+</body>
+</html>

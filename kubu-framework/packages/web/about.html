@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About · Your site</title>
+    <meta name="description" content="How this starter is put together.">
+    <link rel="icon" href="../../img/hippo-black.svg">
+    <!-- The one stylesheet. In your own project: <link rel="stylesheet" href="/static/kubu.min.css"> -->
+    <link rel="stylesheet" href="../../dist/kubu.min.css">
+    <!-- Optional. Without it every link is a normal page load. -->
+    <script src="../../js/htmx.min.js" defer></script>
+</head>
+<!-- hx-boost: a link fetches the next page, htmx keeps the header and swaps #content, then pushes the URL.
+     hx-select-oob moves the aria-current highlight in the header. -->
+<body hx-boost="true" hx-target="#content" hx-select="#content" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-nav">
+<a class="visually-hidden visually-hidden--focusable" href="#content">Skip to content</a>
+<header class="header">
+    <nav class="navbar" aria-label="Main">
+        <a class="logo" href="index.html"><img src="../../img/hippo-white.svg" alt="" width="30" height="30"> Your site</a>
+        <input class="header__toggle" type="checkbox" id="site-menu">
+        <label class="header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav" id="site-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html" aria-current="page">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container section" id="content" tabindex="-1">
+    <h1 class="title">About this starter</h1>
+    <p>Three HTML files, one stylesheet and, if you want it, htmx. Copy the folder, rename the pages and replace the text.</p>
+    <h2>What each part does</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>dist/kubu.min.css</strong>: every component, themed for dark and light.</li>
+        <li class="list-group-item"><strong>htmx</strong>: <code>hx-boost</code> on <code>&lt;body&gt;</code> swaps <code>#content</code> and keeps the header.</li>
+        <li class="list-group-item"><strong>Your server</strong>: return whole pages; htmx picks out the part it needs.</li>
+    </ul>
+    <details class="collapse-details section">
+        <summary>Does anything need JavaScript?</summary>
+        <p>No. The menu is a checkbox, the question you just opened is <code>&lt;details&gt;</code>, and the form checks its own fields.</p>
+    </details>
+</main>
+<footer class="footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="about.html">About</a>
+        <a class="footer__link" href="contact.html">Contact</a>
+        <a class="footer__link" href="../../pages/index.html" hx-boost="false">KUBU docs</a>
+    </nav>
+    <p class="copyright">Built with KUBU: one CSS file and plain HTML.</p>
+</footer>
+</body>
+</html>

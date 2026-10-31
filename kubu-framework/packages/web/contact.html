@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact · Your site</title>
+    <meta name="description" content="A contact form with forgiving validation.">
+    <link rel="icon" href="../../img/hippo-black.svg">
+    <!-- The one stylesheet. In your own project: <link rel="stylesheet" href="/static/kubu.min.css"> -->
+    <link rel="stylesheet" href="../../dist/kubu.min.css">
+    <!-- Optional. Without it every link is a normal page load. -->
+    <script src="../../js/htmx.min.js" defer></script>
+</head>
+<!-- hx-boost: a link fetches the next page, htmx keeps the header and swaps #content, then pushes the URL.
+     hx-select-oob moves the aria-current highlight in the header. -->
+<body hx-boost="true" hx-target="#content" hx-select="#content" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-nav">
+<a class="visually-hidden visually-hidden--focusable" href="#content">Skip to content</a>
+<header class="header">
+    <nav class="navbar" aria-label="Main">
+        <a class="logo" href="index.html"><img src="../../img/hippo-white.svg" alt="" width="30" height="30"> Your site</a>
+        <input class="header__toggle" type="checkbox" id="site-menu">
+        <label class="header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav" id="site-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+<main class="container section" id="content" tabindex="-1">
+    <div class="grid">
+        <form class="col-12 md:col-8 form-container--guarded" action="contact.html" method="get">
+            <h1 class="title">Contact</h1>
+            <p>We answer within one working day.</p>
+            <div class="form-group">
+                <label class="form-label" for="ct-name">Your name <span class="form-label__hint">(required)</span></label>
+                <input class="form-input" id="ct-name" name="name" type="text" autocomplete="name" required aria-describedby="ct-name-error">
+                <p class="form-error form-error--live" id="ct-name-error">Enter your name so we know who to reply to.</p>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ct-email">Email <span class="form-label__hint">(required)</span></label>
+                <input class="form-input" id="ct-email" name="email" type="email" autocomplete="email" required aria-describedby="ct-email-error">
+                <p class="form-error form-error--live" id="ct-email-error">Enter an email address with an @ and a dot, like lerato@example.com.</p>
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="ct-message">Message <span class="form-label__hint">(required, 20 characters or more)</span></label>
+                <textarea class="form-textarea" id="ct-message" name="message" rows="5" required minlength="20" aria-describedby="ct-message-error"></textarea>
+                <p class="form-error form-error--live" id="ct-message-error">Tell us a little more: at least 20 characters.</p>
+            </div>
+            <button class="form-submit" type="submit">Send message</button>
+        </form>
+        <aside class="col-12 md:col-4" aria-label="Other ways to reach us">
+            <article class="card">
+                <h2 class="card__title">Point the form at your server</h2>
+                <div class="card__body"><p>Change <code>action</code> to your endpoint and <code>method</code> to <code>post</code>. Return the next page, and htmx swaps it in.</p></div>
+            </article>
+        </aside>
+    </div>
+</main>
+<footer class="footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="about.html">About</a>
+        <a class="footer__link" href="contact.html">Contact</a>
+        <a class="footer__link" href="../../pages/index.html" hx-boost="false">KUBU docs</a>
+    </nav>
+    <p class="copyright">Built with KUBU: one CSS file and plain HTML.</p>
+</footer>
+</body>
+</html>

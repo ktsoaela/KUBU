@@ -167,8 +167,23 @@ await load(`${base}index.html`);
 const error = await evaluate(`(() => { const e = document.querySelector('#home-email-error'); return [getComputedStyle(e, '::before').content, e.textContent.length, document.querySelector('#home-email').getAttribute('aria-describedby')]; })()`);
 ok(error[0] === '"!"' && error[1] > 20 && error[2] === 'home-email-error', 'home: the form error has an icon, a sentence and is linked to its field');
 
+// The starter in packages/web: the same boost pattern on its own pages, swapping #content.
+const web = base.replace('/pages/', '/packages/web/');
+await load(`${web}index.html`);
+ok(await waitFor('!!window.htmx'), 'starter: htmx is loaded');
+await evaluate(`window.__header = document.querySelector('header.header'); window.__marker = 1`);
+await evaluate(`document.querySelector('#site-nav a[href="about.html"]').click()`);
+ok(await waitFor(`location.pathname.endsWith('/packages/web/about.html') && document.title === 'About · Your site' && !document.querySelector('.htmx-request')`), 'starter: About swaps in with its URL and title');
+ok(await evaluate('window.__marker === 1 && document.querySelector("header.header") === window.__header'), 'starter: no full reload, header kept');
+ok(await evaluate(`document.querySelector('#site-nav [aria-current="page"]').getAttribute('href') === 'about.html'`), 'starter: aria-current moves to About');
+await waitFor('!document.querySelector(".htmx-settling, .htmx-swapping, .htmx-added")', 2000);
+await sleep(100);
+await evaluate('history.back()');
+ok(await waitFor(`location.pathname.endsWith('/packages/web/index.html') && document.title === 'Your site'`), 'starter: Back returns Home');
+
 // Targets: every button, summary, form control label and menu link is at least 44 by 44.
-for (const page of allPages) {
+const starterPages = ['index.html', 'about.html', 'contact.html'].map((p) => `../packages/web/${p}`);
+for (const page of [...allPages, ...starterPages]) {
     await load(`${base}${page}`);
     await evaluate(`document.querySelectorAll('details').forEach(d => d.open = true)`);
     const small = await evaluate(`[...document.querySelectorAll('button, summary, .button, .nav-link, .list-item, .dropdown-item, .pagination__link, .tabs__tab, .theme-switch__label, .rating label, .footer__link, input:not([type=radio]):not([type=checkbox]):not([type=hidden]), select')]
@@ -325,6 +340,15 @@ for (let i = 0; i < 40; i++) {
     await sleep(100);
 }
 ok(entry(history).id !== before && entry(history).url.endsWith('organism-card.html'), 'no JS: a link is a normal navigation to a new history entry');
+
+await load(`${web}index.html`);
+await click('#site-nav a[href="contact.html"]');
+for (let i = 0; i < 40; i++) {
+    history = await cdp('Page.getNavigationHistory');
+    if (entry(history).url.endsWith('/packages/web/contact.html')) break;
+    await sleep(100);
+}
+ok(entry(history).url.endsWith('/packages/web/contact.html'), 'no JS: the starter menu is a normal navigation');
 
 ws.close();
 chrome.kill();
