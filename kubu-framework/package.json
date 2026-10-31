@@ -24,10 +24,15 @@
     "pages": "node scripts/pages.mjs --check",
     "smoke": "node scripts/smoke.mjs",
     "test": "node scripts/pages.mjs --check && node scripts/smoke.mjs",
-    "dev": "npx --yes http-server .. -p 8080 -c-1 -o /kubu-framework/pages/index.html"
+    "dev": "npx --yes http-server .. -p 8080 -c-1 -o /kubu-framework/pages/index.html",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build -o storybook-static"
   },
   "devDependencies": {
+    "@storybook/html-vite": "^10.6.5",
+    "browserslist": "^4.24.0",
     "lightningcss": "^1.29.0",
-    "browserslist": "^4.24.0"
+    "storybook": "^10.6.5",
+    "vite": "^8.3.5"
   }
 }
