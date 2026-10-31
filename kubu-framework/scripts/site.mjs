@@ -1,0 +1,131 @@
+// The KUBU site map: the header links and the sidebar menu, in order.
+// Every page lives directly in kubu-framework/pages, so a relative link means the same thing
+// on every page. That is what lets htmx keep the header and swap only #frame.
+// scripts/pages.mjs stamps these into every page and builds the Contents list from them.
+//
+// Each sidebar item is [label, file, one-line purpose, CSS file it documents (optional)].
+
+export const header = [
+    { title: 'Home', href: 'index.html', purpose: 'What KUBU is, with themed components that work with scripts off.' },
+    { title: 'Papers', href: 'papers.html', purpose: 'The documentation in reading order.' },
+    { title: 'Use Cases', href: 'use-cases.html', purpose: 'Where KUBU fits: server-rendered apps, admin tools and static sites.' },
+    { title: 'Icon Pack', href: 'icons.html', purpose: 'Line icons in one SVG sprite, coloured with currentColor.' },
+    { title: 'Showcases', href: 'showcases.html', purpose: 'Whole pages built only from KUBU components.' },
+    { title: 'News', href: 'news.html', purpose: 'What changed in each KUBU release.' },
+    { title: 'Download', href: 'download.html', purpose: 'Link the bundle, or import only the files you use.' },
+];
+
+export const sidebar = [
+    {
+        title: 'Jumping In',
+        items: [
+            ['Intro', 'start-intro.html', 'How Atomic Design, BEM and native HTML fit together.'],
+            ['Download', 'download.html', 'Link the bundle, or import only the files you use.'],
+            ['Contents', 'start-contents.html', 'Every component with a one-line purpose.'],
+            ['Browser & Devices', 'start-browsers.html', 'Supported browsers and the native features KUBU relies on.'],
+            ['JavaScript', 'start-javascript.html', 'What the optional scripts add, and what works without them.'],
+        ],
+    },
+    {
+        title: 'Atoms',
+        items: [
+            ['Reset', 'atom-reset.html', 'Page colours, the focus ring and reduced motion.', 'atoms/Reset.css'],
+            ['Badge', 'atom-badge.html', 'A short label for a count or a status.', 'atoms/Badge.css'],
+            ['Buttons', 'atom-buttons.html', 'Actions in every state: hover, active, disabled and loading.', 'atoms/Buttons.css'],
+            ['Close', 'atom-close.html', 'The labelled close control for dialogs, panels and alerts.', 'atoms/Close.css'],
+            ['colors', 'atom-colors.html', 'The semantic tokens a theme overrides.', 'atoms/colors.css'],
+            ['spacing', 'atom-spacing.html', 'The --space-* scale and the margin and padding helpers.', 'atoms/spacing.css'],
+            ['Spinners', 'atom-spinners.html', 'Small loading indicators for a control or a region.', 'atoms/Spinners.css'],
+            ['typography', 'atom-typography.html', 'The type scale from metadata to the page title.', 'atoms/typography.css'],
+        ],
+    },
+    {
+        title: 'Molecules',
+        items: [
+            ['Announcements', 'molecule-announcements.html', 'A one-line message across the top of the site.', 'molecules/Announcements.css'],
+            ['Breadcrumb', 'molecule-breadcrumb.html', 'Where this page sits in the site.', 'molecules/Breadcrumb.css'],
+            ['ButtonGroups', 'molecule-button-groups.html', 'Related actions joined into one control.', 'molecules/ButtonGroups.css'],
+            ['Dropdowns', 'molecule-dropdowns.html', 'A menu that opens from a labelled button, no script.', 'molecules/Dropdowns.css'],
+            ['FormGroups', 'molecule-form-groups.html', 'A label, a field, a hint and an error, kept together.', 'molecules/FormGroups.css'],
+            ['ListGroups', 'molecule-list-groups.html', 'Rows with an icon, a title and a line of text.', 'molecules/ListGroups.css'],
+            ['Navbar', 'molecule-navbar.html', 'The labelled row of links in a header.', 'molecules/Navbar.css'],
+            ['Navs', 'molecule-navs.html', 'Links between views of one section: tabs, pills or a stack.', 'molecules/Navs.css'],
+            ['Pagination', 'molecule-pagination.html', 'Links to the pages of a long list.', 'molecules/Pagination.css'],
+        ],
+    },
+    {
+        title: 'Organisms',
+        items: [
+            ['Accordion', 'organism-accordion.html', 'Stacked sections that open one at a time, or each on its own.', 'organisms/Accordion.css'],
+            ['Alerts', 'organism-alerts.html', 'A message with a tone, an icon and a sentence.', 'organisms/Alerts.css'],
+            ['Card', 'organism-card.html', 'A header, body and footer around one subject.', 'organisms/Card.css'],
+            ['Carousel', 'organism-carousel.html', 'Slides that snap into place as you scroll.', 'organisms/Carousel.css'],
+            ['Collapse', 'organism-collapse.html', 'Show and hide one region with <details>.', 'organisms/Collapse.css'],
+            ['DatePicker', 'organism-datepicker.html', 'Choose a date with the native input, or show a month.', 'organisms/DatePicker.css'],
+            ['FileUpload', 'organism-file-upload.html', 'A labelled file field that looks like a button.', 'organisms/FileUpload.css'],
+            ['Forms', 'organism-forms.html', 'Forgiving validation with :user-invalid and inline errors.', 'organisms/Forms.css'],
+            ['ListGroups', 'organism-list-groups.html', 'A panel of selectable rows, like a settings menu.', 'organisms/ListGroups.css'],
+            ['Modal', 'organism-modal.html', 'A native <dialog> built from header, body and footer.', 'organisms/Modal.css'],
+            ['Offcanvas', 'organism-offcanvas.html', 'A panel that slides in from the edge.', 'organisms/Offcanvas.css'],
+            ['Popovers', 'organism-popovers.html', 'Extra content on demand with the popover attribute.', 'organisms/Popovers.css'],
+            ['Progress', 'organism-progress.html', 'How far a task has got.', 'organisms/Progress.css'],
+            ['Scrollspy', 'organism-scrollspy.html', 'A sticky in-page menu that marks the section you jumped to.', 'organisms/Scrollspy.css'],
+            ['Stepper', 'organism-stepper.html', 'The steps of a process and where you are.', 'organisms/Stepper.css'],
+            ['Tables', 'organism-tables.html', 'Data tables with captions, stripes and alignment.', 'organisms/Tables.css'],
+            ['Tabs', 'organism-tabs.html', 'A tab bar that switches panels with radio buttons.', 'organisms/Tabs.css'],
+            ['Toasts', 'organism-toasts.html', 'Short confirmations stacked in a corner.', 'organisms/Toasts.css'],
+            ['Tooltips', 'organism-tooltips.html', 'A short text hint on hover and keyboard focus.', 'organisms/Tooltips.css'],
+            ['Rating', 'organism-rating.html', 'A star rating made of radio buttons.', 'organisms/Rating.css'],
+        ],
+    },
+    {
+        title: 'Utilities',
+        items: [
+            ['Ajax', 'utility-ajax.html', 'Loading, skeleton and swap states for htmx requests.', 'utilities/Ajax.css'],
+            ['Animations', 'utility-animations.html', 'Fade and slide in with transform and opacity.', 'utilities/Animations.css'],
+            ['EventDelegation', 'utility-event-delegation.html', 'One htmx listener on a parent instead of one per child.'],
+            ['Helpers', 'utility-helpers.html', 'Visually hidden text, borders and section spacing.', 'utilities/Helpers.css'],
+            ['Notifications', 'utility-notifications.html', 'Inline status messages for a region.', 'utilities/Notifications.css'],
+            ['Flexbox', 'utility-flexbox.html', 'The sidebar, main and footer page layout.', 'utilities/Flexbox.css'],
+        ],
+    },
+    {
+        title: 'Pages',
+        items: [
+            ['HomePage', 'page-home.html', 'A product home page from the header, card and footer snippets.'],
+            ['AboutPage', 'page-about.html', 'A team and history page from cards, a list group and a table.'],
+            ['ProductPage', 'page-product.html', 'A product page with a carousel, tabs, rating and a buy form.'],
+            ['ContactPage', 'page-contact.html', 'A contact form with forgiving validation.'],
+        ],
+    },
+    {
+        title: 'Snippets',
+        items: [
+            ['Forms', 'snippet-forms.html', 'Base styles for bare form elements.', 'snippets/Forms.css'],
+            ['Navbar', 'snippet-navbar.html', 'The site header: logo, labelled menu and a utility row.', 'snippets/Header.css'],
+            ['Footer', 'snippet-footer.html', 'Footer links and the copyright line.', 'snippets/Footer.css'],
+        ],
+    },
+    {
+        title: 'Templates',
+        items: [['main-template', 'template-main.html', 'A full page layout: header, breadcrumb, content, footer.']],
+    },
+];
+
+// Pages linked from the docs that are not menu items.
+export const extras = [
+    { title: 'Grid', href: 'start-grid.html', purpose: 'The 12-column grid and the auto-fit grid.' },
+    { title: 'Theming and dark mode', href: 'start-theming.html', purpose: 'Override the tokens; dark is the master theme.' },
+];
+
+const items = [
+    ...header.map((h) => ({ label: h.title, href: h.href, purpose: h.purpose })),
+    ...sidebar.flatMap((g) => g.items.map(([label, href, purpose, css]) => ({ label, href, purpose, css, group: g.title }))),
+    ...extras.map((e) => ({ label: e.title, href: e.href, purpose: e.purpose })),
+];
+
+// One entry per file. A sidebar label wins over a header label (Download is in both).
+export const pages = new Map();
+for (const item of items) pages.set(item.href, { ...pages.get(item.href), ...item });
+
+export const allPages = [...pages.keys()];
