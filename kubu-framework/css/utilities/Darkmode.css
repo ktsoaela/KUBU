@@ -3,7 +3,7 @@ body {
     --background-color: white;
     --text-color: black;
     background-color: var(--background-color);
-    color: var(--text-color-primary);
+    color: var(--text-color);
     font-family: Arial, sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
