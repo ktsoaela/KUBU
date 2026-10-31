@@ -1,3 +1,4 @@
+<!-- Accordion fragment: checkboxes let several panels open; radios with one name allow one at a time. -->
 <section class="accordion">
     <div class="tab">
         <input type="checkbox" name="accordion-1" id="cb1" checked>
@@ -10,7 +11,7 @@
         <input type="checkbox" name="accordion-1" id="cb2">
         <label for="cb2" class="tab__label">Open multiple</label>
         <div class="tab__content">
-            <p>Using <code>&lt;input type="checkbox"&gt;</code> allows to have several tabs open at the same time.</p>
+            <p>Using <code>&lt;input type="checkbox"&gt;</code> lets several panels stay open at the same time.</p>
         </div>
     </div>
 </section>
@@ -20,14 +21,14 @@
         <input type="radio" name="accordion-2" id="rd1">
         <label for="rd1" class="tab__label">Radio</label>
         <div class="tab__content">
-            <p>If you want to have only one tab open, you can use <code>&lt;input type="checkbox"&gt;</code>.</p>
+            <p>To allow only one open panel, use <code>&lt;input type="radio"&gt;</code> with a shared name.</p>
         </div>
     </div>
     <div class="tab">
         <input type="radio" name="accordion-2" id="rd2">
         <label for="rd2" class="tab__label">Open single</label>
         <div class="tab__content">
-            <p>But if you wanna close the opened tab, you must add a "close" button somewhere, like the one below, that is just another styled radio input.</p>
+            <p>To close the open panel, add one more radio styled as a close control, like the one below.</p>
         </div>
     </div>
     <div class="tab">

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One component, no bundle · KUBU</title>
+    <!-- The base: tokens, the spacing and type scales, and the reset. -->
+    <link rel="stylesheet" href="../css/atoms/colors.css">
+    <link rel="stylesheet" href="../css/atoms/spacing.css">
+    <link rel="stylesheet" href="../css/atoms/typography.css">
+    <link rel="stylesheet" href="../css/atoms/Reset.css">
+    <!-- Only the components this page uses. -->
+    <link rel="stylesheet" href="../css/atoms/Buttons.css">
+    <link rel="stylesheet" href="../css/organisms/Card.css">
+</head>
+<body>
+    <main style="max-width: 36rem; margin: 2rem auto; padding: 0 1rem">
+        <article class="card">
+            <h1 class="card__title">Six files, no bundle</h1>
+            <div class="card__body">
+                <p>This page loads the four base files and two components: Buttons and Card. It follows your light or dark setting, because the tokens in colors.css use light-dark().</p>
+            </div>
+            <div class="card__footer">
+                <a class="button button--primary" href="../pages/download.html">Back to Download</a>
+                <a class="button button--outline" href="../pages/organism-card.html">Card docs</a>
+            </div>
+        </article>
+    </main>
+</body>
+</html>

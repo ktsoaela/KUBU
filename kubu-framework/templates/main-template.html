@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main template · KUBU</title>
+    <!-- The whole framework. To load less, see pages/download.html (selective imports). -->
+    <link rel="stylesheet" href="../dist/kubu.css">
+</head>
+<body>
+    <a class="visually-hidden visually-hidden--focusable" href="#main">Skip to content</a>
+
+    <!-- Snippet: header (css/snippets/Header.css) with the announcement and the navbar molecule -->
+    <header class="header">
+        <p class="announcement">Spring sale: 20% off every plan until 30 November.</p>
+        <div class="header__utility">
+            <a href="../pages/page-contact.html">Help</a>
+            <a href="../pages/page-about.html">About</a>
+        </div>
+        <nav class="navbar" aria-label="Main">
+            <a class="logo" href="../pages/page-home.html"><img src="../img/hippo-white.svg" alt="" width="30" height="30"> Brand</a>
+            <input class="header__toggle" type="checkbox" id="site-menu">
+            <label class="header__menu" for="site-menu">Menu</label>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="../pages/page-home.html" aria-current="page">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="../pages/page-product.html">Products</a></li>
+                <li class="nav-item">
+                    <details class="dropdown dropdown--end">
+                        <summary class="nav-link">More pages</summary>
+                        <ul class="dropdown-content">
+                            <li><a class="dropdown-item" href="../pages/page-about.html">About</a></li>
+                            <li><a class="dropdown-item" href="../pages/page-contact.html">Contact</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container" id="main">
+        <!-- Fragment: templates/breadcrumb-template.html -->
+        <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb__item"><a class="breadcrumb__link" href="../pages/page-home.html">Home</a></li>
+                <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Page title</li>
+            </ol>
+        </nav>
+
+        <div class="page-layout">
+            <aside class="sidebar left-sidebar" aria-label="Section">
+                <ul class="list-group list-group--panel">
+                    <li><a class="list-group-item" href="../pages/page-home.html" aria-current="page">Overview</a></li>
+                    <li><a class="list-group-item" href="../pages/page-product.html">Products</a></li>
+                    <li><a class="list-group-item" href="../pages/page-contact.html">Contact</a></li>
+                </ul>
+            </aside>
+
+            <div class="main-content">
+                <h1 class="title">Page title</h1>
+                <p class="subtitle">One sentence that says what this page is for.</p>
+
+                <!-- Fragment: templates/accordion-template.html -->
+                <section class="accordion">
+                    <div class="tab">
+                        <input type="checkbox" id="mt-acc-1" checked>
+                        <label class="tab__label" for="mt-acc-1">First section</label>
+                        <div class="tab__content"><p>Content goes here.</p></div>
+                    </div>
+                    <div class="tab">
+                        <input type="checkbox" id="mt-acc-2">
+                        <label class="tab__label" for="mt-acc-2">Second section</label>
+                        <div class="tab__content"><p>More content.</p></div>
+                    </div>
+                </section>
+
+                <!-- Fragment: templates/spinner-template.html, as the loading state of an htmx region -->
+                <section id="latest" aria-live="polite">
+                    <h2>Latest</h2>
+                    <span class="spinner spinner--small" role="status" aria-label="Loading"></span>
+                    <div class="skeleton" aria-hidden="true">
+                        <span class="skeleton__line"></span>
+                        <span class="skeleton__line skeleton__line--short"></span>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar right-sidebar" aria-label="Related">
+                <article class="card">
+                    <h2 class="card__title">Need help?</h2>
+                    <div class="card__body"><p>We reply within one working day.</p></div>
+                    <div class="card__footer"><a class="button button--primary" href="../pages/page-contact.html">Contact us</a></div>
+                </article>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Snippet: footer (css/snippets/Footer.css) -->
+    <footer class="footer">
+        <nav class="footer__links" aria-label="Footer">
+            <a class="footer__link" href="../pages/page-about.html">About</a>
+            <a class="footer__link" href="../pages/page-contact.html">Contact</a>
+            <a class="footer__link" href="../pages/download.html">Download KUBU</a>
+        </nav>
+        <p class="copyright">&copy; 2026 Brand. Built with KUBU.</p>
+    </footer>
+</body>
+</html>
