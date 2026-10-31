@@ -21,6 +21,9 @@
   ],
   "scripts": {
     "build": "node scripts/build.mjs",
+    "pages": "node scripts/pages.mjs --check",
+    "smoke": "node scripts/smoke.mjs",
+    "test": "node scripts/pages.mjs --check && node scripts/smoke.mjs",
     "dev": "npx --yes http-server .. -p 8080 -c-1 -o /kubu-framework/pages/index.html"
   },
   "devDependencies": {
