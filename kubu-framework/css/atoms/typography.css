@@ -157,7 +157,7 @@ li {
     font-size: inherit;
     letter-spacing: var(--letter-spacing-sqush);
     margin-bottom: 0px;
-    padding:10px !important;
+    padding: 10px;
 
 }
 

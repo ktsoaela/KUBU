@@ -331,3 +331,15 @@
 @keyframes button-busy {
     to { transform: rotate(360deg); }
 }
+
+/* Contrast (WCAG AA, 4.5:1 for the label) in both schemes.
+   Status tones keep their meaning but are deepened behind white text; the yellow tones take dark text. */
+.button--danger { background-color: color-mix(in srgb, var(--color-danger) 85%, black); border-color: transparent; }
+.button--safe { background-color: color-mix(in srgb, var(--color-safe) 75%, black); border-color: transparent; }
+.button--info { background-color: color-mix(in srgb, var(--color-info) 80%, black); border-color: transparent; }
+.button--hazard,
+.button--risk { color: #1a1a1a; }
+.button--plain { color: var(--kubu-link); border-color: currentColor; }
+.button--plain:hover { color: var(--kubu-on-primary); background-color: var(--kubu-primary); border-color: var(--kubu-primary); }
+.button--outline:hover { color: var(--kubu-on-primary); background-color: var(--kubu-primary); border-color: var(--kubu-primary); }
+.button--dark { border-color: light-dark(transparent, var(--kubu-border)); }

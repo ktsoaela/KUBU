@@ -30,7 +30,7 @@
     border-radius: var(--space-xs);
     border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
     background-color: color-mix(in srgb, var(--tone) 14%, var(--kubu-surface));
-    color: color-mix(in srgb, var(--tone) 55%, var(--kubu-text));
+    color: var(--kubu-text); /* the tone is in the tint, border and icon; text stays at full contrast */
 }
 
 .ajax-error { --tone: var(--color-danger); }
@@ -77,4 +77,14 @@
 .button.htmx-request {
     cursor: progress;
     opacity: 0.85;
+}
+
+/* A skeleton used as an hx-indicator takes no space until its request starts. */
+.skeleton.htmx-indicator {
+    display: none;
+}
+
+.skeleton.htmx-indicator.htmx-request,
+.htmx-request .skeleton.htmx-indicator {
+    display: grid;
 }

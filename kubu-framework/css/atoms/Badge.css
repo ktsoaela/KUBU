@@ -78,3 +78,12 @@
     background-color: var(--color-dark);
     color: var(--color-light);
 }
+
+/* Contrast: deepen the tones behind white text, dark text on the yellow tones. */
+.badge--secondary { background-color: color-mix(in srgb, var(--color-secondary) 65%, black); }
+.badge--danger { background-color: color-mix(in srgb, var(--color-danger) 85%, black); }
+.badge--safe { background-color: color-mix(in srgb, var(--color-safe) 75%, black); }
+.badge--info { background-color: color-mix(in srgb, var(--color-info) 80%, black); }
+.badge--hazard,
+.badge--risk,
+.badge--light { color: #1a1a1a; }

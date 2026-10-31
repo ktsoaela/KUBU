@@ -10,7 +10,7 @@
 .notification {
     --tone: var(--color-info);
     background-color: color-mix(in srgb, var(--tone) 14%, var(--kubu-surface));
-    color: color-mix(in srgb, var(--tone) 55%, var(--kubu-text));
+    color: var(--kubu-text); /* the tone is in the tint, border and icon; text stays at full contrast */
     border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
 }
 

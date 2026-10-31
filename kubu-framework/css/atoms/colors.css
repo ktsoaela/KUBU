@@ -49,7 +49,7 @@
     --color-kubu-tertiary: #b66508;
 
     --theme-color-primary: #002d4c;
-    --theme-color-secondary: #b66508;
+    --theme-color-secondary: #9c5306; /* darkened from #b66508 so white text meets WCAG AA */
     --theme-color-tertiary: #002d4c;
 
     /* Component theme hooks used by Tabs, Accordion and Close */
@@ -74,7 +74,7 @@
     --dark-link: #7cc0f0;
     --dark-border: #34424f;
     --dark-primary: #2a77b5;
-    --dark-primary-hover: #3586c7;
+    --dark-primary-hover: #22659b;
     --dark-focus: #ffda79;
 
     /* Light (pair) */

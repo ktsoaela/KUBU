@@ -27,9 +27,10 @@
     font-weight: bold;
     --tone: var(--color-info);
     background-color: color-mix(in srgb, var(--tone) 14%, var(--kubu-surface));
-    color: color-mix(in srgb, var(--tone) 55%, var(--kubu-text));
+    color: var(--kubu-text); /* the tone is in the tint, border and icon; text stays at full contrast */
     border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
     border-inline-start-width: 4px;
+    border-inline-start-color: var(--tone);
 }
 
 .alert--success { --tone: var(--color-safe); }
@@ -50,6 +51,34 @@
    Clicking the summary closes the details, and a closed alert is hidden. */
 summary.alert-close {
     list-style: none;
+}
+
+.alert-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 0.25rem;
+    right: 0.25rem;
+    min-width: var(--kubu-target, 44px);
+    min-height: var(--kubu-target, 44px);
+    color: inherit;
+    background: transparent;
+    border: 0;
+    border-radius: var(--space-xs, 4px);
+}
+
+.alert-close:hover {
+    background-color: color-mix(in srgb, var(--tone) 20%, transparent);
+}
+
+/* Leave room for the close control, and keep paragraphs inside an alert tight. */
+.alert:has(> .alert-close) {
+    padding-right: calc(var(--kubu-target, 44px) + 0.5rem);
+}
+
+.alert > p {
+    margin: 0;
+    color: inherit;
 }
 
 summary.alert-close::-webkit-details-marker {

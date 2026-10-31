@@ -40,3 +40,28 @@
 .toast-container--inline {
     position: static;
 }
+
+/* Contrast and meaning: deepen the tones behind white text, and start each toast with a symbol
+   so the tone is never told by colour alone. role="status" on .toast-container announces new toasts. */
+.toast {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm, 8px);
+    min-width: min(20rem, 90vw);
+}
+
+.toast::before {
+    content: "i";
+    flex: none;
+    font-weight: bold;
+}
+
+.toast-success { background-color: color-mix(in srgb, var(--color-safe) 70%, black); }
+.toast-success::before { content: "\2713"; }
+.toast-error { background-color: color-mix(in srgb, var(--color-danger) 80%, black); }
+.toast-error::before { content: "\2715"; }
+.toast-info { background-color: color-mix(in srgb, var(--color-info) 75%, black); }
+.toast-warning { background-color: var(--color-hazard); color: #1a1a1a; }
+.toast-warning::before { content: "!"; }
+
+.toast__body { flex: 1; margin: 0; color: inherit; }
