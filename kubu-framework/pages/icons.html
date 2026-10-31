@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Icon Pack · KUBU</title>
+    <meta name="description" content="Line icons in one SVG sprite, coloured with currentColor.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html" aria-current="page">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1 class="title">Icon Pack</h1>
+    <p class="doc__lead">Line icons in one SVG sprite, <code>img/icons.svg</code>. They are drawn with <code>currentColor</code>, so they take the colour of the text around them and follow the theme. No icon font, no script.</p>
+
+    <h2>Usage</h2>
+    <p>Load <code>css/atoms/Icons.css</code> (included in <code>styles.css</code>) and point <code>&lt;use&gt;</code> at a symbol in the sprite.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <svg class="icon" aria-hidden="true"><use href="../img/icons.svg#home"></use></svg>
+            <a class="button button--primary" href="download.html"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#download"></use></svg> Download</a>
+            <button class="button button--outline" type="button"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#search"></use></svg> Search the docs</button>
+            <button class="modal__close" type="button" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#close"></use></svg></button>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#home"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span>
+<span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"download.html"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#download"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Download<span class="doc-code__tag">&lt;/a&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#search"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Search the docs<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__close"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Close"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#close"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span><span class="doc-code__tag">&lt;/button&gt;</span></code></pre>
+        </details>
+    </div>
+    <p>Browsers load an external sprite only over HTTP from the same origin, so open the site through a local server (<code>npm run dev</code>), not from <code>file://</code>. To avoid the request, paste the <code>&lt;symbol&gt;</code> elements into a hidden <code>&lt;svg&gt;</code> at the top of your page and use <code>href="#home"</code>.</p>
+
+    <h2>All icons</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <ul class="grid grid--auto list-unstyled">
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#home"></use></svg> <code>home</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#search"></use></svg> <code>search</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#menu"></use></svg> <code>menu</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#close"></use></svg> <code>close</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#check"></use></svg> <code>check</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#plus"></use></svg> <code>plus</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#minus"></use></svg> <code>minus</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#chevron-down"></use></svg> <code>chevron-down</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#chevron-right"></use></svg> <code>chevron-right</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#arrow-right"></use></svg> <code>arrow-right</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#external"></use></svg> <code>external</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#download"></use></svg> <code>download</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#upload"></use></svg> <code>upload</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#copy"></use></svg> <code>copy</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#edit"></use></svg> <code>edit</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#trash"></use></svg> <code>trash</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#calendar"></use></svg> <code>calendar</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#mail"></use></svg> <code>mail</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#user"></use></svg> <code>user</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#star"></use></svg> <code>star</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#heart"></use></svg> <code>heart</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#info"></use></svg> <code>info</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#alert"></use></svg> <code>alert</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#sun"></use></svg> <code>sun</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#moon"></use></svg> <code>moon</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#code"></use></svg> <code>code</code></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Classes</h2>
+    <table class="doc-table">
+        <thead><tr><th>Class</th><th>Size</th></tr></thead>
+        <tbody>
+            <tr><td><code>.icon</code></td><td>1.25em, lines up with the text</td></tr>
+            <tr><td><code>.icon--sm</code></td><td>1em</td></tr>
+            <tr><td><code>.icon--lg</code></td><td>2em</td></tr>
+            <tr><td><code>.icon--xl</code></td><td>3em, thinner stroke</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Accessibility</h2>
+    <ul>
+        <li>Icons next to text are decoration: keep <code>aria-hidden="true"</code>.</li>
+        <li>An icon-only button needs an <code>aria-label</code> that says what it does.</li>
+    </ul>
+
+    <h2>Logo</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <img src="../img/hippo-black.svg" alt="KUBU" width="64" height="64">
+            <span class="header doc-logo-tile"><img src="../img/hippo-white.svg" alt="KUBU on the brand colour" width="64" height="64"></span>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-black.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span><span class="doc-code__tag">&gt;</span>
+<span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"header doc-logo-tile"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-white.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU on the brand colour"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span></code></pre>
+        </details>
+    </div>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

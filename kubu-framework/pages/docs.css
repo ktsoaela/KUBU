@@ -1,0 +1,665 @@
+/* Docs-site layout. The components come from styles.css; this file only lays out the site
+   and styles the code samples. Every rule reads the KUBU tokens, so dark and light both follow. */
+
+/* Header: logo, then the labelled menu, then the theme switch. It stays in place while htmx
+   swaps #frame. A light frost when supported; the solid brand colour otherwise. */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid rgb(255 255 255 / 0.12);
+}
+
+@supports (backdrop-filter: blur(8px)) {
+    .site-header {
+        background-color: color-mix(in srgb, var(--kubu-primary) 90%, transparent);
+        backdrop-filter: blur(8px);
+    }
+}
+
+.site-header__announcement {
+    margin: 0;
+}
+
+.site-header__announcement a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.site-header__bar {
+    flex-wrap: wrap;
+    gap: var(--space-xs) var(--space-md);
+    padding: var(--space-xs) clamp(1rem, 4vw, 2rem);
+    background: transparent;
+}
+
+.site-header__logo {
+    min-height: var(--kubu-target);
+    font-size: 1.25rem;
+    letter-spacing: 0.08em;
+}
+
+.site-header__links {
+    flex-wrap: wrap;
+    gap: 0 var(--space-md);
+    margin-right: auto;
+}
+
+.site-header__links .nav-item {
+    margin: 0;
+}
+
+.site-header__links .nav-link {
+    padding-inline: var(--space-xs);
+    border-bottom: 2px solid transparent;
+}
+
+.site-header__links .nav-link[aria-current="page"] {
+    color: var(--color-highlight);
+    border-bottom-color: currentColor;
+}
+
+/* The Menu toggle only shows on narrow screens. */
+.site-header__toggle {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.site-header__menu {
+    display: none;
+    align-items: center;
+    min-height: var(--kubu-target);
+    padding: 0 var(--space-md);
+    font-weight: var(--font-weight-bold);
+    border: 1px solid rgb(255 255 255 / 0.5);
+    border-radius: var(--space-xs);
+    cursor: pointer;
+}
+
+.site-header__toggle:focus-visible + .site-header__menu {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 2px;
+}
+
+/* Theme switch: Auto, Dark, Light. Darkmode.css reads the radios with :has(), so it works
+   with scripts off; js/docs.js only remembers the choice for the next visit. */
+.theme-switch {
+    display: flex;
+    margin: 0;
+    padding: 2px;
+    border: 1px solid rgb(255 255 255 / 0.5);
+    border-radius: var(--space-xs);
+}
+
+.theme-switch__legend,
+.theme-switch__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.theme-switch__label {
+    display: inline-flex;
+    align-items: center;
+    min-height: calc(var(--kubu-target) - 6px);
+    min-width: var(--kubu-target);
+    justify-content: center;
+    padding: 0 var(--space-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.theme-switch__label:hover {
+    background-color: rgb(255 255 255 / 0.12);
+}
+
+.theme-switch__input:checked + .theme-switch__label {
+    color: var(--light-primary);
+    background-color: #fff;
+}
+
+.theme-switch__input:focus-visible + .theme-switch__label {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 1px;
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    left: var(--space-md);
+    top: -4rem;
+    z-index: 100;
+    padding: var(--space-sm) var(--space-md);
+    color: var(--kubu-on-primary);
+    background: var(--kubu-primary);
+    border-radius: var(--space-xs);
+}
+
+.skip-link:focus {
+    top: var(--space-sm);
+}
+
+/* #frame: the sidebar and the article. htmx swaps this element and nothing else. */
+.docs-layout {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+    gap: clamp(1rem, 4vw, 3rem);
+    width: min(100% - 2rem, 1280px);
+    margin-inline: auto;
+    padding-block: var(--space-lg);
+}
+
+.docs-sidebar {
+    position: sticky;
+    top: 7.5rem;
+    max-height: calc(100dvh - 8.5rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.docs-sidebar .list-title {
+    margin: var(--space-md) 0 var(--space-xs);
+    padding: 0 var(--space-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--kubu-text-muted);
+}
+
+.docs-sidebar .list-title:first-child {
+    margin-top: 0;
+}
+
+.docs-sidebar .list-unstyled {
+    margin: 0;
+    padding: 0;
+}
+
+.docs-sidebar .list-item {
+    display: flex;
+    align-items: center;
+    min-height: var(--kubu-target);
+    padding: 0 var(--space-sm);
+    font-size: var(--font-size-sm);
+    color: var(--kubu-text);
+    text-decoration: none;
+    border-radius: var(--space-xs);
+}
+
+.docs-sidebar .list-item:hover {
+    background: var(--kubu-surface-2);
+}
+
+.docs-sidebar .list-item[aria-current="page"] {
+    font-weight: var(--font-weight-bold);
+    color: var(--kubu-on-primary);
+    background: var(--kubu-primary);
+}
+
+/* Article */
+.doc {
+    --scrollspy-top: 8rem; /* clears the sticky header */
+    min-width: 0;
+    max-width: 56rem;
+}
+
+.doc__index-link {
+    display: none;
+}
+
+.doc h1 {
+    margin-bottom: var(--space-sm);
+    font-size: clamp(2.25rem, 1.6rem + 2.5vw, 3.25rem);
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.doc h2 {
+    margin-top: var(--space-xl);
+    font-size: var(--font-size-xl);
+    scroll-margin-top: 8rem;
+}
+
+.doc h3 {
+    margin-top: var(--space-lg);
+}
+
+.doc__lead {
+    max-width: 44rem;
+    font-size: var(--font-size-lg);
+    color: var(--kubu-text-muted);
+}
+
+.doc :not(pre) > code {
+    padding: 0.1em 0.35em;
+    font-family: var(--font-family-mono);
+    font-size: 0.875em;
+    background: var(--kubu-surface-2);
+    border-radius: var(--space-xs);
+}
+
+.doc > ul,
+.doc > ol {
+    margin-left: 1.25rem;
+}
+
+.doc > ul {
+    list-style: disc;
+}
+
+.doc > ol {
+    list-style: decimal;
+}
+
+.doc > ul > li {
+    margin-block: var(--space-xs);
+}
+
+/* Example: the live component, then its markup in a <details> */
+.doc-example {
+    margin-block: var(--space-md);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+    overflow: hidden;
+}
+
+.doc-example__preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    background: var(--kubu-surface);
+}
+
+.doc-example__preview--block {
+    display: block;
+}
+
+.doc-example__preview--block > * + * {
+    margin-top: var(--space-md);
+}
+
+.doc-example__preview--tall {
+    min-height: 15rem;
+    align-items: flex-start;
+}
+
+.doc-example > .doc-code {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid var(--kubu-border);
+    border-radius: 0;
+}
+
+/* Code block. Token colours are spans written in the HTML (see scripts/highlight.mjs).
+   Both palettes meet WCAG AA against their background. */
+.doc-code {
+    --code-bg: light-dark(#f4f6f8, #0b1821);
+    --code-text: light-dark(#1d2a35, #dbe5ed);
+    --code-tag: light-dark(#14587c, #7cc0f0);
+    --code-attr: light-dark(#8a4600, #f2b56b);
+    --code-string: light-dark(#17703a, #8fd694);
+    --code-comment: light-dark(#56616c, #93a1af);
+
+    position: relative;
+    margin-block: var(--space-md);
+    color: var(--code-text);
+    background: var(--code-bg);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+}
+
+.doc-code__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    min-height: var(--kubu-target);
+    padding: 0 var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--kubu-text-muted);
+    cursor: pointer;
+    user-select: none;
+}
+
+.doc-code__summary:hover {
+    color: var(--kubu-text);
+}
+
+.doc-code[open] > .doc-code__summary {
+    border-bottom: 1px solid var(--kubu-border);
+}
+
+.doc-code__pre {
+    margin: 0;
+    padding: var(--space-md);
+    overflow-x: auto;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    tab-size: 4;
+}
+
+.doc-code__block {
+    font-family: inherit;
+    white-space: pre;
+}
+
+.doc-code__tag { color: var(--code-tag); }
+.doc-code__attr { color: var(--code-attr); }
+.doc-code__string { color: var(--code-string); }
+.doc-code__comment { color: var(--code-comment); font-style: italic; }
+
+/* Optional "Copy code" button: hidden in the HTML, shown by js/docs.js when scripts run. */
+.doc-code__copy {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: var(--kubu-target);
+    padding: 0 var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--kubu-link);
+    background: transparent;
+    border: 0;
+    border-left: 1px solid var(--kubu-border);
+    border-radius: 0 var(--space-sm) 0 0;
+    cursor: pointer;
+}
+
+.doc-code__copy:hover {
+    background: var(--kubu-surface-2);
+}
+
+/* Reference tables */
+.doc-table {
+    width: 100%;
+    margin-block: var(--space-md);
+    font-size: var(--font-size-sm);
+    border-collapse: collapse;
+}
+
+.doc-table th,
+.doc-table td {
+    padding: var(--space-sm);
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid var(--kubu-border);
+}
+
+.doc-table th {
+    font-weight: var(--font-weight-medium);
+    color: var(--kubu-text-muted);
+}
+
+/* Home: one focal headline, one sentence, then the actions. No gradient. */
+.doc-hero {
+    padding-block: var(--space-lg) var(--space-md);
+}
+
+.doc-hero__eyebrow {
+    margin: 0 0 var(--space-xs);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--kubu-text-muted);
+}
+
+.doc-hero__title {
+    margin: 0;
+    font-size: clamp(2.5rem, 1.8rem + 3vw, 4rem);
+    letter-spacing: var(--letter-spacing-sqush);
+}
+
+.doc-hero__text {
+    max-width: 38rem;
+    margin-top: var(--space-sm);
+    font-size: var(--font-size-lg);
+    color: var(--kubu-text-muted);
+}
+
+.doc-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.doc-section-links {
+    margin-top: var(--space-md);
+}
+
+/* Footer */
+.site-footer .footer__links {
+    justify-content: center;
+    gap: var(--space-lg);
+}
+
+.site-footer .footer__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--kubu-target);
+}
+
+/* Narrow screens: the seven header links collapse behind "Menu"; the component index follows
+   the article, with a link to it at the top. Primary actions sit lower, in the thumb zone. */
+@media (max-width: 899px) {
+    .docs-layout {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .docs-sidebar {
+        position: static;
+        order: 2;
+        max-height: none;
+        padding-top: var(--space-md);
+        border-top: 1px solid var(--kubu-border);
+    }
+
+    .doc__index-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: var(--kubu-target);
+    }
+
+    .site-header__menu {
+        display: inline-flex;
+        order: 2;
+    }
+
+    .theme-switch {
+        order: 3;
+    }
+
+    .site-header__links {
+        display: none;
+        order: 4;
+        flex-basis: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .site-header__toggle:checked ~ .site-header__links {
+        display: flex;
+    }
+
+    .site-header__logo {
+        margin-right: auto;
+    }
+}
+
+/* Focus on the brand-coloured header: the yellow highlight keeps 3:1 against it in both schemes. */
+.site-header :focus-visible {
+    outline-color: var(--color-highlight);
+}
+
+/* Page progress: shown by htmx (hx-indicator on <body>) while the next page loads. */
+.site-progress {
+    position: absolute;
+    inset: auto 0 0;
+}
+
+/* After a swap, focus moves to <main> so a screen reader starts at the new content.
+   <main> is not a control, so it gets an underline marker instead of the ring. */
+.doc:focus {
+    outline: none;
+}
+
+.doc:focus-visible > h1:first-of-type {
+    text-decoration: underline 2px var(--kubu-focus);
+    text-underline-offset: 0.2em;
+}
+
+/* The swap fades out over 150ms (utilities/Ajax.css). No motion when the visitor asks for none. */
+@media (prefers-reduced-motion: reduce) {
+    .htmx-swapping,
+    .htmx-indicator {
+        transition: none;
+    }
+
+    .ajax-progress {
+        animation: none;
+        background: var(--kubu-primary);
+    }
+}
+
+/* Contents: every component with its one-line purpose */
+.doc-index {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(18rem, 100%), 1fr));
+    gap: var(--space-sm);
+    margin: var(--space-md) 0 0;
+}
+
+.doc-index__item {
+    padding: var(--space-md);
+    background: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+}
+
+.doc-index__term {
+    font-weight: var(--font-weight-bold);
+}
+
+.doc-index__term a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--kubu-target);
+}
+
+.doc-index__purpose {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--kubu-text-muted);
+}
+
+.doc-index__file {
+    display: block;
+    width: fit-content;
+    margin-top: var(--space-xs);
+    font-size: var(--font-size-xs);
+}
+
+/* Metadata line under a component title: which file to import */
+.doc__file {
+    font-size: var(--font-size-sm);
+    color: var(--kubu-text-muted);
+}
+
+/* Short chunks: a row of cards for "what you get" lists */
+.doc-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(15rem, 100%), 1fr));
+    gap: var(--space-md);
+    margin: var(--space-md) 0;
+    padding: 0;
+    list-style: none;
+}
+
+.doc-points > li {
+    margin: 0;
+    padding: var(--space-md);
+    background: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+}
+
+.doc-points strong {
+    display: block;
+    margin-bottom: var(--space-xs);
+    color: var(--kubu-heading);
+}
+
+/* A theme is a token override. The Earth theme used in the examples. */
+.theme-earth {
+    --kubu-primary: light-dark(#7a3e10, #b0652a);
+    --kubu-primary-hover: light-dark(#5e2f0b, #8e4f1f);
+    --kubu-link: light-dark(#7a3e10, #f0b46c);
+    --kubu-heading: light-dark(#7a3e10, #f0b46c);
+}
+
+/* A framed area for whole-page examples (Pages, Templates, Snippets) */
+.doc-example__preview--page {
+    display: block;
+    padding: 0;
+    background: var(--kubu-bg);
+}
+
+.doc-example__preview--page > * + * {
+    margin-top: 0;
+}
+
+/* Colour swatch: set --swatch on the element */
+.doc-swatch {
+    display: grid;
+    gap: var(--space-xs);
+    margin: 0;
+    padding: var(--space-md);
+    padding-top: calc(3rem + var(--space-md));
+    font-size: var(--font-size-sm);
+    background:
+        linear-gradient(var(--swatch), var(--swatch)) top / 100% 3rem no-repeat,
+        var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+}
+
+/* Spacing sample: a bar as wide as --size */
+.doc-space {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin: 0;
+}
+
+.doc-space::before {
+    content: "";
+    flex: none;
+    width: var(--size);
+    height: 1.5rem;
+    background: var(--kubu-primary);
+    border-radius: 2px;
+}
+
+.doc-logo-tile {
+    display: inline-flex;
+    padding: var(--space-md);
+    border-radius: var(--space-sm);
+}
+
+/* Stacks the controls of a demo with the --space scale */
+.doc-stack {
+    display: grid;
+    gap: var(--space-md);
+}

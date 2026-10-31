@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Browser &amp; Devices · KUBU</title>
+    <meta name="description" content="Supported browsers and the native features KUBU relies on.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html" aria-current="page">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Browser &amp; Devices</h1>
+    <p class="doc__lead">KUBU targets the current and previous versions of Chrome, Edge, Firefox and Safari, on desktop and phone.</p>
+
+    <h2>Native features KUBU relies on</h2>
+    <div class="table-container">
+        <table class="table">
+            <caption class="table__caption">Feature, what uses it, and the first version that supports it</caption>
+            <thead class="table__header">
+                <tr><th class="table__header-cell" scope="col">Feature</th><th class="table__header-cell" scope="col">Used by</th><th class="table__header-cell" scope="col">Chrome / Edge</th><th class="table__header-cell" scope="col">Firefox</th><th class="table__header-cell" scope="col">Safari</th></tr>
+            </thead>
+            <tbody>
+                <tr class="table__row"><td class="table__cell"><code>light-dark()</code></td><td class="table__cell">Every colour token</td><td class="table__cell">123</td><td class="table__cell">120</td><td class="table__cell">17.5</td></tr>
+                <tr class="table__row"><td class="table__cell"><code>:has()</code></td><td class="table__cell">Theme radios, guarded forms</td><td class="table__cell">105</td><td class="table__cell">121</td><td class="table__cell">15.4</td></tr>
+                <tr class="table__row"><td class="table__cell"><code>color-mix()</code></td><td class="table__cell">Alert and button tones</td><td class="table__cell">111</td><td class="table__cell">113</td><td class="table__cell">16.2</td></tr>
+                <tr class="table__row"><td class="table__cell"><code>&lt;dialog&gt;</code></td><td class="table__cell">Modal</td><td class="table__cell">37</td><td class="table__cell">98</td><td class="table__cell">15.4</td></tr>
+                <tr class="table__row"><td class="table__cell"><code>popover</code></td><td class="table__cell">Popovers</td><td class="table__cell">114</td><td class="table__cell">125</td><td class="table__cell">17</td></tr>
+                <tr class="table__row"><td class="table__cell"><code>:user-invalid</code></td><td class="table__cell">Form errors</td><td class="table__cell">119</td><td class="table__cell">88</td><td class="table__cell">16.5</td></tr>
+                <tr class="table__row"><td class="table__cell"><code>commandfor</code></td><td class="table__cell">Opening a modal without script</td><td class="table__cell">135</td><td class="table__cell">144</td><td class="table__cell">26.2</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>When a feature is missing</h2>
+    <ul>
+        <li>No <code>commandfor</code>: <code>js/docs.js</code> opens the dialog, or use the <code>:target</code> version on the <a href="organism-modal.html">Modal</a> page.</li>
+        <li>No <code>backdrop-filter</code>: the sticky header and dialog backdrops use a solid colour.</li>
+        <li>No <code>:user-invalid</code>: the browser's own validation message still blocks the send.</li>
+    </ul>
+
+    <h2>Devices</h2>
+    <ul class="doc-points">
+        <li><strong>Touch</strong>Every control is at least 44 by 44 pixels; primary page actions are 48.</li>
+        <li><strong>Narrow screens</strong>The header collapses behind a labelled Menu control, and the component menu follows the article.</li>
+        <li><strong>Zoom and text size</strong>Sizes use <code>rem</code>, so a larger default font scales the whole page.</li>
+        <li><strong>Reduced motion</strong>Transitions and animations stop when the system asks for less motion.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contents · KUBU</title>
+    <meta name="description" content="Every component with a one-line purpose.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html" aria-current="page">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Contents</h1>
+    <p class="doc__lead">Every KUBU component with one line on what it is for. Pick the one that matches what you need to build.</p>
+    <!-- kubu:contents -->
+    <h2 id="contents-atoms">Atoms</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-reset.html">Reset</a></dt><dd class="doc-index__purpose">Page colours, the focus ring and reduced motion. <code class="doc-index__file">css/atoms/Reset.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-badge.html">Badge</a></dt><dd class="doc-index__purpose">A short label for a count or a status. <code class="doc-index__file">css/atoms/Badge.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-buttons.html">Buttons</a></dt><dd class="doc-index__purpose">Actions in every state: hover, active, disabled and loading. <code class="doc-index__file">css/atoms/Buttons.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-close.html">Close</a></dt><dd class="doc-index__purpose">The labelled close control for dialogs, panels and alerts. <code class="doc-index__file">css/atoms/Close.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-colors.html">colors</a></dt><dd class="doc-index__purpose">The semantic tokens a theme overrides. <code class="doc-index__file">css/atoms/colors.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-spacing.html">spacing</a></dt><dd class="doc-index__purpose">The --space-* scale and the margin and padding helpers. <code class="doc-index__file">css/atoms/spacing.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-spinners.html">Spinners</a></dt><dd class="doc-index__purpose">Small loading indicators for a control or a region. <code class="doc-index__file">css/atoms/Spinners.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="atom-typography.html">typography</a></dt><dd class="doc-index__purpose">The type scale from metadata to the page title. <code class="doc-index__file">css/atoms/typography.css</code></dd></div>
+    </dl>
+    <h2 id="contents-molecules">Molecules</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-announcements.html">Announcements</a></dt><dd class="doc-index__purpose">A one-line message across the top of the site. <code class="doc-index__file">css/molecules/Announcements.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-breadcrumb.html">Breadcrumb</a></dt><dd class="doc-index__purpose">Where this page sits in the site. <code class="doc-index__file">css/molecules/Breadcrumb.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-button-groups.html">ButtonGroups</a></dt><dd class="doc-index__purpose">Related actions joined into one control. <code class="doc-index__file">css/molecules/ButtonGroups.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-dropdowns.html">Dropdowns</a></dt><dd class="doc-index__purpose">A menu that opens from a labelled button, no script. <code class="doc-index__file">css/molecules/Dropdowns.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-form-groups.html">FormGroups</a></dt><dd class="doc-index__purpose">A label, a field, a hint and an error, kept together. <code class="doc-index__file">css/molecules/FormGroups.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-list-groups.html">ListGroups</a></dt><dd class="doc-index__purpose">Rows with an icon, a title and a line of text. <code class="doc-index__file">css/molecules/ListGroups.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-navbar.html">Navbar</a></dt><dd class="doc-index__purpose">The labelled row of links in a header. <code class="doc-index__file">css/molecules/Navbar.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-navs.html">Navs</a></dt><dd class="doc-index__purpose">Links between views of one section: tabs, pills or a stack. <code class="doc-index__file">css/molecules/Navs.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="molecule-pagination.html">Pagination</a></dt><dd class="doc-index__purpose">Links to the pages of a long list. <code class="doc-index__file">css/molecules/Pagination.css</code></dd></div>
+    </dl>
+    <h2 id="contents-organisms">Organisms</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-accordion.html">Accordion</a></dt><dd class="doc-index__purpose">Stacked sections that open one at a time, or each on its own. <code class="doc-index__file">css/organisms/Accordion.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-alerts.html">Alerts</a></dt><dd class="doc-index__purpose">A message with a tone, an icon and a sentence. <code class="doc-index__file">css/organisms/Alerts.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-card.html">Card</a></dt><dd class="doc-index__purpose">A header, body and footer around one subject. <code class="doc-index__file">css/organisms/Card.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-carousel.html">Carousel</a></dt><dd class="doc-index__purpose">Slides that snap into place as you scroll. <code class="doc-index__file">css/organisms/Carousel.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-collapse.html">Collapse</a></dt><dd class="doc-index__purpose">Show and hide one region with &lt;details&gt;. <code class="doc-index__file">css/organisms/Collapse.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-datepicker.html">DatePicker</a></dt><dd class="doc-index__purpose">Choose a date with the native input, or show a month. <code class="doc-index__file">css/organisms/DatePicker.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-file-upload.html">FileUpload</a></dt><dd class="doc-index__purpose">A labelled file field that looks like a button. <code class="doc-index__file">css/organisms/FileUpload.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-forms.html">Forms</a></dt><dd class="doc-index__purpose">Forgiving validation with :user-invalid and inline errors. <code class="doc-index__file">css/organisms/Forms.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-list-groups.html">ListGroups</a></dt><dd class="doc-index__purpose">A panel of selectable rows, like a settings menu. <code class="doc-index__file">css/organisms/ListGroups.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-modal.html">Modal</a></dt><dd class="doc-index__purpose">A native &lt;dialog&gt; built from header, body and footer. <code class="doc-index__file">css/organisms/Modal.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-offcanvas.html">Offcanvas</a></dt><dd class="doc-index__purpose">A panel that slides in from the edge. <code class="doc-index__file">css/organisms/Offcanvas.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-popovers.html">Popovers</a></dt><dd class="doc-index__purpose">Extra content on demand with the popover attribute. <code class="doc-index__file">css/organisms/Popovers.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-progress.html">Progress</a></dt><dd class="doc-index__purpose">How far a task has got. <code class="doc-index__file">css/organisms/Progress.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-scrollspy.html">Scrollspy</a></dt><dd class="doc-index__purpose">A sticky in-page menu that marks the section you jumped to. <code class="doc-index__file">css/organisms/Scrollspy.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-stepper.html">Stepper</a></dt><dd class="doc-index__purpose">The steps of a process and where you are. <code class="doc-index__file">css/organisms/Stepper.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-tables.html">Tables</a></dt><dd class="doc-index__purpose">Data tables with captions, stripes and alignment. <code class="doc-index__file">css/organisms/Tables.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-tabs.html">Tabs</a></dt><dd class="doc-index__purpose">A tab bar that switches panels with radio buttons. <code class="doc-index__file">css/organisms/Tabs.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-toasts.html">Toasts</a></dt><dd class="doc-index__purpose">Short confirmations stacked in a corner. <code class="doc-index__file">css/organisms/Toasts.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-tooltips.html">Tooltips</a></dt><dd class="doc-index__purpose">A short text hint on hover and keyboard focus. <code class="doc-index__file">css/organisms/Tooltips.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="organism-rating.html">Rating</a></dt><dd class="doc-index__purpose">A star rating made of radio buttons. <code class="doc-index__file">css/organisms/Rating.css</code></dd></div>
+    </dl>
+    <h2 id="contents-utilities">Utilities</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="utility-ajax.html">Ajax</a></dt><dd class="doc-index__purpose">Loading, skeleton and swap states for htmx requests. <code class="doc-index__file">css/utilities/Ajax.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="utility-animations.html">Animations</a></dt><dd class="doc-index__purpose">Fade and slide in with transform and opacity. <code class="doc-index__file">css/utilities/Animations.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="utility-event-delegation.html">EventDelegation</a></dt><dd class="doc-index__purpose">One htmx listener on a parent instead of one per child.</dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="utility-helpers.html">Helpers</a></dt><dd class="doc-index__purpose">Visually hidden text, borders and section spacing. <code class="doc-index__file">css/utilities/Helpers.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="utility-notifications.html">Notifications</a></dt><dd class="doc-index__purpose">Inline status messages for a region. <code class="doc-index__file">css/utilities/Notifications.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="utility-flexbox.html">Flexbox</a></dt><dd class="doc-index__purpose">The sidebar, main and footer page layout. <code class="doc-index__file">css/utilities/Flexbox.css</code></dd></div>
+    </dl>
+    <h2 id="contents-pages">Pages</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="page-home.html">HomePage</a></dt><dd class="doc-index__purpose">A product home page from the header, card and footer snippets.</dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="page-about.html">AboutPage</a></dt><dd class="doc-index__purpose">A team and history page from cards, a list group and a table.</dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="page-product.html">ProductPage</a></dt><dd class="doc-index__purpose">A product page with a carousel, tabs, rating and a buy form.</dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="page-contact.html">ContactPage</a></dt><dd class="doc-index__purpose">A contact form with forgiving validation.</dd></div>
+    </dl>
+    <h2 id="contents-snippets">Snippets</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="snippet-forms.html">Forms</a></dt><dd class="doc-index__purpose">Base styles for bare form elements. <code class="doc-index__file">css/snippets/Forms.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="snippet-navbar.html">Navbar</a></dt><dd class="doc-index__purpose">The site header: logo, labelled menu and a utility row. <code class="doc-index__file">css/snippets/Header.css</code></dd></div>
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="snippet-footer.html">Footer</a></dt><dd class="doc-index__purpose">Footer links and the copyright line. <code class="doc-index__file">css/snippets/Footer.css</code></dd></div>
+    </dl>
+    <h2 id="contents-templates">Templates</h2>
+    <dl class="doc-index">
+        <div class="doc-index__item"><dt class="doc-index__term"><a href="template-main.html">main-template</a></dt><dd class="doc-index__purpose">A full page layout: header, breadcrumb, content, footer.</dd></div>
+    </dl>
+    <!-- /kubu:contents -->
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

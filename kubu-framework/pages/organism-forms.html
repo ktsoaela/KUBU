@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forms · KUBU</title>
+    <meta name="description" content="Forgiving validation with :user-invalid and inline errors.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html" aria-current="page">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Forms</h1>
+    <p class="doc__lead">Forgiving forms: errors wait until you leave a field, say how to fix it, and the send button wakes up when everything required is valid.</p>
+    <p class="doc__file">File: <code>css/organisms/Forms.css</code>, with <code>css/molecules/FormGroups.css</code></p>
+
+    <h2>Forgiving validation</h2>
+    <p>Type an incomplete email, then move to the next field. The error appears only after you leave it (<code>:user-invalid</code>). The button stays dimmed until both required fields are valid (<code>:has(:invalid)</code>).</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form class="form-container form-container--guarded" action="organism-forms.html" method="get">
+                <div class="form-group">
+                    <label class="form-label" for="fm-email">Email <span class="form-label__hint">(required)</span></label>
+                    <input class="form-input" id="fm-email" name="email" type="email" autocomplete="email" required pattern=".+@.+\..+" placeholder="e.g. palesa@example.com" aria-describedby="fm-email-error">
+                    <p class="form-error form-error--live" id="fm-email-error">Enter an email address with an @ and a dot, like palesa@example.com.</p>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="fm-password">Password <span class="form-label__hint">(required, 12 characters or more)</span></label>
+                    <input class="form-input" id="fm-password" name="password" type="password" autocomplete="new-password" required minlength="12" aria-describedby="fm-password-error">
+                    <p class="form-error form-error--live" id="fm-password-error">Use at least 12 characters. A short sentence is easy to remember.</p>
+                </div>
+                <button class="form-submit" type="submit">Create account</button>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-container form-container--guarded"</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"organism-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-group"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"fm-email"</span><span class="doc-code__tag">&gt;</span>Email <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label__hint"</span><span class="doc-code__tag">&gt;</span>(required)<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-input"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-email"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"email"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"email"</span> <span class="doc-code__attr">autocomplete</span>=<span class="doc-code__string">"email"</span> <span class="doc-code__attr">required</span> <span class="doc-code__attr">pattern</span>=<span class="doc-code__string">".+@.+\..+"</span> <span class="doc-code__attr">placeholder</span>=<span class="doc-code__string">"e.g. palesa@example.com"</span> <span class="doc-code__attr">aria-describedby</span>=<span class="doc-code__string">"fm-email-error"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-error form-error--live"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-email-error"</span><span class="doc-code__tag">&gt;</span>Enter an email address with an @ and a dot, like palesa@example.com.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-group"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"fm-password"</span><span class="doc-code__tag">&gt;</span>Password <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label__hint"</span><span class="doc-code__tag">&gt;</span>(required, 12 characters or more)<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-input"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-password"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"password"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"password"</span> <span class="doc-code__attr">autocomplete</span>=<span class="doc-code__string">"new-password"</span> <span class="doc-code__attr">required</span> <span class="doc-code__attr">minlength</span>=<span class="doc-code__string">"12"</span> <span class="doc-code__attr">aria-describedby</span>=<span class="doc-code__string">"fm-password-error"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-error form-error--live"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-password-error"</span><span class="doc-code__tag">&gt;</span>Use at least 12 characters. A short sentence is easy to remember.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-submit"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"submit"</span><span class="doc-code__tag">&gt;</span>Create account<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>An error from the server</h2>
+    <p>When the server rejects a value, render the field with <code>aria-invalid="true"</code> and the error text, linked with <code>aria-describedby</code>.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <div class="form-group">
+                <label class="form-label" for="fm-user">Username <span class="form-label__hint">(required)</span></label>
+                <input class="form-input" id="fm-user" name="username" type="text" value="thabo" aria-invalid="true" aria-describedby="fm-user-error">
+                <p class="form-error" id="fm-user-error">thabo is taken. Try thabo.m or add a number.</p>
+            </div>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-group"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"fm-user"</span><span class="doc-code__tag">&gt;</span>Username <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label__hint"</span><span class="doc-code__tag">&gt;</span>(required)<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-input"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-user"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"username"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"text"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"thabo"</span> <span class="doc-code__attr">aria-invalid</span>=<span class="doc-code__string">"true"</span> <span class="doc-code__attr">aria-describedby</span>=<span class="doc-code__string">"fm-user-error"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-error"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-user-error"</span><span class="doc-code__tag">&gt;</span>thabo is taken. Try thabo.m or add a number.<span class="doc-code__tag">&lt;/p&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Stay on the page with htmx</h2>
+    <p>The form posts to its own URL without htmx. With htmx, the reply replaces only the result area under the form. The button shows its loading state as soon as you send.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form class="form-container" action="organism-forms.html" method="get" hx-get="../templates/subscribe-response.html" hx-target="#fm-result" hx-select="unset" hx-swap="innerHTML" hx-push-url="false" hx-indicator="#fm-subscribe" hx-disabled-elt="#fm-subscribe">
+                <div class="form-group">
+                    <label class="form-label" for="fm-news">Email for release notes</label>
+                    <input class="form-input" id="fm-news" name="email" type="email" autocomplete="email" required>
+                </div>
+                <button class="button button--primary" id="fm-subscribe" type="submit">Get release notes <span class="spinner spinner--small htmx-indicator" aria-hidden="true"></span></button>
+                <div id="fm-result" aria-live="polite"></div>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-container"</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"organism-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span> <span class="doc-code__attr">hx-get</span>=<span class="doc-code__string">"../templates/subscribe-response.html"</span> <span class="doc-code__attr">hx-target</span>=<span class="doc-code__string">"#fm-result"</span> <span class="doc-code__attr">hx-select</span>=<span class="doc-code__string">"unset"</span> <span class="doc-code__attr">hx-swap</span>=<span class="doc-code__string">"innerHTML"</span> <span class="doc-code__attr">hx-push-url</span>=<span class="doc-code__string">"false"</span> <span class="doc-code__attr">hx-indicator</span>=<span class="doc-code__string">"#fm-subscribe"</span> <span class="doc-code__attr">hx-disabled-elt</span>=<span class="doc-code__string">"#fm-subscribe"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-group"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"fm-news"</span><span class="doc-code__tag">&gt;</span>Email for release notes<span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-input"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-news"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"email"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"email"</span> <span class="doc-code__attr">autocomplete</span>=<span class="doc-code__string">"email"</span> <span class="doc-code__attr">required</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-subscribe"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"submit"</span><span class="doc-code__tag">&gt;</span>Get release notes <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"spinner spinner--small htmx-indicator"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/button&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"fm-result"</span> <span class="doc-code__attr">aria-live</span>=<span class="doc-code__string">"polite"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Parts</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+            <tr><td><code>.form-container</code></td><td>Block: a centred column, at most 400px wide.</td></tr>
+            <tr><td><code>.form-container--guarded</code></td><td>Modifier: dims the submit button until every required field is valid.</td></tr>
+            <tr><td><code>.form-group</code>, <code>.form-label</code>, <code>.form-input</code></td><td>The field parts, from <a href="molecule-form-groups.html">FormGroups</a>.</td></tr>
+            <tr><td><code>.form-error</code></td><td>Element: icon, danger colour and a sentence that names the fix.</td></tr>
+            <tr><td><code>.form-error--live</code></td><td>Modifier: hidden until the field is <code>:user-invalid</code>.</td></tr>
+            <tr><td><code>.form-submit</code></td><td>Element: a full-width, 48px send button.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Rules</h2>
+    <ul>
+        <li>Never show an error before someone has had a chance to type.</li>
+        <li>Error text says what to do: "Enter all 8 digits", not "Invalid input".</li>
+        <li>Keep the browser's validation on; it is the fallback when CSS cannot help.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

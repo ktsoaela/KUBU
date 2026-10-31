@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Forms · KUBU</title>
+    <meta name="description" content="Base styles for bare form elements.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html" aria-current="page">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Forms</h1>
+    <p class="doc__lead">Base styles for bare form elements, so a form from a server template looks right before it has a single class.</p>
+    <p class="doc__file">File: <code>css/snippets/Forms.css</code>. For classes, errors and validation, see the <a href="organism-forms.html">Forms organism</a>.</p>
+
+    <h2>A form with no classes</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form action="snippet-forms.html" method="get">
+                <label for="sf-town">Town</label>
+                <input id="sf-town" name="town" type="text" autocomplete="address-level2" placeholder="e.g. Mafeteng">
+                <label for="sf-date">Pick-up date</label>
+                <input id="sf-date" name="date" type="date">
+                <label for="sf-size">Parcel size</label>
+                <select id="sf-size" name="size">
+                    <option>Small, up to 2 kg</option>
+                    <option>Large, up to 10 kg</option>
+                </select>
+                <button type="submit">Book a pick-up</button>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"snippet-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"sf-town"</span><span class="doc-code__tag">&gt;</span>Town<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"sf-town"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"town"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"text"</span> <span class="doc-code__attr">autocomplete</span>=<span class="doc-code__string">"address-level2"</span> <span class="doc-code__attr">placeholder</span>=<span class="doc-code__string">"e.g. Mafeteng"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"sf-date"</span><span class="doc-code__tag">&gt;</span>Pick-up date<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"sf-date"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"date"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"date"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"sf-size"</span><span class="doc-code__tag">&gt;</span>Parcel size<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;select</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"sf-size"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"size"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;option&gt;</span>Small, up to 2 kg<span class="doc-code__tag">&lt;/option&gt;</span>
+        <span class="doc-code__tag">&lt;option&gt;</span>Large, up to 10 kg<span class="doc-code__tag">&lt;/option&gt;</span>
+    <span class="doc-code__tag">&lt;/select&gt;</span>
+    <span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"submit"</span><span class="doc-code__tag">&gt;</span>Book a pick-up<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>What it styles</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Selector</th><th scope="col">Style</th></tr></thead>
+        <tbody>
+            <tr><td>Text-like <code>input</code>s, <code>textarea</code>, <code>select</code></td><td>Full width, a token border, 44px tall.</td></tr>
+            <tr><td><code>label</code></td><td>Bold, on its own line.</td></tr>
+            <tr><td><code>button</code>, <code>[type="submit"]</code>, <code>[type="reset"]</code></td><td>The primary colour, 44px tall. A <code>.button</code> class overrides it.</td></tr>
+            <tr><td><code>.error-message</code></td><td>Plain error text. Prefer <code>.form-error</code>, which adds the icon.</td></tr>
+        </tbody>
+    </table>
+    <p>Leave this file out if your site styles every control with classes.</p>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

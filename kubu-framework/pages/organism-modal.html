@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Modal · KUBU</title>
+    <meta name="description" content="A native &lt;dialog&gt; built from header, body and footer.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html" aria-current="page">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Modal</h1>
+    <p class="doc__lead">A native <code>&lt;dialog&gt;</code> built from a header, a body and a footer. The browser traps focus, closes it on Esc and draws the backdrop.</p>
+    <p class="doc__file">File: <code>css/organisms/Modal.css</code></p>
+
+    <h2>Example</h2>
+    <p>The button opens the dialog with <code>commandfor</code> and <code>command="show-modal"</code>: no script. Buttons in a <code>form method="dialog"</code> close it.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <button class="button button--danger" type="button" commandfor="delete-dialog" command="show-modal">Delete invoice 1042</button>
+            <dialog class="modal" id="delete-dialog" aria-labelledby="delete-dialog-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="delete-dialog-title">Delete invoice 1042?</h2>
+                    <form method="dialog"><button class="modal__close" aria-label="Close">&times;</button></form>
+                </header>
+                <div class="modal__body">
+                    <p>The invoice and its payment history will be removed. This cannot be undone.</p>
+                </div>
+                <form class="modal__footer" method="dialog">
+                    <button class="button button--outline" value="cancel">Keep invoice</button>
+                    <button class="button button--danger" value="delete">Delete invoice</button>
+                </form>
+            </dialog>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--danger"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span> <span class="doc-code__attr">commandfor</span>=<span class="doc-code__string">"delete-dialog"</span> <span class="doc-code__attr">command</span>=<span class="doc-code__string">"show-modal"</span><span class="doc-code__tag">&gt;</span>Delete invoice 1042<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;dialog</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"delete-dialog"</span> <span class="doc-code__attr">aria-labelledby</span>=<span class="doc-code__string">"delete-dialog-title"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__header"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;h2</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__title"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"delete-dialog-title"</span><span class="doc-code__tag">&gt;</span>Delete invoice 1042?<span class="doc-code__tag">&lt;/h2&gt;</span>
+        <span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"dialog"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__close"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Close"</span><span class="doc-code__tag">&gt;</span>&amp;times;<span class="doc-code__tag">&lt;/button&gt;</span><span class="doc-code__tag">&lt;/form&gt;</span>
+    <span class="doc-code__tag">&lt;/header&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__body"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;p&gt;</span>The invoice and its payment history will be removed. This cannot be undone.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__footer"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"dialog"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"cancel"</span><span class="doc-code__tag">&gt;</span>Keep invoice<span class="doc-code__tag">&lt;/button&gt;</span>
+        <span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--danger"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"delete"</span><span class="doc-code__tag">&gt;</span>Delete invoice<span class="doc-code__tag">&lt;/button&gt;</span>
+    <span class="doc-code__tag">&lt;/form&gt;</span>
+<span class="doc-code__tag">&lt;/dialog&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>CSS-only fallback with :target</h2>
+    <p>For older browsers, the same parts inside a <code>.modal-overlay</code> open when the URL points at its id. The close link goes back to the button that opened it.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <a class="button button--outline" id="terms-open" href="#terms">Read the terms</a>
+            <div class="modal-overlay" id="terms">
+                <div class="modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+                    <header class="modal__header">
+                        <h2 class="modal__title" id="terms-title">Terms of sale</h2>
+                        <a class="modal__close" href="#terms-open" aria-label="Close">&times;</a>
+                    </header>
+                    <div class="modal__body"><p>Returns are free within 30 days. Refunds reach your card in five working days.</p></div>
+                    <footer class="modal__footer"><a class="button button--primary" href="#terms-open">I have read the terms</a></footer>
+                </div>
+            </div>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"terms-open"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"#terms"</span><span class="doc-code__tag">&gt;</span>Read the terms<span class="doc-code__tag">&lt;/a&gt;</span>
+<span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal-overlay"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"terms"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"dialog"</span> <span class="doc-code__attr">aria-modal</span>=<span class="doc-code__string">"true"</span> <span class="doc-code__attr">aria-labelledby</span>=<span class="doc-code__string">"terms-title"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__header"</span><span class="doc-code__tag">&gt;</span>
+            <span class="doc-code__tag">&lt;h2</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__title"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"terms-title"</span><span class="doc-code__tag">&gt;</span>Terms of sale<span class="doc-code__tag">&lt;/h2&gt;</span>
+            <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__close"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"#terms-open"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Close"</span><span class="doc-code__tag">&gt;</span>&amp;times;<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;/header&gt;</span>
+        <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__body"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>Returns are free within 30 days. Refunds reach your card in five working days.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+        <span class="doc-code__tag">&lt;footer</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"modal__footer"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"#terms-open"</span><span class="doc-code__tag">&gt;</span>I have read the terms<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/footer&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Parts</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+            <tr><td><code>dialog.modal</code></td><td>Block: the dialog surface, with a soft shadow and a lightly blurred backdrop.</td></tr>
+            <tr><td><code>.modal__header</code></td><td>Element: the title row, with the close control in the corner.</td></tr>
+            <tr><td><code>.modal__title</code></td><td>Element: the heading. Point <code>aria-labelledby</code> at it.</td></tr>
+            <tr><td><code>.modal__close</code></td><td>Element: the 44px close button, with <code>aria-label="Close"</code>.</td></tr>
+            <tr><td><code>.modal__body</code></td><td>Element: the content. Scrolls when long.</td></tr>
+            <tr><td><code>.modal__footer</code></td><td>Element: the actions, right-aligned. Often a <code>form method="dialog"</code>.</td></tr>
+            <tr><td><code>.modal-overlay</code></td><td>The <code>:target</code> wrapper for the CSS-only version.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Microcopy</h2>
+    <ul>
+        <li>Ask the question in the title: "Delete invoice 1042?"</li>
+        <li>Name both outcomes on the buttons: "Keep invoice", "Delete invoice". Not "Cancel" and "OK".</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

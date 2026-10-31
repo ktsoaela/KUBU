@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HomePage · KUBU</title>
+    <meta name="description" content="A product home page from the header, card and footer snippets.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html" aria-current="page">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>HomePage</h1>
+    <p class="doc__lead">A product home page made only of KUBU parts: the header snippet, a hero, a card grid and the footer snippet.</p>
+    <p class="doc__file">Uses: <a href="snippet-navbar.html">Navbar snippet</a>, <a href="organism-card.html">Card</a>, <a href="atom-buttons.html">Buttons</a>, <a href="start-grid.html">Grid</a>, <a href="snippet-footer.html">Footer snippet</a></p>
+
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--page">
+            <header class="header">
+                <p class="announcement">Free delivery in Maseru until 30 November.</p>
+                <nav class="navbar" aria-label="Shop">
+                    <a class="logo" href="page-home.html"><img src="../img/hippo-white.svg" alt="" width="30" height="30"> Basotho Crafts</a>
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="page-home.html" aria-current="page">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="page-product.html">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="page-about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="page-contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container section">
+                <section aria-labelledby="ph-title">
+                    <h2 class="title" id="ph-title">Made by hand in the mountains.</h2>
+                    <p class="doc__lead">Blankets, hats and baskets from 40 weavers across Lesotho, delivered to your door.</p>
+                    <a class="button button--primary button--large" href="page-product.html">Shop blankets</a>
+                </section>
+                <div class="grid grid--auto section">
+                    <article class="card">
+                        <h3 class="card__title">Blankets</h3>
+                        <p class="card__body">Mohair and wool, in the traditional patterns.</p>
+                        <footer class="card__footer"><a href="page-product.html">See 24 blankets</a></footer>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title">Hats</h3>
+                        <p class="card__body">The mokorotlo, woven from grass.</p>
+                        <footer class="card__footer"><a href="page-product.html">See 9 hats</a></footer>
+                    </article>
+                    <article class="card">
+                        <h3 class="card__title">Our weavers</h3>
+                        <p class="card__body">Every sale pays the maker first.</p>
+                        <footer class="card__footer"><a href="page-about.html">Meet the weavers</a></footer>
+                    </article>
+                </div>
+            </div>
+            <footer class="footer">
+                <nav class="footer__links" aria-label="Shop footer">
+                    <a class="footer__link" href="page-about.html">About us</a>
+                    <a class="footer__link" href="page-contact.html">Contact</a>
+                    <a class="footer__link" href="page-product.html">Delivery and returns</a>
+                </nav>
+                <p class="copyright">&copy; 2026 Basotho Crafts, Maseru.</p>
+            </footer>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"header"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"announcement"</span><span class="doc-code__tag">&gt;</span>Free delivery in Maseru until 30 November.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;nav</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"navbar"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Shop"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"logo"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-home.html"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-white.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">""</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"30"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"30"</span><span class="doc-code__tag">&gt;</span> Basotho Crafts<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;ul</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"navbar-nav"</span><span class="doc-code__tag">&gt;</span>
+            <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-item"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-home.html"</span> <span class="doc-code__attr">aria-current</span>=<span class="doc-code__string">"page"</span><span class="doc-code__tag">&gt;</span>Home<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
+            <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-item"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-product.html"</span><span class="doc-code__tag">&gt;</span>Products<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
+            <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-item"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-about.html"</span><span class="doc-code__tag">&gt;</span>About<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
+            <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-item"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"nav-link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-contact.html"</span><span class="doc-code__tag">&gt;</span>Contact<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
+        <span class="doc-code__tag">&lt;/ul&gt;</span>
+    <span class="doc-code__tag">&lt;/nav&gt;</span>
+<span class="doc-code__tag">&lt;/header&gt;</span>
+<span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"container section"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;section</span> <span class="doc-code__attr">aria-labelledby</span>=<span class="doc-code__string">"ph-title"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;h2</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"title"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"ph-title"</span><span class="doc-code__tag">&gt;</span>Made by hand in the mountains.<span class="doc-code__tag">&lt;/h2&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"doc__lead"</span><span class="doc-code__tag">&gt;</span>Blankets, hats and baskets from 40 weavers across Lesotho, delivered to your door.<span class="doc-code__tag">&lt;/p&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary button--large"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-product.html"</span><span class="doc-code__tag">&gt;</span>Shop blankets<span class="doc-code__tag">&lt;/a&gt;</span>
+    <span class="doc-code__tag">&lt;/section&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"grid grid--auto section"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span>
+            <span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Blankets<span class="doc-code__tag">&lt;/h3&gt;</span>
+            <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span>Mohair and wool, in the traditional patterns.<span class="doc-code__tag">&lt;/p&gt;</span>
+            <span class="doc-code__tag">&lt;footer</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__footer"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-product.html"</span><span class="doc-code__tag">&gt;</span>See 24 blankets<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/footer&gt;</span>
+        <span class="doc-code__tag">&lt;/article&gt;</span>
+        <span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span>
+            <span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Hats<span class="doc-code__tag">&lt;/h3&gt;</span>
+            <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span>The mokorotlo, woven from grass.<span class="doc-code__tag">&lt;/p&gt;</span>
+            <span class="doc-code__tag">&lt;footer</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__footer"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-product.html"</span><span class="doc-code__tag">&gt;</span>See 9 hats<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/footer&gt;</span>
+        <span class="doc-code__tag">&lt;/article&gt;</span>
+        <span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span>
+            <span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Our weavers<span class="doc-code__tag">&lt;/h3&gt;</span>
+            <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span>Every sale pays the maker first.<span class="doc-code__tag">&lt;/p&gt;</span>
+            <span class="doc-code__tag">&lt;footer</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__footer"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-about.html"</span><span class="doc-code__tag">&gt;</span>Meet the weavers<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/footer&gt;</span>
+        <span class="doc-code__tag">&lt;/article&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;footer</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"footer"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;nav</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"footer__links"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Shop footer"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"footer__link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-about.html"</span><span class="doc-code__tag">&gt;</span>About us<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"footer__link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-contact.html"</span><span class="doc-code__tag">&gt;</span>Contact<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"footer__link"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-product.html"</span><span class="doc-code__tag">&gt;</span>Delivery and returns<span class="doc-code__tag">&lt;/a&gt;</span>
+    <span class="doc-code__tag">&lt;/nav&gt;</span>
+    <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"copyright"</span><span class="doc-code__tag">&gt;</span>&amp;copy; 2026 Basotho Crafts, Maseru.<span class="doc-code__tag">&lt;/p&gt;</span>
+<span class="doc-code__tag">&lt;/footer&gt;</span></code></pre>
+        </details>
+    </div>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

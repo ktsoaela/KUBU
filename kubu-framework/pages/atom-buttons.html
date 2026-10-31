@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Buttons · KUBU</title>
+    <meta name="description" content="Actions in every state: hover, active, disabled and loading.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html" aria-current="page">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Buttons</h1>
+    <p class="doc__lead">An action, named by its outcome. Use <code>&lt;button&gt;</code> to do something and <code>&lt;a&gt;</code> to go somewhere; both take <code>.button</code>.</p>
+    <p class="doc__file">File: <code>css/atoms/Buttons.css</code></p>
+
+    <h2>States</h2>
+    <p>Every button is at least 44 by 44 pixels. Hover darkens it, pressing nudges it down, and Tab shows the focus ring.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <button class="button button--primary" type="button">Save changes</button>
+            <button class="button button--primary" type="button" disabled>Save changes</button>
+            <button class="button button--primary" type="button" aria-busy="true" aria-disabled="true">Saving</button>
+            <button class="button button--safe" type="button"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#check"></use></svg> Changes saved</button>
+            <button class="button button--danger" type="button"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#alert"></use></svg> Try saving again</button>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Save changes<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span> <span class="doc-code__attr">disabled</span><span class="doc-code__tag">&gt;</span>Save changes<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span> <span class="doc-code__attr">aria-busy</span>=<span class="doc-code__string">"true"</span> <span class="doc-code__attr">aria-disabled</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span>Saving<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--safe"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#check"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Changes saved<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--danger"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#alert"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Try saving again<span class="doc-code__tag">&lt;/button&gt;</span></code></pre>
+        </details>
+    </div>
+    <table class="doc-table">
+        <thead><tr><th scope="col">State</th><th scope="col">How to show it</th></tr></thead>
+        <tbody>
+            <tr><td>Default, hover, active, focus</td><td>Built in: <code>:hover</code>, <code>:active</code> and <code>:focus-visible</code>.</td></tr>
+            <tr><td>Disabled</td><td><code>disabled</code> on a button; <code>aria-disabled="true"</code> on a link.</td></tr>
+            <tr><td>Loading</td><td><code>aria-busy="true"</code> draws a spinner after the label. htmx adds <code>.htmx-request</code> for you.</td></tr>
+            <tr><td>Success, error</td><td>The server returns the button with <code>.button--safe</code> or <code>.button--danger</code>, an icon and new text.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Loading with htmx</h2>
+    <p>Before the response arrives, htmx puts <code>.htmx-request</code> on the button and shows its <code>.htmx-indicator</code>. The server replies with the next state of the button.</p>
+    <details class="doc-code" open>
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block" data-lang="html"><span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">hx-post</span>=<span class="doc-code__string">"/settings"</span> <span class="doc-code__attr">hx-swap</span>=<span class="doc-code__string">"outerHTML"</span> <span class="doc-code__attr">hx-disabled-elt</span>=<span class="doc-code__string">"this"</span><span class="doc-code__tag">&gt;</span>
+    Save changes <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"spinner spinner--small htmx-indicator"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>
+<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__comment">&lt;!-- the response --&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--safe"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Changes saved<span class="doc-code__tag">&lt;/button&gt;</span></code></pre>
+        </details>
+
+    <h2>Tones</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <button class="button button--primary" type="button">Create invoice</button>
+            <button class="button button--secondary" type="button">Add a note</button>
+            <button class="button button--outline" type="button">Preview</button>
+            <button class="button button--plain" type="button">Cancel</button>
+            <button class="button button--danger" type="button">Delete invoice</button>
+            <button class="button button--safe" type="button">Mark as paid</button>
+            <button class="button button--hazard" type="button">Send reminder</button>
+            <button class="button button--info" type="button">View history</button>
+            <button class="button button--dark" type="button">Archive</button>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Create invoice<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--secondary"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Add a note<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Preview<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--plain"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Cancel<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--danger"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Delete invoice<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--safe"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Mark as paid<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--hazard"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Send reminder<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--info"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>View history<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--dark"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Archive<span class="doc-code__tag">&lt;/button&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Sizes, shapes and links</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <a class="button button--primary button--small" href="download.html">Download</a>
+            <a class="button button--primary button--large" href="download.html">Download</a>
+            <button class="button button--secondary button--rounded-12 button--shadow" type="button">Start trial</button>
+            <a class="button button--outline button--disabled" aria-disabled="true">Sold out</a>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary button--small"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"download.html"</span><span class="doc-code__tag">&gt;</span>Download<span class="doc-code__tag">&lt;/a&gt;</span>
+<span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary button--large"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"download.html"</span><span class="doc-code__tag">&gt;</span>Download<span class="doc-code__tag">&lt;/a&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--secondary button--rounded-12 button--shadow"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span>Start trial<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline button--disabled"</span> <span class="doc-code__attr">aria-disabled</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span>Sold out<span class="doc-code__tag">&lt;/a&gt;</span></code></pre>
+        </details>
+    </div>
+    <p>Small buttons keep the 44-pixel height; only the text and side padding shrink. Use <code>.button--large</code> (48 pixels) for the main action on a phone, low on the screen where a thumb reaches.</p>
+
+    <h2>Parts</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+            <tr><td><code>.button</code></td><td>Block. Inline flex, so an <code>.icon</code> lines up with the label.</td></tr>
+            <tr><td><code>.button--primary</code>, <code>--secondary</code>, <code>--outline</code>, <code>--plain</code>, <code>--dark</code>, <code>--light</code></td><td>Modifier: emphasis.</td></tr>
+            <tr><td><code>.button--danger</code>, <code>--safe</code>, <code>--hazard</code>, <code>--risk</code>, <code>--info</code>, <code>--radiation</code>, <code>--earth</code></td><td>Modifier: status tone.</td></tr>
+            <tr><td><code>.button--small</code>, <code>--medium</code>, <code>--large</code>, <code>--xlarge</code></td><td>Modifier: size.</td></tr>
+            <tr><td><code>.button--rounded-2</code> … <code>--rounded-12</code>, <code>--rounded-circle</code>, <code>--shadow</code></td><td>Modifier: shape and depth.</td></tr>
+            <tr><td><code>.button--disabled</code></td><td>Modifier: the disabled look for a link, with <code>aria-disabled="true"</code>.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Microcopy</h2>
+    <ul>
+        <li>Say the outcome: "Save changes", "Delete invoice", "Copy code". Not "Submit", "OK" or "Click here".</li>
+        <li>An icon goes beside the word. Only a standard close control may be icon-only, and it needs <code>aria-label</code>.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>
