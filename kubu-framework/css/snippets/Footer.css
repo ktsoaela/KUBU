@@ -22,6 +22,8 @@
 .footer__link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    min-width: var(--kubu-target, 44px);
     min-height: var(--kubu-target, 44px);
     color: inherit;
     text-decoration: none;
