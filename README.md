@@ -1,72 +1,80 @@
-# Kubu CSS Framework
+# KUBU
 
-Kubu is a lightweight, flexible CSS framework designed to streamline your web development process. With Kubu, you can quickly build responsive and stylish web interfaces without the hassle of writing extensive custom CSS.
+KUBU is a CSS framework for server-rendered HTML. Components are CSS with BEM class names, sorted by Atomic Design. The browser supplies the behaviour with `<details>`, `<dialog>`, `popover`, `:target`, radio buttons and checkboxes, so every component looks and works with scripts turned off.
 
-## Table of Contents
+- `kubu-framework/`: the framework (`css/`), the bundle (`dist/`) and the docs site (`pages/`)
+- `kubu.20/`: the optional JavaScript component layer and its demo
+- `kubu-web/`: a Vue front end that uses the same classes
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Customization](#customization)
-- [Contributing](#contributing)
-- [License](#license)
+## Use it
 
-## Installation
+KUBU is not published to npm. Take the CSS from this repository.
 
-You can install Kubu via npm or by including the minified CSS file directly in your HTML.
+### The whole framework
 
-### Via npm
-
-```bash
-npm install kubu-css
-```
-
-### Direct Download
-
-<!-- You can download the minified CSS file from the [Kubu GitHub releases page](https://github.com/example/kubu-css/releases). -->
-
-## Usage
-
-To use Kubu in your project, simply include the CSS file in your HTML file or import it into your Sass/Less files.
-
-### HTML
+Copy `kubu-framework/dist/kubu.min.css` into your project and link it:
 
 ```html
-<link rel="stylesheet" href="path/to/kubu.min.css">
+<link rel="stylesheet" href="/css/kubu.min.css">
 ```
 
-### Sass
+### Only the parts you use
 
-```scss
-@import 'path/to/kubu';
+Every atom, molecule and organism is its own file. Load the four base files, then only the components on the page:
+
+```html
+<link rel="stylesheet" href="kubu/css/atoms/colors.css">
+<link rel="stylesheet" href="kubu/css/atoms/spacing.css">
+<link rel="stylesheet" href="kubu/css/atoms/typography.css">
+<link rel="stylesheet" href="kubu/css/atoms/Reset.css">
+<link rel="stylesheet" href="kubu/css/atoms/Buttons.css">
+<link rel="stylesheet" href="kubu/css/organisms/Card.css">
 ```
 
-### Less
+Or list those files as `@import` lines in your own entry file and bundle it:
 
-```less
-@import 'path/to/kubu';
+```bash
+cd kubu-framework
+npm install
+node scripts/build.mjs my-kubu.css   # writes dist/my-kubu.css and dist/my-kubu.min.css
 ```
 
-## Features
+### Write HTML
 
-- **Grid System**: Kubu comes with a responsive 12-column grid system, making layout design a breeze.
-- **Typography**: Easily apply typography styles with pre-defined classes for headings, paragraphs, and more.
-- **Buttons**: Customize buttons with ease using predefined button classes and color themes.
-- **Forms**: Style your forms quickly with Kubu's pre-styled form components.
-- **Utilities**: Kubu includes a variety of utility classes for margin, padding, colors, and more to speed up your development process.
+```html
+<article class="card">
+  <header class="card__header">
+    <h2 class="card__title">Invoice 1042</h2>
+    <span class="badge badge--safe">Paid</span>
+  </header>
+  <div class="card__body"><p>R 4 300.00, paid on 28 October 2026.</p></div>
+  <footer class="card__footer"><a class="button button--primary" href="/invoices/1042">View invoice</a></footer>
+</article>
+```
 
-## Customization
+## Docs
 
-While Kubu comes with a default set of styles, you can easily customize it to fit your project's needs. Simply override the default variables or extend the existing styles to create your own unique look and feel.
+```bash
+cd kubu-framework
+npm install
+npm run dev     # serves the repository and opens http://localhost:8080/kubu-framework/pages/index.html
+```
+
+The docs are one htmx site made of static pages: every component has a page with a live example, its BEM parts and the markup.
+
+## Design rules
+
+- **Semantic HTML.** Real `button`, `a`, `form`, `label`, `dialog`, `details`, `table` and `nav` elements, landmarks, one `h1` per page.
+- **BEM composition.** A component is a block with named parts: `dialog.modal` holds `.modal__header`, `.modal__title`, `.modal__body` and `.modal__footer`. Use the parts you need; there are no options to configure.
+- **htmx boost.** Each address is a full page. With htmx, `hx-boost` swaps only the content and keeps the URL, the title and the Back button right. Without it, links are normal navigations.
+- **Dark-master tokens, OS-aware scheme.** Colours are authored for dark first and paired with light values through `light-dark()`. With no saved choice the page follows the system. A theme is an override of the `--kubu-*` variables in `css/atoms/colors.css`.
+- **44px targets.** Every control is at least 44 by 44 pixels and shows a `:focus-visible` ring. Colour is never the only signal: errors carry an icon and a sentence that says how to fix them.
+- **CSS motion.** Transitions and animations use `transform` and `opacity` only, and stop for `prefers-reduced-motion`.
 
 ## Contributing
 
-We welcome contributions from the community! Whether it's reporting bugs, suggesting features, or submitting pull requests, your help is greatly appreciated. Please read our [contribution guidelines](CONTRIBUTING.md) before getting started.
+See [CONTRIBUTING.md](CONTRIBUTING.md) and [DEV_NOTES.md](DEV_NOTES.md).
 
 ## License
 
-Kubu is licensed under the [MIT License](LICENSE.md).
-
----
-
-Feel free to expand and customize this README according to your specific project requirements and guidelines.
+MIT. See [LICENSE.md](LICENSE.md).
