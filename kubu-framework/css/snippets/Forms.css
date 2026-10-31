@@ -52,7 +52,14 @@ input[type="reset"]:hover {
 
 /* Form Error Messages */
 .error-message {
-    color: red;
+    color: var(--color-danger);
     font-size: 0.875rem;
     margin-top: 0.5rem;
+}
+
+input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]),
+textarea,
+select,
+button {
+    min-height: var(--kubu-target, 44px);
 }

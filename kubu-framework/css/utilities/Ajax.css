@@ -46,3 +46,35 @@
     from { background-position: -50% 0; }
     to { background-position: 150% 0; }
 }
+
+/* Skeletons: placeholders for a region that waits on htmx. Put them inside the target as its
+   initial content (hx-trigger="load") or as the hx-indicator; the response replaces them.
+   <div class="skeleton" aria-hidden="true"><span class="skeleton__line"></span><span class="skeleton__line skeleton__line--short"></span></div>
+   Motion is opacity only and stops for reduced motion. */
+.skeleton {
+    display: grid;
+    gap: var(--space-sm, 8px);
+}
+
+.skeleton__line,
+.skeleton__block {
+    display: block;
+    height: 0.9em;
+    background-color: var(--kubu-surface-2);
+    border-radius: var(--space-xs, 4px);
+    animation: skeleton-pulse 1.2s ease-in-out infinite alternate;
+}
+
+.skeleton__line--short { width: 60%; }
+.skeleton__block { height: 8rem; }
+
+@keyframes skeleton-pulse {
+    from { opacity: 1; }
+    to { opacity: 0.45; }
+}
+
+/* An htmx request on a button reads as loading, the same as aria-busy="true". */
+.button.htmx-request {
+    cursor: progress;
+    opacity: 0.85;
+}

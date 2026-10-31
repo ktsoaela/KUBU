@@ -1,4 +1,7 @@
 .notification {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm, 8px);
     padding: 1rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;

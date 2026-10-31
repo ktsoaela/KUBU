@@ -46,26 +46,3 @@ body {
     text-align: left;
     max-width: 300px;
 }
-
-
-.nav-item {
-    list-style: none;
-    padding: 10px 0;
-    cursor: pointer;
-}
-
-.footer {
-    background-color: var(--kubu-inverse-bg);
-    color: #fff;
-    text-align: center;
-    padding: 1px;
-    margin-top: auto; /* Push the footer to the bottom of the page */
-}
-
-.copyright {
-    /*background-color: #6c757d;*/
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-}
