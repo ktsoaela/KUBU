@@ -1,22 +1,57 @@
-Atomic Design
-Atomic Design is similar to BEM, but in my opinion it reads nicer and more cleanly. As opposed to BEM’s top down approach, Atomic Design approaches this from bottom up. The Atomic Design pattern and eBook was written by Brad Frost, broken down into the following:
-1. Atoms
-2. Molecules
-3. Organisms
-4. Templates
-5. Pages
+# kubu-framework
 
-Atoms
-Atoms are the elements themselves, labels, spans, inputs, buttons etc. These are elements that cannot be broken down any further without ceasing to be useful, like actual atoms. These atoms will display your base styles at a glance.
+The KUBU CSS, organised by Atomic Design and named with BEM.
 
-Molecules
-Molecules, as the name suggests, are composed of 2 or more different atoms, to create a new, useful feature. A label, input field and button can be composed to create a search function.
+## Atomic Design: where a file goes
 
-Organisms
-Following the previous pattern, Organisms are comprised of multiple Molecules and Atoms to create a defined section of a page, such as a header containing the navigation (molecule), search bar (molecule), and logo (atom). Organisms are where Design patterns begin to become evident and reusable, these can be display grids (category, product, form construction), details (product, account, blog post)
+Brad Frost's Atomic Design sorts interface parts by size. KUBU uses it for its folders:
 
-Templates
-Templates are where we compose multiple organisms to lay out what a page is and how it will feel. This is just the natural progression of this system at this point.
+| Folder | What lives there | Examples |
+| --- | --- | --- |
+| `css/atoms/` | The smallest parts and the base: tokens, type, spacing, reset | `colors.css`, `typography.css`, `Buttons.css`, `Badge.css` |
+| `css/molecules/` | A few atoms working as one unit | `FormGroups.css`, `Dropdowns.css`, `Navbar.css`, `Pagination.css` |
+| `css/organisms/` | A section of an interface | `Modal.css`, `Card.css`, `Tabs.css`, `Forms.css`, `Tables.css` |
+| `css/utilities/` | Helpers that cut across sizes | `Ajax.css` (htmx states), `Grid.css`, `Darkmode.css`, `Helpers.css` |
+| `css/snippets/` | Shared site pieces | `Header.css`, `Footer.css`, `Forms.css` (bare elements) |
+| `templates/` | HTML layouts and server fragments | `main-template.html`, `breadcrumb-template.html` |
+| `pages/` | The docs site, including the example pages | `index.html`, `page-contact.html` |
 
-Pages
-Looking through the examples given in Atomic Design, Pages appears to be the testing phase, not another progression of state like the previous 4. So approaching it through this lens, we populate the templates with wildly varying data & content. In mockups, a title may look great at 40 characters long, but what if it’s 140? How does this scale, flex and truncate? What about the whole section? Can the page be traversed easily without going back to a tooltip? Pages is the chance to show off the robustness of what you have just built.
+`styles.css` imports every file in order; `dist/kubu.css` is the bundled build.
+
+## BEM: how a class is named
+
+- **Block**: a standalone component. `.card`, `.modal`, `.tabs`.
+- **Element**: a part of a block, joined with two underscores. `.card__title`, `.modal__footer`, `.tabs__panel`.
+- **Modifier**: a variation, joined with two hyphens. `.button--primary`, `.alert--danger`, `.nav--pills`.
+
+The names match the DOM, so a component is composed from its parts:
+
+```html
+<dialog class="modal" id="confirm" aria-labelledby="confirm-title">
+  <header class="modal__header">
+    <h2 class="modal__title" id="confirm-title">Delete this file?</h2>
+    <form method="dialog"><button class="modal__close" aria-label="Close">&times;</button></form>
+  </header>
+  <div class="modal__body"><p>This cannot be undone.</p></div>
+  <form class="modal__footer" method="dialog">
+    <button class="button button--outline" value="cancel">Keep file</button>
+    <button class="button button--danger" value="delete">Delete file</button>
+  </form>
+</dialog>
+<button class="button button--danger" commandfor="confirm" command="show-modal">Delete file</button>
+```
+
+## Load it
+
+- Everything: `dist/kubu.min.css`, or `styles.css` while developing.
+- Only what a page uses: the four base files (`atoms/colors.css`, `atoms/spacing.css`, `atoms/typography.css`, `atoms/Reset.css`) and the component files. See `templates/selective-import.html` and `pages/download.html`.
+
+## Scripts
+
+```bash
+npm install
+npm run build    # node scripts/build.mjs: dist/kubu.css and dist/kubu.min.css
+npm run pages    # node scripts/pages.mjs --check: stamp and check the docs pages
+npm run smoke    # node scripts/smoke.mjs: browser smoke test (Chrome or Edge)
+npm run dev      # serve the docs at http://localhost:8080
+```
