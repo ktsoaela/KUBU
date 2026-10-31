@@ -48,3 +48,61 @@
     width: 30px;
     height: 30px;
 }
+
+/* Narrow screens: the links collapse behind a labelled "Menu" control. A checkbox keeps it
+   working with scripts off.
+   <input class="header__toggle" type="checkbox" id="menu">
+   <label class="header__menu" for="menu">Menu</label>
+   <ul class="navbar-nav">…</ul>   (after the toggle, inside the same .navbar) */
+.header .navbar {
+    flex-wrap: wrap;
+    gap: var(--space-sm, 8px);
+}
+
+.header__toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.header__menu {
+    display: none;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
+    margin: 0;
+    padding: 0 var(--space-md, 16px);
+    font-weight: bold;
+    border: 1px solid currentColor;
+    border-radius: var(--space-xs, 4px);
+    cursor: pointer;
+}
+
+.header__toggle:focus-visible + .header__menu {
+    outline: 2px solid var(--color-highlight);
+    outline-offset: 2px;
+}
+
+.header :focus-visible {
+    outline-color: var(--color-highlight);
+}
+
+@media (max-width: 767px) {
+    .header__menu {
+        display: inline-flex;
+    }
+
+    .header__toggle ~ .navbar-nav {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+    }
+
+    .header__toggle:checked ~ .navbar-nav {
+        display: flex;
+    }
+
+    .header__toggle ~ .navbar-nav .nav-item {
+        margin: 0;
+    }
+}
