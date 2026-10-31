@@ -2,17 +2,17 @@
    and styles the code samples. Every rule reads the KUBU tokens, so dark and light both follow. */
 
 /* Header: logo, then the labelled menu, then the theme switch. It stays in place while htmx
-   swaps #frame. A light frost when supported; the solid brand colour otherwise. */
+   swaps #frame. It is the same .header as packages/web: the card surface with one line under it,
+   frosted when supported. */
 .site-header {
     position: sticky;
     top: 0;
     z-index: 50;
-    border-bottom: 1px solid rgb(255 255 255 / 0.12);
 }
 
 @supports (backdrop-filter: blur(8px)) {
     .site-header {
-        background-color: color-mix(in srgb, var(--kubu-primary) 90%, transparent);
+        background-color: color-mix(in srgb, var(--kubu-surface) 92%, transparent);
         backdrop-filter: blur(8px);
     }
 }
@@ -35,8 +35,6 @@
 
 .site-header__logo {
     min-height: var(--kubu-target);
-    font-size: 1.25rem;
-    letter-spacing: 0.08em;
 }
 
 .site-header__links {
@@ -51,12 +49,6 @@
 
 .site-header__links .nav-link {
     padding-inline: var(--space-xs);
-    border-bottom: 2px solid transparent;
-}
-
-.site-header__links .nav-link[aria-current="page"] {
-    color: var(--color-highlight);
-    border-bottom-color: currentColor;
 }
 
 /* The Menu toggle only shows on narrow screens. */
@@ -73,13 +65,13 @@
     min-height: var(--kubu-target);
     padding: 0 var(--space-md);
     font-weight: var(--font-weight-bold);
-    border: 1px solid rgb(255 255 255 / 0.5);
-    border-radius: var(--space-xs);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
     cursor: pointer;
 }
 
 .site-header__toggle:focus-visible + .site-header__menu {
-    outline: 2px solid var(--color-highlight);
+    outline: 2px solid var(--kubu-focus);
     outline-offset: 2px;
 }
 
@@ -89,8 +81,9 @@
     display: flex;
     margin: 0;
     padding: 0;
-    border: 1px solid rgb(255 255 255 / 0.5);
-    border-radius: var(--space-xs);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
+    overflow: hidden;
 }
 
 .theme-switch__legend,
@@ -112,22 +105,23 @@
     padding: 0 var(--space-sm);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    border-radius: 2px;
+    color: var(--kubu-text-muted);
     cursor: pointer;
 }
 
 .theme-switch__label:hover {
-    background-color: rgb(255 255 255 / 0.12);
+    color: var(--kubu-text);
 }
 
 .theme-switch__input:checked + .theme-switch__label {
-    color: var(--light-primary);
-    background-color: #fff;
+    font-weight: var(--font-weight-bold);
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface-2);
 }
 
 .theme-switch__input:focus-visible + .theme-switch__label {
-    outline: 2px solid var(--color-highlight);
-    outline-offset: 1px;
+    outline: 2px solid var(--kubu-focus);
+    outline-offset: -2px;
 }
 
 /* Skip link */
@@ -139,7 +133,7 @@
     padding: var(--space-sm) var(--space-md);
     color: var(--kubu-on-primary);
     background: var(--kubu-primary);
-    border-radius: var(--space-xs);
+    border-radius: var(--kubu-radius);
 }
 
 .skip-link:focus {
@@ -154,7 +148,7 @@
     gap: clamp(1rem, 4vw, 3rem);
     width: min(100% - 2rem, 1280px);
     margin-inline: auto;
-    padding-block: var(--space-lg);
+    padding-block: var(--space-xl) var(--space-lg);
 }
 
 .docs-sidebar {
@@ -192,7 +186,7 @@
     font-size: var(--font-size-sm);
     color: var(--kubu-text);
     text-decoration: none;
-    border-radius: var(--space-xs);
+    border-radius: var(--kubu-radius);
 }
 
 .docs-sidebar .list-item:hover {
@@ -216,15 +210,18 @@
     display: none;
 }
 
+/* The page title is the .title: the display face at the display size. Everything under it is
+   the body face. */
 .doc h1 {
-    margin-bottom: var(--space-sm);
-    font-size: clamp(2.25rem, 1.6rem + 2.5vw, 3.25rem);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-display);
+    font-size: var(--font-size-display);
+    line-height: 1.1;
     letter-spacing: var(--letter-spacing-tight);
 }
 
 .doc h2 {
     margin-top: var(--space-xl);
-    font-size: var(--font-size-xl);
     scroll-margin-top: 8rem;
 }
 
@@ -249,7 +246,7 @@
     font-family: var(--font-family-mono);
     font-size: 0.875em;
     background: var(--kubu-surface-2);
-    border-radius: var(--space-xs);
+    border-radius: var(--kubu-radius);
 }
 
 .doc > ul:not([class]),
@@ -271,9 +268,9 @@
 
 /* Example: the live component, then its markup in a <details> */
 .doc-example {
-    margin-block: var(--space-md);
-    border: 1px solid var(--kubu-border);
-    border-radius: var(--space-sm);
+    margin-block: var(--space-lg);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
     overflow: hidden;
 }
 
@@ -302,7 +299,7 @@
 .doc-example > .doc-code {
     margin: 0;
     border: 0;
-    border-top: 1px solid var(--kubu-border);
+    border-top: var(--kubu-line);
     border-radius: 0;
 }
 
@@ -320,8 +317,8 @@
     margin-block: var(--space-md);
     color: var(--code-text);
     background: var(--code-bg);
-    border: 1px solid var(--kubu-border);
-    border-radius: var(--space-sm);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
 }
 
 .doc-code__summary {
@@ -342,7 +339,7 @@
 }
 
 .doc-code[open] > .doc-code__summary {
-    border-bottom: 1px solid var(--kubu-border);
+    border-bottom: var(--kubu-line);
 }
 
 .doc-code__pre {
@@ -377,8 +374,8 @@
     color: var(--kubu-link);
     background: transparent;
     border: 0;
-    border-left: 1px solid var(--kubu-border);
-    border-radius: 0 var(--space-sm) 0 0;
+    border-left: var(--kubu-line);
+    border-radius: 0 var(--kubu-radius) 0 0;
     cursor: pointer;
 }
 
@@ -399,7 +396,7 @@
     padding: var(--space-sm);
     text-align: left;
     vertical-align: top;
-    border-bottom: 1px solid var(--kubu-border);
+    border-bottom: var(--kubu-line);
 }
 
 .doc-table th {
@@ -409,7 +406,7 @@
 
 /* Home: one focal headline, one sentence, then the actions. No gradient. */
 .doc-hero {
-    padding-block: var(--space-lg) var(--space-md);
+    padding-block: 0 var(--space-lg);
 }
 
 .doc-hero__eyebrow {
@@ -423,13 +420,11 @@
 
 .doc-hero__title {
     margin: 0;
-    font-size: clamp(2.5rem, 1.8rem + 3vw, 4rem);
-    letter-spacing: var(--letter-spacing-sqush);
 }
 
 .doc-hero__text {
     max-width: 38rem;
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
     font-size: var(--font-size-lg);
     color: var(--kubu-text-muted);
 }
@@ -438,7 +433,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-sm);
-    margin-top: var(--space-md);
+    margin-top: var(--space-lg);
 }
 
 .doc-section-links {
@@ -468,6 +463,11 @@
 
     .docs-layout {
         grid-template-columns: minmax(0, 1fr);
+        padding-top: var(--space-lg);
+    }
+
+    .doc-example__preview {
+        padding: var(--space-md);
     }
 
     .docs-sidebar {
@@ -475,7 +475,7 @@
         order: 2;
         max-height: none;
         padding-top: var(--space-md);
-        border-top: 1px solid var(--kubu-border);
+        border-top: var(--kubu-line);
     }
 
     .doc__index-link {
@@ -508,11 +508,6 @@
     .site-header__logo {
         margin-right: auto;
     }
-}
-
-/* Focus on the brand-coloured header: the yellow highlight keeps 3:1 against it in both schemes. */
-.site-header :focus-visible {
-    outline-color: var(--color-highlight);
 }
 
 /* Page progress: shown by htmx (hx-indicator on <body>) while the next page loads. */
@@ -556,8 +551,8 @@
 .doc-index__item {
     padding: var(--space-md);
     background: var(--kubu-surface);
-    border: 1px solid var(--kubu-border);
-    border-radius: var(--space-sm);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
 }
 
 .doc-index__term {
@@ -603,14 +598,14 @@
     margin: 0;
     padding: var(--space-md);
     background: var(--kubu-surface);
-    border: 1px solid var(--kubu-border);
-    border-radius: var(--space-sm);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
 }
 
 .doc-points strong {
     display: block;
     margin-bottom: var(--space-xs);
-    color: var(--kubu-heading);
+    color: var(--kubu-text);
 }
 
 /* A theme is a token override. The Earth theme used in the examples. */
@@ -643,8 +638,8 @@
     background:
         linear-gradient(var(--swatch), var(--swatch)) top / 100% 3rem no-repeat,
         var(--kubu-surface);
-    border: 1px solid var(--kubu-border);
-    border-radius: var(--space-sm);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
 }
 
 /* Spacing sample: a bar as wide as --size */
@@ -661,13 +656,19 @@
     width: var(--size);
     height: 1.5rem;
     background: var(--kubu-primary);
-    border-radius: 2px;
+    border-radius: var(--kubu-radius);
 }
 
 .doc-logo-tile {
     display: inline-flex;
     padding: var(--space-md);
-    border-radius: var(--space-sm);
+    background: var(--kubu-inverse-bg);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
+}
+
+.doc-logo-tile--light {
+    background: #fff;
 }
 
 /* Stacks the controls of a demo with the --space scale */

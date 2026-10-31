@@ -70,7 +70,7 @@
     --dark-surface-2: #1d2730;
     --dark-text: #e3e9ef;
     --dark-text-muted: #a3afbb;
-    --dark-heading: #8ccaf2;
+    --dark-heading: #e3e9ef; /* headings are text, not brand */
     --dark-link: #7cc0f0;
     --dark-border: #34424f;
     --dark-primary: #2a77b5;
@@ -83,7 +83,7 @@
     --light-surface-2: #eef1f4;
     --light-text: #18222c;
     --light-text-muted: #4f5a66;
-    --light-heading: #1b5e83;
+    --light-heading: #18222c;
     --light-link: #1b5e83;
     --light-border: #c9d1da;
     --light-primary: #002d4c;
@@ -109,6 +109,13 @@
     --kubu-code-bg: #002b36;
     --kubu-overlay: rgb(0 0 0 / 0.55);
 
+    /* Shape: one radius, one shadow and one border. Buttons, cards and inputs use only these. */
+    --kubu-radius: 6px;
+    --kubu-shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 2px 6px rgb(0 0 0 / 0.06);
+    --kubu-border-width: 1px;
+    --kubu-line: var(--kubu-border-width) solid var(--kubu-border);
+
+    /* Overlays (menus, dialogs, toasts) keep their own depth. */
     --kubu-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08), 0 1px 3px rgb(0 0 0 / 0.06);
     --kubu-shadow-md: 0 4px 12px rgb(0 0 0 / 0.12);
     --kubu-shadow-lg: 0 12px 32px rgb(0 0 0 / 0.2);

@@ -72,8 +72,14 @@
     width: 4em;
 }
 
-.section{
-    margin: 30px 0px 30px;
+/* A page section. The first one on a page opens with the larger space above its title. */
+.section {
+    margin-block: var(--space-lg);
+}
+
+main > .section:first-child,
+main.section {
+    margin-top: var(--space-xl);
 }
 
 /* Hidden on screen, still read by screen readers (labels, legends, skip text). */

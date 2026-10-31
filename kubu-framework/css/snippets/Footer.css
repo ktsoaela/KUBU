@@ -1,4 +1,4 @@
-/* Footer snippet: links and a copyright line on the brand colour.
+/* Footer snippet: links and a copyright line on the card surface.
    <footer class="footer">
      <nav class="footer__links" aria-label="Footer"><a class="footer__link" href="/about">About</a></nav>
      <p class="copyright">&copy; 2026 Company</p>
@@ -6,10 +6,11 @@
 
 .footer {
     margin-top: auto; /* with a flex-column body, keeps the footer at the bottom of short pages */
-    padding: 20px;
-    color: var(--kubu-on-primary);
+    padding: var(--space-lg) var(--space-md);
+    color: var(--kubu-text-muted);
     text-align: center;
-    background-color: var(--theme-color-primary);
+    background-color: var(--kubu-surface);
+    border-top: var(--kubu-line);
 }
 
 .footer__links {
@@ -30,12 +31,8 @@
     transition: color 0.3s ease;
 }
 
-.footer :focus-visible {
-    outline-color: var(--color-highlight);
-}
-
 .footer__link:hover {
-    color: var(--color-highlight);
+    color: var(--kubu-link);
 }
 
 .copyright {

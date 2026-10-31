@@ -1,7 +1,10 @@
+/* Announcement: one line above the header, on the second surface. No accent of its own. */
 .announcement {
-    background-color: var(--theme-color-secondary);
-    color: var(--color-light);
+    background-color: var(--kubu-surface-2);
+    color: var(--kubu-text);
     text-align: center;
-    padding: 8px 1rem;
-    font-weight: bold;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    border-bottom: var(--kubu-line);
 }

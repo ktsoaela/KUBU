@@ -1,89 +1,48 @@
+/* Badge: a small label on the card surface. It uses the one radius and border; the text stays
+   --kubu-text. A status badge tints its background with the status colour; it does not bring
+   an accent of its own. Primary, secondary, radiation and earth are the neutral badge. */
 .badge {
     display: inline-block;
-    /*padding: 0.25em 0.5em;*/
-    /*border-radius: 0.25rem;*/
     padding: var(--space-xs) var(--space-sm);
-    border-radius: var(--space-xs);
-
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
+    line-height: 1.2;
     text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface-2);
 }
 
-/* Modifier for different badge types */
-.badge--primary {
-    color: var(--color-light);
-    background-color: var(--color-primary);
-}
-
-.badge--secondary {
-    color: var(--color-light);
-    background-color: var(--color-secondary);
-}
-
-
-.badge--danger {
-    color: var(--color-light);
-    background-color: var(--color-danger);
-}
-
-.badge--hazard {
-    color: var(--color-light);
-    background-color: var(--color-hazard);
-}
-
-.badge--risk {
-    color: var(--color-light);
-    background-color: var(--color-risk);
-}
-
-.badge--safe {
-    color: var(--color-light);
-    background-color: var(--color-safe);
-}
-
+.badge--danger,
+.badge--hazard,
+.badge--risk,
+.badge--safe,
 .badge--info {
-    color: var(--color-light);
-    background-color: var(--color-info);
+    background-color: color-mix(in srgb, var(--badge-tone) 16%, var(--kubu-surface));
+    border-color: color-mix(in srgb, var(--badge-tone) 45%, var(--kubu-surface));
 }
 
-.badge--radiation {
-    color: var(--color-light);
-    background-color: var(--color-radiation-light);
-}
-
-.badge--earth {
-    color: var(--color-light);
-    background-color: var(--color-earth);
-}
-
+.badge--danger { --badge-tone: var(--color-danger); }
+.badge--hazard { --badge-tone: var(--color-hazard); }
+.badge--risk { --badge-tone: var(--color-risk); }
+.badge--safe { --badge-tone: var(--color-safe); }
+.badge--info { --badge-tone: var(--color-info); }
 
 .badge__label {
     font-weight: var(--font-weight-normal);
 }
 
-
 .badge__label--bold {
     font-weight: var(--font-weight-bold);
 }
 
-
-
-/* Themes */
+/* Themes: a fixed scheme for one badge */
 .badge--light {
-    background-color: var(--color-light);
+    color-scheme: light;
 }
 
 .badge--dark {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+    color-scheme: dark;
 }
-
-/* Contrast: deepen the tones behind white text, dark text on the yellow tones. */
-.badge--secondary { background-color: color-mix(in srgb, var(--color-secondary) 65%, black); }
-.badge--danger { background-color: color-mix(in srgb, var(--color-danger) 85%, black); }
-.badge--safe { background-color: color-mix(in srgb, var(--color-safe) 75%, black); }
-.badge--info { background-color: color-mix(in srgb, var(--color-info) 80%, black); }
-.badge--hazard,
-.badge--risk,
-.badge--light { color: #1a1a1a; }

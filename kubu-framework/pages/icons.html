@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -202,14 +202,16 @@
     <h2>Logo</h2>
     <div class="doc-example">
         <div class="doc-example__preview">
-            <img src="../img/hippo-black.svg" alt="KUBU" width="64" height="64">
-            <span class="header doc-logo-tile"><img src="../img/hippo-white.svg" alt="KUBU on the brand colour" width="64" height="64"></span>
+            <span class="doc-logo-tile doc-logo-tile--light"><img src="../img/hippo-black.svg" alt="KUBU on a light tile" width="64" height="64"></span>
+            <span class="doc-logo-tile"><img src="../img/hippo-white.svg" alt="KUBU on a dark tile" width="64" height="64"></span>
+            <svg class="logo__mark" width="64" height="64" role="img" aria-label="KUBU in the text colour"><use href="../img/icons.svg#hippo"></use></svg>
         </div>
         <details class="doc-code">
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
-            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-black.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span><span class="doc-code__tag">&gt;</span>
-<span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"header doc-logo-tile"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-white.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU on the brand colour"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span></code></pre>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"doc-logo-tile doc-logo-tile--light"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-black.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU on a light tile"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>
+<span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"doc-logo-tile"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-white.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU on a dark tile"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>
+<span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"logo__mark"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"64"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"img"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"KUBU in the text colour"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#hippo"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span></code></pre>
         </details>
     </div>
 </main>

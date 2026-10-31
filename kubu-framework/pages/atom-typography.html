@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -126,24 +126,24 @@
 <a class="doc__index-link" href="#docs-sidebar">Component menu</a>
 <main class="doc" id="main" tabindex="-1">
     <h1>typography</h1>
-    <p class="doc__lead">A type scale that steps from muted metadata, to body text, to the title, so a page can be scanned before it is read.</p>
+    <p class="doc__lead">A type scale with one display size, the title. Headings use the body face and step down to body size, so the title is the one thing that reads first.</p>
     <p class="doc__file">File: <code>css/atoms/typography.css</code></p>
 
     <h2>The scale</h2>
     <div class="doc-example">
         <div class="doc-example__preview doc-example__preview--block">
-            <p class="title">Title, 52px</p>
-            <h2>Heading 2, 26px</h2>
-            <h3>Heading 3, 20px</h3>
+            <p class="title">Title, display face</p>
+            <h2>Heading 2, body face at 20px</h2>
+            <h3>Heading 3, body face at 16px</h3>
             <p>Body text is 16px with a 1.75 line height, for comfortable reading.</p>
             <p><small>Metadata, 12px and muted: updated 31 October 2026</small></p>
         </div>
         <details class="doc-code">
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
-            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"title"</span><span class="doc-code__tag">&gt;</span>Title, 52px<span class="doc-code__tag">&lt;/p&gt;</span>
-<span class="doc-code__tag">&lt;h2&gt;</span>Heading 2, 26px<span class="doc-code__tag">&lt;/h2&gt;</span>
-<span class="doc-code__tag">&lt;h3&gt;</span>Heading 3, 20px<span class="doc-code__tag">&lt;/h3&gt;</span>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"title"</span><span class="doc-code__tag">&gt;</span>Title, display face<span class="doc-code__tag">&lt;/p&gt;</span>
+<span class="doc-code__tag">&lt;h2&gt;</span>Heading 2, body face at 20px<span class="doc-code__tag">&lt;/h2&gt;</span>
+<span class="doc-code__tag">&lt;h3&gt;</span>Heading 3, body face at 16px<span class="doc-code__tag">&lt;/h3&gt;</span>
 <span class="doc-code__tag">&lt;p&gt;</span>Body text is 16px with a 1.75 line height, for comfortable reading.<span class="doc-code__tag">&lt;/p&gt;</span>
 <span class="doc-code__tag">&lt;p&gt;</span><span class="doc-code__tag">&lt;small&gt;</span>Metadata, 12px and muted: updated 31 October 2026<span class="doc-code__tag">&lt;/small&gt;</span><span class="doc-code__tag">&lt;/p&gt;</span></code></pre>
         </details>
@@ -186,13 +186,11 @@
             <tr><td><code>--font-size-xs</code></td><td>0.75rem</td><td>Badges, metadata</td></tr>
             <tr><td><code>--font-size-sm</code></td><td>0.875rem</td><td>Secondary text, tables</td></tr>
             <tr><td><code>--font-size-md</code></td><td>1rem</td><td>Body</td></tr>
-            <tr><td><code>--font-size-lg</code></td><td>1.25rem</td><td>Lead text, h3</td></tr>
-            <tr><td><code>--font-size-xl</code></td><td>1.625rem</td><td>h2</td></tr>
-            <tr><td><code>--font-size-xxl</code></td><td>2.25rem</td><td>h1</td></tr>
-            <tr><td><code>--font-size-xxxl</code></td><td>3.25rem</td><td><code>.title</code></td></tr>
+            <tr><td><code>--font-size-lg</code></td><td>1.25rem</td><td>Lead text, <code>.subtitle</code>, h1 and h2</td></tr>
+            <tr><td><code>--font-size-display</code></td><td>2.25rem to 3.25rem, by width</td><td><code>.title</code>, the only display size</td></tr>
         </tbody>
     </table>
-    <p>Families: <code>--font-family-sans</code> (Raleway), <code>--font-family-serif</code> (Lora) and <code>--font-family-mono</code>. Weights and line heights have tokens too.</p>
+    <p>Faces: <code>--font-display</code> (Raleway) sets <code>.title</code> and the logo only. <code>--font-body</code> (the system face) sets everything else, headings included. <code>--font-family-mono</code> is for code. Weights and line heights have tokens too.</p>
 
     <h2>Rules</h2>
     <ul>

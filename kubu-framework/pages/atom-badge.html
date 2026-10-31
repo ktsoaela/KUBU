@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -126,14 +126,13 @@
 <a class="doc__index-link" href="#docs-sidebar">Component menu</a>
 <main class="doc" id="main" tabindex="-1">
     <h1>Badge</h1>
-    <p class="doc__lead">A short label for a count or a status. The word carries the meaning; the colour supports it.</p>
+    <p class="doc__lead">A short label for a count or a status. The word carries the meaning. Badges share one neutral look; a status badge adds only a tint, never a second accent.</p>
     <p class="doc__file">File: <code>css/atoms/Badge.css</code></p>
 
     <h2>Tones</h2>
     <div class="doc-example">
         <div class="doc-example__preview">
-            <span class="badge badge--primary">New</span>
-            <span class="badge badge--secondary">Beta</span>
+            <span class="badge">New</span>
             <span class="badge badge--safe">Paid</span>
             <span class="badge badge--danger">Overdue</span>
             <span class="badge badge--hazard">Pending</span>
@@ -143,8 +142,7 @@
         <details class="doc-code">
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
-            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--primary"</span><span class="doc-code__tag">&gt;</span>New<span class="doc-code__tag">&lt;/span&gt;</span>
-<span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--secondary"</span><span class="doc-code__tag">&gt;</span>Beta<span class="doc-code__tag">&lt;/span&gt;</span>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge"</span><span class="doc-code__tag">&gt;</span>New<span class="doc-code__tag">&lt;/span&gt;</span>
 <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--safe"</span><span class="doc-code__tag">&gt;</span>Paid<span class="doc-code__tag">&lt;/span&gt;</span>
 <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--danger"</span><span class="doc-code__tag">&gt;</span>Overdue<span class="doc-code__tag">&lt;/span&gt;</span>
 <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--hazard"</span><span class="doc-code__tag">&gt;</span>Pending<span class="doc-code__tag">&lt;/span&gt;</span>
@@ -156,12 +154,12 @@
     <h2>Next to a heading</h2>
     <div class="doc-example">
         <div class="doc-example__preview">
-            <h3>Inbox <span class="badge badge--primary"><span class="badge__label--bold">12</span> <span class="badge__label">unread</span></span></h3>
+            <h3>Inbox <span class="badge"><span class="badge__label--bold">12</span> <span class="badge__label">unread</span></span></h3>
         </div>
         <details class="doc-code">
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
-            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;h3&gt;</span>Inbox <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--primary"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge__label--bold"</span><span class="doc-code__tag">&gt;</span>12<span class="doc-code__tag">&lt;/span&gt;</span> <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge__label"</span><span class="doc-code__tag">&gt;</span>unread<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/h3&gt;</span></code></pre>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;h3&gt;</span>Inbox <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge__label--bold"</span><span class="doc-code__tag">&gt;</span>12<span class="doc-code__tag">&lt;/span&gt;</span> <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge__label"</span><span class="doc-code__tag">&gt;</span>unread<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/h3&gt;</span></code></pre>
         </details>
     </div>
 
@@ -169,9 +167,10 @@
     <table class="doc-table">
         <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
         <tbody>
-            <tr><td><code>.badge</code></td><td>Block: small, bold, uppercase label.</td></tr>
+            <tr><td><code>.badge</code></td><td>Block: small, bold, uppercase label on the surface, with the one radius and border.</td></tr>
             <tr><td><code>.badge__label</code>, <code>.badge__label--bold</code></td><td>Element: a normal or bold part of the label.</td></tr>
-            <tr><td><code>.badge--primary</code>, <code>--secondary</code>, <code>--safe</code>, <code>--danger</code>, <code>--hazard</code>, <code>--risk</code>, <code>--info</code>, <code>--radiation</code>, <code>--earth</code>, <code>--light</code>, <code>--dark</code></td><td>Modifier: tone.</td></tr>
+            <tr><td><code>.badge--safe</code>, <code>--danger</code>, <code>--hazard</code>, <code>--risk</code>, <code>--info</code></td><td>Modifier: status. A tint of the status colour behind the same text colour.</td></tr>
+            <tr><td><code>.badge--light</code>, <code>--dark</code></td><td>Modifier: a fixed scheme for one badge.</td></tr>
         </tbody>
     </table>
 

@@ -1,41 +1,37 @@
-/* organisms/cards.css */
-
-/* Card container */
+/* Card: a --kubu-surface panel on the --kubu-bg page, with the one radius, shadow and border. */
 .card {
-    border: 1px solid var(--kubu-border);
-    border-radius: 0.5rem;
-    padding: 2rem;
-    margin-bottom: 1rem;
-    box-shadow: var(--kubu-shadow-md);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--kubu-shadow);
     background-color: var(--kubu-surface);
 }
 
 .card--demo_product {
-    background-color: #ff88001f;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 40px;
+    background-color: var(--kubu-surface-2);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
 }
 
 .card--demo_code {
     background-color: var(--kubu-code-bg);
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
 }
 
-/* Card title */
+/* Card title: body face, one step up */
 .card__title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--space-sm);
 }
 
 /* Card image */
 .card__image {
     width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
+    border-radius: var(--kubu-radius);
+    margin-bottom: var(--space-sm);
 }
 
 .card__header {
@@ -47,14 +43,16 @@
 
 /* Card content */
 .card__body {
-    font-size: 1rem;
+    font-size: var(--font-size-md);
     line-height: 1.5;
 }
 
 /* Card footer */
 .card__footer {
-    border-top: 1px solid var(--kubu-border);
-    font-size: 1rem;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: var(--kubu-line);
+    font-size: var(--font-size-md);
     line-height: 1.5;
 }
 

@@ -1,19 +1,20 @@
 
 :root {
-    /* Font families */
-    --font-family-sans: Raleway, Montserrat, Helvetica, sans-serif;
-    --font-family-serif: "Lora", Georgia, "Times New Roman", serif;
+    /* Two faces, two roles. The display face sets .title and the logo, nothing else.
+       Every other line of text, headings included, is the body face. */
+    --font-display: Raleway, Montserrat, Helvetica, sans-serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-sans: var(--font-body);
     --font-family-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
 
-
-    /* Font sizes */
+    /* Font sizes. Body steps, then one display size for .title (fluid, so a phone gets
+       the same headline at its own width). Nothing sits between lg and the title. */
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-md: 1rem;
     --font-size-lg: 1.25rem;
-    --font-size-xl: 1.625rem;
-    --font-size-xxl: 2.25rem;
     --font-size-xxxl: 3.25rem;
+    --font-size-display: clamp(2.25rem, 1.6rem + 2.5vw, var(--font-size-xxxl));
 
 
     /* Font weights */
@@ -43,7 +44,7 @@
 
 /* Base typography styles */
 body {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-body);
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-md);
@@ -51,20 +52,24 @@ body {
 }
 
 .title {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-display);
     font-weight: var(--font-weight-bold);
-    font-size: var(--font-size-xxxl);
-    letter-spacing: var(--letter-spacing-sqush);
-    margin-bottom: 0px;
+    font-size: var(--font-size-display);
+    line-height: 1.1;
+    letter-spacing: var(--letter-spacing-tight);
+    margin-bottom: var(--space-sm);
 }
 
+/* The line under a title: body face, a step up, muted. */
 .subtitle {
-    font-family: var(--font-family-sans);
-    font-size: var(--font-size-xxl);
+    font-family: var(--font-body);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    color: var(--kubu-text-muted);
     margin-bottom: 0px;
 }
 
-/* Headings */
+/* Headings: body face, stepping down to body size. Only .title is display-sized. */
 h1,
 h2,
 h3,
@@ -72,38 +77,22 @@ h4,
 h5,
 h6 {
     margin: 0 0 0.5em 0;
-    line-height: var(--line-height-sm);
+    font-family: var(--font-body);
+    font-weight: var(--font-weight-bold);
+    line-height: 1.3;
     color: var(--text-color-primary);
 }
 
-h1 {
-    font-size: var(--font-size-xxl);
-    font-weight: var(--font-weight-bold);
-}
-
+h1,
 h2 {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
-}
-
-h3 {
     font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-medium);
 }
 
-h4 {
-    font-size: var(--font-size-md);
-    font-weight: var(--font-weight-medium);
-}
-
-h5 {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-normal);
-}
-
+h3,
+h4,
+h5,
 h6 {
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-normal);
+    font-size: var(--font-size-md);
 }
 
 /* Paragraphs */
@@ -152,7 +141,6 @@ li {
 }
 
 .list-title {
-    font-family: var(--font-family-sans);
     font-weight: var(--font-weight-bold);
     font-size: inherit;
     letter-spacing: var(--letter-spacing-sqush);

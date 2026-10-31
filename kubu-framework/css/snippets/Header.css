@@ -7,16 +7,19 @@
      </nav>
    </header> */
 
+/* The header sits on the card surface with one line under it. The brand colour is kept for the
+   current menu item. */
 .header {
-    color: var(--kubu-on-primary);
-    background-color: var(--kubu-primary);
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+    border-bottom: var(--kubu-line);
 }
 
 .header__utility {
     display: flex;
     justify-content: flex-end;
     gap: var(--space-md, 16px);
-    padding: 5px 20px;
+    padding: var(--space-xs) var(--space-md);
     font-size: var(--font-size-xs, 0.75rem);
 }
 
@@ -30,23 +33,33 @@
 }
 
 .header .navbar {
-    padding: 10px 20px;
+    padding: var(--space-sm) var(--space-md);
     background-color: transparent;
 }
 
+/* Logo: the display face, and a mark in currentColor so it follows the theme.
+   <a class="logo" href="/"><svg class="logo__mark" aria-hidden="true"><use href="img/icons.svg#hippo"></use></svg> Brand</a>
+   An <img> works too; pick one that reads on the surface in both schemes. */
 .logo {
     display: inline-flex;
     align-items: center;
     gap: var(--space-sm, 8px);
-    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
     font-weight: bold;
     color: inherit;
     text-decoration: none;
 }
 
-.logo img {
+.logo img,
+.logo .logo__mark {
     width: 30px;
     height: 30px;
+    flex: none;
+}
+
+.logo__mark {
+    fill: currentColor;
 }
 
 /* Narrow screens: the links collapse behind a labelled "Menu" control. A checkbox keeps it
@@ -73,18 +86,14 @@
     margin: 0;
     padding: 0 var(--space-md, 16px);
     font-weight: bold;
-    border: 1px solid currentColor;
-    border-radius: var(--space-xs, 4px);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
     cursor: pointer;
 }
 
 .header__toggle:focus-visible + .header__menu {
-    outline: 2px solid var(--color-highlight);
+    outline: 2px solid var(--kubu-focus);
     outline-offset: 2px;
-}
-
-.header :focus-visible {
-    outline-color: var(--color-highlight);
 }
 
 @media (max-width: 767px) {

@@ -14,11 +14,11 @@ input[type="week"],
 textarea,
 select {
     width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid var(--kubu-border);
-    border-radius: 0.25rem;
-    margin-bottom: 1rem;
+    padding: var(--space-sm);
+    font-size: var(--font-size-md);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
+    margin-bottom: var(--space-md);
     box-sizing: border-box;
 }
 
@@ -34,11 +34,11 @@ button,
 input[type="submit"],
 input[type="reset"] {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-md);
     cursor: pointer;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: var(--kubu-radius);
     background-color: var(--kubu-primary);
     color: #fff;
     transition: background-color 0.3s ease;
@@ -53,8 +53,8 @@ input[type="reset"]:hover {
 /* Form Error Messages */
 .error-message {
     color: var(--color-danger);
-    font-size: 0.875rem;
-    margin-top: 0.5rem;
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-sm);
 }
 
 input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]),
