@@ -1,13 +1,12 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Set minimum height to full viewport height */
 }
 
 header {
-    background-color: #333;
+    background-color: var(--kubu-inverse-bg);
     color: #fff;
     padding: 10px;
 }
@@ -62,7 +61,7 @@ header {
 }
 
 .footer {
-    background-color: #333;
+    background-color: var(--kubu-inverse-bg);
     color: #fff;
     text-align: center;
     padding: 1px;

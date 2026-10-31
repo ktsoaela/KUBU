@@ -1,0 +1,69 @@
+/* 12-column responsive grid.
+   .container          centred, max 1200px, fluid padding
+   .grid               12-column CSS grid with a gap
+   .col-{1..12}        span on all sizes
+   .sm:col-* / .md:col-* / .lg:col-*   span from 640px / 768px / 1024px up
+   .grid--auto         as many min 16rem columns as fit, no breakpoints needed
+   .cq                 make an element a size container for @container queries */
+
+.container {
+    width: min(100% - 2 * clamp(1rem, 4vw, 2rem), 1200px);
+    margin-inline: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: var(--grid-gap, var(--space-md));
+}
+
+.grid > * { grid-column: span 12; }
+
+.grid--auto {
+    grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+}
+
+.grid--auto > * { grid-column: auto; }
+
+.col-1 { grid-column: span 1; }
+.col-2 { grid-column: span 2; }
+.col-3 { grid-column: span 3; }
+.col-4 { grid-column: span 4; }
+.col-5 { grid-column: span 5; }
+.col-6 { grid-column: span 6; }
+.col-7 { grid-column: span 7; }
+.col-8 { grid-column: span 8; }
+.col-9 { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+@media (min-width: 640px) {
+    .sm\:col-3 { grid-column: span 3; }
+    .sm\:col-4 { grid-column: span 4; }
+    .sm\:col-6 { grid-column: span 6; }
+    .sm\:col-8 { grid-column: span 8; }
+    .sm\:col-12 { grid-column: span 12; }
+}
+
+@media (min-width: 768px) {
+    .md\:col-3 { grid-column: span 3; }
+    .md\:col-4 { grid-column: span 4; }
+    .md\:col-6 { grid-column: span 6; }
+    .md\:col-8 { grid-column: span 8; }
+    .md\:col-9 { grid-column: span 9; }
+    .md\:col-12 { grid-column: span 12; }
+}
+
+@media (min-width: 1024px) {
+    .lg\:col-2 { grid-column: span 2; }
+    .lg\:col-3 { grid-column: span 3; }
+    .lg\:col-4 { grid-column: span 4; }
+    .lg\:col-6 { grid-column: span 6; }
+    .lg\:col-8 { grid-column: span 8; }
+    .lg\:col-9 { grid-column: span 9; }
+    .lg\:col-10 { grid-column: span 10; }
+    .lg\:col-12 { grid-column: span 12; }
+}
+
+.cq { container-type: inline-size; }

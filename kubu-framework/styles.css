@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* Importing all atoms */
 @import url("css/atoms/Reset.css");
 @import url("css/atoms/Badge.css");
@@ -44,25 +46,17 @@
 /* Importing all utilities */
 @import url("css/utilities/Ajax.css");
 @import url("css/utilities/Animations.css");
-@import url("css/utilities/EventDelegation.css");
 @import url("css/utilities/Helpers.css");
 @import url("css/utilities/Notifications.css");
 @import url("css/utilities/Flexbox.css");
+@import url("css/utilities/Grid.css");
 @import url("css/utilities/Darkmode.css");
-
-/* Importing all pages */
-@import url("css/pages/HomePage.css");
-@import url("css/pages/AboutPage.css");
-@import url("css/pages/ProductPage.css");
-@import url("css/pages/ContactPage.css");
 
 /* Importing snippets */
 @import url("css/snippets/Forms.css");
 @import url("css/snippets/Header.css");
 @import url("css/snippets/Footer.css");
 
-/* Importing templates */
-@import url("css/templates/main-template.css");
 
 
 

@@ -1,2 +1,38 @@
-/* organisms/carousel.css */
+/* organisms/carousel.css
+   CSS-only carousel using scroll snap: swipe, trackpad and keyboard scrolling work with no JS.
+   <div class="carousel" tabindex="0" aria-label="Featured">
+     <div class="carousel-item">...</div>
+   </div> */
 
+.carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    gap: var(--space-md);
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    border-radius: var(--space-sm);
+}
+
+.carousel--peek {
+    grid-auto-columns: 85%;
+}
+
+.carousel-item {
+    scroll-snap-align: center;
+    min-height: 12rem;
+    padding: var(--space-lg);
+    display: grid;
+    place-items: center;
+    background-color: var(--kubu-surface-2);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+}
+
+.carousel:focus-visible {
+    outline: 2px solid var(--kubu-focus);
+    outline-offset: 2px;
+}

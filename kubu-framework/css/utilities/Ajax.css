@@ -1,21 +1,48 @@
-/* AJAX Utility Styles */
+/* AJAX / htmx states.
+   htmx adds .htmx-request to the requesting element (or its hx-indicator target),
+   so these work with no extra JS. The .ajax-* classes are for hand-written fetch code. */
 
-/* Example styles for loading indicators */
+.htmx-indicator,
 .ajax-loader {
-    /* Add your loading indicator styles here */
+    opacity: 0;
+    transition: opacity 200ms ease-in;
 }
 
-/* Example styles for error messages */
-.ajax-error {
-    /* Add your error message styles here */
+.htmx-request .htmx-indicator,
+.htmx-request.htmx-indicator,
+.ajax-loader.is-active {
+    opacity: 1;
 }
 
-/* Example styles for success messages */
+.htmx-request:not(.htmx-indicator),
+[aria-busy="true"] {
+    cursor: progress;
+}
+
+.htmx-swapping {
+    opacity: 0;
+    transition: opacity 150ms ease-out;
+}
+
+.ajax-error,
 .ajax-success {
-    /* Add your success message styles here */
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--space-xs);
+    border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
+    background-color: color-mix(in srgb, var(--tone) 14%, var(--kubu-surface));
+    color: color-mix(in srgb, var(--tone) 55%, var(--kubu-text));
 }
 
-/* Example styles for progress bars */
+.ajax-error { --tone: var(--color-danger); }
+.ajax-success { --tone: var(--color-safe); }
+
 .ajax-progress {
-    /* Add your progress bar styles here */
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--kubu-primary), transparent) 0 0 / 50% 100% no-repeat;
+    animation: ajax-progress 1s linear infinite;
+}
+
+@keyframes ajax-progress {
+    from { background-position: -50% 0; }
+    to { background-position: 150% 0; }
 }
