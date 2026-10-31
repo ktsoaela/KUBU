@@ -45,3 +45,9 @@
 .breadcrumb--arrow .breadcrumb__item + .breadcrumb__item::before {
     content: "➔";
 }
+
+.breadcrumb__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
+}

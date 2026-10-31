@@ -1,88 +1,81 @@
-/* Dropdown toggle button styles */
-/*.dropdown-toggle {*/
-/*    display: inline-block;*/
-/*    padding: 0.5rem 1rem;*/
-/*    background-color: var(--color-primary);*/
-/*    color: #fff;*/
-/*    border: none;*/
-/*    border-radius: 0.25rem;*/
-/*    cursor: pointer;*/
-/*}*/
+/* Dropdowns, two ways, both without JavaScript.
 
-/*.dropdown-toggle:hover {*/
-/*    background-color: #1a5769;*/
-/*}*/
+   1. <details> (recommended: opens on click and tap in every browser, Esc-free but keyboard friendly)
+      <details class="dropdown">
+        <summary class="button button--primary">Account</summary>
+        <ul class="dropdown-content list-unstyled">
+          <li><a class="dropdown-item" href="/profile">Profile</a></li>
+        </ul>
+      </details>
 
-/*!* Dropdown menu styles *!*/
-/*.dropdown-menu {*/
-/*    display: none;*/
-/*    position: absolute;*/
-/*    top: 100%;*/
-/*    left: 0;*/
-/*    min-width: 10rem;*/
-/*    padding: 0.5rem 0;*/
-/*    background-color: var(--color-light);*/
-/*    border: 1px solid #ccc;*/
-/*    border-radius: 0.25rem;*/
-/*    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);*/
-/*    z-index: 1000;*/
-/*}*/
-
-/*.dropdown-menu.show {*/
-/*    display: block;*/
-/*}*/
-
-/*.dropdown-item {*/
-/*    display: block;*/
-/*    padding: 0.5rem 1rem;*/
-/*    color: #333;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.dropdown-item:hover {*/
-/*    background-color: #f0f0f0;*/
-/*}*/
-
+   2. :focus-within, for a menu inside a navbar list
+      <ul class="dropdown"><li class="dropdown-item-container">
+        <button class="button">Account</button>
+        <ul class="dropdown-content">…</ul>
+      </li></ul> */
 
 .dropdown {
-    list-style: none;
     position: relative;
-    margin: 0px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
+.dropdown > summary {
+    list-style: none;
+}
 
-/* Dropdown content */
+.dropdown > summary::-webkit-details-marker {
+    display: none;
+}
+
+.dropdown > summary::after {
+    content: " \25BE";
+}
+
 .dropdown-content {
-    display: none; /* Hidden by default */
+    display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: var(--theme-color-primary);
-    color: var(--color-light);
-    min-width: 160px;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 20;
+    min-width: 10rem;
+    margin: 0;
+    padding: var(--space-xs, 4px) 0;
+    list-style: none;
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-xs, 4px);
     box-shadow: var(--kubu-shadow-md);
-    z-index: 1;
-    padding: 0;
+}
+
+.dropdown--end .dropdown-content {
+    right: 0;
+    left: auto;
 }
 
 .dropdown-item {
-    color: var(--color-light);
-    text-decoration: none;
-    padding: 10px;
     display: block;
+    padding: var(--space-sm, 8px) var(--space-md, 16px);
+    color: inherit;
+    text-decoration: none;
 }
 
-.dropdown-item:hover {
-    /*background-color: #eeeeee;*/
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+    color: var(--kubu-on-primary);
+    background-color: var(--kubu-primary);
 }
 
-/* Display the dropdown when the parent list item is focused (clicked) */
+.dropdown[open] > .dropdown-content,
 .dropdown-item-container:focus-within .dropdown-content {
     display: block;
 }
 
-/* Optionally, style for clicked link */
-.dropdown-item-container a:focus {
-    outline: none;
-    /*background-color: #eeeeee;*/
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
 }

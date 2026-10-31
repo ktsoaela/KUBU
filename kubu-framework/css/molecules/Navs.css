@@ -1,36 +1,69 @@
-/* Navs molecule styles */
+/* Navs: a row of links for moving between views of the same page or section.
+   <nav class="nav" aria-label="Account">
+     <a class="nav__link" href="/account" aria-current="page">Profile</a>
+     <a class="nav__link" href="/account/billing">Billing</a>
+   </nav>
+   Modifiers: .nav--tabs (underlined tab look), .nav--pills (filled), .nav--vertical (stacked).
+   The current link is marked with aria-current="page" by the server. */
 
-.navbar {
+.nav {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-xs, 4px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav__link {
+    display: block;
+    padding: var(--space-sm, 8px) var(--space-md, 16px);
+    color: var(--kubu-link);
+    text-decoration: none;
+    border-radius: var(--space-xs, 4px);
+}
+
+.nav__link:hover {
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface-2);
+}
+
+.nav__link[aria-current] {
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--kubu-heading);
+}
+
+.nav--tabs {
+    gap: 0;
+    border-bottom: 1px solid var(--kubu-border);
+}
+
+.nav--tabs .nav__link {
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+}
+
+.nav--tabs .nav__link:hover {
+    background-color: transparent;
+    border-bottom-color: var(--kubu-border);
+}
+
+.nav--tabs .nav__link[aria-current] {
+    border-bottom-color: var(--kubu-primary);
+}
+
+.nav--pills .nav__link[aria-current] {
+    color: var(--kubu-on-primary);
+    background-color: var(--kubu-primary);
+}
+
+.nav--vertical {
+    flex-direction: column;
+}
+
+.nav__link {
+    display: inline-flex;
     align-items: center;
-    background-color: var(--kubu-inverse-bg);
-    padding: 1rem;
+    min-height: var(--kubu-target, 44px);
 }
-
-.navbar-brand {
-    font-size: 1.5rem;
-    color: #fff;
-    text-decoration: none;
-}
-
-.navbar-nav {
-    display: flex;
-    list-style-type: none;
-}
-
-.nav-item {
-    margin-right: 1rem;
-}
-
-.nav-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 0.5rem;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: var(--kubu-text-muted);
-}
-

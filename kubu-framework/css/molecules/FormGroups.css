@@ -42,3 +42,17 @@
     background-size: 1.25rem;
     cursor: pointer; /* Show pointer on hover */
 }
+
+.form-input,
+.form-select,
+.form-textarea {
+    min-height: var(--kubu-target, 44px);
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+}
+
+/* Required fields say so in text: <label class="form-label">Email <span class="form-label__hint">(required)</span></label> */
+.form-label__hint {
+    font-weight: var(--font-weight-normal, 400);
+    color: var(--kubu-text-muted);
+}

@@ -17,7 +17,7 @@
 }
 
 .list-group-item:hover {
-    background-color: var(--color-light);
+    background-color: var(--kubu-surface-2);
 }
 
 .list-group-item .list-group-icon {
@@ -35,5 +35,5 @@
 
 .list-group-item .list-group-text {
     margin: 0;
-    color: var(--color-neutral-gray-dark);
+    color: var(--kubu-text-muted);
 }
