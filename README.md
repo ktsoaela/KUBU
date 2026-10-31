@@ -2,6 +2,8 @@
 
 KUBU is a CSS framework for server-rendered HTML. Components are CSS with BEM class names, sorted by Atomic Design. The browser supplies the behaviour with `<details>`, `<dialog>`, `popover`, `:target`, radio buttons and checkboxes, so every component looks and works with scripts turned off.
 
+Kubu is the hippo. It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.
+
 There is no UI library to install. One stylesheet is the framework; htmx, if you use it, only swaps pages. `kubu-framework/pages/v2.html` states the whole 2.0 contract on one page.
 
 - `kubu-framework/`: the CSS (`css/`), the bundle (`dist/`), the docs site (`pages/`), the build scripts (`scripts/`) and the optional packages (`packages/`)
