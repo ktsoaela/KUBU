@@ -140,6 +140,7 @@ const visit = async (href, title) => {
 };
 
 await visit('atom-buttons.html', 'Buttons · KUBU');
+await visit('v2.html', 'KUBU 2.0 · KUBU');
 await visit('papers.html', 'Papers · KUBU');
 await visit('organism-modal.html', 'Modal · KUBU');
 

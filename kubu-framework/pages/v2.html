@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KUBU 2.0 · KUBU</title>
+    <meta name="description" content="The 2.0 contract: one CSS file, BEM parts, page endpoints, optional packages.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html"><img src="../img/hippo-white.svg" alt="" width="32" height="32"><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="v2.html" aria-current="page">KUBU 2.0</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-atoms">Atoms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">typography</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-molecules">Molecules</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-organisms">Organisms</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-utilities">Utilities</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-pages">Pages</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-pages">
+            <li><a class="list-item" href="page-home.html">HomePage</a></li>
+            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
+            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
+            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-snippets">Snippets</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+        </ul>
+        <h2 class="list-title" id="nav-templates">Templates</h2>
+        <ul class="list-unstyled" aria-labelledby="nav-templates">
+            <li><a class="list-item" href="template-main.html">main-template</a></li>
+        </ul>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>KUBU 2.0</h1>
+    <p class="doc__lead">The whole contract on one page: link one CSS file, compose BEM parts, treat every page as an endpoint, and install a package only when you want a slice.</p>
+
+    <h2>1. Link one CSS file</h2>
+    <p><code>dist/kubu.min.css</code> holds every atom, molecule and organism, themed for dark and light. Nothing else is required.</p>
+    <details class="doc-code" open>
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block" data-lang="html"><span class="doc-code__tag">&lt;link</span> <span class="doc-code__attr">rel</span>=<span class="doc-code__string">"stylesheet"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"/static/kubu.min.css"</span><span class="doc-code__tag">&gt;</span></code></pre>
+        </details>
+    <p>Get it from <a href="download.html">Download</a>, from <code>npm install kubu-css</code>, or from <code>pip install kubu-css</code> for Django and Flask static files.</p>
+
+    <h2>2. Compose BEM parts</h2>
+    <p>A component is a block with named parts. Use the parts you need; there are no options to configure and no JavaScript to call.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <article class="card">
+                <header class="card__header">
+                    <h3 class="card__title">Order 1042</h3>
+                    <span class="badge badge--safe">Paid</span>
+                </header>
+                <div class="card__body"><p>Two mohair blankets, delivered to Maseru.</p></div>
+                <footer class="card__footer"><a class="button button--primary" href="page-product.html">View the order</a></footer>
+            </article>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__header"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Order 1042<span class="doc-code__tag">&lt;/h3&gt;</span>
+        <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"badge badge--safe"</span><span class="doc-code__tag">&gt;</span>Paid<span class="doc-code__tag">&lt;/span&gt;</span>
+    <span class="doc-code__tag">&lt;/header&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>Two mohair blankets, delivered to Maseru.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;footer</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__footer"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-product.html"</span><span class="doc-code__tag">&gt;</span>View the order<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/footer&gt;</span>
+<span class="doc-code__tag">&lt;/article&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>3. Every page is an endpoint</h2>
+    <p>Each address returns a whole HTML page, the same way a backend route does. With htmx, <code>hx-boost</code> on <code>&lt;body&gt;</code> swaps only the region you name and keeps the URL, the title and Back right. Without it, the same link loads the whole page.</p>
+    <details class="doc-code" open>
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block" data-lang="html"><span class="doc-code__tag">&lt;body</span> <span class="doc-code__attr">hx-boost</span>=<span class="doc-code__string">"true"</span> <span class="doc-code__attr">hx-target</span>=<span class="doc-code__string">"#content"</span> <span class="doc-code__attr">hx-select</span>=<span class="doc-code__string">"#content"</span> <span class="doc-code__attr">hx-swap</span>=<span class="doc-code__string">"outerHTML"</span> <span class="doc-code__attr">hx-push-url</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span></code></pre>
+        </details>
+    <p>Components never depend on that script. Dialogs, disclosures, popovers, tabs and the theme switch run on <code>&lt;dialog&gt;</code>, <code>&lt;details&gt;</code>, <code>popover</code>, <code>:target</code>, radio buttons and checkboxes.</p>
+
+    <h2>4. Install a slice only when you want one</h2>
+    <p>Each folder in <code>kubu-framework/packages</code> has one job. None of them is needed for a component to look right.</p>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Package</th><th scope="col">What it holds</th></tr></thead>
+        <tbody>
+            <tr><td><code>packages/web</code></td><td>A starter site: three pages, one stylesheet, htmx navigation.</td></tr>
+            <tr><td><code>packages/typography</code></td><td>Colours, spacing, type and the reset, without any components.</td></tr>
+            <tr><td><code>packages/icons</code></td><td>The icon CSS and the SVG sprite from the <a href="icons.html">Icon Pack</a>.</td></tr>
+            <tr><td><code>packages/plugin</code></td><td>htmx patterns: out-of-band toasts and one listener on a parent.</td></tr>
+            <tr><td><code>packages/js</code></td><td>Optional ES modules for what HTML cannot do alone. See <a href="start-javascript.html">JavaScript</a>.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Next</h2>
+    <ul class="doc-points">
+        <li><strong><a href="download.html">Download</a></strong>Take the one file, or import only the parts you use.</li>
+        <li><strong><a href="start-contents.html">Contents</a></strong>Every component with its BEM parts.</li>
+        <li><strong><a href="news.html">News</a></strong>What changed in 2.0.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

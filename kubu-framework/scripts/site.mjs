@@ -20,6 +20,7 @@ export const sidebar = [
         title: 'Jumping In',
         items: [
             ['Intro', 'start-intro.html', 'How Atomic Design, BEM and native HTML fit together.'],
+            ['KUBU 2.0', 'v2.html', 'The 2.0 contract: one CSS file, BEM parts, page endpoints, optional packages.'],
             ['Download', 'download.html', 'Link the bundle, or import only the files you use.'],
             ['Contents', 'start-contents.html', 'Every component with a one-line purpose.'],
             ['Browser & Devices', 'start-browsers.html', 'Supported browsers and the native features KUBU relies on.'],

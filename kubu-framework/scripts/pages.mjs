@@ -88,6 +88,7 @@ ${groups.join('\n')}
 
 const FOOTER = `<footer class="footer site-footer">
     <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
         <a class="footer__link" href="papers.html">Papers</a>
         <a class="footer__link" href="start-contents.html">Contents</a>
         <a class="footer__link" href="download.html">Download</a>
