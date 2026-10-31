@@ -63,13 +63,13 @@
 
 .button--hazard {
     background-color: var(--color-hazard);
-    color: black;
+    color: var(--kubu-text);
     border: 1px solid var(--color-hazard);
 }
 
 .button--risk {
     background-color: var(--color-risk);
-    color: black;
+    color: var(--kubu-text);
     border: 1px solid var(--color-risk);
 }
 
@@ -126,7 +126,7 @@
 
 /* Plain Buttons */
 .button--plain {
-    background-color: white;
+    background-color: var(--kubu-surface);
     color: var(--color-primary);
     border: 1px solid var(--color-primary);
 }
@@ -226,9 +226,9 @@
 .copy-btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
-    color: #227093;
+    color: var(--kubu-link);
     background-color: transparent;
-    border: 1px solid #227093;
+    border: 1px solid var(--kubu-link);
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -244,7 +244,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #227093;
+    background-color: var(--kubu-primary);
     color: white;
     opacity: 0;
     transform: translateY(100%);
@@ -252,7 +252,7 @@
 }
 
 .copy-btn:hover {
-    background-color: #227093;
+    background-color: var(--kubu-primary);
     color: white;
 }
 
@@ -269,6 +269,6 @@
 }
 
 .copy-btn:hover {
-    background-color: #227093;
+    background-color: var(--kubu-primary);
     color: white;
 }

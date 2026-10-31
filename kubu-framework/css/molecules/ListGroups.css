@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     padding: 1rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--kubu-border);
 }
 
 .list-group-item:last-child {

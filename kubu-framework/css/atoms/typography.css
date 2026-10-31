@@ -1,14 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     /* Font families */
     --font-family-sans: Raleway, Montserrat, Helvetica, sans-serif;
-    --font-family-serif: 'Lora', 'Playfair Display', 'Georgia', Times, 'Times New Roman', serif;
-    --font-family-mono: 'Courier New', Courier, monospace;
+    --font-family-serif: "Lora", Georgia, "Times New Roman", serif;
+    --font-family-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
 
 
     /* Font sizes */
@@ -39,8 +34,8 @@
     --letter-spacing-wide: 0.1em;
 
     /* Text colors */
-    --text-color-primary: var(--color-primary);
-    --text-color-secondary: var(--color-primary);
+    --text-color-primary: var(--kubu-heading);
+    --text-color-secondary: var(--kubu-text);
     --text-color-light: white;
     --text-color-inverse: #fff;
 
@@ -52,7 +47,7 @@ body {
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-md);
-    color: var(--text-color-primary);
+    color: var(--kubu-text);
 }
 
 .title {
@@ -132,7 +127,7 @@ a:focus {
 /* Other text elements */
 small {
     font-size: var(--font-size-xs);
-    color: var(--text-color-light);
+    color: var(--kubu-text-muted);
 }
 
 strong {
@@ -231,14 +226,14 @@ li {
 }
 
 .list-link li a {
-    color: #007bff;
+    color: var(--kubu-link);
     /* Primary color */
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .list-link li a:hover {
-    color: #0056b3;
+    color: var(--kubu-primary-hover);
     /* Darker shade on hover */
 }
 
@@ -265,10 +260,10 @@ li {
 
 /* Example: Active List Item */
 .list-item.active {
-    background-color: #007bff;
+    background-color: var(--kubu-primary);
     color: var(--color-light);
 }
 
 .list-item.active:hover {
-    background-color: #0056b3;
+    background-color: var(--kubu-primary-hover);
 }

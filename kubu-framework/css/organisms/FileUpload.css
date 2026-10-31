@@ -17,7 +17,7 @@
 
 /* Button style for file upload */
 .file-upload-button {
-    background-color: #007bff;
+    background-color: var(--kubu-primary);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -33,5 +33,5 @@
 /* Placeholder style for the file upload */
 .file-placeholder {
     font-style: italic;
-    color: #888;
+    color: var(--kubu-text-muted);
 }

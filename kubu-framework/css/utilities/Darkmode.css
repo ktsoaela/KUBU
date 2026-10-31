@@ -1,38 +1,19 @@
-/* Base Theme Variables */
+/* Theme switching.
+   Colours come from the semantic tokens in atoms/colors.css, which use light-dark().
+   Changing color-scheme is enough to re-theme every component. Three ways to choose:
+   1. Do nothing: follows the OS setting.
+   2. <html data-theme="dark"> or "light" (see colors.css).
+   3. The CSS-only radio switch below (#light-mode / #dark-mode / #auto-mode). */
+
 body {
-    --background-color: white;
-    --text-color: black;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
+    background-color: var(--kubu-bg);
+    color: var(--kubu-text);
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode Variables */
-body:has(#dark-mode:checked) {
-    --background-color: #121212;
-    --text-color: #ffffff;
-}
-
-/* Light Mode Variables */
-body:has(#light-mode:checked) {
-    --background-color: white;
-    --text-color: black;
-}
-
-/* Auto Mode Variables (based on system preference) */
-@media (prefers-color-scheme: dark) {
-    body:has(#auto-mode:checked) {
-        --background-color: #121212;
-        --text-color: #ffffff;
-    }
-}
-@media (prefers-color-scheme: light) {
-    body:has(#auto-mode:checked) {
-        --background-color: white;
-        --text-color: black;
-    }
-}
+:root:has(#dark-mode:checked) { color-scheme: dark; }
+:root:has(#light-mode:checked) { color-scheme: light; }
+:root:has(#auto-mode:checked) { color-scheme: light dark; }
 
 /* Style for the Theme Switch List */
 .theme-switch-list {
@@ -44,24 +25,30 @@ body:has(#light-mode:checked) {
     justify-content: center;
 }
 
-/* Hide Radio Buttons */
+/* Visually hide the radios but keep them focusable */
 .theme-switch-list input[type="radio"] {
-    display: none;
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
 }
 
-/* Custom Labels */
 .theme-switch-list label {
     cursor: pointer;
     padding: 0.5rem 1rem;
-    border: 1px solid #333;
+    border: 1px solid var(--kubu-border);
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Active State Styling */
+.theme-switch-list input[type="radio"]:focus-visible + label {
+    outline: 2px solid var(--kubu-focus);
+    outline-offset: 2px;
+}
+
 #light-mode:checked + label[for="light-mode"],
 #dark-mode:checked + label[for="dark-mode"],
 #auto-mode:checked + label[for="auto-mode"] {
-    background-color: #333;
-    color: #ffffff;
+    background-color: var(--kubu-inverse-bg);
+    color: var(--kubu-inverse-text);
 }

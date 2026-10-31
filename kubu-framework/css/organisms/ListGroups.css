@@ -9,32 +9,32 @@
 .list-group-item {
     padding: 0.5rem 1rem;
     margin: 0.25rem 0;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
+    background-color: var(--kubu-surface-2);
+    border: 1px solid var(--kubu-border);
     border-radius: 0.25rem;
 }
 
 .list-group-item:hover {
-    background-color: #e9ecef;
+    background-color: var(--kubu-surface-2);
 }
 
 /* List Group Item: Active */
 .list-group-item.active {
-    background-color: #007bff;
+    background-color: var(--kubu-primary);
     color: #fff;
 }
 
 .list-group-item.active:hover {
-    background-color: #007bff;
+    background-color: var(--kubu-primary);
 }
 
 /* List Group Item: Disabled */
 .list-group-item.disabled {
-    background-color: #f8f9fa;
+    background-color: var(--kubu-surface-2);
     color: var(--color-neutral-gray-dark);
     pointer-events: none;
 }
 
 .list-group-item.disabled:hover {
-    background-color: #f8f9fa;
+    background-color: var(--kubu-surface-2);
 }

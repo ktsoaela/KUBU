@@ -16,13 +16,13 @@
 
 /* Header Styles */
 .table__header {
-    background-color: #f0f0f0;
+    background-color: var(--kubu-surface-2);
 }
 
 .table__header-cell {
     padding: 12px;
     text-align: left;
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--kubu-border);
 }
 
 /* Row Variants */
@@ -31,11 +31,11 @@
 }
 
 .table__row--striped {
-    background-color: #f9f9f9;
+    background-color: var(--kubu-surface-2);
 }
 
 .table__row--hoverable:hover {
-    background-color: #e9ecef;
+    background-color: var(--kubu-surface-2);
 }
 
 .table__row--active {
@@ -46,7 +46,7 @@
 /* Cell Styles */
 .table__cell {
     padding: 12px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--kubu-border);
 }
 
 .table__cell--highlight {
@@ -55,25 +55,25 @@
 
 /* Footer Styles */
 .table__footer {
-    background-color: #f8f9fa;
+    background-color: var(--kubu-surface-2);
 }
 
 .table__footer-cell {
     padding: 8px;
     text-align: left;
     font-weight: bold;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid var(--kubu-border);
 }
 
 /* Striped Columns */
 .table__cell--striped:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--kubu-surface-2);
 }
 
 /* Table Borders */
 .table--bordered .table__cell,
 .table--bordered .table__header-cell {
-    border: 1px solid #ddd;
+    border: 1px solid var(--kubu-border);
 }
 
 .table--borderless .table__cell,

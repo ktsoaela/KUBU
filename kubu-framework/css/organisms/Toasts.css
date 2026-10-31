@@ -8,12 +8,12 @@
 
 /* Individual toast */
 .toast {
-    background-color: #333; /* Dark background color */
+    background-color: var(--kubu-inverse-bg); /* Dark background color */
     color: #fff; /* Light text color */
     padding: 10px 20px; /* Padding */
     border-radius: 5px; /* Rounded corners */
     margin-bottom: 10px; /* Margin between toasts */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for depth */
+    box-shadow: var(--kubu-shadow-lg); /* Box shadow for depth */
 }
 
 /* Success toast */

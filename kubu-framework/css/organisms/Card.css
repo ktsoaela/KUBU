@@ -2,7 +2,7 @@
 
 /* Card container */
 .card {
-    border: 1px solid #ccc;
+    border: 1px solid var(--kubu-border);
     border-radius: 0.5rem;
     padding: 2rem;
     margin-bottom: 1rem;
@@ -17,7 +17,7 @@
 }
 
 .card--demo_code {
-    background-color: #002B36;
+    background-color: var(--kubu-code-bg);
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -52,7 +52,7 @@
 
 /* Card footer */
 .card__footer {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--kubu-border);
     font-size: 1rem;
     line-height: 1.5;
 }

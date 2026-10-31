@@ -4,29 +4,17 @@
     margin-bottom: 1rem;
 }
 
-.notification.success {
-    background-color: #dff0d8;
-    color: #3c763d;
-    border-color: #d6e9c6;
+.notification {
+    --tone: var(--color-info);
+    background-color: color-mix(in srgb, var(--tone) 14%, var(--kubu-surface));
+    color: color-mix(in srgb, var(--tone) 55%, var(--kubu-text));
+    border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
 }
 
-.notification.error {
-    background-color: #f2dede;
-    color: #a94442;
-    border-color: #ebccd1;
-}
-
-.notification.warning {
-    background-color: #fcf8e3;
-    color: #8a6d3b;
-    border-color: #faebcc;
-}
-
-.notification.info {
-    background-color: #d9edf7;
-    color: #31708f;
-    border-color: #bce8f1;
-}
+.notification.success { --tone: var(--color-safe); }
+.notification.error { --tone: var(--color-danger); }
+.notification.warning { --tone: var(--color-hazard); }
+.notification.info { --tone: var(--color-info); }
 
 .notification .close {
     float: right;

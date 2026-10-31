@@ -22,20 +22,17 @@
     border-radius: 0.25rem;
     font-size: 1rem;
     font-weight: bold;
-    color: #721c24;
+    --tone: var(--color-info);
+    background-color: color-mix(in srgb, var(--tone) 14%, var(--kubu-surface));
+    color: color-mix(in srgb, var(--tone) 55%, var(--kubu-text));
+    border: 1px solid color-mix(in srgb, var(--tone) 35%, transparent);
+    border-inline-start-width: 4px;
 }
 
-/* Success Alert */
-.alert-success {
-    background-color: #4CAF50;
-    color: #FFFFFF;
-}
-
-/* Danger Alert */
-.alert-danger {
-    background-color: #f44336;
-    color: #FFFFFF;
-}
+.alert-success { --tone: var(--color-safe); }
+.alert-danger { --tone: var(--color-danger); }
+.alert-warning { --tone: var(--color-hazard); }
+.alert-info { --tone: var(--color-info); }
 
 /* Close Button */
 .alert-close {

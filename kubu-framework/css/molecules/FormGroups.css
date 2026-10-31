@@ -14,7 +14,7 @@
 .form-input {
     width: 100%; /* Make input fields full width */
     padding: 0.5rem; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Basic border */
+    border: 1px solid var(--kubu-border); /* Basic border */
     border-radius: 0.25rem; /* Rounded corners */
     box-sizing: border-box; /* Include padding in width */
 }
@@ -23,7 +23,7 @@
 .form-textarea {
     width: 100%; /* Make textarea full width */
     padding: 0.5rem; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Basic border */
+    border: 1px solid var(--kubu-border); /* Basic border */
     border-radius: 0.25rem; /* Rounded corners */
     box-sizing: border-box; /* Include padding in width */
 }
@@ -32,7 +32,7 @@
 .form-select {
     width: 100%; /* Make select box full width */
     padding: 0.5rem; /* Adjust padding as needed */
-    border: 1px solid #ccc; /* Basic border */
+    border: 1px solid var(--kubu-border); /* Basic border */
     border-radius: 0.25rem; /* Rounded corners */
     box-sizing: border-box; /* Include padding in width */
     appearance: none; /* Remove default styles */

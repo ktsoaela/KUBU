@@ -60,7 +60,7 @@
     background-color: var(--theme-color-primary);
     color: var(--color-light);
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--kubu-shadow-md);
     z-index: 1;
     padding: 0;
 }

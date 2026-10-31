@@ -2,7 +2,7 @@
 .rating {
     display: inline-block;
     unicode-bidi: bidi-override;
-    color: #888888;
+    color: var(--kubu-text-muted);
     font-size: 20px;
     height: 1em;
     width: auto;

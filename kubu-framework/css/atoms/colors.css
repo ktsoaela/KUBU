@@ -51,4 +51,40 @@
     --theme-color-primary: #002d4c;
     --theme-color-secondary: #b66508;
     --theme-color-tertiary: #002d4c;
+
+    /* Component theme hooks used by Tabs, Accordion and Close */
+    --theme: var(--kubu-primary);
+    --secondary: var(--theme-color-secondary);
 }
+
+/* Semantic tokens: components read these, so light and dark themes come for free.
+   Override color-scheme with [data-theme="light"|"dark"] on <html>. */
+:root {
+    color-scheme: light dark;
+
+    --kubu-bg: light-dark(#f6f7f9, #0e1419);
+    --kubu-surface: light-dark(#ffffff, #151d24);
+    --kubu-surface-2: light-dark(#eef1f4, #1d2730);
+    --kubu-text: light-dark(#18222c, #e3e9ef);
+    --kubu-text-muted: light-dark(#56616d, #9aa6b2);
+    --kubu-heading: light-dark(#1b5e83, #8ccaf2);
+    --kubu-link: light-dark(#1b5e83, #7cc0f0);
+    --kubu-border: light-dark(#d5dbe2, #2c3843);
+
+    --kubu-primary: light-dark(#002d4c, #2a77b5);
+    --kubu-primary-hover: light-dark(#004574, #1f639a);
+    --kubu-on-primary: #ffffff;
+    --kubu-accent: #b66508;
+    --kubu-inverse-bg: #1f2933;
+    --kubu-inverse-text: #ffffff;
+    --kubu-code-bg: #002b36;
+    --kubu-focus: light-dark(#1b5e83, #8ccaf2);
+    --kubu-overlay: rgb(0 0 0 / 0.5);
+
+    --kubu-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08), 0 1px 3px rgb(0 0 0 / 0.06);
+    --kubu-shadow-md: 0 4px 12px rgb(0 0 0 / 0.12);
+    --kubu-shadow-lg: 0 12px 32px rgb(0 0 0 / 0.2);
+}
+
+[data-theme="light"] { color-scheme: light; }
+[data-theme="dark"] { color-scheme: dark; }

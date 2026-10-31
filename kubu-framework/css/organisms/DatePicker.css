@@ -7,7 +7,7 @@
 .datepicker__input {
     width: 100%;
     padding: 0.5rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--kubu-border);
     border-radius: 0.25rem;
     font-size: 1rem;
 }
@@ -18,10 +18,10 @@
     top: 100%;
     left: 0;
     z-index: 1000;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
     border-radius: 0.25rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--kubu-shadow-sm);
     display: none;
 }
 
@@ -35,19 +35,19 @@
 .datepicker__calendar th {
     padding: 0.5rem;
     text-align: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--kubu-border);
 }
 
 /* Datepicker calendar table cells */
 .datepicker__calendar td {
     padding: 0.5rem;
     text-align: center;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--kubu-border);
 }
 
 /* Datepicker calendar table cells for selected dates */
 .datepicker__calendar td.selected {
-    background-color: #227093;
+    background-color: var(--kubu-primary);
     color: #fff;
 }
 
@@ -58,7 +58,7 @@
 
 /* Datepicker calendar table cells for disabled dates */
 .datepicker__calendar td.disabled {
-    color: #ccc;
+    color: var(--kubu-text-muted);
     cursor: not-allowed;
 }
 

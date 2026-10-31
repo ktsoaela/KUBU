@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: #227093;
+    background-color: var(--kubu-primary);
     color: white;
 }
 

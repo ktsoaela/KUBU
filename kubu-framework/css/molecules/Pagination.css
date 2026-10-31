@@ -16,14 +16,14 @@
     display: inline-block;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    color: #227093; /* Example color */
-    border: 1px solid #227093; /* Example color */
+    color: var(--kubu-link); /* Example color */
+    border: 1px solid var(--kubu-link); /* Example color */
     border-radius: 0.25rem;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .pagination__link:hover,
 .pagination__link:focus {
-    background-color: #227093; /* Example color */
+    background-color: var(--kubu-primary); /* Example color */
     color: #fff; /* Example color */
 }
