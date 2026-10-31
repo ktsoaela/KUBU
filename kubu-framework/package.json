@@ -1,0 +1,30 @@
+{
+  "name": "kubu-css",
+  "version": "2.0.0",
+  "description": "KUBU: a lightweight, theme-aware CSS framework built on Atomic Design and BEM.",
+  "license": "MIT",
+  "author": "Khotso Tsoaela",
+  "style": "dist/kubu.css",
+  "main": "dist/kubu.css",
+  "files": [
+    "dist",
+    "css",
+    "styles.css"
+  ],
+  "keywords": [
+    "css",
+    "framework",
+    "atomic-design",
+    "bem",
+    "dark-mode",
+    "htmx"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "npx --yes http-server .. -p 8080 -c-1 -o /kubu-framework/pages/index.html"
+  },
+  "devDependencies": {
+    "lightningcss": "^1.29.0",
+    "browserslist": "^4.24.0"
+  }
+}
