@@ -1,15 +1,29 @@
 {
   "name": "kubu-css",
   "version": "2.0.0",
-  "description": "KUBU: a lightweight, theme-aware CSS framework built on Atomic Design and BEM.",
+  "description": "KUBU: one CSS file for server-rendered HTML. Atomic Design, BEM, dark-first tokens, htmx-friendly.",
   "license": "MIT",
   "author": "Khotso Tsoaela",
-  "style": "dist/kubu.css",
-  "main": "dist/kubu.css",
+  "homepage": "https://github.com/ktsoaela/KUBU#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktsoaela/KUBU.git",
+    "directory": "kubu-framework"
+  },
+  "bugs": {
+    "url": "https://github.com/ktsoaela/KUBU/issues"
+  },
+  "style": "dist/kubu.min.css",
+  "main": "dist/kubu.min.css",
   "files": [
     "dist",
     "css",
-    "styles.css"
+    "packages",
+    "styles.css",
+    "img",
+    "js/htmx.min.js",
+    "!packages/*/dist",
+    "!packages/*/node_modules"
   ],
   "keywords": [
     "css",
@@ -26,7 +40,8 @@
     "test": "node scripts/pages.mjs --check && node scripts/smoke.mjs",
     "dev": "npx --yes http-server .. -p 8080 -c-1 -o /kubu-framework/pages/index.html",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build -o storybook-static"
+    "build-storybook": "storybook build -o storybook-static",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@storybook/html-vite": "^10.6.5",
