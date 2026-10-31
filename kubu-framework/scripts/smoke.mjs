@@ -133,6 +133,10 @@ const visit = async (href, title) => {
     const current = await evaluate(`[...document.querySelectorAll('[aria-current="page"]')].filter(a => a.closest('#docs-sidebar, #site-links')).map(a => a.getAttribute('href'))`);
     ok(current.length >= 1 && current.every((h) => h === href), `${href}: aria-current on ${current.join(', ')}`);
     ok(await waitFor('document.activeElement && document.activeElement.id === "main"', 2000), `${href}: focus moved to #main`);
+    // Let htmx finish settling and process the new links before the next click. A click inside that
+    // window is a normal page load, which works, but would not test the swap.
+    await waitFor('!document.querySelector(".htmx-settling, .htmx-swapping, .htmx-added")', 2000);
+    await sleep(100);
 };
 
 await visit('atom-buttons.html', 'Buttons · KUBU');
@@ -174,6 +178,64 @@ for (const page of allPages) {
         .map(([el, r]) => el.tagName.toLowerCase() + '.' + el.className + ' ' + Math.round(r.width) + 'x' + Math.round(r.height))`);
     ok(small.length === 0, `${page}: targets at least 44px${small.length ? ': ' + small.slice(0, 5).join('; ') : ''}`);
 }
+
+// Text contrast (WCAG AA): 4.5:1, or 3:1 for large text, against the nearest opaque background,
+// on every page in both schemes. Disabled controls and hidden text are exempt.
+const CONTRAST = `(() => {
+    const parse = (c) => {
+        let m = c.match(/rgba?\\(([^)]+)\\)/);
+        if (m) { const p = m[1].split(/[ ,/]+/).filter(Boolean).map(Number); return [p[0], p[1], p[2], p[3] ?? 1]; }
+        m = c.match(/color\\(srgb ([^)]+)\\)/);
+        if (m) { const p = m[1].split(/[ /]+/).filter(Boolean).map(Number); return [p[0] * 255, p[1] * 255, p[2] * 255, p[3] ?? 1]; }
+        return null;
+    };
+    const lum = ([r, g, b]) => [r, g, b].map((v) => { v /= 255; return v <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4; })
+        .reduce((s, v, i) => s + v * [0.2126, 0.7152, 0.0722][i], 0);
+    const bgOf = (el) => {
+        for (let e = el; e; e = e.parentElement) {
+            const s = getComputedStyle(e);
+            if (s.backgroundImage !== 'none' && !e.classList.contains('doc-swatch')) return null; // gradients: skip
+            const c = parse(s.backgroundColor);
+            if (c && c[3] >= 0.99) return c;
+        }
+        return parse(getComputedStyle(document.body).backgroundColor);
+    };
+    const out = [];
+    const walker = document.createTreeWalker(document.querySelector('main'), NodeFilter.SHOW_TEXT);
+    const seen = new Set();
+    for (let n; (n = walker.nextNode()); ) {
+        const el = n.parentElement;
+        if (!n.textContent.trim() || seen.has(el)) continue;
+        seen.add(el);
+        if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) || el.closest('[disabled], [aria-disabled="true"], .visually-hidden, dialog:not([open]), [popover]:not(:popover-open), .offcanvas, .tooltiptext, .popover-content, .dropdown-content, .modal-overlay')) continue;
+        const s = getComputedStyle(el);
+        const fg = parse(s.color);
+        const bg = bgOf(el);
+        if (!fg || !bg) continue;
+        let o = 1;
+        for (let e = el; e; e = e.parentElement) o *= Number(getComputedStyle(e).opacity);
+        if (o < 0.99) continue;
+        const mix = fg.slice(0, 3).map((v, i) => v * fg[3] + bg[i] * (1 - fg[3]));
+        const [a, b] = [lum(mix), lum(bg)].sort((x, y) => y - x);
+        const ratio = (a + 0.05) / (b + 0.05);
+        const size = parseFloat(s.fontSize);
+        const large = size >= 24 || (size >= 18.66 && Number(s.fontWeight) >= 700);
+        if (ratio < (large ? 3 : 4.5)) out.push(el.tagName.toLowerCase() + '.' + [...el.classList].join('.') + ' "' + n.textContent.trim().slice(0, 24) + '" ' + ratio.toFixed(2));
+    }
+    return out;
+})()`;
+for (const scheme of ['dark', 'light']) {
+    await cdp('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: scheme }] });
+    const failing = [];
+    for (const page of allPages) {
+        await load(`${base}${page}`);
+        await evaluate(`document.querySelectorAll('main details').forEach(d => d.open = true)`);
+        await sleep(50);
+        for (const f of await evaluate(CONTRAST)) failing.push(`${page}: ${f}`);
+    }
+    ok(failing.length === 0, `${scheme}: text contrast meets WCAG AA on every page${failing.length ? `\n      ${failing.slice(0, 25).join('\n      ')}${failing.length > 25 ? `\n      …and ${failing.length - 25} more` : ''}` : ''}`);
+}
+await cdp('Emulation.setEmulatedMedia', { features: [] });
 
 // Buttons: hover, active, disabled and loading look different from default.
 await load(`${base}atom-buttons.html`);
