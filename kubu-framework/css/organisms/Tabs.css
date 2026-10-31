@@ -40,7 +40,7 @@
     max-height: 0;
     overflow: hidden;
     transition: all 0.35s;
-    background-color: var(--color-light);
+    background-color: var(--kubu-surface);
 }
 
 .tab input:checked ~ .tab__content {

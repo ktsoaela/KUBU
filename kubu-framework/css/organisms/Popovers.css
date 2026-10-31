@@ -9,14 +9,15 @@
     display: none;
     position: absolute;
     z-index: 1;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--kubu-surface);
+    box-shadow: var(--kubu-shadow-sm);
     border-radius: 4px;
     padding: 8px;
 }
 
 /* Show popover content on hover */
-.popover:hover .popover-content {
+.popover:hover .popover-content,
+.popover:focus-within .popover-content {
     display: block;
 }
 
@@ -25,4 +26,16 @@
 .popover-content {
     top: 100%;
     left: 0;
+}
+
+/* Native popover: <button popovertarget="p1">Open</button> <div id="p1" popover class="popover-native">...</div>
+   Light-dismiss and Esc are handled by the browser. */
+.popover-native {
+    margin: auto;
+    padding: var(--space-md);
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+    box-shadow: var(--kubu-shadow-md);
 }

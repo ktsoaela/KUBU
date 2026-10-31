@@ -16,5 +16,22 @@
 
 .collapse__body {
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: var(--kubu-surface-2);
+}
+
+/* Native disclosure: <details class="collapse-details"><summary>Title</summary>Body</details> */
+.collapse-details {
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-xs);
+    background-color: var(--kubu-surface);
+}
+
+.collapse-details > summary {
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    font-weight: var(--font-weight-bold);
+}
+
+.collapse-details > :not(summary) {
+    padding: 0 var(--space-md) var(--space-md);
 }

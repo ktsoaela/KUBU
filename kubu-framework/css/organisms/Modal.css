@@ -6,24 +6,24 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: var(--kubu-overlay); /* Semi-transparent background */
     z-index: 1000; /* Ensure modal appears on top of other content */
     overflow: auto; /* Enable scrolling if content exceeds viewport */
 }
 
 /* Modal content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: var(--kubu-surface);
     margin: 15% auto; /* Center modal vertically and horizontally */
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--kubu-border);
     border-radius: 5px;
     width: 80%; /* Set width of modal */
 }
 
 /* Close button */
 .close {
-    color: #aaa;
+    color: var(--kubu-text-muted);
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -31,7 +31,36 @@
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: var(--kubu-text);
     text-decoration: none;
     cursor: pointer;
+}
+
+/* CSS-only: <a href="#my-modal"> opens <div id="my-modal" class="modal">, href="#" closes it */
+.modal:target {
+    display: block;
+}
+
+/* Native: <dialog class="modal-dialog"> opened with dialog.showModal() or
+   <button commandfor="id" command="show-modal">. Esc, focus trap and backdrop are built in. */
+.modal-dialog {
+    width: min(90vw, 36rem);
+    padding: var(--space-lg);
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: var(--space-sm);
+    box-shadow: var(--kubu-shadow-lg);
+}
+
+.modal-dialog::backdrop {
+    background-color: var(--kubu-overlay);
+}
+
+.modal-dialog[open] {
+    animation: modal-in 0.2s ease-out;
+}
+
+@keyframes modal-in {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
 }
