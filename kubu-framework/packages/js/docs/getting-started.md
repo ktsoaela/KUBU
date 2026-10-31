@@ -4,7 +4,7 @@ Five minutes from an empty folder to a themed page.
 
 ## 1. Get the CSS
 
-KUBU is not on npm. Copy `kubu-framework/dist/kubu.min.css` from this repository into your project, or link the files straight from a clone.
+Install `kubu-css` from npm or pip, or copy `kubu-framework/dist/kubu.min.css` from this repository into your project, or link the files straight from a clone.
 
 ## 2. Start a page
 
