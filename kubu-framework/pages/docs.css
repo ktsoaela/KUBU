@@ -452,8 +452,14 @@
 }
 
 /* Narrow screens: the seven header links collapse behind "Menu"; the component index follows
-   the article, with a link to it at the top. Primary actions sit lower, in the thumb zone. */
+   the article, with a link to it at the top. Primary actions become full-width 48px buttons,
+   easy to reach with a thumb. */
 @media (max-width: 899px) {
+    .doc-hero__actions .button {
+        flex: 1 1 100%;
+        min-height: 48px;
+    }
+
     .docs-layout {
         grid-template-columns: minmax(0, 1fr);
     }
