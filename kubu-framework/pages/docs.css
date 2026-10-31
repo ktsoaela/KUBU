@@ -232,6 +232,12 @@
     margin-top: var(--space-lg);
 }
 
+/* Article spacing is for the docs text. Inside a live preview, headings keep the component's own
+   spacing, so a card title lines up with its badge as it does on a real page. */
+.doc .doc-example__preview :is(h2, h3) {
+    margin-top: 0;
+}
+
 .doc__lead {
     max-width: 44rem;
     font-size: var(--font-size-lg);
@@ -246,12 +252,12 @@
     border-radius: var(--space-xs);
 }
 
-.doc > ul,
-.doc > ol {
+.doc > ul:not([class]),
+.doc > ol:not([class]) {
     margin-left: 1.25rem;
 }
 
-.doc > ul {
+.doc > ul:not([class]) {
     list-style: disc;
 }
 
@@ -259,7 +265,7 @@
     list-style: decimal;
 }
 
-.doc > ul > li {
+.doc > ul:not([class]) > li {
     margin-block: var(--space-xs);
 }
 
