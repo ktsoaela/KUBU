@@ -1,6 +1,6 @@
 
 :root {
-    --button-primary-bg: var(--theme-color-primary);
+    --button-primary-bg: var(--kubu-primary);
     --button-primary-color: var(--color-light);
     --button-secondary-bg: var(--theme-color-secondary);
     --button-secondary-color: var(--color-light);
@@ -45,8 +45,8 @@
 
 .button--outline {
     background-color: transparent;
-    color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    color: var(--kubu-link);
+    border: 1px solid var(--kubu-link);
 }
 
 .button--outline:hover {

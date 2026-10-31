@@ -5,12 +5,6 @@ body {
     min-height: 100vh; /* Set minimum height to full viewport height */
 }
 
-header {
-    background-color: var(--kubu-inverse-bg);
-    color: #fff;
-    padding: 10px;
-}
-
 
 .page-layout {
     display: flex;

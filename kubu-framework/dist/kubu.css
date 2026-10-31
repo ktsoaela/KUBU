@@ -93,7 +93,7 @@ html {
 }
 
 :root {
-  --button-primary-bg: var(--theme-color-primary);
+  --button-primary-bg: var(--kubu-primary);
   --button-primary-color: var(--color-light);
   --button-secondary-bg: var(--theme-color-secondary);
   --button-secondary-color: var(--color-light);
@@ -137,8 +137,8 @@ html {
 }
 
 .button--outline {
-  color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  color: var(--kubu-link);
+  border: 1px solid var(--kubu-link);
   background-color: #0000;
 }
 
@@ -1305,7 +1305,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  line-height: var(--line-height-lg);
+  line-height: var(--line-height-sm);
   color: var(--text-color-primary);
   margin: 0 0 .5em;
 }
@@ -2867,12 +2867,6 @@ body {
   min-height: 100vh;
   margin: 0;
   display: flex;
-}
-
-header {
-  background-color: var(--kubu-inverse-bg);
-  color: #fff;
-  padding: 10px;
 }
 
 .page-layout {
