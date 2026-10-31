@@ -48,6 +48,20 @@ html {
 /*    height: auto;*/
 /*}*/
 
+/* Page colours come from the semantic tokens in colors.css, so a page that loads only
+   colors.css, Reset.css and one component is already themed for light and dark mode. */
+body {
+    margin: 0;
+    background-color: var(--kubu-bg);
+    color: var(--kubu-text);
+}
+
+img,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
 :focus-visible {
     outline: 2px solid var(--kubu-focus, currentColor);
     outline-offset: 2px;

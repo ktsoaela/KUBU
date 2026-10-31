@@ -13,7 +13,7 @@ body {
 
 :root:has(#dark-mode:checked) { color-scheme: dark; }
 :root:has(#light-mode:checked) { color-scheme: light; }
-:root:has(#auto-mode:checked) { color-scheme: light dark; }
+:root:not([data-theme]):has(#auto-mode:checked) { color-scheme: light dark; }
 
 /* Style for the Theme Switch List */
 .theme-switch-list {

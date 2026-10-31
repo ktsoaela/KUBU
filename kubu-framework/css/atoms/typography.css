@@ -11,9 +11,9 @@
     --font-size-sm: 0.875rem;
     --font-size-md: 1rem;
     --font-size-lg: 1.25rem;
-    --font-size-xl: 1.5rem;
-    --font-size-xxl: 2rem;
-    --font-size-xxxl: 3rem;
+    --font-size-xl: 1.625rem;
+    --font-size-xxl: 2.25rem;
+    --font-size-xxxl: 3.25rem;
 
 
     /* Font weights */
@@ -115,7 +115,7 @@ p {
 
 /* Links */
 a {
-    color: var(--text-color-primary);
+    color: var(--kubu-link);
     text-decoration: none;
 }
 

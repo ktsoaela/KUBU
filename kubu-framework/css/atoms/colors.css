@@ -57,33 +57,64 @@
     --secondary: var(--theme-color-secondary);
 }
 
-/* Semantic tokens: components read these, so light and dark themes come for free.
-   Override color-scheme with [data-theme="light"|"dark"] on <html>. */
+/* Semantic tokens. Dark is the master theme: each value is authored for dark first (--dark-*),
+   then paired with a light value (--light-*). light-dark() picks one from the page's color-scheme,
+   which follows the visitor's system unless [data-theme="dark"|"light"] is set on <html>.
+   Components read only the --kubu-* names, so a theme is an override of these variables. */
 :root {
     color-scheme: light dark;
 
-    --kubu-bg: light-dark(#f6f7f9, #0e1419);
-    --kubu-surface: light-dark(#ffffff, #151d24);
-    --kubu-surface-2: light-dark(#eef1f4, #1d2730);
-    --kubu-text: light-dark(#18222c, #e3e9ef);
-    --kubu-text-muted: light-dark(#56616d, #9aa6b2);
-    --kubu-heading: light-dark(#1b5e83, #8ccaf2);
-    --kubu-link: light-dark(#1b5e83, #7cc0f0);
-    --kubu-border: light-dark(#d5dbe2, #2c3843);
+    /* Dark (master) */
+    --dark-bg: #0e1419;
+    --dark-surface: #151d24;
+    --dark-surface-2: #1d2730;
+    --dark-text: #e3e9ef;
+    --dark-text-muted: #a3afbb;
+    --dark-heading: #8ccaf2;
+    --dark-link: #7cc0f0;
+    --dark-border: #34424f;
+    --dark-primary: #2a77b5;
+    --dark-primary-hover: #3586c7;
+    --dark-focus: #ffda79;
 
-    --kubu-primary: light-dark(#002d4c, #2a77b5);
-    --kubu-primary-hover: light-dark(#004574, #1f639a);
+    /* Light (pair) */
+    --light-bg: #f6f7f9;
+    --light-surface: #ffffff;
+    --light-surface-2: #eef1f4;
+    --light-text: #18222c;
+    --light-text-muted: #4f5a66;
+    --light-heading: #1b5e83;
+    --light-link: #1b5e83;
+    --light-border: #c9d1da;
+    --light-primary: #002d4c;
+    --light-primary-hover: #004574;
+    --light-focus: #1b5e83;
+
+    --kubu-bg: light-dark(var(--light-bg), var(--dark-bg));
+    --kubu-surface: light-dark(var(--light-surface), var(--dark-surface));
+    --kubu-surface-2: light-dark(var(--light-surface-2), var(--dark-surface-2));
+    --kubu-text: light-dark(var(--light-text), var(--dark-text));
+    --kubu-text-muted: light-dark(var(--light-text-muted), var(--dark-text-muted));
+    --kubu-heading: light-dark(var(--light-heading), var(--dark-heading));
+    --kubu-link: light-dark(var(--light-link), var(--dark-link));
+    --kubu-border: light-dark(var(--light-border), var(--dark-border));
+    --kubu-primary: light-dark(var(--light-primary), var(--dark-primary));
+    --kubu-primary-hover: light-dark(var(--light-primary-hover), var(--dark-primary-hover));
+    --kubu-focus: light-dark(var(--light-focus), var(--dark-focus));
+
     --kubu-on-primary: #ffffff;
     --kubu-accent: #b66508;
     --kubu-inverse-bg: #1f2933;
     --kubu-inverse-text: #ffffff;
     --kubu-code-bg: #002b36;
-    --kubu-focus: light-dark(#1b5e83, #8ccaf2);
-    --kubu-overlay: rgb(0 0 0 / 0.5);
+    --kubu-overlay: rgb(0 0 0 / 0.55);
 
     --kubu-shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08), 0 1px 3px rgb(0 0 0 / 0.06);
     --kubu-shadow-md: 0 4px 12px rgb(0 0 0 / 0.12);
     --kubu-shadow-lg: 0 12px 32px rgb(0 0 0 / 0.2);
+
+    /* Size of the smallest touch target (WCAG 2.2 enhanced), used by controls */
+    --kubu-target: 44px;
 }
 
 [data-theme="light"] { color-scheme: light; }
