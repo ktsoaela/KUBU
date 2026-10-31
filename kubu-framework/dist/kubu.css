@@ -1895,6 +1895,8 @@ li {
 
 .nav-link {
   min-height: var(--kubu-target, 44px);
+  min-width: var(--kubu-target, 44px);
+  justify-content: center;
   align-items: center;
   display: inline-flex;
 }

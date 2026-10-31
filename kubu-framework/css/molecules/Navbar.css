@@ -60,5 +60,7 @@
 .nav-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     min-height: var(--kubu-target, 44px);
+    min-width: var(--kubu-target, 44px);
 }
