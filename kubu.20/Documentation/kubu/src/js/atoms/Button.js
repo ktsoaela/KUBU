@@ -1,4 +1,4 @@
-class Button {
+export class Button {
     constructor(selector, options = {}) {
         this.buttonElement = document.querySelector(selector);
         this.text = options.text || 'Button';
@@ -13,7 +13,7 @@ class Button {
 
     render() {
         // Set button text, variant, and size
-        this.buttonElement.classList.add('btn', `btn-${this.variant}`, `btn-${this.size}`);
+        this.buttonElement.classList.add('button', `button--${this.variant}`, `button--${this.size}`);
         this.buttonElement.innerText = this.text;
         if (this.isActive) this.buttonElement.classList.add('active');
     }
@@ -38,9 +38,9 @@ class Button {
 
     updateVariant(newVariant) {
         // Update button style by changing variant
-        this.buttonElement.classList.remove(`btn-${this.variant}`);
+        this.buttonElement.classList.remove(`button--${this.variant}`);
         this.variant = newVariant;
-        this.buttonElement.classList.add(`btn-${this.variant}`);
+        this.buttonElement.classList.add(`button--${this.variant}`);
     }
 
     disable() {
@@ -53,14 +53,3 @@ class Button {
         this.buttonElement.classList.remove('disabled');
     }
 }
-
-// Usage example
-// HTML: <button id="myButton"></button>
-const myButton = new Button('#myButton', {
-    text: 'Click Me',
-    variant: 'success',
-    size: 'large',
-    onClick: (isActive) => {
-        console.log(`Button is now ${isActive ? 'active' : 'inactive'}`);
-    }
-});

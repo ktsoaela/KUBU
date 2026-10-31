@@ -1,4 +1,4 @@
-class Badge {
+export class Badge {
     constructor(selector, options = {}) {
         this.badgeElement = document.querySelector(selector);
         this.text = options.text || 'Badge';
@@ -8,7 +8,7 @@ class Badge {
 
     render() {
         // Apply badge styles and content
-        this.badgeElement.classList.add('badge', `badge-${this.variant}`);
+        this.badgeElement.classList.add('badge', `badge--${this.variant}`);
         this.badgeElement.innerText = this.text;
     }
 
@@ -19,14 +19,8 @@ class Badge {
 
     updateVariant(newVariant) {
         // Remove previous variant class and add the new one
-        this.badgeElement.classList.remove(`badge-${this.variant}`);
+        this.badgeElement.classList.remove(`badge--${this.variant}`);
         this.variant = newVariant;
-        this.badgeElement.classList.add(`badge-${this.variant}`);
+        this.badgeElement.classList.add(`badge--${this.variant}`);
     }
 }
-
-// Usage example
-// HTML: <span id="myBadge"></span>
-const myBadge = new Badge('#myBadge', { text: 'New', variant: 'success' });
-myBadge.updateText('Updated');
-myBadge.updateVariant('danger');

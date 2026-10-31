@@ -1,4 +1,4 @@
-class ToggleButton {
+export class ToggleButton {
     constructor(selector, options = {}) {
         this.buttonElement = document.querySelector(selector);
         this.activeClass = options.activeClass || 'active';
@@ -16,6 +16,7 @@ class ToggleButton {
 
     toggle() {
         this.isActive = !this.isActive;
+        this.buttonElement.setAttribute('aria-pressed', String(this.isActive));
         if (this.isActive) {
             this.buttonElement.classList.add(this.activeClass);
             this.buttonElement.textContent = 'On';
@@ -25,7 +26,3 @@ class ToggleButton {
         }
     }
 }
-
-// Usage example
-// HTML: <button id="toggleButton">Off</button>
-const myToggleButton = new ToggleButton('#toggleButton', { activeClass: 'btn-active' });

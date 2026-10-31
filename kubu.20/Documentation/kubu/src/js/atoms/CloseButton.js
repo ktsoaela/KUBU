@@ -1,4 +1,4 @@
-class CloseButton {
+export class CloseButton {
     constructor(selector, options = {}) {
         this.buttonElement = document.querySelector(selector);
         this.targetSelector = options.target || null; // The element to close (e.g., a modal, alert)
@@ -34,12 +34,3 @@ class CloseButton {
         if (this.onCloseCallback) this.onCloseCallback();
     }
 }
-
-// Usage example
-// HTML: <button id="myCloseButton"></button> <div id="alertBox">Alert message</div>
-const myCloseButton = new CloseButton('#myCloseButton', {
-    target: '#alertBox', // The element to be closed
-    onClose: () => {
-        console.log('Alert has been closed!');
-    }
-});

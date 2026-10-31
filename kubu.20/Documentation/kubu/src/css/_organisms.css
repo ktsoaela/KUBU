@@ -1,137 +1,69 @@
-Accordion
-Card
-Carousel
-Collapse
-Modal
-Navbar
-Navs
-Tabs
-Offcanvas
-Popover
-Scrollspy
-Toast
+/* Organisms added by the JS layer: Carousel.js controls and the Navbar.js mobile menu */
 
-
-.alert {
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 4px;
+.carousel__controls {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-sm);
 }
 
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
+.carousel__prev,
+.carousel__next {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+    border: 1px solid var(--kubu-border);
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.alert-info {
-    background-color: #cce5ff;
-    color: #004085;
+.carousel__dots {
+    display: flex;
+    gap: var(--space-sm);
 }
 
-.alert-warning {
-    background-color: #fff3cd;
-    color: #856404;
+.carousel__dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    padding: 0;
+    background-color: var(--kubu-border);
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-.alert-error {
-    background-color: #f8d7da;
-    color: #721c24;
+.carousel__dot[aria-current="true"] {
+    background-color: var(--kubu-primary);
 }
 
-.alert-close-button {
-    background: none;
-    border: none;
+.navbar__toggle {
+    display: none;
+    padding: var(--space-sm);
     font-size: 1.5rem;
     line-height: 1;
     color: inherit;
+    background: none;
+    border: 1px solid currentColor;
+    border-radius: var(--space-xs);
     cursor: pointer;
 }
 
-.breadcrumb {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-    display: flex;
-}
+@media (max-width: 767px) {
+    .navbar__toggle {
+        display: inline-block;
+    }
 
-.breadcrumb-item {
-    margin-right: 0.5rem;
-}
+    .navbar:has(.navbar__toggle) .navbar-nav {
+        display: none;
+        flex-basis: 100%;
+        flex-direction: column;
+    }
 
-.breadcrumb-item a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.breadcrumb-item.active {
-    color: #6c757d;
-}
-
-
-.button-group {
-    display: flex;
-}
-
-.btn {
-    padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: #007bff; /* Default button color */
-    color: white;
-}
-
-.btn.active {
-    background-color: #0056b3; /* Active button color */
-    border-color: #004085; /* Border color for active button */
-}
-
-.list-group {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.list-group-item {
-    padding: 0.75rem 1.25rem;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    margin-bottom: -1px; /* Prevents double borders */
-}
-
-.list-group-item:hover {
-    background-color: #f8f9fa;
-}
-
-.list-group-item.active {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-#toggleButton {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ddd;
-    cursor: pointer;
-}
-
-#toggleButton.btn-active {
-    background-color: #28a745;
-    color: white;
+    .navbar .navbar-nav.is-open {
+        display: flex;
+    }
 }

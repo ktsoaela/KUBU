@@ -1,7 +1,7 @@
-class ButtonGroup {
+export class ButtonGroup {
     constructor(selector) {
         this.buttonGroupElement = document.querySelector(selector);
-        this.buttons = this.buttonGroupElement.querySelectorAll('.btn');
+        this.buttons = this.buttonGroupElement.querySelectorAll('.button');
         this.init();
     }
 
@@ -28,11 +28,3 @@ class ButtonGroup {
         button.classList.add('active');
     }
 }
-
-// Usage example
-// HTML: <div id="myButtonGroup" class="button-group">
-//           <button class="btn">Button 1</button>
-//           <button class="btn">Button 2</button>
-//           <button class="btn">Button 3</button>
-//       </div>
-const myButtonGroup = new ButtonGroup('#myButtonGroup');

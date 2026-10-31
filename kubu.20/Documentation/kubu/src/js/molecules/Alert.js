@@ -1,4 +1,4 @@
-class Alert {
+export class Alert {
     constructor(selector, options = {}) {
         this.alertElement = document.querySelector(selector);
         this.message = options.message || 'This is an alert!';
@@ -16,16 +16,16 @@ class Alert {
     render() {
         // Create the alert box
         this.alertElement.innerHTML = `
-            <div class="alert alert-${this.type}">
+            <div class="alert alert-${this.type === 'error' ? 'danger' : this.type}" role="alert">
                 <span class="alert-message">${this.message}</span>
-                ${this.dismissible ? '<button class="alert-close-button">&times;</button>' : ''}
+                ${this.dismissible ? '<button class="alert-close" aria-label="Dismiss">&times;</button>' : ''}
             </div>
         `;
     }
 
     bindEvents() {
         if (this.dismissible) {
-            const closeButton = this.alertElement.querySelector('.alert-close-button');
+            const closeButton = this.alertElement.querySelector('.alert-close');
             closeButton.addEventListener('click', () => this.dismiss());
         }
     }
@@ -34,11 +34,3 @@ class Alert {
         this.alertElement.innerHTML = ''; // Clear the alert
     }
 }
-
-// Usage example
-// HTML: <div id="myAlert"></div>
-const myAlert = new Alert('#myAlert', {
-    message: 'This is a dismissible alert!',
-    type: 'success',
-    dismissible: true
-});

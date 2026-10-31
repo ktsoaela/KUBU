@@ -1,4 +1,4 @@
-class Tooltip {
+export class Tooltip {
     constructor(selector, options = {}) {
         this.element = document.querySelector(selector);
         this.message = options.message || 'Tooltip text';
@@ -11,8 +11,11 @@ class Tooltip {
     init() {
         // Create tooltip element
         this.tooltipElement = document.createElement('div');
-        this.tooltipElement.className = 'tooltip';
+        this.tooltipElement.className = 'kubu-tooltip';
+        this.tooltipElement.id = `kubu-tooltip-${Math.random().toString(36).slice(2, 8)}`;
+        this.tooltipElement.setAttribute('role', 'tooltip');
         this.tooltipElement.innerText = this.message;
+        this.element.setAttribute('aria-describedby', this.tooltipElement.id);
 
         // Apply tooltip styling and add to the DOM
         this.element.style.position = 'relative';
@@ -24,6 +27,8 @@ class Tooltip {
         // Event listeners for mouse enter and leave
         this.element.addEventListener('mouseenter', () => this.showTooltip());
         this.element.addEventListener('mouseleave', () => this.hideTooltip());
+        this.element.addEventListener('focusin', () => this.showTooltip());
+        this.element.addEventListener('focusout', () => this.hideTooltip());
     }
 
     showTooltip() {
@@ -60,10 +65,3 @@ class Tooltip {
         }
     }
 }
-
-// Usage example
-// HTML: <div id="myTooltipElement">Hover over me</div>
-const myTooltip = new Tooltip('#myTooltipElement', {
-    message: 'This is a tooltip!',
-    position: 'top'
-});

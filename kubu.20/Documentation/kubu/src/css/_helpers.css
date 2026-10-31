@@ -1,0 +1,23 @@
+/* Helpers for pages built with the JS layer */
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--stack-gap, var(--space-md));
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--cluster-gap, var(--space-sm));
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}

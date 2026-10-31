@@ -1,4 +1,4 @@
-class BreadCrumb {
+export class BreadCrumb {
     constructor(selector) {
         this.breadcrumbElement = document.querySelector(selector);
         this.items = [];
@@ -24,8 +24,8 @@ class BreadCrumb {
     createBreadcrumbItem(item, index) {
         const isLastItem = index === this.items.length - 1;
         return `
-            <li class="breadcrumb-item${isLastItem ? ' active' : ''}">
-                ${isLastItem ? item.label : `<a href="${item.link}">${item.label}</a>`}
+            <li class="breadcrumb__item${isLastItem ? ' breadcrumb__item--active' : ''}"${isLastItem ? ' aria-current="page"' : ''}>
+                ${isLastItem ? item.label : `<a class="breadcrumb__link" href="${item.link}">${item.label}</a>`}
             </li>
         `;
     }
@@ -34,10 +34,3 @@ class BreadCrumb {
         // You can add additional event listeners if necessary
     }
 }
-
-// Usage example
-// HTML: <ul id="myBreadcrumb"></ul>
-const myBreadcrumb = new BreadCrumb('#myBreadcrumb');
-myBreadcrumb.addItem('Home', '/home');
-myBreadcrumb.addItem('Library', '/library');
-myBreadcrumb.addItem('Data', '/data');

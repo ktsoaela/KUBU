@@ -1,4 +1,4 @@
-class ListGroup {
+export class ListGroup {
     constructor(selector) {
         this.listGroupElement = document.querySelector(selector);
         this.items = this.listGroupElement.querySelectorAll('.list-group-item');
@@ -23,11 +23,3 @@ class ListGroup {
         clickedItem.classList.add('active');
     }
 }
-
-// Usage example
-// HTML: <ul id="myListGroup" class="list-group">
-//          <li class="list-group-item">Item 1</li>
-//          <li class="list-group-item">Item 2</li>
-//          <li class="list-group-item">Item 3</li>
-//       </ul>
-const myListGroup = new ListGroup('#myListGroup');

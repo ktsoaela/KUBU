@@ -1,24 +1,22 @@
-Button
-Badge
-Close Button
-Spinner
-Placeholder
-Tooltip
+/* Atoms added by the JS layer: Tooltip.js and Placeholder.js */
 
-
-
-.loading-animation {
-    animation: pulse 1.5s infinite;
+.kubu-tooltip {
+    position: absolute;
+    z-index: 20;
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    color: var(--kubu-inverse-text);
+    background-color: var(--kubu-inverse-bg);
+    border-radius: var(--space-xs);
+    box-shadow: var(--kubu-shadow-md);
+    pointer-events: none;
 }
 
-@keyframes pulse {
-    0% {
-        background-color: #e0e0e0;
-    }
-    50% {
-        background-color: #f5f5f5;
-    }
-    100% {
-        background-color: #e0e0e0;
-    }
+.loading-animation {
+    animation: kubu-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes kubu-pulse {
+    50% { opacity: 0.5; }
 }

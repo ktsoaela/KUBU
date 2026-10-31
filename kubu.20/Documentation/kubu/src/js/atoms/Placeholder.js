@@ -1,4 +1,4 @@
-class Placeholder {
+export class Placeholder {
     constructor(selector, options = {}) {
         this.element = document.querySelector(selector);
         this.type = options.type || 'text'; // Placeholder type: 'text', 'image', 'animation'
@@ -23,7 +23,7 @@ class Placeholder {
         // Create a text placeholder with styling
         this.element.style.width = this.width;
         this.element.style.height = this.height;
-        this.element.style.backgroundColor = '#e0e0e0';
+        this.element.style.backgroundColor = 'var(--kubu-surface-2, #e0e0e0)';
         this.element.style.color = 'transparent';
         this.element.style.borderRadius = '4px';
         this.element.style.lineHeight = this.height;
@@ -35,7 +35,7 @@ class Placeholder {
         // Create an image placeholder with specific dimensions
         this.element.style.width = this.width;
         this.element.style.height = this.height;
-        this.element.style.backgroundColor = '#e0e0e0';
+        this.element.style.backgroundColor = 'var(--kubu-surface-2, #e0e0e0)';
         this.element.style.display = 'inline-block';
         this.element.style.borderRadius = '4px';
     }
@@ -45,7 +45,7 @@ class Placeholder {
         this.element.classList.add('loading-animation'); // Add a CSS animation class
         this.element.style.width = this.width;
         this.element.style.height = this.height;
-        this.element.style.backgroundColor = '#e0e0e0';
+        this.element.style.backgroundColor = 'var(--kubu-surface-2, #e0e0e0)';
     }
 
     remove() {
@@ -55,15 +55,3 @@ class Placeholder {
         this.element.classList.remove('loading-animation');
     }
 }
-
-// Usage example
-// HTML: <div id="myPlaceholder"></div>
-const myPlaceholder = new Placeholder('#myPlaceholder', {
-    type: 'text',
-    text: 'Loading...',
-    width: '200px',
-    height: '20px'
-});
-
-// To remove the placeholder after content has loaded
-// myPlaceholder.remove();

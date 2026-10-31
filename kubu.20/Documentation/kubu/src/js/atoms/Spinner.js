@@ -1,8 +1,8 @@
-class Spinner {
+export class Spinner {
     constructor(selector, options = {}) {
         this.spinnerElement = document.querySelector(selector);
         this.size = options.size || 'medium'; // 'small', 'medium', or 'large'
-        this.color = options.color || '#000'; // Default color is black
+        this.color = options.color || null; // Defaults to the theme's --spinner-color
         this.animationType = options.animationType || 'rotate'; // Animation style, e.g., 'rotate' or 'pulse'
         
         this.render();
@@ -10,12 +10,12 @@ class Spinner {
 
     render() {
         // Add base styling to spinner element
+        // .spinner in kubu.css draws the ring and animation; size and colour are variables
         this.spinnerElement.classList.add('spinner');
-        this.spinnerElement.style.width = this.getSize();
-        this.spinnerElement.style.height = this.getSize();
-        this.spinnerElement.style.border = `4px solid ${this.color}`;
-        this.spinnerElement.style.borderTopColor = 'transparent';
-        this.spinnerElement.style.borderRadius = '50%';
+        this.spinnerElement.setAttribute('role', 'status');
+        this.spinnerElement.setAttribute('aria-label', 'Loading');
+        this.spinnerElement.style.setProperty('--spinner-size', this.getSize());
+        if (this.color) this.spinnerElement.style.setProperty('--spinner-color', this.color);
 
         // Add animation class based on the animation type
         if (this.animationType === 'rotate') {
@@ -37,11 +37,3 @@ class Spinner {
         }
     }
 }
-
-// Usage example
-// HTML: <div id="mySpinner"></div>
-const mySpinner = new Spinner('#mySpinner', {
-    size: 'large',
-    color: '#3498db', // A nice blue color
-    animationType: 'rotate'
-});
