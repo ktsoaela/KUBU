@@ -63,6 +63,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../static'),
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
+      },
+      // The KUBU framework build and icon sprite, served from the framework itself.
+      {
+        from: path.resolve(__dirname, '../../../kubu-framework/dist'),
+        to: path.posix.join(config.dev.assetsSubDirectory, 'kubu')
+      },
+      {
+        from: path.resolve(__dirname, '../../../kubu-framework/img/icons.svg'),
+        to: path.posix.join(config.dev.assetsSubDirectory, 'kubu/icons.svg')
       }
     ])
   ]

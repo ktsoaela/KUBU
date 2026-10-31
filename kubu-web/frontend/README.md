@@ -1,30 +1,18 @@
-# kubu-ui
+# kubu-web
 
-> A Vue.js project
+A Vue front end for KUBU. It uses the framework exactly as a project would: one stylesheet, the same BEM class names, the same pages and wording as the docs site.
 
-## Build Setup
+- CSS: `src/main.js` imports `../../../kubu-framework/dist/kubu.css`. There is no second copy of the CSS in this app; rebuild the framework (`node scripts/build.mjs` in `kubu-framework`) and this app picks it up.
+- Download: the webpack config copies `kubu-framework/dist/` and `kubu-framework/img/icons.svg` to `static/kubu/`, so the Download page links the built files.
+- Navigation: the same seven header links as the docs (`src/site.js`). The router uses history mode, so the server must send `index.html` for unknown paths.
+- Component pages link to the static docs in `kubu-framework/pages/`. Set `docsBase` in `src/site.js` to where those are served.
 
-``` bash
-# install dependencies
+## Run
+
+```bash
 npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+npm run dev     # http://localhost:8080
+npm run build   # dist/
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Run the docs site from `kubu-framework` on another port if you want the component links to work locally, or change `docsBase`.

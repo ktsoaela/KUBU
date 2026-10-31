@@ -118,6 +118,16 @@ const webpackConfig = merge(baseWebpackConfig, {
         from: path.resolve(__dirname, '../static'),
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
+      },
+      // The KUBU framework is the one source of truth: serve its build and icon sprite as-is
+      // (static/kubu/kubu.min.css is the Download link).
+      {
+        from: path.resolve(__dirname, '../../../kubu-framework/dist'),
+        to: path.posix.join(config.build.assetsSubDirectory, 'kubu')
+      },
+      {
+        from: path.resolve(__dirname, '../../../kubu-framework/img/icons.svg'),
+        to: path.posix.join(config.build.assetsSubDirectory, 'kubu/icons.svg')
       }
     ])
   ]

@@ -1,13 +1,9 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-// CSS
-import '@/assets/css/kubu.css'
-import '@/assets/css/kubu-font.css'
-// Icons
-import 'boxicons'
+
+// The one stylesheet: the KUBU framework build. No second copy lives in this app.
+import '../../../kubu-framework/dist/kubu.css'
 
 Vue.config.productionTip = false
 
