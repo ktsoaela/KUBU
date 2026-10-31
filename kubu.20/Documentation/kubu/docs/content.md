@@ -1,233 +1,65 @@
-# Content in Kubu
+# Content
 
-Kubu provides a variety of content components designed to enhance the presentation of information on your website. This page will guide you through the available content components, how to use them effectively, and tips for customization.
+## Type scale
 
-## 1. Typography
-
-### Headings
-
-Kubu allows for easy styling of headings to ensure a consistent hierarchy across your web pages. Use the following classes to apply styles:
+Scan first, then read: muted metadata, body text, then the title.
 
 ```html
-<h1 class="heading">Main Title</h1>
-<h2 class="subheading">Subheading</h2>
-<p class="body-text">This is a paragraph of body text.</p>
+<h1 class="title">Orders</h1>
+<p>Body text, 16px with a 1.75 line height.</p>
+<p><small>Updated 31 October 2026</small></p>
 ```
 
-### CSS for Typography
+Tokens: `--font-size-xs` (0.75rem) to `--font-size-xxxl` (3.25rem), `--font-family-sans`, `--font-family-serif`, `--font-family-mono`. One `h1` per page, headings in order.
 
-```css
-.heading {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.subheading {
-    font-size: 1.5rem;
-    color: var(--secondary-color);
-}
-
-.body-text {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-```
-
-## 2. Images
-
-### Responsive Images
-
-Kubu makes it easy to create responsive images that adapt to the container’s size.
-
-#### Example: Responsive Image
+## Lists
 
 ```html
-<img src="image.jpg" alt="Description" class="img-responsive">
+<ul class="list-unstyled">…</ul>
+<ul class="list-inline"><li>Atoms</li><li>Molecules</li></ul>
+<dl class="description-list">
+  <dt class="description-term">Block</dt><dd class="description-definition">A standalone component.</dd>
+</dl>
 ```
 
-### CSS for Images
+## Cards
 
-```css
-.img-responsive {
-    max-width: 100%;
-    height: auto;
-}
-```
-
-## 3. Lists
-
-### Unordered and Ordered Lists
-
-Create styled lists using simple HTML markup.
+A card is composed from its parts; use the ones you need.
 
 ```html
-<ul class="list">
-    <li>Item 1</li>
-    <li>Item 2</li>
-</ul>
-
-<ol class="list">
-    <li>First Item</li>
-    <li>Second Item</li>
-</ol>
+<article class="card">
+  <img class="card__image" src="tour.jpg" alt="The dam wall at sunrise">
+  <header class="card__header"><h2 class="card__title">Katse Dam tour</h2></header>
+  <div class="card__body"><p>A day trip with a guide and lunch.</p></div>
+  <footer class="card__footer"><a class="button button--primary" href="/tours/katse">Book a seat</a></footer>
+</article>
 ```
 
-### CSS for Lists
-
-```css
-.list {
-    padding-left: 1.5rem;
-    margin: 0;
-}
-
-.list li {
-    margin-bottom: 0.5rem;
-}
-```
-
-## 4. Quotes
-
-### Blockquotes
-
-Use blockquotes to highlight quotes or important text.
+## Tables
 
 ```html
-<blockquote class="blockquote">
-    “This is a quote from someone important.”
-</blockquote>
-```
-
-### CSS for Blockquotes
-
-```css
-.blockquote {
-    border-left: 4px solid var(--primary-color);
-    padding: 1rem;
-    margin: 1rem 0;
-    font-style: italic;
-}
-```
-
-## 5. Tables
-
-Kubu supports responsive tables, allowing you to present data in a clear format.
-
-### Example: Table Structure
-
-```html
-<table class="table">
-    <thead>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Data 1</td>
-            <td>Data 2</td>
-        </tr>
-        <tr>
-            <td>Data 3</td>
-            <td>Data 4</td>
-        </tr>
-    </tbody>
-</table>
-```
-
-### CSS for Tables
-
-```css
-.table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.table th, .table td {
-    border: 1px solid #ddd;
-    padding: 0.5rem;
-    text-align: left;
-}
-```
-
-## 6. Code Snippets
-
-For displaying code, Kubu provides a simple way to format code blocks.
-
-### Example: Code Block
-
-```html
-<pre class="code-block">
-    <code>
-        const example = "Hello, Kubu!";
-    </code>
-</pre>
-```
-
-### CSS for Code Blocks
-
-```css
-.code-block {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: var(--border-radius);
-}
-```
-
-## 7. Customizing Content Components
-
-### Custom Styles
-
-You can easily override the default styles for any content component. For instance, if you want to change the font color for headings:
-
-```css
-.heading {
-    color: var(--dark-color);
-}
-```
-
-## 8. Example Content Page
-
-To create a full content page using Kubu, you can combine these components as follows:
-
-```html
-<div class="container">
-    <h1 class="heading">Welcome to Kubu</h1>
-    <img src="logo.png" alt="Kubu Logo" class="img-responsive">
-    <p class="body-text">Kubu is a CSS framework designed for easy and responsive web design.</p>
-    <blockquote class="blockquote">“Simplicity is the ultimate sophistication.”</blockquote>
-    
-    <h2 class="subheading">Features</h2>
-    <ul class="list">
-        <li>Easy to use</li>
-        <li>Responsive design</li>
-        <li>Customizable components</li>
-    </ul>
-    
-    <h2 class="subheading">Data Table</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Item 1</td>
-                <td>100</td>
-            </tr>
-            <tr>
-                <td>Item 2</td>
-                <td>200</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="table-container">
+  <table class="table">
+    <caption class="table__caption">Orders this week</caption>
+    <thead class="table__header"><tr><th class="table__header-cell" scope="col">Order</th><th class="table__header-cell table__cell--align-right" scope="col">Total</th></tr></thead>
+    <tbody><tr class="table__row table__row--hoverable"><td class="table__cell">1042</td><td class="table__cell table__cell--align-right">R 4 300.00</td></tr></tbody>
+  </table>
 </div>
 ```
 
-## Conclusion
+## Badges
 
-Kubu's content components are designed to help you present information clearly and effectively. By using the available classes and customizing them as needed, you can create visually appealing and user-friendly content for your website.
+```html
+<span class="badge badge--safe">Paid</span>
+<span class="badge badge--danger">Overdue</span>
+```
 
-For more examples and detailed information about using Kubu, refer to the [Kubu Documentation](https://github.com/yourusername/kubu/docs).
+Write the status as a word. Colour supports it; it never carries it alone.
+
+## Icons
+
+```html
+<svg class="icon" aria-hidden="true"><use href="kubu-framework/img/icons.svg#download"></use></svg>
+```
+
+Icons sit beside a word. Only a standard close control may be icon-only, and it needs `aria-label`.

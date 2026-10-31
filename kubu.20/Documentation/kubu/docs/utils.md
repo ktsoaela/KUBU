@@ -1,181 +1,60 @@
-# Kubu Utilities
+# Utilities and htmx
 
-Kubu CSS framework includes a set of utility functions and mixins that simplify common styling tasks and promote reusability. These utilities help streamline your development process, allowing for cleaner, more maintainable CSS code.
+## htmx states (`utilities/Ajax.css`)
 
-## 1. Color Utility Functions
+htmx adds classes while a request runs; KUBU styles them, so feedback shows before the reply.
 
-### Purpose
-
-Color utility functions assist in generating and manipulating color values for themes, backgrounds, and text colors.
-
-### Example Functions
-
-- **Darken**: Darkens a given color by a specified percentage.
-- **Lighten**: Lightens a given color by a specified percentage.
-- **Color Contrast**: Generates a contrasting color (e.g., black or white) based on the background color.
-
-### CSS Example:
-
-```css
-:root {
-    --primary-color: #007bff;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: contrast(var(--primary-color));
-}
-```
-
-### Example Code:
-
-```scss
-@function darken($color, $amount) {
-    @return mix(black, $color, $amount);
-}
-
-@function lighten($color, $amount) {
-    @return mix(white, $color, $amount);
-}
-```
-
-## 2. Responsive Utilities
-
-### Purpose
-
-Responsive utilities help create styles that adapt to different screen sizes, enhancing user experience across devices.
-
-### Example Usage
+| Class | Added by | Effect |
+| --- | --- | --- |
+| `.htmx-indicator` | you | Hidden until a request runs |
+| `.htmx-request` | htmx | Shows the indicator; a button gets the progress cursor |
+| `.htmx-swapping` | htmx | Fades the old content out over 150ms |
+| `.skeleton`, `.skeleton__line`, `.skeleton__line--short`, `.skeleton__block` | you | Placeholders for a region that waits |
+| `.ajax-progress` | you | A thin moving bar |
+| `.ajax-success`, `.ajax-error` | you or the server | A tinted result message |
 
 ```html
-<div class="d-none d-md-block">Visible on medium and larger screens only.</div>
-```
-
-### CSS Example:
-
-```css
-@media (max-width: 768px) {
-    .d-md-block { display: block; }
-}
-```
-
-## 3. Flexbox Utilities
-
-### Purpose
-
-Flexbox utilities facilitate the creation of responsive layouts using flex properties.
-
-### Example Classes
-
-- **Flex Direction**: `.flex-row`, `.flex-column`
-- **Justify Content**: `.justify-start`, `.justify-center`, `.justify-end`
-- **Align Items**: `.align-start`, `.align-center`, `.align-end`
-
-### CSS Example:
-
-```css
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-```
-
-## 4. Grid Utilities
-
-### Purpose
-
-Grid utilities enable grid-based layouts with configurable row and column sizes.
-
-### Example Classes
-
-- **Grid Columns**: `.grid-1`, `.grid-2`, `.grid-3`
-- **Grid Gap**: `.gap-1`, `.gap-2`, `.gap-3`
-
-### Example Usage:
-
-```html
-<div class="grid grid-3 gap-2">
-    <div>Column 1</div>
-    <div>Column 2</div>
-    <div>Column 3</div>
+<button class="button button--outline" hx-get="/orders/latest" hx-target="#orders" hx-indicator="#orders-skeleton">Load the latest orders</button>
+<div class="skeleton htmx-indicator" id="orders-skeleton" aria-hidden="true">
+  <span class="skeleton__line"></span>
+  <span class="skeleton__line skeleton__line--short"></span>
 </div>
+<div id="orders" aria-live="polite">…</div>
 ```
 
-### CSS Example:
+Use skeletons for regions, not a full-page spinner.
 
-```css
-.grid {
-    display: grid;
-}
+## Event delegation with htmx
 
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
+Set behaviour once on a parent. `hx-*` attributes are inherited and htmx events bubble:
 
-.gap-2 {
-    gap: 0.5rem;
-}
+```html
+<ul class="list-group list-group--panel" hx-target="closest li" hx-swap="outerHTML"
+    hx-on::after-request="document.getElementById('status').textContent = 'Order archived.'">
+  <li><form class="list-group-item" action="/orders/1043/archive" method="post" hx-post="/orders/1043/archive">
+    Order 1043 <button class="button button--plain button--small">Archive order 1043</button>
+  </form></li>
+</ul>
+<p id="status" role="status"></p>
 ```
 
-## 5. Animation Utilities
+## A site as one htmx app
 
-### Purpose
+Every URL is a full page; `hx-boost` swaps only the content:
 
-Animation utilities simplify the application of animations and transitions to elements.
-
-### Example Classes
-
-- **Fade In**: `.fade-in`
-- **Slide Up**: `.slide-up`
-
-### CSS Example:
-
-```css
-.fade-in {
-    animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
+```html
+<body hx-boost="true" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML" hx-push-url="true">
 ```
 
-## 6. Typography Utilities
+See `kubu-framework/pages/start-javascript.html` for the full setup, including the `<title>` and the current-page highlight.
 
-### Purpose
+## Motion (`utilities/Animations.css`)
 
-Typography utilities standardize font styles across your application for better readability and aesthetics.
+`.fade-in`, `.slide-in-left`, `.slide-in-right` use only `transform` and `opacity`, and stop with `prefers-reduced-motion`.
 
-### Example Classes
+## Notifications (`utilities/Notifications.css`)
 
-- **Font Size**: `.fs-small`, `.fs-large`
-- **Font Weight**: `.fw-bold`, `.fw-light`
-- **Text Align**: `.text-left`, `.text-center`, `.text-right`
-
-### CSS Example:
-
-```css
-.fs-small { font-size: 0.875rem; }
-.fs-large { font-size: 1.25rem; }
+```html
+<div class="notification success" role="status">Settings saved.</div>
+<div class="notification error" role="alert">The file is too large. Choose one under 5 MB.</div>
 ```
-
-## 7. Custom Media Queries
-
-### Purpose
-
-Custom media queries allow for quick adjustments based on specific breakpoints.
-
-### Example Usage:
-
-```css
-@media (min-width: 768px) {
-    .custom-class {
-        display: flex;
-    }
-}
-```
-
-## Conclusion
-
-The utility functions and mixins provided in the Kubu CSS framework empower developers to create flexible, responsive, and maintainable stylesheets. By leveraging these utilities, you can enhance your workflow and streamline the design process. For more details and documentation, please refer to the [Kubu Documentation](https://github.com/yourusername/kubu/docs).

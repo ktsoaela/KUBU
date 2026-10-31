@@ -1,126 +1,78 @@
-# Kubu JavaScript Enhancements
+# JavaScript API
 
-While Kubu is primarily a CSS framework, you can enhance your components with JavaScript for additional interactivity. This section provides examples of how to use JavaScript to manage button functionalities and other interactive components.
+KUBU 2.0 is optional. Every class below enhances markup that already works without it.
 
-## Button Variants and Groups
-
-### Button Variants
-
-You can create various button styles using classes that represent different variants. For instance, buttons can have primary, secondary, and danger styles.
-
-### Example HTML:
+## Load
 
 ```html
-<div class="button-group">
-    <button class="btn btn-primary" onclick="handleButtonClick('primary')">Primary</button>
-    <button class="btn btn-secondary" onclick="handleButtonClick('secondary')">Secondary</button>
-    <button class="btn btn-danger" onclick="handleButtonClick('danger')">Danger</button>
-</div>
+<link rel="stylesheet" href="kubu-framework/dist/kubu.css">
+<script type="module" src="kubu.20/Documentation/kubu/src/js/main.js"></script>
 ```
 
-### Example JavaScript:
+`main.js` runs `autoInit()` on load and after every htmx swap (`htmx:afterSettle`). It sets up each element with a `data-kubu` value it knows, once.
 
-```javascript
-function handleButtonClick(type) {
-    switch(type) {
-        case 'primary':
-            alert('Primary button clicked!');
-            break;
-        case 'secondary':
-            alert('Secondary button clicked!');
-            break;
-        case 'danger':
-            alert('Danger button clicked!');
-            break;
-        default:
-            alert('Button clicked!');
-    }
-}
+| `data-kubu` | Class | Extra attributes |
+| --- | --- | --- |
+| `modal` | `Modal` | Openers: `data-kubu-open="#id"`; closers inside: `data-kubu-close` |
+| `carousel` | `Carousel` | `data-autoplay` (skipped with reduced motion) |
+| `navbar` | `Navbar` | A `.navbar__toggle` button with `aria-controls` |
+| `accordion` | `Accordion` | none |
+| `progress` | `ProgressBar` | `data-value` |
+| `tooltip` | `Tooltip` | `data-tooltip`, `data-position`; needs an `id` |
+
+## Organisms
+
+```js
+import { Accordion, Card, Carousel, Modal, Navbar } from './main.js';
+
+new Modal('#confirm', { closeOnBackdrop: true, onClose: (value) => console.log(value) }).open();
+new Accordion('#faq').open(1);                     // also close(i), toggle(i), closeAll()
+new Carousel('#featured', { autoplay: true, interval: 5000 }).go(2);
+new Card('#invoice', { title: 'Invoice 1042', text: 'R 4 300.00', image: 'paid.svg', imageAlt: '' });
+new Navbar('.navbar');
 ```
 
-## Button Groups
+`Modal` wraps a native `<dialog class="modal">`: the browser keeps focus inside, closes on Esc and draws the backdrop. `Card` renders `.card__image`, `.card__header`, `.card__title`, `.card__body` and `.card__footer` and escapes the text it is given.
 
-### Purpose
+## Molecules
 
-Button groups allow you to group multiple buttons together, either horizontally or vertically.
+```js
+import { Alert, BreadCrumb, ButtonGroup, ListGroup, Pagination, ProgressBar, ToggleButton } from './main.js';
 
-### Example HTML:
+new Alert('#notice', { message: 'Your changes were saved.', type: 'success', dismissible: true });
+const crumbs = new BreadCrumb('#crumbs');
+crumbs.addItem('Home', '/');
+crumbs.addItem('Orders', '/orders');
 
-```html
-<div class="button-group vertical">
-    <button class="btn btn-primary" onclick="handleButtonClick('primary')">Primary</button>
-    <button class="btn btn-secondary" onclick="handleButtonClick('secondary')">Secondary</button>
-</div>
+const pager = new Pagination('#pages', { totalPages: 5, currentPage: 1 });
+document.querySelector('#pages').addEventListener('kubu:page', (e) => console.log(e.detail.page));
+
+new ProgressBar('#upload', { value: 40, max: 100, label: 'Upload' }).setValue(75);
+new ButtonGroup('#views');      // one .active button at a time
+new ListGroup('#mailbox');      // one .active row at a time
+new ToggleButton('#mute', { activeClass: 'active' });
 ```
 
-### Example CSS:
+`Alert` renders `.alert alert--success` (or `--info`, `--warning`, `--danger` for `type: 'error'`), with its icon. `Pagination` renders `.pagination__link` buttons and fires `kubu:page`.
 
-```css
-.button-group {
-    display: flex;
-}
+## Atoms
 
-.button-group.vertical {
-    flex-direction: column;
-}
+```js
+import { Badge, Button, CloseButton, Placeholder, Spinner, Tooltip } from './main.js';
 
-.button-group.horizontal {
-    flex-direction: row;
-}
+new Button('#save', { text: 'Save changes', variant: 'primary', size: 'large', onClick: save });
+new Badge('#status', { text: 'Paid', variant: 'safe' });
+new CloseButton('#dismiss', { target: '#notice' });
+new Spinner('#loading', { size: 'small' });
+new Placeholder('#name', { type: 'animation', width: '160px', height: '1rem' });
+new Tooltip('#vat', { message: 'VAT is 15%', position: 'top' });
 ```
 
-## Isolated Buttons
+Classes map to the CSS: `Button` adds `.button`, `.button--{variant}` and `.button--{size}`; `Badge` adds `.badge--{variant}`.
 
-### Purpose
+## Rules for new components
 
-Isolated buttons can be used anywhere in your layout without being part of a group.
-
-### Example HTML:
-
-```html
-<button class="btn btn-primary isolated" onclick="handleButtonClick('isolated')">Isolated Button</button>
-```
-
-### Example CSS:
-
-```css
-.isolated {
-    margin: 1rem; /* Adds margin around isolated buttons */
-}
-```
-
-### Example JavaScript:
-
-```javascript
-document.querySelectorAll('.isolated').forEach(button => {
-    button.addEventListener('click', () => {
-        alert('Isolated button clicked!');
-    });
-});
-```
-
-## Toggle Buttons
-
-### Purpose
-
-Toggle buttons can switch between two states, such as on and off.
-
-### Example HTML:
-
-```html
-<button class="btn btn-toggle" onclick="toggleButton(this)">Toggle Me</button>
-```
-
-### Example JavaScript:
-
-```javascript
-function toggleButton(button) {
-    button.classList.toggle('active');
-    button.innerText = button.classList.contains('active') ? 'On' : 'Off';
-}
-```
-
-## Conclusion
-
-By incorporating JavaScript into your Kubu CSS framework, you can significantly enhance user interaction and component functionality. This section outlined how to manage button variants, groups, isolated buttons, and toggle states with practical examples. For more detailed information and further customization options, please refer to the [Kubu Documentation](https://github.com/yourusername/kubu/docs).
-
+- Enhance working HTML; never be the only way to use a control.
+- Keep focus visible and keyboard behaviour native.
+- Respect `prefers-reduced-motion`.
+- Re-run setup after htmx swaps by registering in `main.js`.

@@ -1,146 +1,72 @@
-# Customizing Kubu
+# Getting started
 
-Kubu is designed to be flexible and easy to customize, allowing you to adapt the framework to fit your unique branding and design needs. This guide will walk you through the customization options available in Kubu.
+Five minutes from an empty folder to a themed page.
 
-## 1. CSS Variables
+## 1. Get the CSS
 
-Kubu utilizes CSS custom properties (variables) for key styling attributes. You can easily override these variables to change the look and feel of your components.
+KUBU is not on npm. Copy `kubu-framework/dist/kubu.min.css` from this repository into your project, or link the files straight from a clone.
 
-### Default Variables
+## 2. Start a page
 
-Here are some default CSS variables defined in Kubu:
-
-```css
-:root {
-    --primary-color: #007bff;
-    --secondary-color: #6c757d;
-    --success-color: #28a745;
-    --danger-color: #dc3545;
-    --warning-color: #ffc107;
-    --info-color: #17a2b8;
-    --light-color: #f8f9fa;
-    --dark-color: #343a40;
-    --font-family: 'Arial', sans-serif;
-    --border-radius: 0.25rem;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orders · My shop</title>
+  <link rel="stylesheet" href="css/kubu.min.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="navbar" aria-label="Main">
+      <a class="logo" href="/">My shop</a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/orders" aria-current="page">Orders</a></li>
+        <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container" id="main">
+    <h1>Orders</h1>
+    <article class="card">
+      <header class="card__header">
+        <h2 class="card__title">Order 1042</h2>
+        <span class="badge badge--safe">Paid</span>
+      </header>
+      <div class="card__body"><p>R 4 300.00, paid on 28 October 2026.</p></div>
+      <footer class="card__footer"><a class="button button--primary" href="/orders/1042">View order</a></footer>
+    </article>
+  </main>
+  <footer class="footer"><p class="copyright">&copy; 2026 My shop</p></footer>
+</body>
+</html>
 ```
 
-### Overriding Variables
+The page follows the visitor's light or dark setting, every control is at least 44 pixels, and keyboard focus shows a ring. No script has run.
 
-You can override these variables in your own CSS file:
+## 3. Add behaviour with HTML
 
-```css
-:root {
-    --primary-color: #ff5733; /* Changing the primary color */
-    --font-family: 'Verdana', sans-serif; /* Custom font */
-}
+```html
+<details class="dropdown">
+  <summary class="button button--outline">Export orders</summary>
+  <ul class="dropdown-content">
+    <li><a class="dropdown-item" href="/orders.csv">As CSV</a></li>
+  </ul>
+</details>
 ```
 
-## 2. Component Customization
+Dropdowns, accordions, tabs, modals and offcanvas panels all open and close with HTML: see [Components](components.md).
 
-Each component in Kubu can be customized individually. Below are examples of how to customize various components.
+## 4. Optional: JavaScript
 
-### Buttons
+Add the KUBU 2.0 entry when you need something HTML cannot do. See [JavaScript API](javascript.md).
 
-To change the style of buttons, you can adjust the button class styles:
-
-```css
-.btn {
-    padding: 0.75rem 1.5rem;
-    border-radius: var(--border-radius);
-    transition: background-color 0.3s;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: darken(var(--primary-color), 10%);
-}
+```html
+<script type="module" src="kubu.20/Documentation/kubu/src/js/main.js"></script>
 ```
 
-### Alerts
+## Next
 
-You can customize alerts by adjusting the background colors and text styles:
-
-```css
-.alert {
-    border-radius: var(--border-radius);
-    padding: 1rem;
-}
-
-.alert-warning {
-    background-color: var(--warning-color);
-    color: #856404;
-}
-```
-
-## 3. Utility Classes
-
-Kubu provides utility classes for spacing, alignment, and layout. You can easily customize these to fit your design preferences. For example, you might want to create a custom spacing utility:
-
-```css
-.mt-4 {
-    margin-top: 2rem; /* Custom margin top */
-}
-```
-
-## 4. Media Queries
-
-Kubu is built to be responsive, but you can customize breakpoints for different devices. Adjust the breakpoints as needed:
-
-```css
-@media (max-width: 768px) {
-    .card {
-        margin: 1rem; /* Adjust card margin for smaller screens */
-    }
-}
-```
-
-## 5. Custom Fonts
-
-To use custom fonts, you can import them in your CSS and set them in your root variables:
-
-```css
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-:root {
-    --font-family: 'Roboto', sans-serif;
-}
-```
-
-## 6. Example Customization
-
-Here’s an example of a complete customization in Kubu:
-
-```css
-:root {
-    --primary-color: #4caf50;
-    --font-family: 'Arial', sans-serif;
-}
-
-.btn {
-    border-radius: 0.5rem;
-}
-
-.alert-success {
-    background-color: var(--primary-color);
-    color: white;
-}
-```
-
-## 7. Further Customization Resources
-
-For more advanced customization techniques and examples, check out the following resources:
-
-- [CSS Tricks: A Complete Guide to CSS Variables](https://css-tricks.com/a-complete-guide-to-css-variables/)
-- [MDN Web Docs on Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
-- [Learn CSS Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-
-## Conclusion
-
-Customizing Kubu allows you to create a unique look for your projects while maintaining the framework’s simplicity and ease of use. By utilizing CSS variables, utility classes, and responsive design principles, you can effectively tailor Kubu to meet your specific design requirements.
-
-For more examples and usage details, refer to the [Kubu Documentation](https://github.com/yourusername/kubu/docs).
+- [Customization and themes](customization.md)
+- The full docs site: `kubu-framework/pages/index.html` (run `npm run dev` in `kubu-framework`)
