@@ -3885,6 +3885,174 @@ body {
   }
 }
 
+.grid--13 {
+  grid-template-columns: repeat(13, minmax(0, 1fr));
+}
+
+.grid--13 > * {
+  grid-column: span 13;
+}
+
+.grid--13 > .col-1 {
+  grid-column: span 1;
+}
+
+.grid--13 > .col-2 {
+  grid-column: span 2;
+}
+
+.grid--13 > .col-3 {
+  grid-column: span 3;
+}
+
+.grid--13 > .col-4 {
+  grid-column: span 4;
+}
+
+.grid--13 > .col-5 {
+  grid-column: span 5;
+}
+
+.grid--13 > .col-6 {
+  grid-column: span 6;
+}
+
+.grid--13 > .col-7 {
+  grid-column: span 7;
+}
+
+.grid--13 > .col-8 {
+  grid-column: span 8;
+}
+
+.grid--13 > .col-9 {
+  grid-column: span 9;
+}
+
+.grid--13 > .col-10 {
+  grid-column: span 10;
+}
+
+.grid--13 > .col-11 {
+  grid-column: span 11;
+}
+
+.grid--13 > .col-12 {
+  grid-column: span 12;
+}
+
+.grid--13 > .col-13 {
+  grid-column: span 13;
+}
+
+@media (width >= 768px) {
+  .grid--13 > .md\:col-1 {
+    grid-column: span 1;
+  }
+
+  .grid--13 > .md\:col-2 {
+    grid-column: span 2;
+  }
+
+  .grid--13 > .md\:col-3 {
+    grid-column: span 3;
+  }
+
+  .grid--13 > .md\:col-4 {
+    grid-column: span 4;
+  }
+
+  .grid--13 > .md\:col-5 {
+    grid-column: span 5;
+  }
+
+  .grid--13 > .md\:col-6 {
+    grid-column: span 6;
+  }
+
+  .grid--13 > .md\:col-7 {
+    grid-column: span 7;
+  }
+
+  .grid--13 > .md\:col-8 {
+    grid-column: span 8;
+  }
+
+  .grid--13 > .md\:col-9 {
+    grid-column: span 9;
+  }
+
+  .grid--13 > .md\:col-10 {
+    grid-column: span 10;
+  }
+
+  .grid--13 > .md\:col-11 {
+    grid-column: span 11;
+  }
+
+  .grid--13 > .md\:col-12 {
+    grid-column: span 12;
+  }
+
+  .grid--13 > .md\:col-13 {
+    grid-column: span 13;
+  }
+}
+
+@media (width >= 1024px) {
+  .grid--13 > .lg\:col-1 {
+    grid-column: span 1;
+  }
+
+  .grid--13 > .lg\:col-2 {
+    grid-column: span 2;
+  }
+
+  .grid--13 > .lg\:col-3 {
+    grid-column: span 3;
+  }
+
+  .grid--13 > .lg\:col-4 {
+    grid-column: span 4;
+  }
+
+  .grid--13 > .lg\:col-5 {
+    grid-column: span 5;
+  }
+
+  .grid--13 > .lg\:col-6 {
+    grid-column: span 6;
+  }
+
+  .grid--13 > .lg\:col-7 {
+    grid-column: span 7;
+  }
+
+  .grid--13 > .lg\:col-8 {
+    grid-column: span 8;
+  }
+
+  .grid--13 > .lg\:col-9 {
+    grid-column: span 9;
+  }
+
+  .grid--13 > .lg\:col-10 {
+    grid-column: span 10;
+  }
+
+  .grid--13 > .lg\:col-11 {
+    grid-column: span 11;
+  }
+
+  .grid--13 > .lg\:col-12 {
+    grid-column: span 12;
+  }
+
+  .grid--13 > .lg\:col-13 {
+    grid-column: span 13;
+  }
+}
+
 .cq {
   container-type: inline-size;
 }

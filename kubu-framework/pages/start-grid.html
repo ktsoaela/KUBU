@@ -126,7 +126,7 @@
 <a class="doc__index-link" href="#docs-sidebar">Component menu</a>
 <main class="doc" id="main" tabindex="-1">
     <h1>Grid</h1>
-    <p class="doc__lead">A 12-column CSS grid for page layout, and an auto-fit grid for lists of cards.</p>
+    <p class="doc__lead">A 12-column CSS grid for page layout, a 13-column option for uneven splits, and an auto-fit grid for lists of cards.</p>
     <p class="doc__file">File: <code>css/utilities/Grid.css</code></p>
 
     <h2>Twelve columns</h2>
@@ -152,6 +152,39 @@
     <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"col-6 lg:col-3 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>col-6 lg:col-3<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
     <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"col-6 lg:col-3 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>col-6 lg:col-3<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
     <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"col-6 lg:col-3 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>col-6 lg:col-3<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Thirteen columns</h2>
+    <p>Twelve columns is the default, and every page should start there. <code>.grid--13</code> is the extra option, for the splits twelve cannot make: a 5+8 or 6+7 layout is off-centre on purpose. Children span the whole row until you give them a span, so on a phone each part is full width. The spans inside <code>.grid--13</code>, including <code>.col-13</code> for a full row, apply only there.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <div class="grid grid--13">
+                <div class="md:col-5 demo_product"><code>md:col-5</code></div>
+                <div class="md:col-8 demo_product"><code>md:col-8</code></div>
+                <div class="md:col-6 demo_product"><code>md:col-6</code></div>
+                <div class="md:col-7 demo_product"><code>md:col-7</code></div>
+                <div class="md:col-4 demo_product"><code>md:col-4</code></div>
+                <div class="md:col-9 demo_product"><code>md:col-9</code></div>
+                <div class="md:col-3 demo_product"><code>md:col-3</code></div>
+                <div class="md:col-10 demo_product"><code>md:col-10</code></div>
+                <div class="col-13 demo_product"><code>col-13</code>: a full row</div>
+            </div>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"grid grid--13"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-5 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-5<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-8 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-8<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-6 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-6<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-7 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-7<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-4 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-4<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-9 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-9<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-3 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-3<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"md:col-10 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>md:col-10<span class="doc-code__tag">&lt;/code&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"col-13 demo_product"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;code&gt;</span>col-13<span class="doc-code__tag">&lt;/code&gt;</span>: a full row<span class="doc-code__tag">&lt;/div&gt;</span>
 <span class="doc-code__tag">&lt;/div&gt;</span></code></pre>
         </details>
     </div>
@@ -185,6 +218,8 @@
             <tr><td><code>.grid</code></td><td>Twelve equal columns with a <code>--grid-gap</code> gap (default <code>--space-md</code>).</td></tr>
             <tr><td><code>.col-1</code> … <code>.col-12</code></td><td>Span that many columns at every width.</td></tr>
             <tr><td><code>.sm:col-*</code>, <code>.md:col-*</code>, <code>.lg:col-*</code></td><td>Span from 640px, 768px or 1024px up.</td></tr>
+            <tr><td><code>.grid--13</code></td><td>The extra option: thirteen columns. Twelve is the default.</td></tr>
+            <tr><td><code>.grid--13 &gt; .col-1</code> … <code>.col-13</code>, <code>md:</code>, <code>lg:</code></td><td>Spans out of thirteen. They apply only inside <code>.grid--13</code>.</td></tr>
             <tr><td><code>.grid--auto</code></td><td>As many 16rem-or-wider columns as fit.</td></tr>
             <tr><td><code>.cq</code></td><td>Makes the element a size container for <code>@container</code> queries.</td></tr>
         </tbody>
