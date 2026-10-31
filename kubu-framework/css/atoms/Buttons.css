@@ -30,7 +30,7 @@
 }
 
 .button--primary:hover {
-    background-color: darken(var(--button-primary-bg), 10%);
+    background-color: color-mix(in srgb, var(--button-primary-bg) 90%, black);
 }
 
 .button--secondary {
@@ -40,7 +40,7 @@
 }
 
 .button--secondary:hover {
-    background-color: darken(var(--button-secondary-bg), 10%);
+    background-color: color-mix(in srgb, var(--button-secondary-bg) 90%, black);
 }
 
 .button--outline {
