@@ -7,30 +7,34 @@
     margin-left: 0px;
 }
 
+/* Colours come from the semantic tokens, so the trail meets WCAG AA in dark and light. */
 .breadcrumb__item {
-    color: var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    color: var(--kubu-text);
 }
 
 .breadcrumb__item + .breadcrumb__item::before {
     content: "/";
     padding: 0 0.5rem;
-    color: var(--color-primary);
+    color: var(--kubu-text-muted);
 }
 
 .breadcrumb__link {
     text-decoration: none;
-    color: var(--color-primary);
+    color: var(--kubu-link);
 }
 
 .breadcrumb__link:hover {
     text-decoration: underline;
-    color: var(--theme-color-secondary);
+    color: var(--kubu-heading);
 }
 
+/* The current page: bold text in the body colour, marked with aria-current="page". */
 .breadcrumb__item--active {
-    color: var(--color-kubu-secondary);
+    color: var(--kubu-text);
     font-weight: bold;
-    pointer-events: none;
 }
 
 /* Different Divider Styles */
