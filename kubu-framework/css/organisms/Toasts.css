@@ -35,3 +35,8 @@
 .toast-warning {
     background-color:var(--color-risk); /* Yellow background color */
 }
+
+/* A container that sits in the page flow instead of the corner (for previews and inline feedback). */
+.toast-container--inline {
+    position: static;
+}

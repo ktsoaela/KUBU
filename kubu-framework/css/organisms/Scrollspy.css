@@ -32,3 +32,41 @@
 .scrollspy-section {
     margin-bottom: 100px; /* Adjust according to your content's height */
 }
+
+/* Sticky, CSS-only scrollspy: the menu sticks beside the content instead of being fixed to the
+   viewport, and the section you jumped to is highlighted with :target.
+   Moving .active while scrolling needs a few lines of optional JavaScript (IntersectionObserver). */
+.scrollspy--sticky {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    gap: var(--space-lg, 32px);
+    align-items: start;
+}
+
+.scrollspy--sticky .scrollspy-nav {
+    position: sticky;
+    top: var(--scrollspy-top, 1rem);
+    right: auto;
+    transform: none;
+    margin: 0;
+    padding: 0;
+}
+
+.scrollspy--sticky .scrollspy-content {
+    margin-top: 0;
+}
+
+.scrollspy-section {
+    scroll-margin-top: var(--scrollspy-top, 1rem);
+}
+
+.scrollspy-section:target {
+    padding-left: var(--space-md, 16px);
+    border-left: 4px solid var(--kubu-primary);
+}
+
+.scrollspy-nav-item a[aria-current],
+.scrollspy-nav-item.active a {
+    font-weight: bold;
+    color: var(--kubu-heading);
+}

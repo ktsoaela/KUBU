@@ -7,12 +7,22 @@
     height: 1em;
     width: auto;
     margin: 0;
+    padding: 0;
+    border: 0;
     position: relative;
 }
 
-/* Hide radio buttons */
+/* Hide the radios visually; they stay focusable, so arrow keys change the rating */
 .rating input {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.rating input:focus-visible + label {
+    outline: 2px solid var(--kubu-focus);
+    outline-offset: 2px;
 }
 
 /* Star symbol */

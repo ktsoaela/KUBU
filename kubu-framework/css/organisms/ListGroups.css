@@ -1,40 +1,51 @@
-/* List Group Container */
-.list-group {
+/* ListGroups organism: a list of separate, selectable rows (a settings menu, a mailbox list).
+   It extends the ListGroups molecule (molecules/ListGroups.css) with the .list-group--panel modifier,
+   so both files can be loaded together.
+   <ul class="list-group list-group--panel">
+     <li><a class="list-group-item" href="/inbox" aria-current="page">Inbox</a></li>
+     <li><a class="list-group-item" href="/drafts">Drafts</a></li>
+     <li><span class="list-group-item list-group-item--disabled" aria-disabled="true">Spam</span></li>
+   </ul> */
+
+.list-group--panel {
     display: flex;
     flex-direction: column;
-
+    gap: var(--space-xs, 4px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-/* List Group Item */
-.list-group-item {
+.list-group--panel .list-group-item {
+    display: flex;
+    align-items: center;
     padding: 0.5rem 1rem;
-    margin: 0.25rem 0;
+    color: var(--kubu-text);
+    text-decoration: none;
     background-color: var(--kubu-surface-2);
     border: 1px solid var(--kubu-border);
     border-radius: 0.25rem;
 }
 
-.list-group-item:hover {
-    background-color: var(--kubu-surface-2);
+.list-group--panel .list-group-item:last-child {
+    border-bottom: 1px solid var(--kubu-border);
 }
 
-/* List Group Item: Active */
-.list-group-item.active {
+.list-group--panel a.list-group-item:hover {
+    border-color: var(--kubu-primary);
+}
+
+/* Current row: aria-current from the server, or .active */
+.list-group--panel .list-group-item[aria-current],
+.list-group--panel .list-group-item.active {
+    color: var(--kubu-on-primary);
     background-color: var(--kubu-primary);
-    color: #fff;
+    border-color: var(--kubu-primary);
 }
 
-.list-group-item.active:hover {
-    background-color: var(--kubu-primary);
-}
-
-/* List Group Item: Disabled */
-.list-group-item.disabled {
-    background-color: var(--kubu-surface-2);
-    color: var(--color-neutral-gray-dark);
+.list-group--panel .list-group-item--disabled,
+.list-group--panel .list-group-item.disabled {
+    color: var(--kubu-text-muted);
     pointer-events: none;
-}
-
-.list-group-item.disabled:hover {
-    background-color: var(--kubu-surface-2);
+    opacity: 0.7;
 }

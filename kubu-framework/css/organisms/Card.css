@@ -6,7 +6,8 @@
     border-radius: 0.5rem;
     padding: 2rem;
     margin-bottom: 1rem;
-    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 1);
+    box-shadow: var(--kubu-shadow-md);
+    background-color: var(--kubu-surface);
 }
 
 .card--demo_product {

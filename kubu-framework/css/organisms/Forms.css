@@ -39,9 +39,63 @@
     background-color: var(--kubu-primary-hover);
 }
 
-/* Form validation error message styles */
+/* Errors pair colour with an icon and a sentence that says how to fix the field.
+   <p class="form-error" id="email-error">Enter an email address like name@example.com.</p>
+   Link it to the field with aria-describedby, and set aria-invalid="true" when the server rejects it. */
 .form-error {
-    color: #dc3545;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5em;
+    margin: -0.5rem 0 1rem;
+    font-size: var(--font-size-sm, 0.875rem);
+    font-weight: var(--font-weight-medium, 500);
+    color: light-dark(#a51d2d, #ff9aa4);
+}
+
+.form-error::before {
+    content: "!";
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1.35em;
+    height: 1.35em;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--color-danger);
+    border-radius: 50%;
+}
+
+.form-input[aria-invalid="true"],
+.form-input:user-invalid,
+.form-select:user-invalid,
+.form-textarea:user-invalid {
+    border: 2px solid var(--color-danger);
+}
+
+/* Forgiving validation, no script:
+   - .form-error--live stays hidden until the visitor has edited the field and left it invalid (:user-invalid).
+   - .form-container--guarded dims its submit button until every required field is valid. */
+.form-error--live {
+    display: none;
+}
+
+.form-group:has(:user-invalid) .form-error--live,
+:user-invalid ~ .form-error--live {
+    display: flex;
+}
+
+.form-container--guarded:has(:invalid) .form-submit,
+.form-container--guarded:has(:invalid) [type="submit"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.form-submit {
+    min-height: 48px;
+}
+
+.form-submit:active {
+    filter: brightness(0.92);
 }

@@ -53,7 +53,8 @@
 
 /* Datepicker calendar table cells for today's date */
 .datepicker__calendar td.today {
-    background-color: #ffda79;
+    color: #000;
+    background-color: var(--color-highlight);
 }
 
 /* Datepicker calendar table cells for disabled dates */
@@ -84,4 +85,39 @@
 /* Datepicker calendar navigation button for next month */
 .datepicker__next-month {
     float: right;
+}
+
+/* Open state without JavaScript: make the picker a <details> and its trigger a <summary>.
+   <details class="datepicker">
+     <summary class="datepicker__input">11 November 2026</summary>
+     <div class="datepicker__calendar">…</div>
+   </details> */
+.datepicker[open] > .datepicker__calendar,
+.datepicker__calendar--open {
+    display: block;
+}
+
+summary.datepicker__input {
+    list-style: none;
+    cursor: pointer;
+    background-color: var(--kubu-surface);
+}
+
+.datepicker__calendar {
+    min-width: 18rem;
+    padding: var(--space-sm, 8px);
+}
+
+.datepicker__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-sm, 8px);
+    font-weight: bold;
+}
+
+.datepicker__calendar td a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
 }

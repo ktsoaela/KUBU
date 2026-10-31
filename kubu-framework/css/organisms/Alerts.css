@@ -1,4 +1,4 @@
-/* organisms/alerts.css */
+/* Alerts: .alert plus a tone modifier (.alert--info, --success, --warning, --danger). */
 
 /* Alert Container */
 .alert-container {
@@ -15,7 +15,10 @@
 
 /* Alert */
 .alert {
-    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm, 8px);
+    text-align: left;
     position: relative;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -29,10 +32,10 @@
     border-inline-start-width: 4px;
 }
 
-.alert-success { --tone: var(--color-safe); }
-.alert-danger { --tone: var(--color-danger); }
-.alert-warning { --tone: var(--color-hazard); }
-.alert-info { --tone: var(--color-info); }
+.alert--success { --tone: var(--color-safe); }
+.alert--danger { --tone: var(--color-danger); }
+.alert--warning { --tone: var(--color-hazard); }
+.alert--info { --tone: var(--color-info); }
 
 /* Close Button */
 .alert-close {
@@ -42,3 +45,42 @@
     font-size: 1.2rem;
     cursor: pointer;
 }
+
+/* Dismissible without script: <details class="alert alert--info" open><summary class="alert-close">×</summary>…</details>.
+   Clicking the summary closes the details, and a closed alert is hidden. */
+summary.alert-close {
+    list-style: none;
+}
+
+summary.alert-close::-webkit-details-marker {
+    display: none;
+}
+
+details.alert:not([open]) {
+    display: none;
+}
+
+/* Colour is never the only signal: each tone has an icon, and the text states the outcome. */
+.alert::before,
+.notification::before {
+    content: "i";
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--tone);
+    border-radius: 50%;
+}
+
+.alert--success::before,
+.notification.success::before { content: "\2713"; }
+
+.alert--warning::before,
+.notification.warning::before { content: "!"; color: #000; }
+
+.alert--danger::before,
+.notification.error::before { content: "\2715"; }

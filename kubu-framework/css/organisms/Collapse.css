@@ -35,3 +35,9 @@
 .collapse-details > :not(summary) {
     padding: 0 var(--space-md) var(--space-md);
 }
+
+.collapse-details > summary {
+    display: flex;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
+}
