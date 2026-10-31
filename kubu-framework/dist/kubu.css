@@ -4162,8 +4162,10 @@ input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]), tex
 }
 
 .footer__link {
+  min-width: var(--kubu-target, 44px);
   min-height: var(--kubu-target, 44px);
   color: inherit;
+  justify-content: center;
   align-items: center;
   text-decoration: none;
   transition: color .3s;
