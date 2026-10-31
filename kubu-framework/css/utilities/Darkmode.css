@@ -46,9 +46,18 @@ body {
     outline-offset: 2px;
 }
 
-#light-mode:checked + label[for="light-mode"],
-#dark-mode:checked + label[for="dark-mode"],
-#auto-mode:checked + label[for="auto-mode"] {
+.theme-switch-list {
+    border: 0;
+}
+
+.theme-switch-list label {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
+    margin: 0;
+}
+
+.theme-switch-list input[type="radio"]:checked + label {
     background-color: var(--kubu-inverse-bg);
     color: var(--kubu-inverse-text);
 }

@@ -35,3 +35,45 @@
     font-style: italic;
     color: var(--kubu-text-muted);
 }
+
+.file-upload-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
+}
+
+/* The overlay input is invisible, so draw its focus ring on the visible button. */
+.file-upload:has(input:focus-visible) .file-upload-button {
+    outline: 2px solid var(--kubu-focus);
+    outline-offset: 2px;
+}
+
+/* Native version (recommended): the browser shows the chosen file name, with no script.
+   <label class="form-label" for="cv">CV</label>
+   <input class="file-upload__input" id="cv" type="file" accept=".pdf"> */
+.file-upload__input {
+    display: block;
+    width: 100%;
+    padding: var(--space-xs, 4px);
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface);
+    border: 1px dashed var(--kubu-border);
+    border-radius: var(--space-xs, 4px);
+}
+
+.file-upload__input::file-selector-button {
+    min-height: calc(var(--kubu-target, 44px) - 10px);
+    margin-right: var(--space-md, 16px);
+    padding: 0 var(--space-md, 16px);
+    font: inherit;
+    font-weight: var(--font-weight-bold, 700);
+    color: var(--kubu-on-primary);
+    background-color: var(--kubu-primary);
+    border: 0;
+    border-radius: var(--space-xs, 4px);
+    cursor: pointer;
+}
+
+.file-upload__input:hover::file-selector-button {
+    background-color: color-mix(in srgb, var(--kubu-primary) 90%, black);
+}

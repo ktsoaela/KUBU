@@ -79,6 +79,27 @@
     visibility: visible;
 }
 
+/* A closed panel is hidden from keyboard and screen readers, not only moved off screen.
+   visibility waits for the slide to finish before hiding. */
+.offcanvas {
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0.3s;
+}
+
+.offcanvas:target,
+.offcanvas.active,
+.offcanvas-toggle:checked ~ .offcanvas {
+    visibility: visible;
+}
+
+.offcanvas .close-btn {
+    color: var(--kubu-text-muted);
+}
+
+.offcanvas .close-btn:hover {
+    color: var(--kubu-text);
+}
+
 .offcanvas .close-btn {
     display: inline-flex;
     align-items: center;

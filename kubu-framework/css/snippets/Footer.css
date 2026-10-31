@@ -20,9 +20,16 @@
 }
 
 .footer__link {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--kubu-target, 44px);
     color: inherit;
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.footer :focus-visible {
+    outline-color: var(--color-highlight);
 }
 
 .footer__link:hover {

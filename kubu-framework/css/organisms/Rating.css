@@ -62,3 +62,38 @@
 .rating:not(:hover) input:checked + label:after {
     opacity: 1;
 }
+
+/* Every star up to the chosen one is filled, and so is every star up to the one under the pointer.
+   Each star is a 44px target. */
+.rating {
+    height: auto;
+    display: inline-flex;
+}
+
+.rating label {
+    display: inline-grid;
+    place-items: center;
+    width: var(--kubu-target, 44px);
+    height: var(--kubu-target, 44px);
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.rating label:after {
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+.rating:not(:hover) label:has(~ input:checked):after {
+    opacity: 1;
+}
+
+.rating:hover label:hover:after,
+.rating:hover label:has(~ label:hover):after {
+    opacity: 1;
+}
+
+.rating:hover input:checked + label:not(:hover):not(:has(~ label:hover)):after {
+    opacity: 0;
+}
