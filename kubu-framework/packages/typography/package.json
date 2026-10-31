@@ -1,0 +1,16 @@
+{
+  "name": "kubu-typography",
+  "version": "2.0.0",
+  "description": "KUBU colours, spacing, type scale and reset, without components.",
+  "license": "MIT",
+  "author": "Khotso Tsoaela",
+  "repository": { "type": "git", "url": "git+https://github.com/ktsoaela/KUBU.git", "directory": "kubu-framework/packages/typography" },
+  "style": "dist/typography.min.css",
+  "main": "dist/typography.min.css",
+  "files": ["dist"],
+  "keywords": ["css", "typography", "design-tokens", "dark-mode", "kubu"],
+  "scripts": {
+    "build": "node ../../scripts/build.mjs typography.css",
+    "prepublishOnly": "npm run build"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "kubu-icons",
+  "version": "2.0.0",
+  "description": "KUBU line icons: one SVG sprite and the .icon classes, coloured with currentColor.",
+  "license": "MIT",
+  "author": "Khotso Tsoaela",
+  "repository": { "type": "git", "url": "git+https://github.com/ktsoaela/KUBU.git", "directory": "kubu-framework/packages/icons" },
+  "style": "dist/icons.min.css",
+  "main": "dist/icons.min.css",
+  "files": ["dist"],
+  "keywords": ["css", "icons", "svg", "sprite", "kubu"],
+  "scripts": {
+    "build": "node ../../scripts/build.mjs icons.css && node -e \"require('fs').copyFileSync('../../img/icons.svg', 'dist/icons.svg')\"",
+    "prepublishOnly": "npm run build"
+  }
+}

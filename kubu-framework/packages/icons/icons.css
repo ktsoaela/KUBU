@@ -1,0 +1,3 @@
+/* kubu-icons: the .icon classes. Pair with icons.svg, the sprite the docs use.
+   <svg class="icon" aria-hidden="true"><use href="icons.svg#home"></use></svg> */
+@import url("../../css/atoms/Icons.css");
