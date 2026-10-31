@@ -272,3 +272,62 @@
     background-color: var(--kubu-primary);
     color: white;
 }
+
+/* States and touch targets.
+   Every button is at least --kubu-target (44px) tall, with the padding included.
+   default -> :hover -> :active (pressed) -> :disabled / [aria-disabled] -> [aria-busy] (loading).
+   Focus uses the :focus-visible ring from Reset.css. */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    min-height: var(--kubu-target, 44px);
+    min-width: var(--kubu-target, 44px);
+    line-height: 1.2;
+    border: 1px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, opacity 0.2s, transform 0.1s;
+}
+
+.button--large,
+.button--xlarge {
+    min-height: 48px;
+}
+
+.button--rounded-circle {
+    width: var(--kubu-target, 44px);
+    height: var(--kubu-target, 44px);
+    padding: 0;
+}
+
+.button:active:not(:disabled, [aria-disabled="true"], [aria-busy="true"]) {
+    transform: translateY(1px);
+    filter: brightness(0.92);
+}
+
+.button:disabled,
+.button[aria-disabled="true"],
+.button--disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading: set aria-busy="true" while the request runs. The ring is drawn in CSS. */
+.button[aria-busy="true"] {
+    cursor: progress;
+}
+
+.button[aria-busy="true"]::after {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: button-busy 0.7s linear infinite;
+}
+
+@keyframes button-busy {
+    to { transform: rotate(360deg); }
+}

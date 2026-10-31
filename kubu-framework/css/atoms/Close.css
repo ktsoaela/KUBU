@@ -16,3 +16,10 @@
 .close-button:hover {
     background: var(--color-secondary);
 }
+
+.close-button {
+    align-items: center;
+    min-width: var(--kubu-target, 44px);
+    min-height: var(--kubu-target, 44px);
+    border: 0;
+}
