@@ -1,81 +1,65 @@
-<!-- Papers.vue -->
 <template>
-  <div class="main-container">
-    <h1>Kubu CSS Documentation</h1>
+  <div>
+    <h1>Papers</h1>
+    <p>The KUBU documentation in reading order. Every component page has a live example, its BEM parts and the markup.</p>
 
-    <h2>Installation</h2>
-    <p>To install Kubu CSS, you can use npm:</p>
-    <div class="code">
-      <div class="code-header text-right">
-        <a href="#" class="copy-link" @click="toggleCopy"
-          ><i class="bx bx-clipboard"></i> <span>{{ copyButtonText }}</span></a
-        >
-      </div>
-      <div class="code-body">
-        <pre><code>npm install kubu-css</code></pre>
-      </div>
+    <h2>1. Install</h2>
+    <p>Link the bundle. KUBU is not on npm; take the file from the repository or from <router-link to="/download">Download</router-link>.</p>
+    <div class="demo_code">
+      <pre><code>{{ linkSnippet }}</code></pre>
     </div>
+    <button class="button button--outline button--small" type="button" @click="copy(linkSnippet)">{{ copyLabel }}</button>
 
-    <h2>Usage</h2>
-    <p>
-      To use Kubu CSS in your project, you can include the compiled CSS file in
-      your HTML:
-    </p>
+    <h2>2. Jumping in</h2>
+    <ul class="list-group list-group--panel">
+      <li v-for="page in start" :key="page[1]"><a class="list-group-item" :href="docsBase + page[1]">{{ page[0] }}: {{ page[2] }}</a></li>
+    </ul>
 
-    <div class="code">
-      <div class="code-header text-right">
-        <a href="#" class="copy-link" @click="toggleCopy"
-          ><i class="bx bx-clipboard"></i> <span>{{ copyButtonText }}</span></a
-        >
-      </div>
-      <div class="code-body">
-        <pre><code>&lt;link rel="stylesheet" href="path/to/kubu.min.css"&gt;</code></pre>
-      </div>
-    </div>
+    <h2>3. Components</h2>
+    <p>Small parts first, then the parts they make. <router-link to="/components">Contents</router-link> lists them all.</p>
 
-    <h2>Grid System</h2>
-    <p>
-      Kubu CSS comes with a responsive grid system based on 13 columns. You can
-      use the following classes to create grid layouts:
-    </p>
-    <div class="code">
-      <div class="code-header text-right">
-        <a href="#" class="copy-link" @click="toggleCopy"
-          ><i class="bx bx-clipboard"></i> <span>{{ copyButtonText }}</span></a
-        >
-      </div>
-      <div class="code-body">
-        <pre>
-          <code>
-              &lt;div class="kubu-row"&gt;
-                  &lt;div class="kubu-col-4"&gt;Column 1&lt;/div&gt;
-                  &lt;div class="kubu-col-4"&gt;Column 2&lt;/div&gt;
-                  &lt;div class="kubu-col-4"&gt;Column 3&lt;/div&gt;
-              &lt;/div&gt;
-          </code>
-        </pre>
-      </div>
-    </div>
+    <h2>Design rules</h2>
+    <ol>
+      <li>Real elements and landmarks: <code>button</code>, <code>a</code>, <code>dialog</code>, <code>details</code>, one <code>h1</code>.</li>
+      <li>BEM matches the DOM: <code>.block</code>, <code>.block__element</code>, <code>.block--modifier</code>.</li>
+      <li>Targets are at least 44 by 44 pixels, and every control shows a focus ring.</li>
+      <li>Colour is never the only signal: errors carry an icon and a sentence.</li>
+      <li>Motion is CSS only, transform and opacity, and stops for reduced motion.</li>
+      <li>Dark is the master theme; with no saved choice the page follows the system.</li>
+    </ol>
   </div>
 </template>
 
 <script>
+import { docsBase } from '@/site'
+
 export default {
   name: 'Papers',
   data () {
     return {
-      copyButtonText: 'copy code'
+      docsBase,
+      copyLabel: 'Copy code',
+      linkSnippet: '<link rel="stylesheet" href="/css/kubu.min.css">',
+      start: [
+        ['Intro', 'start-intro.html', 'Atomic Design, BEM, and why the browser does the work'],
+        ['Theming and dark mode', 'start-theming.html', 'dark is the master theme; light is its pair'],
+        ['Grid', 'start-grid.html', 'twelve columns, or as many as fit'],
+        ['Browser & Devices', 'start-browsers.html', 'the native features KUBU relies on'],
+        ['JavaScript', 'start-javascript.html', 'optional: htmx, the docs script and KUBU 2.0']
+      ]
     }
   },
   methods: {
-    toggleCopy () {
-      this.copyButtonText = 'copied'
-      setTimeout(() => {
-        this.copyButtonText = 'copy code'
-      }, 1000) // Change back to 'copy code' after 1 second
+    copy (text) {
+      if (!navigator.clipboard) {
+        this.copyLabel = 'Select the code to copy it'
+        return
+      }
+      navigator.clipboard.writeText(text).then(() => {
+        this.copyLabel = 'Copied'
+        setTimeout(() => { this.copyLabel = 'Copy code' }, 2000)
+      })
     }
   }
 }
 </script>
-
-<style scoped></style>

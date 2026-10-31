@@ -1,33 +1,37 @@
 <template>
-  <div id="app">
+  <div id="app" class="app">
+    <a class="visually-hidden visually-hidden--focusable" href="#main">Skip to content</a>
     <Header />
-    <router-view />
-    <!-- <Footer />
-    <Copywrite /> -->
+    <main class="container section app__main" id="main" tabindex="-1">
+      <router-view />
+    </main>
+    <Footer />
   </div>
 </template>
 
 <script>
-import 'boxicons/css/boxicons.min.css'
-
-// Snippets
 import Header from '@/components/snippets/Header'
 import Footer from '@/components/snippets/Footer'
-import Copywrite from '@/components/snippets/Copywrite'
 
 export default {
   name: 'App',
-  components: {
-    Header,
-    Footer,
-    Copywrite
-  }
+  components: { Header, Footer }
 }
 </script>
 
 <style>
-#app {
-  margin:0px;
-  padding:0px;
+/* Layout only: every colour, size and state comes from kubu.css. */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app__main {
+  flex: 1;
+}
+
+.app__main:focus {
+  outline: none;
 }
 </style>
