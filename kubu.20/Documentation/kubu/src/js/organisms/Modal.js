@@ -1,4 +1,5 @@
-// Wraps a native <dialog class="modal-dialog">: focus trapping, Esc and the backdrop come from the browser.
+// Wraps a native <dialog class="modal"> (with .modal__header, .modal__body, .modal__footer; the older
+// single-part .modal-dialog also works): focus trapping, Esc and the backdrop come from the browser.
 // Any element with data-kubu-open="#dialog-id" opens it; any [data-kubu-close] inside it closes it.
 const resolve = (target) => (typeof target === 'string' ? document.querySelector(target) : target);
 

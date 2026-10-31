@@ -20,13 +20,13 @@
 <body>
 
 <nav class="navbar" data-kubu="navbar" aria-label="Main">
-    <a href="#" class="navbar-brand"><img src="../kubu-framework/img/hippo-white.svg" alt="" width="28" height="28"> KUBU 2.0</a>
-    <button class="navbar__toggle" aria-controls="demo-menu" aria-label="Menu">&#9776;</button>
+    <a href="index.html" class="navbar-brand"><img src="../kubu-framework/img/hippo-white.svg" alt="" width="28" height="28"> KUBU 2.0</a>
+    <button class="navbar__toggle" aria-controls="demo-menu">Menu</button>
     <div id="demo-menu" class="navbar-nav">
         <a href="#overlays">Overlays</a>
         <a href="#navigation">Navigation</a>
         <a href="#feedback">Feedback</a>
-        <a href="../kubu-framework/pages/docs.html">Docs</a>
+        <a href="../kubu-framework/pages/start-javascript.html">Docs</a>
     </div>
 </nav>
 
@@ -41,11 +41,14 @@
         <section id="overlays" class="demo-section md:col-6 stack">
             <h2>Modal</h2>
             <p>A native <code>&lt;dialog&gt;</code>: Esc, focus trapping and the backdrop come from the browser.</p>
-            <div><button class="button button--primary" data-kubu-open="#demo-modal">Open modal</button></div>
-            <dialog id="demo-modal" class="modal-dialog" data-kubu="modal" aria-labelledby="demo-modal-title">
-                <h2 id="demo-modal-title">Hello from KUBU</h2>
-                <p>Press Esc, click outside, or use the button.</p>
-                <button class="button button--secondary" data-kubu-close>Close</button>
+            <div><button class="button button--primary" data-kubu-open="#demo-modal">Open the demo dialog</button></div>
+            <dialog id="demo-modal" class="modal" data-kubu="modal" aria-labelledby="demo-modal-title">
+                <header class="modal__header">
+                    <h2 class="modal__title" id="demo-modal-title">Hello from KUBU</h2>
+                    <button class="modal__close" data-kubu-close aria-label="Close">&times;</button>
+                </header>
+                <div class="modal__body"><p>Press Esc, click outside, or use a button.</p></div>
+                <footer class="modal__footer"><button class="button button--secondary" data-kubu-close>Close the dialog</button></footer>
             </dialog>
         </section>
 
@@ -115,8 +118,8 @@
             <h2>Progress</h2>
             <div id="demo-progress" data-kubu="progress" data-value="35"></div>
             <div class="cluster">
-                <button class="button button--outline button--small" data-step="-10">&minus; 10</button>
-                <button class="button button--outline button--small" data-step="10">+ 10</button>
+                <button class="button button--outline button--small" data-step="-10">Remove 10%</button>
+                <button class="button button--outline button--small" data-step="10">Add 10%</button>
             </div>
         </section>
 
@@ -146,7 +149,7 @@
         document.querySelector('#demo-accordion').kubu.open(1));
 
     const crumbs = new BreadCrumb('#demo-breadcrumb');
-    ['Home', 'Library', 'Data'].forEach((label) => crumbs.addItem(label, '#'));
+    [['Home', '../kubu-framework/pages/index.html'], ['Docs', '../kubu-framework/pages/start-javascript.html'], ['KUBU 2.0', 'index.html']].forEach(([label, href]) => crumbs.addItem(label, href));
 
     const pager = document.querySelector('#demo-pagination');
     new Pagination('#demo-pagination', { totalPages: 5, currentPage: 1 });
