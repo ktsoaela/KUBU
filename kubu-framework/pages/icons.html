@@ -148,6 +148,24 @@
     </div>
     <p>Browsers load an external sprite only over HTTP from the same origin, so open the site through a local server (<code>npm run dev</code>), not from <code>file://</code>. To avoid the request, paste the <code>&lt;symbol&gt;</code> elements into a hidden <code>&lt;svg&gt;</code> at the top of your page and use <code>href="#home"</code>.</p>
 
+    <h2>Icons from another set</h2>
+    <p>The sprite is the KUBU set. An inline SVG copied from another icon set takes the same <code>class="icon"</code>: it gets the same size and the text colour, and keeps its own fill or stroke. Below, a sprite icon and a filled bookmark pasted as an inline SVG, side by side in a button and in text.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <button class="button button--outline" type="button"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#star"></use></svg> Star from the sprite</button>
+            <button class="button button--outline" type="button"><svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 1.5A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5V16l-5-3-5 3z"/></svg> Bookmark, inline SVG</button>
+            <p>In a line of text: <svg class="icon" aria-hidden="true"><use href="../img/icons.svg#star"></use></svg> and <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3 1.5A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5V16l-5-3-5 3z"/></svg> line up the same way.</p>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#star"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Star from the sprite<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;button</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"button"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">viewBox</span>=<span class="doc-code__string">"0 0 16 16"</span> <span class="doc-code__attr">fill</span>=<span class="doc-code__string">"currentColor"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;path</span> <span class="doc-code__attr">d</span>=<span class="doc-code__string">"M3 1.5A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5V16l-5-3-5 3z"</span><span class="doc-code__tag">/&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Bookmark, inline SVG<span class="doc-code__tag">&lt;/button&gt;</span>
+<span class="doc-code__tag">&lt;p&gt;</span>In a line of text: <span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#star"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> and <span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">viewBox</span>=<span class="doc-code__string">"0 0 16 16"</span> <span class="doc-code__attr">fill</span>=<span class="doc-code__string">"currentColor"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;path</span> <span class="doc-code__attr">d</span>=<span class="doc-code__string">"M3 1.5A1.5 1.5 0 0 1 4.5 0h7A1.5 1.5 0 0 1 13 1.5V16l-5-3-5 3z"</span><span class="doc-code__tag">/&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> line up the same way.<span class="doc-code__tag">&lt;/p&gt;</span></code></pre>
+        </details>
+    </div>
+    <p>An icon font works the same way if you load it yourself: <code>&lt;i class="icon …"&gt;&lt;/i&gt;</code> gets the same box and colour. KUBU does not bundle an icon font, so <code>kubu.min.css</code> stays one file with no font download.</p>
+
     <h2>All icons</h2>
     <div class="doc-example">
         <div class="doc-example__preview doc-example__preview--block">
@@ -178,6 +196,7 @@
                 <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#sun"></use></svg> <code>sun</code></li>
                 <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#moon"></use></svg> <code>moon</code></li>
                 <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#code"></use></svg> <code>code</code></li>
+                <li class="demo_product"><svg class="icon icon--lg" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg> <code>hippo</code> (the logo mark, filled)</li>
             </ul>
         </div>
     </div>
@@ -186,7 +205,7 @@
     <table class="doc-table">
         <thead><tr><th>Class</th><th>Size</th></tr></thead>
         <tbody>
-            <tr><td><code>.icon</code></td><td>1.25em, lines up with the text</td></tr>
+            <tr><td><code>.icon</code></td><td>1.25em, lines up with the text. The same box and <code>currentColor</code> on <code>svg.icon</code> and <code>i.icon</code>.</td></tr>
             <tr><td><code>.icon--sm</code></td><td>1em</td></tr>
             <tr><td><code>.icon--lg</code></td><td>2em</td></tr>
             <tr><td><code>.icon--xl</code></td><td>3em, thinner stroke</td></tr>

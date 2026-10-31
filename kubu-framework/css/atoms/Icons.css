@@ -1,12 +1,24 @@
 /* Icons: line icons from img/icons.svg, coloured with currentColor so they follow the text and the theme.
    <svg class="icon" aria-hidden="true"><use href="img/icons.svg#home"></use></svg>
-   Give an icon-only control an aria-label; the icon itself stays aria-hidden. */
+   Give an icon-only control an aria-label; the icon itself stays aria-hidden.
+
+   .icon is the box, whatever draws in it: the KUBU sprite, an inline SVG pasted from another set,
+   or an <i> from an icon font you load yourself. All three share the same width, height and colour.
+   KUBU ships no icon font; nothing here loads one. */
 
 .icon {
+    --icon-size: 1.25em;
     display: inline-block;
-    width: 1.25em;
-    height: 1.25em;
+    flex: none;
+    width: var(--icon-size);
+    height: var(--icon-size);
     vertical-align: -0.25em;
+    color: currentColor;
+}
+
+/* The KUBU sprite is drawn with lines. The stroke is set on <use>, so it reaches only the sprite;
+   an inline SVG from another set keeps its own fill and stroke attributes. */
+.icon > use {
     fill: none;
     stroke: currentColor;
     stroke-width: 2;
@@ -14,6 +26,18 @@
     stroke-linejoin: round;
 }
 
-.icon--sm { width: 1em; height: 1em; }
-.icon--lg { width: 2em; height: 2em; }
-.icon--xl { width: 3em; height: 3em; stroke-width: 1.5; }
+/* An icon font draws a glyph in an <i>: size the glyph to the same box. */
+i.icon {
+    width: 1em;
+    height: 1em;
+    font-size: var(--icon-size);
+    font-style: normal;
+    line-height: 1;
+    text-align: center;
+    vertical-align: -0.2em;
+}
+
+.icon--sm { --icon-size: 1em; }
+.icon--lg { --icon-size: 2em; }
+.icon--xl { --icon-size: 3em; }
+.icon--xl > use { stroke-width: 1.5; }
