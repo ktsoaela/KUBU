@@ -1,7 +1,0 @@
-/* KUBU 2.0: the framework plus the styles the JS components add.
-   Load this one file, or load kubu-framework/dist/kubu.css and these partials yourself. */
-@import url("../../../../../kubu-framework/dist/kubu.css");
-@import url("_atoms.css");
-@import url("_molecules.css");
-@import url("_organisms.css");
-@import url("_helpers.css");

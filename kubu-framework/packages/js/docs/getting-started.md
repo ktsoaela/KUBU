@@ -60,10 +60,10 @@ Dropdowns, accordions, tabs, modals and offcanvas panels all open and close with
 
 ## 4. Optional: JavaScript
 
-Add the KUBU 2.0 entry when you need something HTML cannot do. See [JavaScript API](javascript.md).
+Add the JS layer when you need something HTML cannot do. See [JavaScript API](javascript.md).
 
 ```html
-<script type="module" src="kubu.20/Documentation/kubu/src/js/main.js"></script>
+<script type="module" src="kubu-framework/packages/js/src/main.js"></script>
 ```
 
 ## Next

@@ -168,16 +168,17 @@
         <li>Focus moved to the article after htmx swaps a page, so screen readers start at the new content.</li>
     </ol>
 
-    <h2>KUBU 2.0 components</h2>
-    <p>KUBU 2.0 is an optional JavaScript layer for things the browser cannot do alone, like a live date range or a sortable table. Mark an element with <code>data-kubu</code>; the layer sets it up on load and again after every htmx swap (<code>htmx:afterSettle</code>).</p>
+    <h2>The JS layer</h2>
+    <p>An optional set of ES modules in <code>packages/js</code> covers things the browser cannot do alone, like building a card from data or opening an accordion panel from code. Mark an element with <code>data-kubu</code>; the layer sets it up on load and again after every htmx swap (<code>htmx:afterSettle</code>).</p>
     <details class="doc-code" open>
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
-            <pre class="doc-code__pre"><code class="doc-code__block" data-lang="html"><span class="doc-code__tag">&lt;link</span> <span class="doc-code__attr">rel</span>=<span class="doc-code__string">"stylesheet"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"kubu-framework/dist/kubu.css"</span><span class="doc-code__tag">&gt;</span>
-<span class="doc-code__tag">&lt;script</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"module"</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"kubu.20/Documentation/kubu/src/js/main.js"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/script&gt;</span></code></pre>
+            <pre class="doc-code__pre"><code class="doc-code__block" data-lang="html"><span class="doc-code__tag">&lt;link</span> <span class="doc-code__attr">rel</span>=<span class="doc-code__string">"stylesheet"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"kubu-framework/dist/kubu.min.css"</span><span class="doc-code__tag">&gt;</span>
+<span class="doc-code__tag">&lt;link</span> <span class="doc-code__attr">rel</span>=<span class="doc-code__string">"stylesheet"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"kubu-framework/packages/js/css/main.css"</span><span class="doc-code__tag">&gt;</span>
+<span class="doc-code__tag">&lt;script</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"module"</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"kubu-framework/packages/js/src/main.js"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/script&gt;</span></code></pre>
         </details>
-    <p>The JS components add a few styles of their own. To get those too, link <code>kubu.20/Documentation/kubu/src/css/main.css</code> in place of <code>dist/kubu.css</code>; it imports the bundle first.</p>
-    <p><a href="../../kubu.20/index.html" hx-boost="false">Open the KUBU 2.0 demo</a>.</p>
+    <p>The second stylesheet holds only the few styles the JS components add, such as tooltip and carousel controls. Leave it and the script out and every component still looks and works the same.</p>
+    <p><a href="../packages/js/index.html" hx-boost="false">Open the JS layer demo</a>.</p>
 </main>
 </div>
 <footer class="footer site-footer">
@@ -186,7 +187,7 @@
         <a class="footer__link" href="start-contents.html">Contents</a>
         <a class="footer__link" href="download.html">Download</a>
         <a class="footer__link" href="start-javascript.html">JavaScript</a>
-        <a class="footer__link" href="../../kubu.20/index.html" hx-boost="false">KUBU 2.0 demo</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
         <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
     </nav>
     <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>

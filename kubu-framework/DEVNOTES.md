@@ -1,6 +1,6 @@
 # Component map
 
-Each Atomic Design name, the file that holds it, and its docs page in `pages/`. Components are CSS; JavaScript is optional and lives in `kubu.20/`.
+Each Atomic Design name, the file that holds it, and its docs page in `pages/`. Components are CSS; JavaScript is optional and lives in `packages/js/`.
 
 ## Atoms
 

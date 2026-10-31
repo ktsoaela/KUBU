@@ -1,12 +1,13 @@
 # JavaScript API
 
-KUBU 2.0 is optional. Every class below enhances markup that already works without it.
+The JS layer is optional. Every class below enhances markup that already works without it.
 
 ## Load
 
 ```html
-<link rel="stylesheet" href="kubu-framework/dist/kubu.css">
-<script type="module" src="kubu.20/Documentation/kubu/src/js/main.js"></script>
+<link rel="stylesheet" href="kubu-framework/dist/kubu.min.css">
+<link rel="stylesheet" href="kubu-framework/packages/js/css/main.css">
+<script type="module" src="kubu-framework/packages/js/src/main.js"></script>
 ```
 
 `main.js` runs `autoInit()` on load and after every htmx swap (`htmx:afterSettle`). It sets up each element with a `data-kubu` value it knows, once.
