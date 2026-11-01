@@ -32,9 +32,9 @@
         </ul>
         <fieldset class="theme-switch">
             <legend class="theme-switch__legend">Colour theme</legend>
-            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
-            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
-            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#monitor"></use></svg><span class="visually-hidden">Auto</span></label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#moon"></use></svg><span class="visually-hidden">Dark</span></label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#sun"></use></svg><span class="visually-hidden">Light</span></label>
         </fieldset>
     </nav>
     <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
@@ -146,7 +146,7 @@
 <a class="doc__index-link" href="#docs-sidebar">Component menu</a>
 <main class="doc" id="main" tabindex="-1">
     <h1>Grid</h1>
-    <p class="doc__lead">A 12-column CSS grid for page layout, a 13-column option for uneven splits, and an auto-fit grid for lists of cards.</p>
+    <p class="doc__lead">A 12-column CSS grid for page layout, a 13-column option for uneven splits, and an auto-fit grid for lists of cards. The grid is where a part sits. Left, right, and the middle of a row are column spans. Half the row is <code>.col-6</code>. The whole row is <code>.col-12</code>. A card or a button does not take a width or a height of its own.</p>
     <p class="doc__file">File: <code>css/utilities/Grid.css</code></p>
 
     <h2>Twelve columns</h2>
@@ -256,7 +256,7 @@
         <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
         <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
     </nav>
-    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+    <p class="copyright">&copy; 2026 KUBU, a product of Khotso Tsoaela. MIT licence.</p>
 </footer>
 </body>
 </html>

@@ -32,9 +32,9 @@
         </ul>
         <fieldset class="theme-switch">
             <legend class="theme-switch__legend">Colour theme</legend>
-            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
-            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
-            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#monitor"></use></svg><span class="visually-hidden">Auto</span></label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#moon"></use></svg><span class="visually-hidden">Dark</span></label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#sun"></use></svg><span class="visually-hidden">Light</span></label>
         </fieldset>
     </nav>
     <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
@@ -59,7 +59,23 @@
                 <li>A 12-column grid, and a 13-column grid when you need 5 and 8.</li>
                 <li>Packages for a starter site, icons, and type. The same CSS file in each.</li>
             </ul>
+            <p>This is the <code>prod</code> line. <code>stable</code>, <code>main</code>, and <code>staging</code> carry the same contract. Install it with <code>npm install kubu-css</code> or <code>pip install kubu-css</code>. The same file is in the <code>web</code>, <code>icons</code>, <code>typography</code>, <code>plugin</code>, and <code>js</code> packages.</p>
             <p><a href="v2.html">Read the 2.0 contract</a>. <a href="download.html">Download the stylesheet</a>.</p>
+        </div>
+    </article>
+
+    <article class="card">
+        <header>
+            <h2>2.x</h2>
+            <span class="badge badge--info">In progress</span>
+        </header>
+        <div class="card__body">
+            <p>Work that has not replaced 2.0. Each branch is one job.</p>
+            <ul>
+                <li><code>bugfix</code> holds a fix that is not on <code>prod</code> yet.</li>
+                <li><code>experimental</code> holds a trial.</li>
+                <li><code>presentation</code> holds a talk about the framework.</li>
+            </ul>
         </div>
     </article>
 
@@ -69,10 +85,12 @@
             <span class="badge">Archived</span>
         </header>
         <div class="card__body">
+            <p>The branch is <code>1-css-components</code>.</p>
             <ul>
                 <li>Separate CSS files, named with BEM.</li>
+                <li>Page colour was written as hex on the page.</li>
                 <li>A Vue site showed the components.</li>
-                <li>2.0 replaced that site with HTML pages.</li>
+                <li>2.0 replaced that site with HTML pages and <code>light-dark()</code> tokens.</li>
             </ul>
         </div>
     </article>
@@ -88,7 +106,7 @@
         <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
         <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
     </nav>
-    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+    <p class="copyright">&copy; 2026 KUBU, a product of Khotso Tsoaela. MIT licence.</p>
 </footer>
 </body>
 </html>

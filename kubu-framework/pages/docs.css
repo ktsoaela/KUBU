@@ -103,6 +103,7 @@
     min-width: var(--kubu-target);
     justify-content: center;
     padding: 0 var(--space-sm);
+    gap: var(--space-xs);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
     color: var(--kubu-text-muted);
