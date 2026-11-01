@@ -1,20 +1,33 @@
-// Smoke test for the docs site in a real browser (headless Chrome or Edge, no npm packages).
+// Smoke test for the docs site in real browsers. The same checks run in every engine found:
 //
-//   node scripts/smoke.mjs            # CHROME=/path/to/chrome to choose the browser
+//   Chrome and Edge   launched directly, driven over the DevTools protocol   (scripts/browsers/cdp.mjs)
+//   Firefox           launched directly, driven over WebDriver BiDi        (scripts/browsers/bidi.mjs)
+//   WebKit            Safari's engine, through Playwright's WebKit build    (scripts/browsers/webkit.mjs)
 //
-// It serves the repository on a free port, then checks:
+//   node scripts/smoke.mjs                      # every engine that is installed
+//   node scripts/smoke.mjs firefox webkit       # only these (chrome, edge, firefox, webkit)
+//   CHROME=… EDGE=… FIREFOX=… node scripts/smoke.mjs   # point at a browser in another place
+//
+// Real Safari cannot be driven on Windows or Linux, so Safari is covered through WebKit. Chrome,
+// Edge and Firefox are skipped with a note when they are not installed; WebKit is skipped when
+// playwright-core or its WebKit download is missing. The run fails if no engine runs at all.
+//
+// It serves the repository on a free port, then checks, in each engine:
 //   - with scripts on: header and sidebar links swap #frame, update the URL, the title and
 //     aria-current, keep the header, move focus to #main, and Back returns to the last page;
 //   - a fresh load of a page has the right aria-current;
-//   - controls are at least 44 by 44 pixels, and Tab shows a focus ring in dark and light;
+//   - controls are at least 44 by 44 pixels, text meets WCAG AA contrast, and Tab shows a focus
+//     ring, in dark and light;
 //   - with scripts off: the dialog, a disclosure, tabs, the theme radios and the code
 //     samples work, and links are normal navigations.
 
-import { spawn } from 'node:child_process';
-import { createReadStream, existsSync, mkdirSync, mkdtempSync, rmSync, statSync } from 'node:fs';
+import { createReadStream, existsSync, mkdirSync, statSync } from 'node:fs';
 import { createServer } from 'node:http';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import * as cdp from './browsers/cdp.mjs';
+import * as bidi from './browsers/bidi.mjs';
+import * as webkit from './browsers/webkit.mjs';
 import { allPages } from './site.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -32,171 +45,223 @@ const server = createServer((req, res) => {
 await new Promise((r) => server.listen(0, '127.0.0.1', r));
 const base = `http://127.0.0.1:${server.address().port}/kubu-framework/pages/`;
 
-const browsers = [
-    process.env.CHROME,
-    'C:/Program Files/Google/Chrome/Application/chrome.exe',
-    'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
-    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-    '/usr/bin/google-chrome',
-    '/usr/bin/chromium',
-].filter(Boolean);
-const exe = browsers.find((b) => existsSync(b));
-if (!exe) {
-    console.error('No Chrome or Edge found. Set CHROME=/path/to/chrome.');
-    process.exit(2);
-}
-
-// The throwaway browser profile lives in node_modules/.cache, which git ignores.
+// Throwaway browser profiles live in node_modules/.cache, which git ignores.
 const cache = path.join(root, 'kubu-framework/node_modules/.cache');
 mkdirSync(cache, { recursive: true });
-const profile = mkdtempSync(path.join(cache, 'kubu-smoke-'));
-const chrome = spawn(exe, ['--headless=new', '--remote-debugging-port=0', `--user-data-dir=${profile}`, '--window-size=1280,900', 'about:blank']);
-const wsUrl = await new Promise((resolve, reject) => {
-    let err = '';
-    chrome.stderr.on('data', (d) => {
-        err += d;
-        const m = err.match(/ws:\/\/[^\s]+/);
-        if (m) resolve(m[0]);
-    });
-    chrome.on('exit', () => reject(new Error(`browser exited: ${err}`)));
-});
 
-// --- a tiny DevTools protocol client -----------------------------------------------------------
-const ws = new WebSocket(wsUrl);
-await new Promise((r) => ws.addEventListener('open', r));
-let nextId = 0;
-const pending = new Map();
-const listeners = [];
-ws.addEventListener('message', (e) => {
-    const msg = JSON.parse(e.data);
-    if (msg.id && pending.has(msg.id)) {
-        const { resolve, reject } = pending.get(msg.id);
-        pending.delete(msg.id);
-        msg.error ? reject(new Error(msg.error.message)) : resolve(msg.result);
-    } else if (msg.method) listeners.forEach((l) => l(msg));
-});
-const send = (method, params = {}, sessionId) =>
-    new Promise((resolve, reject) => {
-        const id = ++nextId;
-        pending.set(id, { resolve, reject });
-        ws.send(JSON.stringify({ id, method, params, sessionId }));
-    });
-
-const { targetId } = await send('Target.createTarget', { url: 'about:blank' });
-const { sessionId } = await send('Target.attachToTarget', { targetId, flatten: true });
-const cdp = (method, params) => send(method, params, sessionId);
-await cdp('Page.enable');
-await cdp('Runtime.enable');
-await cdp('DOM.enable');
-await cdp('CSS.enable');
+const find = (...paths) => paths.filter(Boolean).find((p) => existsSync(p));
+const engines = {
+    chrome: () => {
+        const exe = find(process.env.CHROME, 'C:/Program Files/Google/Chrome/Application/chrome.exe', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/usr/bin/google-chrome', '/usr/bin/chromium');
+        return exe ? { driver: cdp, exe } : 'not installed (set CHROME=/path/to/chrome)';
+    },
+    edge: () => {
+        const exe = find(process.env.EDGE, 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', 'C:/Program Files/Microsoft/Edge/Application/msedge.exe', '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge', '/usr/bin/microsoft-edge');
+        return exe ? { driver: cdp, exe } : 'not installed (set EDGE=/path/to/msedge)';
+    },
+    firefox: () => {
+        const exe = find(process.env.FIREFOX, 'C:/Program Files/Mozilla Firefox/firefox.exe', 'C:/Program Files (x86)/Mozilla Firefox/firefox.exe', '/Applications/Firefox.app/Contents/MacOS/firefox', '/usr/bin/firefox');
+        return exe ? { driver: bidi, exe } : 'not installed (set FIREFOX=/path/to/firefox)';
+    },
+    webkit: async () => (await webkit.available()) ?? { driver: webkit },
+};
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const evaluate = async (expression) => {
-    const { result, exceptionDetails } = await cdp('Runtime.evaluate', { expression, awaitPromise: true, returnByValue: true });
-    if (exceptionDetails) throw new Error(exceptionDetails.exception?.description || exceptionDetails.text);
-    return result.value;
-};
-const waitFor = async (expression, ms = 5000) => {
-    const end = Date.now() + ms;
-    while (Date.now() < end) {
-        if (await evaluate(expression).catch(() => false)) return true;
-        await sleep(50);
-    }
-    return false;
-};
-const load = async (url) => {
-    const done = new Promise((r) => {
-        const l = (m) => m.method === 'Page.loadEventFired' && m.sessionId === sessionId && (listeners.splice(listeners.indexOf(l), 1), r());
-        listeners.push(l);
-    });
-    await cdp('Page.navigate', { url });
-    await done;
-};
 
-let failures = 0;
-const ok = (cond, label) => {
-    console.log(`${cond ? 'ok  ' : 'FAIL'}  ${label}`);
-    if (!cond) failures++;
-};
+// ---- the checks: one run in one browser -------------------------------------------------------
+async function run(b, ok, skip) {
+    const evaluate = (expression) => b.evaluate(expression);
+    // A navigation that never finishes fails the run with a message instead of hanging it.
+    // A busy machine can stall one load, so each load gets one retry.
+    const load = async (url) => {
+        for (let attempt = 1; ; attempt++) {
+            const timeout = sleep(20000).then(() => 'timeout');
+            if ((await Promise.race([b.load(url).then(() => 'loaded'), timeout])) === 'loaded') return;
+            if (attempt === 2) throw new Error(`load timed out twice: ${url}`);
+        }
+    };
+    const waitFor = async (expression, ms = 5000) => {
+        const end = Date.now() + ms;
+        while (Date.now() < end) {
+            if (await evaluate(expression).catch(() => false)) return true;
+            await sleep(50);
+        }
+        return false;
+    };
+    // A real pointer click in the middle of the element, as a visitor would make it.
+    const click = async (selector) => {
+        const [x, y] = await evaluate(`(() => {
+            const el = document.querySelector(${JSON.stringify(selector)});
+            el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
+            const r = el.getBoundingClientRect();
+            return [r.x + r.width / 2, r.y + r.height / 2];
+        })()`);
+        await b.click(x, y);
+        await sleep(150);
+    };
+    const hasAttr = (selector, name) => evaluate(`document.querySelector(${JSON.stringify(selector)}).hasAttribute(${JSON.stringify(name)})`);
+    const style = (selector, prop) => evaluate(`getComputedStyle(document.querySelector(${JSON.stringify(selector)})).getPropertyValue(${JSON.stringify(prop)})`);
 
-// --- with scripts on ---------------------------------------------------------------------------
-await load(`${base}index.html`);
-ok(await waitFor('!!window.htmx'), 'htmx is loaded');
-await evaluate(`window.__header = document.querySelector('.site-header'); window.__marker = 1`);
+    // --- with scripts on ---
+    await load(`${base}index.html`);
+    ok(await waitFor('!!window.htmx'), 'htmx is loaded');
+    await evaluate(`window.__header = document.querySelector('.site-header'); window.__marker = 1`);
 
-const visit = async (href, title) => {
-    await evaluate(`document.querySelector('#frame a[href="${href}"], #site-links a[href="${href}"]').click()`);
-    const arrived = await waitFor(`location.pathname.endsWith('/${href}') && document.title === ${JSON.stringify(title)} && !document.querySelector('.htmx-request')`);
-    ok(arrived, `${href}: URL and title "${title}" after the swap`);
-    ok(await evaluate('window.__marker === 1'), `${href}: no full reload`);
-    ok(await evaluate('document.querySelector(".site-header") === window.__header'), `${href}: header kept`);
-    const current = await evaluate(`[...document.querySelectorAll('[aria-current="page"]')].filter(a => a.closest('#docs-sidebar, #site-links')).map(a => a.getAttribute('href'))`);
-    ok(current.length >= 1 && current.every((h) => h === href), `${href}: aria-current on ${current.join(', ')}`);
-    ok(await waitFor('document.activeElement && document.activeElement.id === "main"', 2000), `${href}: focus moved to #main`);
-    // Let htmx finish settling and process the new links before the next click. A click inside that
-    // window is a normal page load, which works, but would not test the swap.
+    const visit = async (href, title) => {
+        await evaluate(`document.querySelector('#frame a[href="${href}"], #site-links a[href="${href}"]').click()`);
+        const arrived = await waitFor(`location.pathname.endsWith('/${href}') && document.title === ${JSON.stringify(title)} && !document.querySelector('.htmx-request')`);
+        ok(arrived, `${href}: URL and title "${title}" after the swap`);
+        ok(await evaluate('window.__marker === 1'), `${href}: no full reload`);
+        ok(await evaluate('document.querySelector(".site-header") === window.__header'), `${href}: header kept`);
+        const current = await evaluate(`[...document.querySelectorAll('[aria-current="page"]')].filter(a => a.closest('#docs-sidebar, #site-links')).map(a => a.getAttribute('href'))`);
+        ok(current.length >= 1 && current.every((h) => h === href), `${href}: aria-current on ${current.join(', ')}`);
+        ok(await waitFor('document.activeElement && document.activeElement.id === "main"', 2000), `${href}: focus moved to #main`);
+        // Let htmx finish settling and process the new links before the next click. A click inside that
+        // window is a normal page load, which works, but would not test the swap.
+        await waitFor('!document.querySelector(".htmx-settling, .htmx-swapping, .htmx-added")', 2000);
+        await sleep(100);
+    };
+
+    await visit('atom-buttons.html', 'Buttons · KUBU');
+    await visit('v2.html', 'KUBU 2.0 · KUBU');
+    await visit('papers.html', 'Papers · KUBU');
+    await visit('organism-modal.html', 'Modal · KUBU');
+
+    await evaluate('history.back()');
+    ok(await waitFor(`location.pathname.endsWith('/papers.html') && document.title === 'Papers · KUBU'`), 'Back returns to Papers');
+    ok(await waitFor(`document.querySelector('#site-links a[href="papers.html"]').getAttribute('aria-current') === 'page'`), 'Back restores the header highlight');
+
+    await load(`${base}organism-tabs.html`);
+    ok(await evaluate(`document.querySelector('#docs-sidebar a[aria-current="page"]').getAttribute('href') === 'organism-tabs.html'`), 'refresh: full page with aria-current on Tabs');
+
+    // In-page htmx: a form swaps only its result, and the URL stays.
+    await load(`${base}organism-forms.html`);
+    await waitFor('!!window.htmx');
+    ok(await evaluate(`getComputedStyle(document.querySelector('.form-container--guarded .form-submit')).opacity === '0.55'`), 'forms: send stays dimmed while required fields are empty');
+    await evaluate(`document.querySelector('#fm-news').value = 'palesa@example.com'; document.querySelector('#fm-subscribe').click()`);
+    ok(await waitFor(`document.querySelector('#fm-result').textContent.includes('You are on the list')`), 'forms: hx-get fills the result area');
+    ok(await evaluate(`location.pathname.endsWith('/organism-forms.html') && !!document.querySelector('#docs-sidebar')`), 'forms: URL and page stay');
+
+    await load(`${base}organism-toasts.html`);
+    await waitFor('!!window.htmx');
+    await evaluate(`document.querySelector('[hx-get$="toast-saved.html"]').click()`);
+    ok(await waitFor(`document.querySelectorAll('#toasts .toast').length === 1`), 'toasts: hx-swap-oob adds a toast to #toasts');
+
+    await load(`${base}index.html`);
+    const error = await evaluate(`(() => { const e = document.querySelector('#home-email-error'); return [getComputedStyle(e, '::before').content, e.textContent.length, document.querySelector('#home-email').getAttribute('aria-describedby')]; })()`);
+    ok(error[0] === '"!"' && error[1] > 20 && error[2] === 'home-email-error', 'home: the form error has an icon, a sentence and is linked to its field');
+
+    // The starter in packages/web: the same boost pattern on its own pages, swapping #content.
+    const web = base.replace('/pages/', '/packages/web/');
+    await load(`${web}index.html`);
+    ok(await waitFor('!!window.htmx'), 'starter: htmx is loaded');
+    await evaluate(`window.__header = document.querySelector('header.header'); window.__marker = 1`);
+    await evaluate(`document.querySelector('#site-nav a[href="about.html"]').click()`);
+    ok(await waitFor(`location.pathname.endsWith('/packages/web/about.html') && document.title === 'About · Your site' && !document.querySelector('.htmx-request')`), 'starter: About swaps in with its URL and title');
+    ok(await evaluate('window.__marker === 1 && document.querySelector("header.header") === window.__header'), 'starter: no full reload, header kept');
+    ok(await evaluate(`document.querySelector('#site-nav [aria-current="page"]').getAttribute('href') === 'about.html'`), 'starter: aria-current moves to About');
     await waitFor('!document.querySelector(".htmx-settling, .htmx-swapping, .htmx-added")', 2000);
     await sleep(100);
-};
+    await evaluate('history.back()');
+    ok(await waitFor(`location.pathname.endsWith('/packages/web/index.html') && document.title === 'Your site'`), 'starter: Back returns Home');
 
-await visit('atom-buttons.html', 'Buttons · KUBU');
-await visit('v2.html', 'KUBU 2.0 · KUBU');
-await visit('papers.html', 'Papers · KUBU');
-await visit('organism-modal.html', 'Modal · KUBU');
+    // Targets: every button, summary, form control label and menu link is at least 44 by 44.
+    const starterPages = ['index.html', 'about.html', 'contact.html'].map((p) => `../packages/web/${p}`);
+    for (const page of [...allPages, ...starterPages]) {
+        await load(`${base}${page}`);
+        await evaluate(`document.querySelectorAll('details').forEach(d => d.open = true)`);
+        const small = await evaluate(`[...document.querySelectorAll('button, summary, .button, .nav-link, .list-item, .dropdown-item, .pagination__link, .tabs__tab, .theme-switch__label, .rating label, .footer__link, input:not([type=radio]):not([type=checkbox]):not([type=hidden]), select')]
+            .filter(el => el.offsetParent && !el.closest('dialog:not([open]), .doc-code__pre, [popover]:not(:popover-open), .offcanvas'))
+            .map(el => [el, el.getBoundingClientRect()])
+            .filter(([, r]) => r.width > 0 && (Math.round(r.height) < 44 || Math.round(r.width) < 44))
+            .map(([el, r]) => el.tagName.toLowerCase() + '.' + el.className + ' ' + Math.round(r.width) + 'x' + Math.round(r.height))`);
+        ok(small.length === 0, `${page}: targets at least 44px${small.length ? ': ' + small.slice(0, 5).join('; ') : ''}`);
+    }
 
-await evaluate('history.back()');
-ok(await waitFor(`location.pathname.endsWith('/papers.html') && document.title === 'Papers · KUBU'`), 'Back returns to Papers');
-ok(await waitFor(`document.querySelector('#site-links a[href="papers.html"]').getAttribute('aria-current') === 'page'`), 'Back restores the header highlight');
+    // Text contrast (WCAG AA): 4.5:1, or 3:1 for large text, against the nearest opaque background,
+    // on every page in both schemes. Disabled controls and hidden text are exempt.
+    for (const scheme of ['dark', 'light']) {
+        await b.setScheme(scheme);
+        const failing = [];
+        for (const page of allPages) {
+            await load(`${base}${page}`);
+            await evaluate(`document.querySelectorAll('main details').forEach(d => d.open = true)`);
+            await sleep(50);
+            for (const f of await evaluate(CONTRAST)) failing.push(`${page}: ${f}`);
+        }
+        ok(failing.length === 0, `${scheme}: text contrast meets WCAG AA on every page${failing.length ? `\n      ${failing.slice(0, 25).join('\n      ')}${failing.length > 25 ? `\n      …and ${failing.length - 25} more` : ''}` : ''}`);
+    }
+    await b.setScheme(null);
 
-await load(`${base}organism-tabs.html`);
-ok(await evaluate(`document.querySelector('#docs-sidebar a[aria-current="page"]').getAttribute('href') === 'organism-tabs.html'`), 'refresh: full page with aria-current on Tabs');
+    // Buttons: hover, active, disabled and loading look different from default.
+    await load(`${base}atom-buttons.html`);
+    const states = await evaluate(`(() => {
+        const [def, dis, busy] = document.querySelectorAll('.doc-example__preview .button');
+        const s = (el) => getComputedStyle(el);
+        const after = getComputedStyle(busy, '::after');
+        return { disabled: s(dis).opacity !== s(def).opacity, busy: after.content !== 'none' && after.animationName !== 'none' };
+    })()`);
+    ok(states.disabled, 'buttons: disabled state is distinct');
+    ok(states.busy, 'buttons: loading state draws a spinner');
 
-// In-page htmx: a form swaps only its result, and the URL stays.
-await load(`${base}organism-forms.html`);
-await waitFor('!!window.htmx');
-ok(await evaluate(`getComputedStyle(document.querySelector('.form-container--guarded .form-submit')).opacity === '0.55'`), 'forms: send stays dimmed while required fields are empty');
-await evaluate(`document.querySelector('#fm-news').value = 'palesa@example.com'; document.querySelector('#fm-subscribe').click()`);
-ok(await waitFor(`document.querySelector('#fm-result').textContent.includes('You are on the list')`), 'forms: hx-get fills the result area');
-ok(await evaluate(`location.pathname.endsWith('/organism-forms.html') && !!document.querySelector('#docs-sidebar')`), 'forms: URL and page stay');
+    // Focus ring in both schemes, and Auto follows the system setting.
+    for (const scheme of ['dark', 'light']) {
+        await b.setScheme(scheme);
+        await load(`${base}index.html`);
+        for (let i = 0; i < 4; i++) await b.pressTab();
+        // Headless Firefox on Windows never gives its window focus, so no element can match :focus.
+        // Tab still moves document.activeElement; the ring itself is then reported as skipped.
+        const [ring, moved, windowFocus] = await evaluate(`(() => { const e = document.activeElement; const s = getComputedStyle(e); return [s.outlineStyle + ' ' + s.outlineWidth, e !== document.body, document.hasFocus()]; })()`);
+        ok(moved, `${scheme}: Tab moves focus through the page`);
+        if (windowFocus) ok(/solid 2px|auto/.test(ring), `${scheme}: Tab shows a focus ring (${ring})`);
+        else skip(`${scheme}: focus ring not checked, the headless window has no focus`);
+        const bg = await evaluate(`getComputedStyle(document.body).backgroundColor`);
+        ok(scheme === 'dark' ? bg === 'rgb(14, 20, 25)' : bg === 'rgb(246, 247, 249)', `${scheme}: Auto follows the system (${bg})`);
+    }
+    await b.setScheme(null);
 
-await load(`${base}organism-toasts.html`);
-await waitFor('!!window.htmx');
-await evaluate(`document.querySelector('[hx-get$="toast-saved.html"]').click()`);
-ok(await waitFor(`document.querySelectorAll('#toasts .toast').length === 1`), 'toasts: hx-swap-oob adds a toast to #toasts');
+    // --- with scripts off: drive the page with real clicks and read the DOM ---
+    await b.setScripts(false);
+    await load(`${base}index.html`);
+    ok(!(await evaluate('!!window.htmx')), 'no JS: page scripts do not run');
+    await click('button[commandfor="home-dialog"]');
+    ok(await hasAttr('#home-dialog', 'open'), 'no JS: the dialog opens from its button');
+    await click('#home-dialog .modal__close');
+    ok(!(await hasAttr('#home-dialog', 'open')), 'no JS: the dialog closes from its corner button');
+    await click('.collapse-details:not([open]) > summary');
+    ok(await hasAttr('.collapse-details:nth-of-type(2)', 'open'), 'no JS: a disclosure opens');
+    await click('.doc-code > summary');
+    ok(await hasAttr('.doc-code', 'open'), 'no JS: a code sample opens');
+    ok((await style('.doc-code__tag', 'color')) !== (await style('.doc-code__block', 'color')), 'no JS: code is colour-coded by spans in the HTML');
+    // The page background fades over 0.3s after the :has() restyle, so wait for it to settle.
+    const themes = async (radio, bg) => {
+        await click(`label[for="${radio}"]`);
+        await waitFor(`getComputedStyle(document.body).backgroundColor === ${JSON.stringify(bg)}`, 3000);
+        return style('body', 'background-color');
+    };
+    const darkBg = await themes('dark-mode', 'rgb(14, 20, 25)');
+    ok(darkBg === 'rgb(14, 20, 25)', `no JS: the Dark radio themes the page (${darkBg})`);
+    const lightBg = await themes('light-mode', 'rgb(246, 247, 249)');
+    ok(lightBg === 'rgb(246, 247, 249)', `no JS: the Light radio themes the page (${lightBg})`);
 
-await load(`${base}index.html`);
-const error = await evaluate(`(() => { const e = document.querySelector('#home-email-error'); return [getComputedStyle(e, '::before').content, e.textContent.length, document.querySelector('#home-email').getAttribute('aria-describedby')]; })()`);
-ok(error[0] === '"!"' && error[1] > 20 && error[2] === 'home-email-error', 'home: the form error has an icon, a sentence and is linked to its field');
+    await load(`${base}organism-tabs.html`);
+    await click('label[for="tabs-size"]');
+    ok((await style('#tabs-size + .tabs__tab + .tabs__panel', 'display')) === 'block', 'no JS: a tab shows its panel');
+    ok((await style('#tabs-desc + .tabs__tab + .tabs__panel', 'display')) === 'none', 'no JS: the other panel hides');
 
-// The starter in packages/web: the same boost pattern on its own pages, swapping #content.
-const web = base.replace('/pages/', '/packages/web/');
-await load(`${web}index.html`);
-ok(await waitFor('!!window.htmx'), 'starter: htmx is loaded');
-await evaluate(`window.__header = document.querySelector('header.header'); window.__marker = 1`);
-await evaluate(`document.querySelector('#site-nav a[href="about.html"]').click()`);
-ok(await waitFor(`location.pathname.endsWith('/packages/web/about.html') && document.title === 'About · Your site' && !document.querySelector('.htmx-request')`), 'starter: About swaps in with its URL and title');
-ok(await evaluate('window.__marker === 1 && document.querySelector("header.header") === window.__header'), 'starter: no full reload, header kept');
-ok(await evaluate(`document.querySelector('#site-nav [aria-current="page"]').getAttribute('href') === 'about.html'`), 'starter: aria-current moves to About');
-await waitFor('!document.querySelector(".htmx-settling, .htmx-swapping, .htmx-added")', 2000);
-await sleep(100);
-await evaluate('history.back()');
-ok(await waitFor(`location.pathname.endsWith('/packages/web/index.html') && document.title === 'Your site'`), 'starter: Back returns Home');
+    // A normal navigation loads a new document, so performance.timeOrigin changes.
+    const navigates = async (selector, ending) => {
+        const before = await evaluate('performance.timeOrigin');
+        await click(selector);
+        const arrived = await waitFor(`location.pathname.endsWith(${JSON.stringify(ending)}) && document.readyState === 'complete'`, 5000);
+        return arrived && (await evaluate('performance.timeOrigin')) !== before;
+    };
+    ok(await navigates('#docs-sidebar a[href="organism-card.html"]', '/organism-card.html'), 'no JS: a link is a normal navigation to a new document');
 
-// Targets: every button, summary, form control label and menu link is at least 44 by 44.
-const starterPages = ['index.html', 'about.html', 'contact.html'].map((p) => `../packages/web/${p}`);
-for (const page of [...allPages, ...starterPages]) {
-    await load(`${base}${page}`);
-    await evaluate(`document.querySelectorAll('details').forEach(d => d.open = true)`);
-    const small = await evaluate(`[...document.querySelectorAll('button, summary, .button, .nav-link, .list-item, .dropdown-item, .pagination__link, .tabs__tab, .theme-switch__label, .rating label, .footer__link, input:not([type=radio]):not([type=checkbox]):not([type=hidden]), select')]
-        .filter(el => el.offsetParent && !el.closest('dialog:not([open]), .doc-code__pre, [popover]:not(:popover-open), .offcanvas'))
-        .map(el => [el, el.getBoundingClientRect()])
-        .filter(([, r]) => r.width > 0 && (Math.round(r.height) < 44 || Math.round(r.width) < 44))
-        .map(([el, r]) => el.tagName.toLowerCase() + '.' + el.className + ' ' + Math.round(r.width) + 'x' + Math.round(r.height))`);
-    ok(small.length === 0, `${page}: targets at least 44px${small.length ? ': ' + small.slice(0, 5).join('; ') : ''}`);
+    await load(`${web}index.html`);
+    ok(await navigates('#site-nav a[href="contact.html"]', '/packages/web/contact.html'), 'no JS: the starter menu is a normal navigation');
 }
 
-// Text contrast (WCAG AA): 4.5:1, or 3:1 for large text, against the nearest opaque background,
-// on every page in both schemes. Disabled controls and hidden text are exempt.
 const CONTRAST = `(() => {
     const parse = (c) => {
         let m = c.match(/rgba?\\(([^)]+)\\)/);
@@ -223,7 +288,7 @@ const CONTRAST = `(() => {
         const el = n.parentElement;
         if (!n.textContent.trim() || seen.has(el)) continue;
         seen.add(el);
-        if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) || el.closest('[disabled], [aria-disabled="true"], .visually-hidden, dialog:not([open]), [popover]:not(:popover-open), .offcanvas, .tooltiptext, .popover-content, .dropdown-content, .modal-overlay')) continue;
+        if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true }) || el.closest('progress, meter, [disabled], [aria-disabled="true"], .visually-hidden, dialog:not([open]), [popover]:not(:popover-open), .offcanvas, .tooltiptext, .popover-content, .dropdown-content, .modal-overlay')) continue;
         const s = getComputedStyle(el);
         const fg = parse(s.color);
         const bg = bgOf(el);
@@ -240,125 +305,47 @@ const CONTRAST = `(() => {
     }
     return out;
 })()`;
-for (const scheme of ['dark', 'light']) {
-    await cdp('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: scheme }] });
-    const failing = [];
-    for (const page of allPages) {
-        await load(`${base}${page}`);
-        await evaluate(`document.querySelectorAll('main details').forEach(d => d.open = true)`);
-        await sleep(50);
-        for (const f of await evaluate(CONTRAST)) failing.push(`${page}: ${f}`);
+
+// ---- run every engine -------------------------------------------------------------------------
+const wanted = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(engines);
+const results = [];
+for (const key of wanted) {
+    if (!engines[key]) {
+        console.error(`Unknown browser "${key}". Choose from: ${Object.keys(engines).join(', ')}`);
+        process.exit(2);
     }
-    ok(failing.length === 0, `${scheme}: text contrast meets WCAG AA on every page${failing.length ? `\n      ${failing.slice(0, 25).join('\n      ')}${failing.length > 25 ? `\n      …and ${failing.length - 25} more` : ''}` : ''}`);
-}
-await cdp('Emulation.setEmulatedMedia', { features: [] });
-
-// Buttons: hover, active, disabled and loading look different from default.
-await load(`${base}atom-buttons.html`);
-const states = await evaluate(`(() => {
-    const [def, dis, busy] = document.querySelectorAll('.doc-example__preview .button');
-    const s = (el) => getComputedStyle(el);
-    const after = getComputedStyle(busy, '::after');
-    return { disabled: s(dis).opacity !== s(def).opacity, busy: after.content !== 'none' && after.animationName !== 'none' };
-})()`);
-ok(states.disabled, 'buttons: disabled state is distinct');
-ok(states.busy, 'buttons: loading state draws a spinner');
-
-// Focus ring in both schemes.
-for (const scheme of ['dark', 'light']) {
-    await cdp('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: scheme }] });
-    await load(`${base}index.html`);
-    for (let i = 0; i < 4; i++) {
-        await cdp('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
-        await cdp('Input.dispatchKeyEvent', { type: 'keyUp', key: 'Tab', code: 'Tab', windowsVirtualKeyCode: 9 });
+    const found = await engines[key]();
+    if (typeof found === 'string') {
+        console.log(`\n== ${key}: skipped, ${found}`);
+        results.push([key, 'skipped']);
+        continue;
     }
-    const ring = await evaluate(`(() => { const s = getComputedStyle(document.activeElement); return s.outlineStyle + ' ' + s.outlineWidth; })()`);
-    ok(/solid 2px|auto/.test(ring), `${scheme}: Tab shows a focus ring (${ring})`);
-    const bg = await evaluate(`getComputedStyle(document.body).backgroundColor`);
-    ok(scheme === 'dark' ? bg === 'rgb(14, 20, 25)' : bg === 'rgb(246, 247, 249)', `${scheme}: Auto follows the system (${bg})`);
+    let failures = 0;
+    let b;
+    try {
+        b = await found.driver.launch({ name: key, exe: found.exe, cache });
+        console.log(`\n== ${b.name}`);
+        await run(
+            b,
+            (cond, label) => {
+                console.log(`${cond ? 'ok  ' : 'FAIL'}  [${key}] ${label}`);
+                if (!cond) failures++;
+            },
+            (label) => console.log(`skip  [${key}] ${label}`),
+        );
+    } catch (e) {
+        console.log(`FAIL  [${key}] the run stopped: ${e.message}`);
+        failures++;
+    } finally {
+        await b?.close();
+    }
+    results.push([key, failures ? `${failures} check(s) failed` : 'all checks passed']);
 }
-await cdp('Emulation.setEmulatedMedia', { features: [] });
-
-// --- with scripts off: drive the page with real clicks and read the DOM -------------------------
-await cdp('Emulation.setScriptExecutionDisabled', { value: true });
-const node = async (selector) => {
-    const { root } = await cdp('DOM.getDocument', { depth: 0 });
-    const { nodeId } = await cdp('DOM.querySelector', { nodeId: root.nodeId, selector });
-    return nodeId;
-};
-const click = async (selector) => {
-    const nodeId = await node(selector);
-    await cdp('DOM.scrollIntoViewIfNeeded', { nodeId });
-    const { model } = await cdp('DOM.getBoxModel', { nodeId });
-    const [x1, y1, , , x2, y2] = model.content;
-    const x = (x1 + x2) / 2;
-    const y = (y1 + y2) / 2;
-    for (const type of ['mousePressed', 'mouseReleased']) await cdp('Input.dispatchMouseEvent', { type, x, y, button: 'left', clickCount: 1 });
-    await sleep(150);
-};
-const hasAttr = async (selector, name) => {
-    const { attributes } = await cdp('DOM.getAttributes', { nodeId: await node(selector) });
-    return attributes.includes(name);
-};
-const style = async (selector, prop) => {
-    const { computedStyle } = await cdp('CSS.getComputedStyleForNode', { nodeId: await node(selector) });
-    return computedStyle.find((p) => p.name === prop)?.value;
-};
-
-await load(`${base}index.html`);
-await click('button[commandfor="home-dialog"]');
-ok(await hasAttr('#home-dialog', 'open'), 'no JS: the dialog opens from its button');
-await click('#home-dialog .modal__close');
-ok(!(await hasAttr('#home-dialog', 'open')), 'no JS: the dialog closes from its corner button');
-await click('.collapse-details:not([open]) > summary');
-ok(await hasAttr('.collapse-details:nth-of-type(2)', 'open'), 'no JS: a disclosure opens');
-await click('.doc-code > summary');
-ok(await hasAttr('.doc-code', 'open'), 'no JS: a code sample opens');
-ok((await style('.doc-code__tag', 'color')) !== (await style('.doc-code__block', 'color')), 'no JS: code is colour-coded by spans in the HTML');
-// The page background fades over 0.3s, so wait for it to settle before reading it.
-await click('label[for="dark-mode"]');
-await sleep(500);
-const darkBg = await style('body', 'background-color');
-ok(darkBg === 'rgb(14, 20, 25)', `no JS: the Dark radio themes the page (${darkBg})`);
-await click('label[for="light-mode"]');
-await sleep(500);
-const lightBg = await style('body', 'background-color');
-ok(lightBg === 'rgb(246, 247, 249)', `no JS: the Light radio themes the page (${lightBg})`);
-
-await load(`${base}organism-tabs.html`);
-await click('label[for="tabs-size"]');
-ok((await style('#tabs-size + .tabs__tab + .tabs__panel', 'display')) === 'block', 'no JS: a tab shows its panel');
-ok((await style('#tabs-desc + .tabs__tab + .tabs__panel', 'display')) === 'none', 'no JS: the other panel hides');
-
-// Compare entry ids, not counts: Chrome keeps at most 50 entries and this run loads more pages.
-const entry = (h) => h.entries[h.currentIndex];
-const before = entry(await cdp('Page.getNavigationHistory')).id;
-await click('#docs-sidebar a[href="organism-card.html"]');
-let history;
-for (let i = 0; i < 40; i++) {
-    history = await cdp('Page.getNavigationHistory');
-    if (history.entries[history.currentIndex].url.endsWith('organism-card.html')) break;
-    await sleep(100);
-}
-ok(entry(history).id !== before && entry(history).url.endsWith('organism-card.html'), 'no JS: a link is a normal navigation to a new history entry');
-
-await load(`${web}index.html`);
-await click('#site-nav a[href="contact.html"]');
-for (let i = 0; i < 40; i++) {
-    history = await cdp('Page.getNavigationHistory');
-    if (entry(history).url.endsWith('/packages/web/contact.html')) break;
-    await sleep(100);
-}
-ok(entry(history).url.endsWith('/packages/web/contact.html'), 'no JS: the starter menu is a normal navigation');
-
-ws.close();
-chrome.kill();
 server.close();
-await sleep(300);
-try {
-    rmSync(profile, { recursive: true, force: true });
-} catch {
-    /* the browser may still hold a file for a moment */
-}
-console.log(failures ? `\n${failures} check(s) failed` : '\nall checks passed');
-process.exit(failures ? 1 : 0);
+
+console.log('\nSummary');
+for (const [key, result] of results) console.log(`  ${key.padEnd(8)} ${result}`);
+const ran = results.filter(([, r]) => r !== 'skipped');
+const failed = ran.some(([, r]) => r !== 'all checks passed');
+if (!ran.length) console.log('\nNo browser ran. Install Chrome, Edge or Firefox, or run `npx playwright-core install webkit`.');
+process.exit(failed || !ran.length ? 1 : 0);

@@ -52,6 +52,6 @@ The names match the DOM, so a component is composed from its parts:
 npm install
 npm run build    # node scripts/build.mjs: dist/kubu.css and dist/kubu.min.css
 npm run pages    # node scripts/pages.mjs --check: stamp and check the docs pages
-npm run smoke    # node scripts/smoke.mjs: browser smoke test (Chrome or Edge)
+npm run smoke    # node scripts/smoke.mjs: the same checks in Chrome, Edge, Firefox and WebKit (Safari)
 npm run dev      # serve the docs at http://localhost:8080
 ```

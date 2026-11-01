@@ -52,7 +52,7 @@ People get KUBU by cloning [github.com/ktsoaela/KUBU](https://github.com/ktsoael
 ```bash
 cd kubu-framework
 node scripts/pages.mjs --check   # links, one h1, #frame, banned classes and markup
-node scripts/smoke.mjs           # headless Chrome or Edge: swaps, Back, 44px targets, focus, no-JS behaviour
+node scripts/smoke.mjs           # Chrome, Edge, Firefox and WebKit (Safari): swaps, Back, 44px targets, focus, no-JS behaviour
 node scripts/build.mjs           # the bundle still builds
 ```
 

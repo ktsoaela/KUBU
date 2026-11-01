@@ -154,6 +154,21 @@
         <li>No <code>:user-invalid</code>: the browser's own validation message still blocks the send.</li>
     </ul>
 
+    <h2>How it is tested</h2>
+    <p><code>npm run smoke</code> (<code>scripts/smoke.mjs</code>) runs the same checks in every browser it finds: htmx swaps and Back, 44-pixel targets, WCAG AA contrast in dark and light, the focus ring, and the dialog, tabs, theme radios and links with scripts off.</p>
+    <ul>
+        <li><strong>Chrome, Edge and Firefox are launched directly.</strong> The script starts the installed browser headless and drives it itself: Chrome and Edge over the DevTools protocol, Firefox over WebDriver BiDi. A browser that is not installed is skipped with a note.</li>
+        <li><strong>Safari is covered through WebKit.</strong> Real Safari cannot be driven on Windows, so the Safari pass runs in WebKit, the engine inside Safari, from Playwright's build. Run <code>npx playwright-core install webkit</code> once to download it.</li>
+        <li>Headless Firefox on Windows never gives its window focus, so its focus-ring check is reported as skipped; Tab moving focus is still checked.</li>
+    </ul>
+    <details class="doc-code" open>
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block" data-lang="shell"><span class="doc-code__tag">npm</span> run smoke                        <span class="doc-code__comment"># every browser that is installed</span>
+<span class="doc-code__tag">node</span> scripts/smoke.mjs firefox webkit  <span class="doc-code__comment"># only these: chrome, edge, firefox, webkit</span></code></pre>
+        </details>
+    <p>The CSS itself is compiled for the browserslist query <code>&gt;= 0.5%, last 2 versions, not dead</code> in <code>scripts/build.mjs</code>.</p>
+
     <h2>Devices</h2>
     <ul class="doc-points">
         <li><strong>Touch</strong>Every control is at least 44 by 44 pixels; primary page actions are 48.</li>

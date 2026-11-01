@@ -39,7 +39,7 @@ Each folder in `kubu-framework/packages/` has one job. A slice imports from `../
 ```bash
 cd kubu-framework
 node scripts/pages.mjs --check   # stamps pages, checks links and markup
-node scripts/smoke.mjs           # needs Chrome or Edge
+node scripts/smoke.mjs           # runs in each of Chrome, Edge, Firefox and WebKit that is installed
 node scripts/build.mjs           # rebuilds dist/kubu.css and dist/kubu.min.css
 npm run build-storybook          # every story still finds its docs page
 ```
