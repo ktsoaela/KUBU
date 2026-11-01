@@ -75,6 +75,7 @@ export const sidebar = [
             ['Stepper', 'organism-stepper.html', 'The steps of a process and where you are.', 'organisms/Stepper.css'],
             ['Tables', 'organism-tables.html', 'Data tables with captions, stripes and alignment.', 'organisms/Tables.css'],
             ['Tabs', 'organism-tabs.html', 'A tab bar that switches panels with radio buttons.', 'organisms/Tabs.css'],
+            ['Timeline', 'organism-timeline.html', 'What happened, in order, with a date on each step.', 'organisms/Timeline.css'],
             ['Toasts', 'organism-toasts.html', 'Short confirmations stacked in a corner.', 'organisms/Toasts.css'],
             ['Tooltips', 'organism-tooltips.html', 'A short text hint on hover and keyboard focus.', 'organisms/Tooltips.css'],
             ['Rating', 'organism-rating.html', 'A star rating made of radio buttons.', 'organisms/Rating.css'],

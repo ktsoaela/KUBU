@@ -20,6 +20,7 @@ export const Scrollspy = story('organism-scrollspy.html');
 export const Stepper = story('organism-stepper.html');
 export const Tables = story('organism-tables.html');
 export const Tabs = story('organism-tabs.html');
+export const Timeline = story('organism-timeline.html');
 export const Toasts = story('organism-toasts.html');
 export const Tooltips = story('organism-tooltips.html');
 export const Rating = story('organism-rating.html');

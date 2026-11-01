@@ -3490,6 +3490,58 @@ summary.datepicker__input {
   opacity: 1;
 }
 
+.timeline {
+  margin: 0 0 var(--space-md);
+  padding: 0 0 0 var(--space-md);
+  border-inline-start: var(--kubu-line);
+  list-style: none;
+}
+
+.timeline__item {
+  padding: 0 0 var(--space-md) var(--space-sm);
+  margin: 0;
+  position: relative;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item:before {
+  content: "";
+  top: .45em;
+  left: calc(-1 * var(--space-md) - var(--kubu-border-width) / 2 - .3125rem);
+  border: 2px solid var(--kubu-text-muted);
+  background-color: var(--kubu-bg);
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: .625rem;
+  height: .625rem;
+  position: absolute;
+}
+
+.timeline__item[aria-current]:before {
+  border-color: var(--kubu-primary);
+  background-color: var(--kubu-primary);
+}
+
+.timeline__date {
+  font-size: var(--font-size-sm);
+  color: var(--kubu-text-muted);
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+
+.timeline__title {
+  font-weight: var(--font-weight-bold);
+  color: var(--kubu-heading);
+  margin: 0;
+}
+
+.timeline__text {
+  margin: var(--space-xs) 0 0;
+}
+
 .rating {
   color: var(--kubu-text-muted);
   unicode-bidi: bidi-override;

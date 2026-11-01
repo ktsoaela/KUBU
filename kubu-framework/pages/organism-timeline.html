@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Timeline · KUBU</title>
+    <meta name="description" content="What happened, in order, with a date on each step.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <details class="docs-sidebar__group" id="nav-jumping-in">
+            <summary class="docs-sidebar__summary">Jumping In</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-atoms">
+            <summary class="docs-sidebar__summary">Atoms</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-avatar.html">Avatar</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">Colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">Spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">Typography</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-molecules">
+            <summary class="docs-sidebar__summary">Molecules</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">Button Groups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">Form Groups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">List Groups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-organisms" open>
+            <summary class="docs-sidebar__summary">Organisms</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">Date Picker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">File Upload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">List Groups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-timeline.html" aria-current="page">Timeline</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-utilities">
+            <summary class="docs-sidebar__summary">Utilities</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">Event Delegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-pages">
+            <summary class="docs-sidebar__summary">Pages</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="page-home.html">Home Page</a></li>
+            <li><a class="list-item" href="page-about.html">About Page</a></li>
+            <li><a class="list-item" href="page-product.html">Product Page</a></li>
+            <li><a class="list-item" href="page-contact.html">Contact Page</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-snippets">
+            <summary class="docs-sidebar__summary">Snippets</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-templates">
+            <summary class="docs-sidebar__summary">Templates</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="template-main.html">Main Template</a></li>
+            </ul>
+        </details>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Timeline</h1>
+    <p class="doc__lead">What happened, in order. It is an ordered list: the line is the one border, and each date is text, so the order reads the same without the line.</p>
+    <p class="doc__file">File: <code>css/organisms/Timeline.css</code></p>
+
+    <h2>An order's history</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <ol class="timeline" aria-label="Order KB-1042">
+                <li class="timeline__item">
+                    <time class="timeline__date" datetime="2026-10-28T09:12">28 October, 09:12</time>
+                    <p class="timeline__title">Order placed</p>
+                    <p class="timeline__text">Two Seanamarena blankets, paid by M-Pesa.</p>
+                </li>
+                <li class="timeline__item">
+                    <time class="timeline__date" datetime="2026-10-29T15:40">29 October, 15:40</time>
+                    <p class="timeline__title">Shipped from Maseru</p>
+                    <p class="timeline__text">Courier reference LS-88213.</p>
+                </li>
+                <li class="timeline__item" aria-current="step">
+                    <time class="timeline__date" datetime="2026-10-31T11:05">31 October, 11:05</time>
+                    <p class="timeline__title">Now: at the Mafeteng depot</p>
+                    <p class="timeline__text">Out for delivery on the next working day.</p>
+                </li>
+            </ol>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;ol</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Order KB-1042"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__item"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;time</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__date"</span> <span class="doc-code__attr">datetime</span>=<span class="doc-code__string">"2026-10-28T09:12"</span><span class="doc-code__tag">&gt;</span>28 October, 09:12<span class="doc-code__tag">&lt;/time&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__title"</span><span class="doc-code__tag">&gt;</span>Order placed<span class="doc-code__tag">&lt;/p&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__text"</span><span class="doc-code__tag">&gt;</span>Two Seanamarena blankets, paid by M-Pesa.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;/li&gt;</span>
+    <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__item"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;time</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__date"</span> <span class="doc-code__attr">datetime</span>=<span class="doc-code__string">"2026-10-29T15:40"</span><span class="doc-code__tag">&gt;</span>29 October, 15:40<span class="doc-code__tag">&lt;/time&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__title"</span><span class="doc-code__tag">&gt;</span>Shipped from Maseru<span class="doc-code__tag">&lt;/p&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__text"</span><span class="doc-code__tag">&gt;</span>Courier reference LS-88213.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;/li&gt;</span>
+    <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__item"</span> <span class="doc-code__attr">aria-current</span>=<span class="doc-code__string">"step"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;time</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__date"</span> <span class="doc-code__attr">datetime</span>=<span class="doc-code__string">"2026-10-31T11:05"</span><span class="doc-code__tag">&gt;</span>31 October, 11:05<span class="doc-code__tag">&lt;/time&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__title"</span><span class="doc-code__tag">&gt;</span>Now: at the Mafeteng depot<span class="doc-code__tag">&lt;/p&gt;</span>
+        <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"timeline__text"</span><span class="doc-code__tag">&gt;</span>Out for delivery on the next working day.<span class="doc-code__tag">&lt;/p&gt;</span>
+    <span class="doc-code__tag">&lt;/li&gt;</span>
+<span class="doc-code__tag">&lt;/ol&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Parts</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+            <tr><td><code>.timeline</code></td><td>Block: an <code>&lt;ol&gt;</code> with the one border down its side.</td></tr>
+            <tr><td><code>.timeline__item</code></td><td>Element: one step, with a marker on the line.</td></tr>
+            <tr><td><code>.timeline__date</code></td><td>Element: a <code>&lt;time&gt;</code> with a <code>datetime</code> the server prints.</td></tr>
+            <tr><td><code>.timeline__title</code>, <code>.timeline__text</code></td><td>Element: what happened, and a line about it.</td></tr>
+            <tr><td><code>[aria-current="step"]</code></td><td>State: the latest step. Its marker is filled, and its title says "Now".</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Accessibility</h2>
+    <ul>
+        <li>Use <code>&lt;ol&gt;</code>, so a screen reader says how many steps there are.</li>
+        <li>Write each date as text. The marker and the line are decoration.</li>
+        <li>Name the list with <code>aria-label</code> when the page has more than one.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

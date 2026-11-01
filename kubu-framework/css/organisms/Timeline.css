@@ -1,0 +1,62 @@
+/* Timeline: an ordered list of what happened. The line is the one border; each date
+   is text in a <time>, so the order reads the same without the line.
+   <ol class="timeline">
+     <li class="timeline__item">
+       <time class="timeline__date" datetime="2026-10-28">28 October</time>
+       <p class="timeline__title">Order placed</p>
+       <p class="timeline__text">Two Seanamarena blankets, paid by M-Pesa.</p>
+     </li>
+   </ol>
+   Mark the latest step with aria-current="step" and say so in the title. */
+.timeline {
+    margin: 0 0 var(--space-md);
+    padding: 0 0 0 var(--space-md);
+    list-style: none;
+    border-inline-start: var(--kubu-line);
+}
+
+.timeline__item {
+    position: relative;
+    margin: 0;
+    padding: 0 0 var(--space-md) var(--space-sm);
+}
+
+.timeline__item:last-child {
+    padding-bottom: 0;
+}
+
+/* The marker sits on the line. */
+.timeline__item::before {
+    content: "";
+    position: absolute;
+    top: 0.45em;
+    left: calc(-1 * var(--space-md) - var(--kubu-border-width) / 2 - 0.3125rem);
+    width: 0.625rem;
+    height: 0.625rem;
+    border: 2px solid var(--kubu-text-muted);
+    border-radius: 50%;
+    background-color: var(--kubu-bg);
+    box-sizing: border-box;
+}
+
+.timeline__item[aria-current]::before {
+    border-color: var(--kubu-primary);
+    background-color: var(--kubu-primary);
+}
+
+.timeline__date {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--kubu-text-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+.timeline__title {
+    margin: 0;
+    font-weight: var(--font-weight-bold);
+    color: var(--kubu-heading);
+}
+
+.timeline__text {
+    margin: var(--space-xs) 0 0;
+}

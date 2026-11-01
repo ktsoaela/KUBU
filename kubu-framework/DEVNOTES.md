@@ -52,6 +52,7 @@ Each Atomic Design name, the file that holds it, and its docs page in `pages/`. 
 | Stepper | `css/organisms/Stepper.css` | `organism-stepper.html` |
 | Tables | `css/organisms/Tables.css` | `organism-tables.html` |
 | Tabs | `css/organisms/Tabs.css` | `organism-tabs.html` |
+| Timeline | `css/organisms/Timeline.css` | `organism-timeline.html` |
 | Toasts | `css/organisms/Toasts.css` | `organism-toasts.html` |
 | Tooltips | `css/organisms/Tooltips.css` | `organism-tooltips.html` |
 | Rating | `css/organisms/Rating.css` | `organism-rating.html` |
