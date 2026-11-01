@@ -42,15 +42,16 @@
 <div class="docs-layout docs-layout--wide" id="frame">
 <main class="doc" id="main" tabindex="-1">
     <h1 class="title">News</h1>
-    <p class="doc__lead">The newest release is first. The version in the header already points at the contract, so this page only says what changed.</p>
+    <p class="doc__lead">A release number is <code>MAJOR.MINOR.PATCH</code>. The highest number replaces the one below it. <code>2.0.0</code> is the release you install.</p>
 
     <article class="card">
         <header>
-            <h2 class="title">2.0</h2>
+            <h2 class="title">2.0.0</h2>
             <p class="text-muted">31 October 2026</p>
             <span class="badge badge--safe">Current</span>
         </header>
         <div class="card__body">
+            <p>Major 2, because the public API changed. Minor 0 and patch 0, because this is the first release of that API. A fix on this API is <code>2.0.1</code>. A new part that keeps this API working is <code>2.1.0</code>. A break of this API is <code>3.0.0</code>.</p>
             <ul>
                 <li>One stylesheet, <code>kubu.min.css</code>, for the whole page.</li>
                 <li>Named parts: a card is a header, a body, and a footer.</li>
@@ -59,38 +60,41 @@
                 <li>A 12-column grid, and a 13-column grid when you need 5 and 8.</li>
                 <li>Packages for a starter site, icons, and type. The same CSS file in each.</li>
             </ul>
-            <p>This is the <code>prod</code> line. <code>stable</code>, <code>main</code>, and <code>staging</code> carry the same contract. Install it with <code>npm install kubu-css</code> or <code>pip install kubu-css</code>. The same file is in the <code>web</code>, <code>icons</code>, <code>typography</code>, <code>plugin</code>, and <code>js</code> packages.</p>
-            <p><a href="v2.html">Read the 2.0 contract</a>. <a href="download.html">Download the stylesheet</a>.</p>
+            <p>The release branch is <code>prod</code>. <code>stable</code> is the default branch on GitHub and the same <code>2.0.0</code>, stopped on 31 October 2026 when <code>dist/kubu.css</code> was last rebuilt. Install it with <code>npm install kubu-css</code> or <code>pip install kubu-css</code>. The same file is in the <code>web</code>, <code>icons</code>, <code>typography</code>, <code>plugin</code>, and <code>js</code> packages.</p>
+            <p><a href="v2.html">Read the 2.0.0 contract</a>. <a href="download.html">Download the stylesheet</a>.</p>
         </div>
     </article>
 
     <article class="card">
         <header>
-            <h2>2.x</h2>
-            <span class="badge badge--info">In progress</span>
+            <h2 class="title">1.0.0</h2>
+            <p class="text-muted">3 February 2025</p>
+            <span class="badge">Previous major</span>
         </header>
         <div class="card__body">
-            <p>Work that has not replaced 2.0. Each branch is one job.</p>
+            <p>The previous public API. <code>2.0.0</code> replaced it. The branch is <code>1-css-components</code>.</p>
             <ul>
-                <li><code>bugfix</code> holds a fix that is not on <code>prod</code> yet.</li>
-                <li><code>experimental</code> holds a trial.</li>
-                <li><code>presentation</code> holds a talk about the framework.</li>
+                <li>Separate CSS files, named with BEM.</li>
+                <li>Page colour was written as hex on the page.</li>
+                <li>A Vue site, <code>kubu-web</code>, showed the components. <code>kubu.20</code> held the optional script layer.</li>
+                <li>The public API changed in <code>2.0.0</code>: HTML pages and <code>light-dark()</code> tokens.</li>
             </ul>
         </div>
     </article>
 
     <article class="card">
         <header>
-            <h2>1.0</h2>
-            <span class="badge">Archived</span>
+            <h2 class="title">0.y.z</h2>
+            <span class="badge badge--info">Initial development</span>
         </header>
         <div class="card__body">
-            <p>The branch is <code>1-css-components</code>.</p>
+            <p>Before <code>1.0.0</code> the public API could change at any time. These branches carry that work. They have no release number of their own.</p>
             <ul>
-                <li>Separate CSS files, named with BEM.</li>
-                <li>Page colour was written as hex on the page.</li>
-                <li>A Vue site showed the components.</li>
-                <li>2.0 replaced that site with HTML pages and <code>light-dark()</code> tokens.</li>
+                <li><code>main</code>, 22 March 2024. The first copy. One folder, <code>kubu_ui</code>, and a 13-column grid.</li>
+                <li><code>staging</code>, 13 June 2024. A <code>backend</code> and a <code>frontend</code>, written while the components moved to plain JavaScript.</li>
+                <li><code>presentation</code>, 20 June 2024. Buttons, breadcrumbs, and type, and a start on the documentation.</li>
+                <li><code>bugfix</code>, 7 November 2024. One round of fixes. The folders are <code>kubu-css</code> and <code>kubu-web</code>.</li>
+                <li><code>experimental</code>, 5 February 2025. Files added by hand, in <code>kubu-css</code> and <code>kubu-framework</code>. That commit stayed unreleased, so it did not become <code>1.0.1</code> or <code>1.1.0</code>.</li>
             </ul>
         </div>
     </article>
@@ -106,7 +110,7 @@
         <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
         <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
     </nav>
-    <p class="copyright">&copy; 2026 KUBU, a product of Khotso Tsoaela. MIT licence.</p>
+    <p class="copyright">&copy; 2026 KUBU. MIT licence.</p>
 </footer>
 </body>
 </html>

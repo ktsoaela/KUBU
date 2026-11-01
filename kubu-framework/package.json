@@ -39,6 +39,7 @@
     "smoke": "node scripts/smoke.mjs",
     "test": "node scripts/pages.mjs --check && node scripts/smoke.mjs",
     "dev": "npx --yes http-server .. -p 8080 -c-1 -o /kubu-framework/pages/index.html",
+    "demo": "node demo/server.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o storybook-static",
     "prepublishOnly": "npm run build"

@@ -120,7 +120,7 @@ function siteFooter(page) {
         <a class="footer__link" href="${asset(page)}packages/js/index.html" hx-boost="false">JS layer demo</a>
         <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
     </nav>
-    <p class="copyright">&copy; 2026 KUBU, a product of Khotso Tsoaela. MIT licence.</p>
+    <p class="copyright">&copy; 2026 KUBU. MIT licence.</p>
 </footer>`;
 }
 
