@@ -150,3 +150,70 @@ button {
     font-weight: var(--font-weight-bold);
     color: var(--kubu-heading);
 }
+
+/* Range: a 44px tall row, so the thumb is easy to grab, with a thin track drawn
+   with the tokens. Write the value in an <output> next to it: the server prints
+   the first value, and a line of script may keep it in step.
+   <label for="budget">Budget</label>
+   <input type="range" id="budget" name="budget" min="0" max="2000" step="50" value="800">
+   <output for="budget">M800</output> */
+:where(input[type="range"]) {
+    appearance: none;
+    width: 100%;
+    min-height: var(--kubu-target, 44px);
+    margin: 0;
+    background: transparent;
+    accent-color: var(--kubu-primary);
+    cursor: pointer;
+}
+
+:where(input[type="range"])::-webkit-slider-runnable-track {
+    height: 0.375rem;
+    border-radius: var(--kubu-radius);
+    background: var(--kubu-border);
+}
+
+:where(input[type="range"])::-moz-range-track {
+    height: 0.375rem;
+    border-radius: var(--kubu-radius);
+    background: var(--kubu-border);
+}
+
+:where(input[type="range"])::-moz-range-progress {
+    height: 0.375rem;
+    border-radius: var(--kubu-radius);
+    background: var(--kubu-primary);
+}
+
+:where(input[type="range"])::-webkit-slider-thumb {
+    appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: -0.4375rem;
+    border: 2px solid var(--kubu-surface);
+    border-radius: 50%;
+    background: var(--kubu-primary);
+    box-shadow: 0 0 0 1px var(--kubu-primary);
+}
+
+:where(input[type="range"])::-moz-range-thumb {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid var(--kubu-surface);
+    border-radius: 50%;
+    background: var(--kubu-primary);
+    box-shadow: 0 0 0 1px var(--kubu-primary);
+}
+
+:where(input[type="range"]):disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* The value, written out. Tabular figures keep it from jumping as it changes. */
+:where(output) {
+    display: inline-block;
+    font-weight: var(--font-weight-bold);
+    font-variant-numeric: tabular-nums;
+    color: var(--kubu-heading);
+}

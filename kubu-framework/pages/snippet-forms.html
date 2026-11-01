@@ -227,6 +227,27 @@
         </details>
     </div>
 
+    <h2>Range and output</h2>
+    <p>The row is 44px tall, so the thumb is easy to grab. The number is written in an <code>&lt;output&gt;</code> next to the slider, so the value is read as text and not guessed from the thumb. The server prints the first value. One <code>hx-on:input</code> keeps it in step. With scripts off, the number shows the value the page was printed with.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form action="snippet-forms.html" method="get" hx-on:input="this.budget_out.value = 'M' + this.budget.value">
+                <label for="budget">Most you will spend on a blanket</label>
+                <input type="range" id="budget" name="budget" min="200" max="2000" step="50" value="800">
+                <output id="budget_out" for="budget">M800</output>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"snippet-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span> <span class="doc-code__attr">hx-on:input</span>=<span class="doc-code__string">"this.budget_out.value = 'M' + this.budget.value"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"budget"</span><span class="doc-code__tag">&gt;</span>Most you will spend on a blanket<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"range"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"budget"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"budget"</span> <span class="doc-code__attr">min</span>=<span class="doc-code__string">"200"</span> <span class="doc-code__attr">max</span>=<span class="doc-code__string">"2000"</span> <span class="doc-code__attr">step</span>=<span class="doc-code__string">"50"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"800"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;output</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"budget_out"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"budget"</span><span class="doc-code__tag">&gt;</span>M800<span class="doc-code__tag">&lt;/output&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
     <h2>What it styles</h2>
     <table class="doc-table">
         <thead><tr><th scope="col">Selector</th><th scope="col">Style</th></tr></thead>
@@ -235,6 +256,7 @@
             <tr><td><code>label</code></td><td>Bold, on its own line.</td></tr>
             <tr><td><code>[type="checkbox"]</code>, <code>[type="radio"]</code></td><td>A token border, a tick, dash or dot when on. A label around one is a 44px row. Zero specificity, so tabs and rating still hide their radios.</td></tr>
             <tr><td><code>fieldset</code>, <code>legend</code></td><td>The one border and radius around a group. The legend is bold body text.</td></tr>
+            <tr><td><code>[type="range"]</code>, <code>output</code></td><td>A 44px row with a thin track and a round thumb. The output is bold, with figures that do not jump.</td></tr>
             <tr><td><code>button</code>, <code>[type="submit"]</code>, <code>[type="reset"]</code></td><td>The primary colour, 44px tall. A <code>.button</code> class overrides it.</td></tr>
             <tr><td><code>.error-message</code></td><td>Plain error text. Prefer <code>.form-error</code>, which adds the icon.</td></tr>
         </tbody>
