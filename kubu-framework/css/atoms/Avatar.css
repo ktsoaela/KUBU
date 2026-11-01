@@ -24,11 +24,15 @@
 .avatar--sm { --avatar-size: 2rem; }
 .avatar--lg { --avatar-size: 4rem; }
 
-/* A name next to the avatar. */
+/* A name next to the avatar: a row of its own, so a list of people stacks. */
 .avatar-label {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: var(--space-sm);
+}
+
+.avatar-label + .avatar-label {
+    margin-top: var(--space-sm);
 }
 
 /* Presence: a dot that only ever sits beside a word, so colour is never the only signal.
