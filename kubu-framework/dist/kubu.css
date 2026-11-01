@@ -4192,6 +4192,68 @@ input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]), tex
   min-height: var(--kubu-target, 44px);
 }
 
+:where(input[type="checkbox"], input[type="radio"]) {
+  appearance: none;
+  border: 2px solid var(--kubu-text-muted);
+  border-radius: var(--kubu-radius);
+  background: var(--kubu-surface) center / .875rem no-repeat;
+  vertical-align: middle;
+  cursor: pointer;
+  flex: none;
+  place-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  display: inline-grid;
+}
+
+:where(input[type="radio"]) {
+  border-radius: 50%;
+}
+
+:where(input[type="checkbox"]:checked) {
+  border-color: var(--kubu-primary);
+  background-color: var(--kubu-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+:where(input[type="checkbox"]:indeterminate) {
+  border-color: var(--kubu-primary);
+  background-color: var(--kubu-primary);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8h9' fill='none' stroke='%23fff' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+:where(input[type="radio"]:checked) {
+  border-color: var(--kubu-primary);
+  background-color: var(--kubu-primary);
+  box-shadow: inset 0 0 0 .25rem var(--kubu-surface);
+}
+
+:where(input[type="checkbox"], input[type="radio"]):disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+  :where(input[type="checkbox"], input[type="radio"]) {
+    appearance: auto;
+  }
+}
+
+:where(label:has( > input[type="checkbox"],  > input[type="radio"])) {
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: var(--kubu-target, 44px);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  display: flex;
+}
+
+:where(label:has( > input:disabled)) {
+  color: var(--kubu-text-muted);
+  cursor: not-allowed;
+}
+
 .header {
   color: var(--kubu-text);
   background-color: var(--kubu-surface);
