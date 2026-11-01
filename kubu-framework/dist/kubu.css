@@ -2764,7 +2764,7 @@ summary.datepicker__input {
   }
 }
 
-.form-input--otp {
+.form-input.form-input--otp {
   width: calc(6ch + 3em + 2 * var(--space-sm));
   font-family: var(--font-family-mono);
   font-size: var(--font-size-lg);

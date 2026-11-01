@@ -150,11 +150,11 @@
     }
 }
 
-/* One-time code: one field, not six boxes. autocomplete="one-time-code" lets the phone
+/* One-time code: one field, not six boxes. Two classes, so the bare input rule in snippets/Forms.css cannot stretch it. autocomplete="one-time-code" lets the phone
    offer the code from the message, and a paste fills it in one go.
    <input class="form-input form-input--otp" id="code" name="code" type="text"
           inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6"> */
-.form-input--otp {
+.form-input.form-input--otp {
     width: calc(6ch + 3em + 2 * var(--space-sm));
     font-family: var(--font-family-mono);
     font-size: var(--font-size-lg);
