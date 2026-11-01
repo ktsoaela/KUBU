@@ -1771,6 +1771,65 @@ li {
   border-bottom-left-radius: 0;
 }
 
+.chips {
+  gap: var(--space-xs);
+  border: 0;
+  flex-wrap: wrap;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.chips__chip {
+  min-width: var(--kubu-target, 44px);
+  min-height: var(--kubu-target, 44px);
+  padding-inline: var(--space-sm);
+  border: var(--kubu-line);
+  border-radius: var(--kubu-radius);
+  background: var(--kubu-surface);
+  color: var(--kubu-text);
+  font-weight: var(--font-weight-normal);
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  position: relative;
+}
+
+.chips__chip:hover {
+  border-color: var(--kubu-text-muted);
+}
+
+.chips__input {
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.chips__chip:has(.chips__input:focus-visible) {
+  outline: 2px solid var(--kubu-focus, currentColor);
+  outline-offset: 2px;
+}
+
+.chips__chip:has(.chips__input:checked) {
+  border-color: var(--kubu-text);
+  background: var(--kubu-text);
+  color: var(--kubu-bg);
+  font-weight: var(--font-weight-bold);
+}
+
+.chips__chip:has(.chips__input:disabled) {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
 .dropdown {
   margin: 0;
   padding: 0;

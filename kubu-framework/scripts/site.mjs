@@ -47,6 +47,7 @@ export const sidebar = [
             ['Announcements', 'molecule-announcements.html', 'A one-line message across the top of the site.', 'molecules/Announcements.css'],
             ['Breadcrumb', 'molecule-breadcrumb.html', 'Where this page sits in the site.', 'molecules/Breadcrumb.css'],
             ['Button Groups', 'molecule-button-groups.html', 'Related actions joined into one control.', 'molecules/ButtonGroups.css'],
+            ['Chips', 'molecule-chips.html', 'Filter chips made of radios or checkboxes.', 'molecules/Chips.css'],
             ['Dropdowns', 'molecule-dropdowns.html', 'A menu that opens from a labelled button, no script.', 'molecules/Dropdowns.css'],
             ['Form Groups', 'molecule-form-groups.html', 'A label, a field, a hint and an error, kept together.', 'molecules/FormGroups.css'],
             ['List Groups', 'molecule-list-groups.html', 'Rows with an icon, a title and a line of text.', 'molecules/ListGroups.css'],

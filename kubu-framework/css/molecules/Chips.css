@@ -1,0 +1,70 @@
+/* Filter chips: radios (pick one) or checkboxes (pick any) whose labels are the chips.
+   The input is clipped, not removed: it stays in the tab order, the arrow keys move
+   between radios, and the form posts the choice without a script. Give a set of radios
+   an "All" chip, which is the reset.
+   <fieldset class="chips">
+     <legend class="visually-hidden">Category</legend>
+     <label class="chips__chip">All<input class="chips__input" type="radio" name="cat" value="all" checked></label>
+     <label class="chips__chip">Blankets<input class="chips__input" type="radio" name="cat" value="blankets"></label>
+   </fieldset>
+   To filter a list with no script, read the choice with :has() on a parent. */
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.chips__chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--kubu-target, 44px);
+    min-height: var(--kubu-target, 44px);
+    padding-inline: var(--space-sm);
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
+    background: var(--kubu-surface);
+    color: var(--kubu-text);
+    font-weight: var(--font-weight-normal);
+    cursor: pointer;
+}
+
+.chips__chip:hover {
+    border-color: var(--kubu-text-muted);
+}
+
+/* Clipped, not hidden: still focusable and still read. */
+.chips__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.chips__chip:has(.chips__input:focus-visible) {
+    outline: 2px solid var(--kubu-focus, currentColor);
+    outline-offset: 2px;
+}
+
+/* On: the chip turns over and the text goes bold, a change in weight as well as colour. */
+.chips__chip:has(.chips__input:checked) {
+    border-color: var(--kubu-text);
+    background: var(--kubu-text);
+    color: var(--kubu-bg);
+    font-weight: var(--font-weight-bold);
+}
+
+.chips__chip:has(.chips__input:disabled) {
+    opacity: 0.55;
+    cursor: not-allowed;
+}

@@ -1503,3 +1503,13 @@
     display: grid;
     gap: var(--space-md);
 }
+
+/* Chips page: a list that filters by the chosen chip, with :has() and no script. */
+.chips-demo__list {
+    margin-top: var(--space-md);
+}
+
+.chips-demo:has([name="weight"][value="light"]:checked) [data-weight="heavy"],
+.chips-demo:has([name="weight"][value="heavy"]:checked) [data-weight="light"] {
+    display: none;
+}

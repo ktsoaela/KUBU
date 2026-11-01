@@ -24,6 +24,7 @@ Each Atomic Design name, the file that holds it, and its docs page in `pages/`. 
 | Announcements | `css/molecules/Announcements.css` | `molecule-announcements.html` |
 | Breadcrumb | `css/molecules/Breadcrumb.css` | `molecule-breadcrumb.html` |
 | ButtonGroups | `css/molecules/ButtonGroups.css` | `molecule-button-groups.html` |
+| Chips | `css/molecules/Chips.css` | `molecule-chips.html` |
 | Dropdowns | `css/molecules/Dropdowns.css` | `molecule-dropdowns.html` |
 | FormGroups | `css/molecules/FormGroups.css` | `molecule-form-groups.html` |
 | ListGroups | `css/molecules/ListGroups.css` | `molecule-list-groups.html` |

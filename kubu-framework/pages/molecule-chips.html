@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chips · KUBU</title>
+    <meta name="description" content="Filter chips made of radios or checkboxes.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <details class="docs-sidebar__group" id="nav-jumping-in">
+            <summary class="docs-sidebar__summary">Jumping In</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-atoms">
+            <summary class="docs-sidebar__summary">Atoms</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-avatar.html">Avatar</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">Colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">Spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">Typography</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-molecules" open>
+            <summary class="docs-sidebar__summary">Molecules</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">Button Groups</a></li>
+            <li><a class="list-item" href="molecule-chips.html" aria-current="page">Chips</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">Form Groups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">List Groups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-organisms">
+            <summary class="docs-sidebar__summary">Organisms</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">Date Picker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">File Upload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">List Groups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-timeline.html">Timeline</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-utilities">
+            <summary class="docs-sidebar__summary">Utilities</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">Event Delegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-pages">
+            <summary class="docs-sidebar__summary">Pages</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="page-home.html">Home Page</a></li>
+            <li><a class="list-item" href="page-about.html">About Page</a></li>
+            <li><a class="list-item" href="page-product.html">Product Page</a></li>
+            <li><a class="list-item" href="page-contact.html">Contact Page</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-snippets">
+            <summary class="docs-sidebar__summary">Snippets</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+            <li><a class="list-item" href="snippet-dock.html">Dock</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-templates">
+            <summary class="docs-sidebar__summary">Templates</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="template-main.html">Main Template</a></li>
+            </ul>
+        </details>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Chips</h1>
+    <p class="doc__lead">Filter chips are radios or checkboxes whose labels are the chips. The input is clipped, not removed, so it stays in the tab order and the form posts the choice without a script.</p>
+    <p class="doc__file">File: <code>css/molecules/Chips.css</code></p>
+
+    <h2>Pick one, with All as the reset</h2>
+    <p>Radios give one choice. The "All" chip is the reset. A parent reads the choice with <code>:has()</code>, so this list filters with no script.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form class="chips-demo" action="molecule-chips.html" method="get">
+                <fieldset class="chips">
+                    <legend class="visually-hidden">Blanket weight</legend>
+                    <label class="chips__chip">All<input class="chips__input" type="radio" name="weight" value="all" checked></label>
+                    <label class="chips__chip">Light<input class="chips__input" type="radio" name="weight" value="light"></label>
+                    <label class="chips__chip">Heavy<input class="chips__input" type="radio" name="weight" value="heavy"></label>
+                </fieldset>
+                <ul class="chips-demo__list">
+                    <li data-weight="light">Seanamarena Victoria, 1.6 kg</li>
+                    <li data-weight="heavy">Seanamarena Lekhotla, 2.4 kg</li>
+                    <li data-weight="light">Poone, 1.5 kg</li>
+                    <li data-weight="heavy">Morena, 2.6 kg</li>
+                </ul>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips-demo"</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"molecule-chips.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;fieldset</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;legend</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"visually-hidden"</span><span class="doc-code__tag">&gt;</span>Blanket weight<span class="doc-code__tag">&lt;/legend&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>All<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"weight"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"all"</span> <span class="doc-code__attr">checked</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>Light<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"weight"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"light"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>Heavy<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"weight"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"heavy"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;/fieldset&gt;</span>
+    <span class="doc-code__tag">&lt;ul</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips-demo__list"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">data-weight</span>=<span class="doc-code__string">"light"</span><span class="doc-code__tag">&gt;</span>Seanamarena Victoria, 1.6 kg<span class="doc-code__tag">&lt;/li&gt;</span>
+        <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">data-weight</span>=<span class="doc-code__string">"heavy"</span><span class="doc-code__tag">&gt;</span>Seanamarena Lekhotla, 2.4 kg<span class="doc-code__tag">&lt;/li&gt;</span>
+        <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">data-weight</span>=<span class="doc-code__string">"light"</span><span class="doc-code__tag">&gt;</span>Poone, 1.5 kg<span class="doc-code__tag">&lt;/li&gt;</span>
+        <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">data-weight</span>=<span class="doc-code__string">"heavy"</span><span class="doc-code__tag">&gt;</span>Morena, 2.6 kg<span class="doc-code__tag">&lt;/li&gt;</span>
+    <span class="doc-code__tag">&lt;/ul&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Pick any</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form action="molecule-chips.html" method="get">
+                <fieldset class="chips">
+                    <legend class="visually-hidden">Colours</legend>
+                    <label class="chips__chip">Blue<input class="chips__input" type="checkbox" name="colour" value="blue" checked></label>
+                    <label class="chips__chip">Red<input class="chips__input" type="checkbox" name="colour" value="red"></label>
+                    <label class="chips__chip">Green<input class="chips__input" type="checkbox" name="colour" value="green" checked></label>
+                    <label class="chips__chip">Gold<input class="chips__input" type="checkbox" name="colour" value="gold" disabled></label>
+                </fieldset>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"molecule-chips.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;fieldset</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;legend</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"visually-hidden"</span><span class="doc-code__tag">&gt;</span>Colours<span class="doc-code__tag">&lt;/legend&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>Blue<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"checkbox"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"colour"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"blue"</span> <span class="doc-code__attr">checked</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>Red<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"checkbox"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"colour"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"red"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>Green<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"checkbox"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"colour"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"green"</span> <span class="doc-code__attr">checked</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__chip"</span><span class="doc-code__tag">&gt;</span>Gold<span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"chips__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"checkbox"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"colour"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"gold"</span> <span class="doc-code__attr">disabled</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;/fieldset&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Parts</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+            <tr><td><code>.chips</code></td><td>Block: a <code>&lt;fieldset&gt;</code> of chips that wraps. Give it a <code>&lt;legend&gt;</code>, hidden if the page already says what it filters.</td></tr>
+            <tr><td><code>.chips__chip</code></td><td>Element: the label, a 44px chip with the one radius and border.</td></tr>
+            <tr><td><code>.chips__input</code></td><td>Element: the radio or checkbox, clipped but focusable.</td></tr>
+            <tr><td><code>:checked</code></td><td>State: the chip turns over and its text goes bold.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Accessibility</h2>
+    <ul>
+        <li>Radios move with the arrow keys; checkboxes each take a Tab stop and toggle with Space.</li>
+        <li>The chip's word is its name. Do not use a colour swatch alone; add an <code>aria-label</code> if you must.</li>
+        <li>Say how many results are left in text next to the chips, as the <a href="use-cases.html">Use Cases</a> catalog does.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>
