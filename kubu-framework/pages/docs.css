@@ -1452,7 +1452,7 @@
 }
 
 .doc-logo-tile--light {
-    background: #fff;
+    background: var(--color-light);
 }
 
 /* Stacks the controls of a demo with the --space scale */

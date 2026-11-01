@@ -154,14 +154,23 @@
     <div class="doc-example">
         <div class="doc-example__preview doc-example__preview--tall">
             <details class="dropdown">
-                <summary class="button button--primary">Account menu</summary>
-                <ul class="dropdown-content">
-                    <li><a class="dropdown-item" href="page-about.html">Profile</a></li>
-                    <li><a class="dropdown-item" href="organism-forms.html">Settings</a></li>
-                    <li><a class="dropdown-item" href="index.html">Sign out</a></li>
-                </ul>
+                <summary class="button button--plain" aria-label="Signed in as Account owner, Owner"><span class="avatar" aria-hidden="true">OW</span></summary>
+                <div class="dropdown-content">
+                    <div class="dropdown-head">
+                        <span class="avatar" aria-hidden="true">OW</span>
+                        <div>
+                            <p class="dropdown-head__name">Account owner</p>
+                            <p class="dropdown-head__role">Owner</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="page-about.html"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#user"></use></svg> Desk</a>
+                    <a class="dropdown-item" href="organism-timeline.html"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#copy"></use></svg> Activity</a>
+                    <a class="dropdown-item" href="organism-forms.html"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#edit"></use></svg> Settings</a>
+                    <hr class="dropdown-rule">
+                    <a class="dropdown-item dropdown-item--danger" href="start-intro.html"><svg class="icon" aria-hidden="true"><use href="../img/icons.svg#external"></use></svg> Switch desk</a>
+                </div>
             </details>
-            <details class="dropdown dropdown--end">
+            <details class="dropdown">
                 <summary class="button button--outline">Export</summary>
                 <ul class="dropdown-content">
                     <li><a class="dropdown-item" href="../dist/kubu.css" hx-boost="false">As CSS</a></li>
@@ -173,14 +182,23 @@
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
             <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;details</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown"</span><span class="doc-code__tag">&gt;</span>
-    <span class="doc-code__tag">&lt;summary</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--primary"</span><span class="doc-code__tag">&gt;</span>Account menu<span class="doc-code__tag">&lt;/summary&gt;</span>
-    <span class="doc-code__tag">&lt;ul</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-content"</span><span class="doc-code__tag">&gt;</span>
-        <span class="doc-code__tag">&lt;li&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-about.html"</span><span class="doc-code__tag">&gt;</span>Profile<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
-        <span class="doc-code__tag">&lt;li&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"organism-forms.html"</span><span class="doc-code__tag">&gt;</span>Settings<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
-        <span class="doc-code__tag">&lt;li&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"index.html"</span><span class="doc-code__tag">&gt;</span>Sign out<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
-    <span class="doc-code__tag">&lt;/ul&gt;</span>
+    <span class="doc-code__tag">&lt;summary</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--plain"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Signed in as Account owner, Owner"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span>OW<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/summary&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-content"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-head"</span><span class="doc-code__tag">&gt;</span>
+            <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span>OW<span class="doc-code__tag">&lt;/span&gt;</span>
+            <span class="doc-code__tag">&lt;div&gt;</span>
+                <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-head__name"</span><span class="doc-code__tag">&gt;</span>Account owner<span class="doc-code__tag">&lt;/p&gt;</span>
+                <span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-head__role"</span><span class="doc-code__tag">&gt;</span>Owner<span class="doc-code__tag">&lt;/p&gt;</span>
+            <span class="doc-code__tag">&lt;/div&gt;</span>
+        <span class="doc-code__tag">&lt;/div&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"page-about.html"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#user"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Desk<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"organism-timeline.html"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#copy"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Activity<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"organism-forms.html"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#edit"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Settings<span class="doc-code__tag">&lt;/a&gt;</span>
+        <span class="doc-code__tag">&lt;hr</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-rule"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item dropdown-item--danger"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"start-intro.html"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;svg</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"icon"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;use</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../img/icons.svg#external"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/use&gt;</span><span class="doc-code__tag">&lt;/svg&gt;</span> Switch desk<span class="doc-code__tag">&lt;/a&gt;</span>
+    <span class="doc-code__tag">&lt;/div&gt;</span>
 <span class="doc-code__tag">&lt;/details&gt;</span>
-<span class="doc-code__tag">&lt;details</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown dropdown--end"</span><span class="doc-code__tag">&gt;</span>
+<span class="doc-code__tag">&lt;details</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown"</span><span class="doc-code__tag">&gt;</span>
     <span class="doc-code__tag">&lt;summary</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"button button--outline"</span><span class="doc-code__tag">&gt;</span>Export<span class="doc-code__tag">&lt;/summary&gt;</span>
     <span class="doc-code__tag">&lt;ul</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-content"</span><span class="doc-code__tag">&gt;</span>
         <span class="doc-code__tag">&lt;li&gt;</span><span class="doc-code__tag">&lt;a</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"dropdown-item"</span> <span class="doc-code__attr">href</span>=<span class="doc-code__string">"../dist/kubu.css"</span> <span class="doc-code__attr">hx-boost</span>=<span class="doc-code__string">"false"</span><span class="doc-code__tag">&gt;</span>As CSS<span class="doc-code__tag">&lt;/a&gt;</span><span class="doc-code__tag">&lt;/li&gt;</span>
@@ -226,7 +244,10 @@
             <tr><td><code>details.dropdown</code> or <code>ul.dropdown</code></td><td>Block: positions the menu.</td></tr>
             <tr><td><code>summary</code> with <code>.button</code></td><td>The labelled trigger. A down arrow is added in CSS.</td></tr>
             <tr><td><code>.dropdown-content</code></td><td>Element: the menu panel.</td></tr>
-            <tr><td><code>.dropdown-item</code></td><td>Element: one link, 44px tall.</td></tr>
+            <tr><td><code>.dropdown-head</code></td><td>Element: the mark, the desk and the role at 14px.</td></tr>
+            <tr><td><code>.dropdown-item</code></td><td>Element: one link, 14px and 44px tall. An icon sits in the link.</td></tr>
+            <tr><td><code>.dropdown-rule</code></td><td>Element: the divider before the leaving action.</td></tr>
+            <tr><td><code>.dropdown-item--danger</code></td><td>Modifier: the leaving action, in the danger colour.</td></tr>
             <tr><td><code>.dropdown-item-container</code></td><td>Element: the <code>li</code> that opens on <code>:focus-within</code>.</td></tr>
             <tr><td><code>.dropdown--end</code></td><td>Modifier: align the menu to the right edge.</td></tr>
         </tbody>
@@ -234,7 +255,7 @@
 
     <h2>Accessibility</h2>
     <ul>
-        <li>Label the trigger with what the menu holds: "Account menu", not an icon.</li>
+        <li>A mark on its own needs an accessible name, such as <code>aria-label="Signed in as Account owner, Owner"</code>.</li>
         <li>Use links for places and buttons for actions inside the menu.</li>
     </ul>
 </main>

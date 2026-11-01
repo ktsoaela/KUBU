@@ -1,8 +1,10 @@
 /* Base Table Block */
 .table {
     width: 100%;
+    margin-bottom: 0;
     border-collapse: collapse;
     border-spacing: 0;
+    color: var(--kubu-text-muted);
 }
 
 .table--small {
@@ -20,9 +22,15 @@
 }
 
 .table__header-cell {
-    padding: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.462;
     text-align: left;
-    border-bottom: 2px solid var(--kubu-border);
+    vertical-align: middle;
+    white-space: nowrap;
+    color: var(--kubu-heading);
+    border-bottom: var(--kubu-line);
 }
 
 /* Row Variants */
@@ -39,18 +47,21 @@
 }
 
 .table__row--active {
-    background-color: var(--color-primary);
-    color: var(--color-light);
+    background-color: var(--kubu-surface-2);
+    color: var(--kubu-heading);
 }
 
 /* Cell Styles */
 .table__cell {
-    padding: 12px;
-    border-bottom: 1px solid var(--kubu-border);
+    padding: 10px 20px;
+    font-size: 13px;
+    line-height: 1.462;
+    vertical-align: middle;
+    border-bottom: var(--kubu-line);
 }
 
 .table__cell--highlight {
-    background-color: var(--color-secondary-light);
+    background-color: var(--kubu-surface-2);
 }
 
 /* Footer Styles */
@@ -59,10 +70,12 @@
 }
 
 .table__footer-cell {
-    padding: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
     text-align: left;
-    font-weight: bold;
-    border-top: 2px solid var(--kubu-border);
+    color: var(--kubu-heading);
+    border-top: var(--kubu-line);
 }
 
 /* Striped Columns */
@@ -82,13 +95,10 @@
 }
 
 /* Accented Tables */
-.table--accented .table__header {
-    background-color: var(--color-primary-light);
-    color: var(--color-light);
-}
-
+.table--accented .table__header,
 .table--accented .table__footer {
-    background-color: var(--color-secondary-light);
+    background-color: var(--kubu-surface-2);
+    color: var(--kubu-heading);
 }
 
 /* Alignment */
@@ -103,7 +113,7 @@
 /* Nesting */
 .table__nested {
     margin: 16px 0;
-    border: 1px solid var(--color-neutral-light);
+    border: var(--kubu-line);
 }
 
 /* Captions */
@@ -111,9 +121,9 @@
     caption-side: top;
     text-align: left;
     font-weight: bold;
-    font-size: var(--font-size-md);
+    font-size: 14px;
     margin-bottom: 8px;
-    color: var(--text-color-secondary);
+    color: var(--kubu-text-muted);
 }
 
 /* Responsive Table */
