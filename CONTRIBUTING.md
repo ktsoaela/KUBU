@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-`npm run dev` serves the repository and opens the docs at `http://localhost:8080/kubu-framework/pages/index.html`.
+`npm run dev` serves the repository and opens the docs at `http://localhost:8080/kubu-framework/pages/index.html`. The same command starts the desk at `http://localhost:3000`.
 
 ## Change a component
 

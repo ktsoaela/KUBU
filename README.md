@@ -84,7 +84,7 @@ node scripts/build.mjs my-kubu.css   # writes dist/my-kubu.css and dist/my-kubu.
 ```bash
 cd kubu-framework
 npm install
-npm run dev     # serves the repository and opens http://localhost:8080/kubu-framework/pages/index.html
+npm run dev     # docs at http://localhost:8080/kubu-framework/pages/index.html and the desk at http://localhost:3000
 ```
 
 The docs are one htmx site made of static pages in `kubu-framework/pages/`. Each address is a full HTML file. With htmx, the header stays and `#frame` (sidebar and main) swaps. Without htmx, the same links are normal navigations.

@@ -75,6 +75,7 @@ export function layout(ctx, { title, body, built }) {
                 })}
             </ul>
         </nav>`)}
+        <a class="app__me" href="/settings"><span class="avatar avatar--sm" aria-hidden="true">${user.role.slice(0, 2).toUpperCase()}</span><span class="app__me-text"><span class="app__me-name">${user.name}</span><span class="app__me-role">${user.role}</span></span></a>
         <div class="app__sidebar-foot">
             <span class="presence ${prefs.nojs ? 'presence--away' : 'presence--on'}"><span class="presence__dot" aria-hidden="true"></span>${prefs.nojs ? 'JavaScript off' : 'htmx on'}</span>
             <a href="/no-js">Change</a>
@@ -86,8 +87,17 @@ export function layout(ctx, { title, body, built }) {
             <label class="button button--outline app__menu" for="app-menu">${icon('menu')}<span class="visually-hidden">Menu</span></label>
             <form class="app__search" role="search" action="/search" method="get">
                 <label class="visually-hidden" for="global-search">Search accounts, invoices and desks</label>
+                ${icon('search', 'app__search-icon')}
                 <input class="form-input" id="global-search" type="search" name="q" value="${path === '/search' ? ctx.url.searchParams.get('q') || '' : ''}" placeholder="Search accounts, invoices and desks" autocomplete="off">
             </form>
+            <details class="dropdown dropdown--end app__new">
+                <summary class="button button--primary" aria-label="Add new">${icon('plus')}<span class="app__new-label">Add new</span></summary>
+                <ul class="dropdown-content">
+                    <li><a class="dropdown-item" href="/invoices/new">${icon('copy')} New invoice</a></li>
+                    <li><a class="dropdown-item" href="/accounts/new">${icon('user')} New account</a></li>
+                    <li><a class="dropdown-item" href="/team#invite">${icon('mail')} Invite someone</a></li>
+                </ul>
+            </details>
             <form class="button-group app__theme" action="/prefs" method="post" hx-boost="false" aria-label="Colour theme">
                 <input type="hidden" name="back" value="${ctx.url.pathname + ctx.url.search}">
                 ${[['auto', 'monitor', 'System'], ['dark', 'moon', 'Dark'], ['light', 'sun', 'Light']].map(([value, glyph, label]) => html`<button class="button button--outline" name="theme" value="${value}" aria-pressed="${prefs.theme === value ? 'true' : 'false'}" title="${label} theme">${icon(glyph)}<span class="visually-hidden">${label} theme</span></button>`)}
@@ -101,13 +111,22 @@ export function layout(ctx, { title, body, built }) {
                         : html`<p>Nothing needs you right now.</p>`}
                 </div>
             </details>
-            <details class="dropdown dropdown--end">
-                <summary class="button button--outline app__user" aria-label="Signed in as ${user.role}"><span class="avatar avatar--sm" aria-hidden="true">${user.role.slice(0, 2).toUpperCase()}</span><span class="app__user-name">${user.role}</span></summary>
-                <ul class="dropdown-content">
-                    <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                    <li><a class="dropdown-item" href="/settings#signin">Sign in as someone else</a></li>
-                    <li><a class="dropdown-item" href="/why-kubu">Why KUBU</a></li>
-                </ul>
+            <details class="dropdown dropdown--end app__account">
+                <summary class="button button--plain app__user" aria-label="Signed in as ${user.name}, ${user.role}"><span class="avatar" aria-hidden="true">${user.role.slice(0, 2).toUpperCase()}</span></summary>
+                <div class="dropdown-content app__account-menu">
+                    <div class="app__account-head">
+                        <span class="avatar" aria-hidden="true">${user.role.slice(0, 2).toUpperCase()}</span>
+                        <div>
+                            <p class="app__account-name">${user.name}</p>
+                            <p class="app__account-role">${user.role}</p>
+                        </div>
+                    </div>
+                    <a class="dropdown-item" href="/settings">${icon('user')} Desk</a>
+                    <a class="dropdown-item" href="/activity">${icon('copy')} Activity</a>
+                    <a class="dropdown-item" href="/settings">${icon('edit')} Settings</a>
+                    <hr class="app__account-rule">
+                    <a class="dropdown-item app__account-leave" href="/settings#signin">${icon('external')} Switch desk</a>
+                </div>
             </details>
         </header>
         <div class="ajax-progress htmx-indicator app__progress" id="app-progress" aria-hidden="true"></div>

@@ -53,5 +53,5 @@ npm install
 npm run build    # node scripts/build.mjs: dist/kubu.css and dist/kubu.min.css
 npm run pages    # node scripts/pages.mjs --check: stamp and check the docs pages
 npm run smoke    # node scripts/smoke.mjs: the same checks in Chrome, Edge, Firefox and WebKit (Safari)
-npm run dev      # serve the docs at http://localhost:8080
+npm run dev      # docs at http://localhost:8080 and the desk at http://localhost:3000
 ```

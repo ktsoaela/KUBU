@@ -18,7 +18,7 @@ Node 20 or later. No dependencies and no build step. The data lives in memory, i
 | The whole app works with JavaScript off | **Run without JavaScript** in the sidebar. The server stops sending every `<script>` and each screen still works |
 | htmx is an enhancement, not a dependency | Live search, swap-on-change role select, a polled status panel. All of it uses the same routes as the no-JS version |
 | Server-rendered and backend-agnostic | Every screen is a whole HTML page from a route. POST then redirect. Validation and permissions live on the server |
-| Dark-first tokens | Theme buttons in the top bar. The server writes `data-theme`, so the wrong theme never flashes |
+| Dark-first tokens | Theme buttons in the top bar. The server writes `data-theme`, so the wrong theme never flashes. The charcoal-and-amber look is one block of token overrides at the top of `app.css` |
 | Small and measured | **Compare frameworks** reads and gzips the real files on each request, and counts the classes in the code samples |
 | Accessible by default | 44px targets, an error summary that links to each field, `aria-invalid`, `aria-sort`, `aria-current`, a skip link, and status shown in words as well as colour |
 | Readable BEM markup | Open **How this screen is built** at the foot of any screen |
@@ -37,7 +37,7 @@ demo/
 │   └── layout.mjs      # the app shell, page head, pagination and form fields
 ├── views/              # one module per area: dashboard, accounts, invoices, team, workspace, why
 └── public/
-    ├── app.css         # only the shell and app-specific blocks, built on KUBU tokens
+    ├── app.css         # a theme (KUBU token overrides only), the shell, and app-specific blocks
     └── app.js          # optional: moves focus to <main> after an htmx swap
 ```
 
