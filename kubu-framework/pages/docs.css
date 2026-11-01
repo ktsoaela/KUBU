@@ -433,7 +433,7 @@
     }
 }
 
-.icon-dialog .catalog-filters {
+.icon-dialog .chips {
     margin: 0;
 }
 
@@ -500,7 +500,7 @@
 .icon-dialog:has([data-ctrl="size"][value="48"]:checked) .icon-stage .icon { --icon-size: 10.5rem; }
 .icon-dialog:has([data-ctrl="size"][value="64"]:checked) .icon-stage .icon { --icon-size: 12.5rem; }
 
-.icon-dialog .catalog-filters label.icon-swatch:has(input:checked) {
+.icon-dialog .chips__chip.icon-swatch:has(:checked) {
     color: inherit;
     background: transparent;
     border-color: var(--kubu-text);
@@ -627,50 +627,6 @@
 .catalog-bar .form-input {
     width: min(100%, 24rem);
     min-height: var(--kubu-target);
-}
-
-.catalog-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-xs);
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-
-.catalog-filters label {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    min-width: var(--kubu-target);
-    min-height: var(--kubu-target);
-    padding-inline: var(--space-sm);
-    border: var(--kubu-line);
-    border-radius: var(--kubu-radius);
-    background: var(--kubu-surface);
-    cursor: pointer;
-}
-
-.catalog-filters input {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-.catalog-filters label:has(input:focus-visible) {
-    outline: 2px solid var(--kubu-focus, currentColor);
-    outline-offset: 2px;
-}
-
-.catalog-filters label:has(input:checked) {
-    background: var(--kubu-text);
-    color: var(--kubu-bg);
 }
 
 .catalog-count {
