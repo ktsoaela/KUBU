@@ -114,4 +114,13 @@
     .header__toggle ~ .navbar-nav .nav-item {
         margin: 0;
     }
+
+    .header .logo {
+        margin-right: auto;
+    }
+
+    .header__toggle ~ .navbar-nav .nav-link {
+        justify-content: flex-start;
+        width: 100%;
+    }
 }

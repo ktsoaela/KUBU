@@ -161,6 +161,41 @@
     max-width: none;
 }
 
+/* Homepage bands. The fill is the current surface pair, so light and dark stay the tokens
+   in colors.css. The page background shows between the bands. */
+.docs-layout--wide:has(.home) {
+    width: 100%;
+    padding-top: 0;
+}
+
+.color-wrapper {
+    background-color: light-dark(var(--light-surface), var(--dark-surface));
+}
+
+.color-wrapper__inner,
+.home > section:not(.color-wrapper) {
+    width: min(100% - 2rem, 72rem);
+    margin-inline: auto;
+}
+
+.home > .color-wrapper {
+    width: 100%;
+    padding-block: clamp(var(--space-lg), 6vw, var(--space-xl));
+}
+
+.home > section:not(.color-wrapper) {
+    padding-block: clamp(var(--space-lg), 6vw, var(--space-xl));
+}
+
+.home > section > h2,
+.color-wrapper__inner > h2 {
+    margin-top: 0;
+}
+
+.color-wrapper .card {
+    background-color: light-dark(var(--light-surface-2), var(--dark-surface-2));
+}
+
 /* Product homepage. The title is the hippo line. The live card sits beside the HTML
    that made it. Reasons and screens use the same named parts as the docs. */
 .home-hero .title {
@@ -1215,11 +1250,46 @@
     min-height: var(--kubu-target);
 }
 
-/* Narrow screens: the seven header links collapse behind "Menu"; the component index follows
-   the article, with a link to it at the top. Primary actions become full-width 48px buttons,
-   easy to reach with a thumb. */
+/* The seven docs links meet the theme switch before 900px, so the menu takes over earlier. */
+@media (max-width: 64rem) {
+    .site-header__menu {
+        display: inline-flex;
+        order: 2;
+    }
+
+    .theme-switch {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .site-header__links {
+        display: none;
+        order: 4;
+        flex-basis: 100%;
+        flex-direction: column;
+        margin: 0;
+        padding-block: var(--space-xs) var(--space-sm);
+        background-color: var(--kubu-surface);
+        border-top: var(--kubu-line);
+    }
+
+    .site-header__toggle:checked ~ .site-header__links {
+        display: flex;
+    }
+
+    .site-header__links .nav-link {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .site-header__logo {
+        margin-right: auto;
+    }
+}
+
 @media (max-width: 899px) {
-    .doc-hero__actions .button {
+    .doc-hero__actions .button,
+    .home-actions .button {
         flex: 1 1 100%;
         min-height: 48px;
     }
@@ -1247,29 +1317,23 @@
         min-height: var(--kubu-target);
     }
 
-    .site-header__menu {
-        display: inline-flex;
-        order: 2;
-    }
-
-    .theme-switch {
-        order: 3;
-    }
-
-    .site-header__links {
-        display: none;
-        order: 4;
+    .device__bar .title {
         flex-basis: 100%;
+        font-size: var(--font-size-lg);
+    }
+
+    .device__screen {
+        height: min(70vh, 36rem);
+    }
+
+    .site-footer .footer__links {
         flex-direction: column;
-        margin: 0;
+        align-items: center;
+        gap: var(--space-xs);
     }
 
-    .site-header__toggle:checked ~ .site-header__links {
-        display: flex;
-    }
-
-    .site-header__logo {
-        margin-right: auto;
+    .site-header__announcement {
+        text-wrap: balance;
     }
 }
 
