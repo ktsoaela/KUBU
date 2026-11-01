@@ -20,6 +20,17 @@ function setTheme(theme) {
     else root.dataset.theme = theme;
 }
 
+function visibleText(node) {
+    if (!node) return '';
+    if (node.nodeType === Node.TEXT_NODE) return node.textContent;
+    if (node.nodeType !== Node.ELEMENT_NODE) return '';
+    const style = getComputedStyle(node);
+    if (style.display === 'none' || style.visibility === 'hidden') return '';
+    let text = '';
+    for (const child of node.childNodes) text += visibleText(child);
+    return text;
+}
+
 function showCopyButtons(root) {
     if (navigator.clipboard) root.querySelectorAll('.doc-code__copy[hidden]').forEach((b) => (b.hidden = false));
 }
@@ -32,7 +43,7 @@ document.addEventListener('click', (e) => {
     const copy = e.target.closest('.doc-code__copy');
     if (copy) {
         const code = copy.closest('.doc-code').querySelector('.doc-code__block');
-        navigator.clipboard.writeText(code.textContent).then(
+        navigator.clipboard.writeText(visibleText(code)).then(
             () => (copy.textContent = 'Copied'),
             () => (copy.textContent = 'Select the code to copy it'),
         );
@@ -44,6 +55,26 @@ document.addEventListener('click', (e) => {
         document.getElementById(opener.getAttribute('commandfor'))?.showModal();
     }
 });
+
+(function () {
+    const root = document.getElementById('catalog');
+    if (!root) return;
+    const input = document.getElementById('catalog-search');
+    const count = document.getElementById('catalog-count');
+    const cards = [...root.querySelectorAll('.catalog-card')];
+    const apply = () => {
+        const query = (input?.value || '').trim().toLowerCase();
+        for (const card of cards) {
+            const title = (card.getAttribute('data-title') || '').toLowerCase();
+            card.hidden = query !== '' && !title.includes(query);
+        }
+        if (!count) return;
+        const shown = cards.filter((card) => !card.hidden && getComputedStyle(card).display !== 'none').length;
+        count.textContent = `Showing ${shown} ${shown === 1 ? 'section.' : 'sections.'}`;
+    };
+    input?.addEventListener('input', apply);
+    root.addEventListener('change', apply);
+})();
 
 let main = document.getElementById('main');
 

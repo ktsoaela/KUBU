@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ContactPage · KUBU</title>
+    <title>Contact Page · KUBU</title>
     <meta name="description" content="A contact form with forgiving validation.">
     <link rel="icon" href="../img/hippo-black.svg">
     <link rel="stylesheet" href="../styles.css">
@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -41,49 +41,56 @@
 </header>
 <div class="docs-layout" id="frame">
     <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
-        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+        <details class="docs-sidebar__group" id="nav-jumping-in">
+            <summary class="docs-sidebar__summary">Jumping In</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="start-intro.html">Intro</a></li>
             <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
             <li><a class="list-item" href="download.html">Download</a></li>
             <li><a class="list-item" href="start-contents.html">Contents</a></li>
             <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
             <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-atoms">Atoms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-atoms">
+            <summary class="docs-sidebar__summary">Atoms</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="atom-reset.html">Reset</a></li>
             <li><a class="list-item" href="atom-badge.html">Badge</a></li>
             <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
             <li><a class="list-item" href="atom-close.html">Close</a></li>
-            <li><a class="list-item" href="atom-colors.html">colors</a></li>
-            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-colors.html">Colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">Spacing</a></li>
             <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
-            <li><a class="list-item" href="atom-typography.html">typography</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-molecules">Molecules</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="atom-typography.html">Typography</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-molecules">
+            <summary class="docs-sidebar__summary">Molecules</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
             <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
-            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">Button Groups</a></li>
             <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
-            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
-            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">Form Groups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">List Groups</a></li>
             <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
             <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
             <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-organisms">Organisms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-organisms">
+            <summary class="docs-sidebar__summary">Organisms</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
             <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
             <li><a class="list-item" href="organism-card.html">Card</a></li>
             <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
             <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
-            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
-            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">Date Picker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">File Upload</a></li>
             <li><a class="list-item" href="organism-forms.html">Forms</a></li>
-            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">List Groups</a></li>
             <li><a class="list-item" href="organism-modal.html">Modal</a></li>
             <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
             <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
@@ -95,44 +102,53 @@
             <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
             <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
             <li><a class="list-item" href="organism-rating.html">Rating</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-utilities">Utilities</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-utilities">
+            <summary class="docs-sidebar__summary">Utilities</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
             <li><a class="list-item" href="utility-animations.html">Animations</a></li>
-            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">Event Delegation</a></li>
             <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
             <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
             <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-pages">Pages</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-pages">
-            <li><a class="list-item" href="page-home.html">HomePage</a></li>
-            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
-            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
-            <li><a class="list-item" href="page-contact.html" aria-current="page">ContactPage</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-snippets">Snippets</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-pages" open>
+            <summary class="docs-sidebar__summary">Pages</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="page-home.html">Home Page</a></li>
+            <li><a class="list-item" href="page-about.html">About Page</a></li>
+            <li><a class="list-item" href="page-product.html">Product Page</a></li>
+            <li><a class="list-item" href="page-contact.html" aria-current="page">Contact Page</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-snippets">
+            <summary class="docs-sidebar__summary">Snippets</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
             <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
             <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-templates">Templates</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-templates">
-            <li><a class="list-item" href="template-main.html">main-template</a></li>
-        </ul>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-templates">
+            <summary class="docs-sidebar__summary">Templates</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="template-main.html">Main Template</a></li>
+            </ul>
+        </details>
     </nav>
 <a class="doc__index-link" href="#docs-sidebar">Component menu</a>
 <main class="doc" id="main" tabindex="-1">
-    <h1>ContactPage</h1>
+    <h1>Contact Page</h1>
     <p class="doc__lead">A contact form with forgiving validation: errors wait until you leave a field, say how to fix it, and Send stays dimmed until the required fields are valid.</p>
     <p class="doc__file">Uses: <a href="organism-forms.html">Forms</a>, <a href="molecule-form-groups.html">FormGroups</a>, <a href="organism-collapse.html">Collapse</a>, <a href="organism-card.html">Card</a></p>
 
     <div class="doc-example">
         <div class="doc-example__preview doc-example__preview--page">
             <div class="container section grid">
-                <form class="col-12 md:col-8 form-container--guarded" action="page-contact.html" method="get">
+                    <form class="col-12 md:col-8 form-container--guarded" id="contact-preview" action="page-contact.html" method="get">
                     <h2>Write to us</h2>
                     <p>We answer within one working day.</p>
                     <div class="form-group">
@@ -184,7 +200,7 @@
             <summary class="doc-code__summary">Code</summary>
             <button type="button" class="doc-code__copy" hidden>Copy code</button>
             <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"container section grid"</span><span class="doc-code__tag">&gt;</span>
-    <span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"col-12 md:col-8 form-container--guarded"</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"page-contact.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"col-12 md:col-8 form-container--guarded"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"contact-preview"</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"page-contact.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
         <span class="doc-code__tag">&lt;h2&gt;</span>Write to us<span class="doc-code__tag">&lt;/h2&gt;</span>
         <span class="doc-code__tag">&lt;p&gt;</span>We answer within one working day.<span class="doc-code__tag">&lt;/p&gt;</span>
         <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-group"</span><span class="doc-code__tag">&gt;</span>

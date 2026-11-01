@@ -4,13 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KUBU</title>
-    <meta http-equiv="refresh" content="0; url=pages/index.html">
-    <link rel="stylesheet" href="dist/kubu.css">
+    <meta name="description" content="Kubu is the hippo. It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.">
+    <link rel="icon" href="img/hippo-black.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pages/docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="js/docs.js" defer></script>
 </head>
 <body>
-    <main class="container section">
-        <h1>KUBU</h1>
-        <p>The documentation lives in <code>pages/</code>. <a class="button button--primary" href="pages/index.html">Open the KUBU docs</a></p>
-    </main>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="pages/news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="index.html" aria-current="page"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="pages/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="pages/download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+</header>
+<div class="docs-layout docs-layout--wide">
+<main class="doc" id="main" tabindex="-1">
+    <h1 class="title">KUBU</h1>
+    <p class="doc__lead">Kubu is the hippo. It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.</p>
+    <p><a class="button button--primary button--large" href="dist/kubu.min.css" download>Download kubu.min.css</a></p>
+    <details class="doc-code">
+        <summary class="doc-code__summary">The one line</summary>
+        <pre class="doc-code__pre"><code class="doc-code__block">&lt;link rel="stylesheet" href="/css/kubu.min.css"&gt;</code></pre>
+    </details>
+    <div class="case-grid">
+        <article class="card">
+            <h2 class="card__title">Docs</h2>
+            <p>The named parts, with a page for each one. Home in the menu opens this.</p>
+            <footer class="card__footer"><a class="button button--outline" href="pages/index.html">Open Home</a></footer>
+        </article>
+        <article class="card">
+            <h2 class="card__title">A page you can copy</h2>
+            <p>Four finished screens: an invoice, a server swap, an admin row, and a public page.</p>
+            <footer class="card__footer"><a class="button button--outline" href="pages/use-cases.html">Use cases</a></footer>
+        </article>
+        <article class="card">
+            <h2 class="card__title">Pages that are only Kubu</h2>
+            <p>Home, product, contact, and about, rendered from the same stylesheet.</p>
+            <footer class="card__footer"><a class="button button--outline" href="pages/showcases.html">Showcases</a></footer>
+        </article>
+        <article class="card">
+            <h2 class="card__title">2.0 is current</h2>
+            <p>31 October 2026. One file, dark as the master theme, and the layout without a script.</p>
+            <footer class="card__footer"><a class="button button--outline" href="pages/news.html">News</a></footer>
+        </article>
+    </div>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="pages/v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="pages/download.html">Download</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
 </body>
 </html>

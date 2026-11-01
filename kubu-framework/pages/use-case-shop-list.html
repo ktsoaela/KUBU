@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blanket list · KUBU</title>
+    <meta name="description" content="Three blankets on a public page.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout docs-layout--wide" id="frame">
+<main class="doc" id="main" tabindex="-1">
+    <p><a class="catalog-back" href="use-cases.html">All use cases</a></p>
+    <h1 class="title">Blanket list</h1>
+    <p class="doc__lead">Three blankets on a public page. Each card is the price and the pattern.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <h2>Blankets</h2>
+            <div class="grid grid--auto">
+                <article class="card"><header class="card__header"><h3 class="card__title">Victoria</h3></header><div class="card__body"><p>Crown pattern. R 1 450.00.</p></div></article>
+                <article class="card"><header class="card__header"><h3 class="card__title">Seana Marena</h3></header><div class="card__body"><p>The chief's blanket. R 2 200.00.</p></div></article>
+                <article class="card"><header class="card__header"><h3 class="card__title">Lehlosi</h3></header><div class="card__body"><p>A lighter weave. R 980.00.</p></div></article>
+            </div>
+        </div>
+        <details class="doc-code" data-summary="Copy this">
+            <summary class="doc-code__summary">Copy this</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;h2&gt;</span>Blankets<span class="doc-code__tag">&lt;/h2&gt;</span>
+<span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"grid grid--auto"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__header"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Victoria<span class="doc-code__tag">&lt;/h3&gt;</span><span class="doc-code__tag">&lt;/header&gt;</span><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>Crown pattern. R 1 450.00.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span><span class="doc-code__tag">&lt;/article&gt;</span>
+    <span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__header"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Seana Marena<span class="doc-code__tag">&lt;/h3&gt;</span><span class="doc-code__tag">&lt;/header&gt;</span><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>The chief's blanket. R 2 200.00.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span><span class="doc-code__tag">&lt;/article&gt;</span>
+    <span class="doc-code__tag">&lt;article</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;header</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__header"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;h3</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__title"</span><span class="doc-code__tag">&gt;</span>Lehlosi<span class="doc-code__tag">&lt;/h3&gt;</span><span class="doc-code__tag">&lt;/header&gt;</span><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"card__body"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>A lighter weave. R 980.00.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span><span class="doc-code__tag">&lt;/article&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span></code></pre>
+        </details>
+    </div>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

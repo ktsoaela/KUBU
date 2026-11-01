@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weaver row · KUBU</title>
+    <meta name="description" content="One weaver row and the workshop they work in.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout docs-layout--wide" id="frame">
+<main class="doc" id="main" tabindex="-1">
+    <p><a class="catalog-back" href="use-cases.html">All use cases</a></p>
+    <h1 class="title">Weaver row</h1>
+    <p class="doc__lead">One weaver and the workshop they work in. Two tabs, still radios.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <div class="table-container">
+                <table class="table">
+                    <thead class="table__header"><tr><th class="table__header-cell" scope="col">Weaver</th><th class="table__header-cell" scope="col">Workshop</th></tr></thead>
+                    <tbody><tr class="table__row"><td class="table__cell">'Maseeiso Letsie</td><td class="table__cell">Teyateyaneng</td></tr></tbody>
+                </table>
+            </div>
+            <p class="alert alert--success" role="status">Saved. The workshop is updated.</p>
+            <div class="tabs" role="group" aria-label="Weaver record">
+                <input class="tabs__input" type="radio" name="uc-weaver" id="uc-weaver-work" checked>
+                <label class="tabs__tab" for="uc-weaver-work">Work</label>
+                <div class="tabs__panel"><p>Victoria blanket, crown pattern. On the loom this week.</p></div>
+                <input class="tabs__input" type="radio" name="uc-weaver" id="uc-weaver-history">
+                <label class="tabs__tab" for="uc-weaver-history">History</label>
+                <div class="tabs__panel"><p>Joined the co-operative in 2019.</p></div>
+            </div>
+        </div>
+        <details class="doc-code" data-summary="Copy this">
+            <summary class="doc-code__summary">Copy this</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table-container"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;table</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;thead</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table__header"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;tr&gt;</span><span class="doc-code__tag">&lt;th</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table__header-cell"</span> <span class="doc-code__attr">scope</span>=<span class="doc-code__string">"col"</span><span class="doc-code__tag">&gt;</span>Weaver<span class="doc-code__tag">&lt;/th&gt;</span><span class="doc-code__tag">&lt;th</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table__header-cell"</span> <span class="doc-code__attr">scope</span>=<span class="doc-code__string">"col"</span><span class="doc-code__tag">&gt;</span>Workshop<span class="doc-code__tag">&lt;/th&gt;</span><span class="doc-code__tag">&lt;/tr&gt;</span><span class="doc-code__tag">&lt;/thead&gt;</span>
+        <span class="doc-code__tag">&lt;tbody&gt;</span><span class="doc-code__tag">&lt;tr</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table__row"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;td</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table__cell"</span><span class="doc-code__tag">&gt;</span>'Maseeiso Letsie<span class="doc-code__tag">&lt;/td&gt;</span><span class="doc-code__tag">&lt;td</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"table__cell"</span><span class="doc-code__tag">&gt;</span>Teyateyaneng<span class="doc-code__tag">&lt;/td&gt;</span><span class="doc-code__tag">&lt;/tr&gt;</span><span class="doc-code__tag">&lt;/tbody&gt;</span>
+    <span class="doc-code__tag">&lt;/table&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;p</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"alert alert--success"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"status"</span><span class="doc-code__tag">&gt;</span>Saved. The workshop is updated.<span class="doc-code__tag">&lt;/p&gt;</span>
+<span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"group"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Weaver record"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"uc-weaver"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"uc-weaver-work"</span> <span class="doc-code__attr">checked</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs__tab"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"uc-weaver-work"</span><span class="doc-code__tag">&gt;</span>Work<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs__panel"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>Victoria blanket, crown pattern. On the loom this week.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs__input"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"uc-weaver"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"uc-weaver-history"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs__tab"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"uc-weaver-history"</span><span class="doc-code__tag">&gt;</span>History<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;div</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"tabs__panel"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;p&gt;</span>Joined the co-operative in 2019.<span class="doc-code__tag">&lt;/p&gt;</span><span class="doc-code__tag">&lt;/div&gt;</span>
+<span class="doc-code__tag">&lt;/div&gt;</span></code></pre>
+        </details>
+    </div>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

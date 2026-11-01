@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact · Basotho Crafts</title>
+    <link rel="icon" href="../../img/hippo-black.svg">
+    <link rel="stylesheet" href="../../styles.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+</head>
+<body>
+<main class="container section">
+    <header class="header">
+        <nav class="navbar" aria-label="Shop">
+            <a class="logo" href="storefront.html"><svg class="icon" aria-hidden="true"><use href="../../img/icons.svg#hippo"></use></svg> Basotho Crafts</a>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="storefront.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="product.html">Blankets</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html" aria-current="page">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html">Desk</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h1 class="title">Write to us</h1>
+    <p>We answer within one working day.</p>
+    <form class="form-container--guarded" action="contact.html" method="get">
+        <div class="form-group">
+            <label class="form-label" for="sc-name">Your name <span class="form-label__hint">(required)</span></label>
+            <input class="form-input" id="sc-name" name="name" type="text" autocomplete="name" required aria-describedby="sc-name-error">
+            <p class="form-error form-error--live" id="sc-name-error">Enter your name so we know who to reply to.</p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="sc-email">Email <span class="form-label__hint">(required)</span></label>
+            <input class="form-input" id="sc-email" name="email" type="email" autocomplete="email" required placeholder="e.g. lerato@example.com" aria-describedby="sc-email-error">
+            <p class="form-error form-error--live" id="sc-email-error">Enter an email address with an @ and a dot, like lerato@example.com.</p>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="sc-topic">Topic</label>
+            <select class="form-select" id="sc-topic" name="topic">
+                <option>An order</option>
+                <option>Wholesale</option>
+                <option>Something else</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="sc-message">Message <span class="form-label__hint">(required)</span></label>
+            <textarea class="form-input" id="sc-message" name="message" rows="4" required></textarea>
+        </div>
+        <button class="button button--primary" type="submit">Send</button>
+    </form>
+</main>
+</body>
+</html>

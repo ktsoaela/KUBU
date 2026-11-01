@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -39,126 +39,43 @@
     </nav>
     <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
 </header>
-<div class="docs-layout" id="frame">
-    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
-        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
-            <li><a class="list-item" href="start-intro.html">Intro</a></li>
-            <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
-            <li><a class="list-item" href="download.html">Download</a></li>
-            <li><a class="list-item" href="start-contents.html">Contents</a></li>
-            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
-            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-atoms">Atoms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-atoms">
-            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
-            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
-            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
-            <li><a class="list-item" href="atom-close.html">Close</a></li>
-            <li><a class="list-item" href="atom-colors.html">colors</a></li>
-            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
-            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
-            <li><a class="list-item" href="atom-typography.html">typography</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-molecules">Molecules</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-molecules">
-            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
-            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
-            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
-            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
-            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
-            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
-            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
-            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
-            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-organisms">Organisms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-organisms">
-            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
-            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
-            <li><a class="list-item" href="organism-card.html">Card</a></li>
-            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
-            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
-            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
-            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
-            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
-            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
-            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
-            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
-            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
-            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
-            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
-            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
-            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
-            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
-            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
-            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
-            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-utilities">Utilities</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-utilities">
-            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
-            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
-            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
-            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
-            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
-            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-pages">Pages</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-pages">
-            <li><a class="list-item" href="page-home.html">HomePage</a></li>
-            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
-            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
-            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-snippets">Snippets</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-snippets">
-            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
-            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
-            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-templates">Templates</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-templates">
-            <li><a class="list-item" href="template-main.html">main-template</a></li>
-        </ul>
-    </nav>
-<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<div class="docs-layout docs-layout--wide" id="frame">
 <main class="doc" id="main" tabindex="-1">
-    <h1>Showcases</h1>
-    <p class="doc__lead">Whole pages built only from KUBU components, with no extra CSS. Open one to see the page and the markup behind it.</p>
+    <div class="catalog-hero">
+        <p class="catalog-kicker">Showcase</p>
+        <h1 class="title">Five finished pages.</h1>
+    </div>
+    <p class="doc__lead">A store, a product, a letter, the people who weave, and the desk. Open a tab or a thumbnail.</p>
 
-    <div class="grid grid--auto">
-        <article class="card">
-            <header class="card__header"><h2 class="card__title">HomePage</h2><span class="badge badge--primary">Page</span></header>
-            <div class="card__body"><p>A product home page: header snippet, a hero, a card grid and the footer.</p></div>
-            <footer class="card__footer"><a href="page-home.html">Open HomePage</a></footer>
-        </article>
-        <article class="card">
-            <header class="card__header"><h2 class="card__title">AboutPage</h2><span class="badge badge--primary">Page</span></header>
-            <div class="card__body"><p>Team cards, a timeline as a list group, and a facts table.</p></div>
-            <footer class="card__footer"><a href="page-about.html">Open AboutPage</a></footer>
-        </article>
-        <article class="card">
-            <header class="card__header"><h2 class="card__title">ProductPage</h2><span class="badge badge--primary">Page</span></header>
-            <div class="card__body"><p>A scroll-snap gallery, tabs for details, a rating and a buy form.</p></div>
-            <footer class="card__footer"><a href="page-product.html">Open ProductPage</a></footer>
-        </article>
-        <article class="card">
-            <header class="card__header"><h2 class="card__title">ContactPage</h2><span class="badge badge--safe">Forms</span></header>
-            <div class="card__body"><p>Forgiving validation: errors appear after you leave a field, and say how to fix it.</p></div>
-            <footer class="card__footer"><a href="page-contact.html">Open ContactPage</a></footer>
-        </article>
-        <article class="card">
-            <header class="card__header"><h2 class="card__title">main-template</h2><span class="badge badge--secondary">Template</span></header>
-            <div class="card__body"><p>The layout the pages share: header, breadcrumb, content, aside and footer.</p></div>
-            <footer class="card__footer"><a href="template-main.html">Open main-template</a></footer>
-        </article>
-        <article class="card">
-            <header class="card__header"><h2 class="card__title">This site</h2><span class="badge badge--info">htmx</span></header>
-            <div class="card__body"><p>The docs you are reading: static pages, boosted by htmx into one app.</p></div>
-            <footer class="card__footer"><a href="start-javascript.html">How the site works</a></footer>
-        </article>
+    <nav class="catalog-tabs" aria-label="Showcase pages">
+        <a class="catalog-tab" href="showcase/storefront.html" hx-boost="false">Storefront</a>
+        <a class="catalog-tab" href="showcase/product.html" hx-boost="false">Product</a>
+        <a class="catalog-tab" href="showcase/contact.html" hx-boost="false">Contact</a>
+        <a class="catalog-tab" href="showcase/about.html" hx-boost="false">About</a>
+        <a class="catalog-tab" href="showcase/dashboard.html" hx-boost="false">Dashboard</a>
+    </nav>
+
+    <div class="catalog-grid">
+        <div class="catalog-card catalog-card--shot">
+            <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="../templates/showcase/storefront.html" title=""></iframe></div>
+            <a class="catalog-card__link" href="showcase/storefront.html" hx-boost="false"><span class="catalog-card__head"><span><span class="catalog-card__title">Storefront</span><span class="catalog-card__note">Shop homepage</span></span></span></a>
+        </div>
+        <div class="catalog-card catalog-card--shot">
+            <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="../templates/showcase/product.html" title=""></iframe></div>
+            <a class="catalog-card__link" href="showcase/product.html" hx-boost="false"><span class="catalog-card__head"><span><span class="catalog-card__title">Product</span><span class="catalog-card__note">A blanket for sale</span></span></span></a>
+        </div>
+        <div class="catalog-card catalog-card--shot">
+            <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="../templates/showcase/contact.html" title=""></iframe></div>
+            <a class="catalog-card__link" href="showcase/contact.html" hx-boost="false"><span class="catalog-card__head"><span><span class="catalog-card__title">Contact</span><span class="catalog-card__note">A letter to the workshop</span></span></span></a>
+        </div>
+        <div class="catalog-card catalog-card--shot">
+            <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="../templates/showcase/about.html" title=""></iframe></div>
+            <a class="catalog-card__link" href="showcase/about.html" hx-boost="false"><span class="catalog-card__head"><span><span class="catalog-card__title">About</span><span class="catalog-card__note">The people who weave</span></span></span></a>
+        </div>
+        <div class="catalog-card catalog-card--shot">
+            <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="../templates/showcase/dashboard.html" title=""></iframe></div>
+            <a class="catalog-card__link" href="showcase/dashboard.html" hx-boost="false"><span class="catalog-card__head"><span><span class="catalog-card__title">Dashboard</span><span class="catalog-card__note">The desk</span></span></span></a>
+        </div>
     </div>
 </main>
 </div>

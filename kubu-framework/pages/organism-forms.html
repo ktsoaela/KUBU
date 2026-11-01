@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -41,49 +41,56 @@
 </header>
 <div class="docs-layout" id="frame">
     <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
-        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
+        <details class="docs-sidebar__group" id="nav-jumping-in">
+            <summary class="docs-sidebar__summary">Jumping In</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="start-intro.html">Intro</a></li>
             <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
             <li><a class="list-item" href="download.html">Download</a></li>
             <li><a class="list-item" href="start-contents.html">Contents</a></li>
             <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
             <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-atoms">Atoms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-atoms">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-atoms">
+            <summary class="docs-sidebar__summary">Atoms</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="atom-reset.html">Reset</a></li>
             <li><a class="list-item" href="atom-badge.html">Badge</a></li>
             <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
             <li><a class="list-item" href="atom-close.html">Close</a></li>
-            <li><a class="list-item" href="atom-colors.html">colors</a></li>
-            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
+            <li><a class="list-item" href="atom-colors.html">Colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">Spacing</a></li>
             <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
-            <li><a class="list-item" href="atom-typography.html">typography</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-molecules">Molecules</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-molecules">
+            <li><a class="list-item" href="atom-typography.html">Typography</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-molecules">
+            <summary class="docs-sidebar__summary">Molecules</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
             <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
-            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">Button Groups</a></li>
             <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
-            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
-            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">Form Groups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">List Groups</a></li>
             <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
             <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
             <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-organisms">Organisms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-organisms">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-organisms" open>
+            <summary class="docs-sidebar__summary">Organisms</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
             <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
             <li><a class="list-item" href="organism-card.html">Card</a></li>
             <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
             <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
-            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
-            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">Date Picker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">File Upload</a></li>
             <li><a class="list-item" href="organism-forms.html" aria-current="page">Forms</a></li>
-            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">List Groups</a></li>
             <li><a class="list-item" href="organism-modal.html">Modal</a></li>
             <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
             <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
@@ -95,33 +102,42 @@
             <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
             <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
             <li><a class="list-item" href="organism-rating.html">Rating</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-utilities">Utilities</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-utilities">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-utilities">
+            <summary class="docs-sidebar__summary">Utilities</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
             <li><a class="list-item" href="utility-animations.html">Animations</a></li>
-            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">Event Delegation</a></li>
             <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
             <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
             <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-pages">Pages</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-pages">
-            <li><a class="list-item" href="page-home.html">HomePage</a></li>
-            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
-            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
-            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-snippets">Snippets</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-snippets">
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-pages">
+            <summary class="docs-sidebar__summary">Pages</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="page-home.html">Home Page</a></li>
+            <li><a class="list-item" href="page-about.html">About Page</a></li>
+            <li><a class="list-item" href="page-product.html">Product Page</a></li>
+            <li><a class="list-item" href="page-contact.html">Contact Page</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-snippets">
+            <summary class="docs-sidebar__summary">Snippets</summary>
+            <ul class="list-unstyled">
             <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
             <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
             <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-templates">Templates</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-templates">
-            <li><a class="list-item" href="template-main.html">main-template</a></li>
-        </ul>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-templates">
+            <summary class="docs-sidebar__summary">Templates</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="template-main.html">Main Template</a></li>
+            </ul>
+        </details>
     </nav>
 <a class="doc__index-link" href="#docs-sidebar">Component menu</a>
 <main class="doc" id="main" tabindex="-1">

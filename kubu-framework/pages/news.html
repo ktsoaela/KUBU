@@ -18,7 +18,7 @@
 <header class="header site-header">
     <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
     <nav class="navbar site-header__bar" aria-label="Main">
-        <a class="logo site-header__logo" href="index.html"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
         <input class="site-header__toggle" type="checkbox" id="site-menu">
         <label class="site-header__menu" for="site-menu">Menu</label>
         <ul class="navbar-nav site-header__links" id="site-links">
@@ -39,123 +39,41 @@
     </nav>
     <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
 </header>
-<div class="docs-layout" id="frame">
-    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
-        <h2 class="list-title" id="nav-jumping-in">Jumping In</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-jumping-in">
-            <li><a class="list-item" href="start-intro.html">Intro</a></li>
-            <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
-            <li><a class="list-item" href="download.html">Download</a></li>
-            <li><a class="list-item" href="start-contents.html">Contents</a></li>
-            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
-            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-atoms">Atoms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-atoms">
-            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
-            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
-            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
-            <li><a class="list-item" href="atom-close.html">Close</a></li>
-            <li><a class="list-item" href="atom-colors.html">colors</a></li>
-            <li><a class="list-item" href="atom-spacing.html">spacing</a></li>
-            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
-            <li><a class="list-item" href="atom-typography.html">typography</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-molecules">Molecules</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-molecules">
-            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
-            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
-            <li><a class="list-item" href="molecule-button-groups.html">ButtonGroups</a></li>
-            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
-            <li><a class="list-item" href="molecule-form-groups.html">FormGroups</a></li>
-            <li><a class="list-item" href="molecule-list-groups.html">ListGroups</a></li>
-            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
-            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
-            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-organisms">Organisms</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-organisms">
-            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
-            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
-            <li><a class="list-item" href="organism-card.html">Card</a></li>
-            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
-            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
-            <li><a class="list-item" href="organism-datepicker.html">DatePicker</a></li>
-            <li><a class="list-item" href="organism-file-upload.html">FileUpload</a></li>
-            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
-            <li><a class="list-item" href="organism-list-groups.html">ListGroups</a></li>
-            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
-            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
-            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
-            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
-            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
-            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
-            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
-            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
-            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
-            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
-            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-utilities">Utilities</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-utilities">
-            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
-            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
-            <li><a class="list-item" href="utility-event-delegation.html">EventDelegation</a></li>
-            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
-            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
-            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-pages">Pages</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-pages">
-            <li><a class="list-item" href="page-home.html">HomePage</a></li>
-            <li><a class="list-item" href="page-about.html">AboutPage</a></li>
-            <li><a class="list-item" href="page-product.html">ProductPage</a></li>
-            <li><a class="list-item" href="page-contact.html">ContactPage</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-snippets">Snippets</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-snippets">
-            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
-            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
-            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
-        </ul>
-        <h2 class="list-title" id="nav-templates">Templates</h2>
-        <ul class="list-unstyled" aria-labelledby="nav-templates">
-            <li><a class="list-item" href="template-main.html">main-template</a></li>
-        </ul>
-    </nav>
-<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<div class="docs-layout docs-layout--wide" id="frame">
 <main class="doc" id="main" tabindex="-1">
-    <h1>News</h1>
-    <p class="doc__lead">What changed in each KUBU release, newest first.</p>
+    <h1 class="title">News</h1>
+    <p class="doc__lead">The newest release is first. The version in the header already points at the contract, so this page only says what changed.</p>
 
     <article class="card">
-        <header class="card__header">
-            <h2 class="card__title">KUBU 2.0</h2>
+        <header>
+            <h2 class="title">2.0</h2>
+            <p class="text-muted">31 October 2026</p>
             <span class="badge badge--safe">Current</span>
         </header>
         <div class="card__body">
-            <p><small><time datetime="2026-10-31">31 October 2026</time></small></p>
             <ul>
-                <li>Dark is the master theme. Each token has a dark value and a light pair, picked with <code>light-dark()</code>.</li>
-                <li>A theme switch (Auto, Dark, Light) that works as plain radio buttons.</li>
-                <li>Every control is at least 44 by 44 pixels and shows a focus ring.</li>
-                <li>Buttons gained active and loading states; form errors gained an icon and a sentence.</li>
-                <li>Dropdowns, tabs, modals, offcanvas and the date picker work without JavaScript.</li>
-                <li>A 12-column grid, a scroll-snap carousel and skeletons for htmx regions.</li>
-                <li>The docs are one htmx site: each address is a real page, and only the content swaps.</li>
-                <li><code>node scripts/build.mjs</code> bundles the CSS, or just the files you list.</li>
+                <li>One stylesheet, <code>kubu.min.css</code>, for the whole page.</li>
+                <li>Named parts: a card is a header, a body, and a footer.</li>
+                <li>The layout still works when the script is gone. htmx only swaps a region.</li>
+                <li>Dark is the master theme. Light is the pair, through <code>light-dark()</code>.</li>
+                <li>A 12-column grid, and a 13-column grid when you need 5 and 8.</li>
+                <li>Packages for a starter site, icons, and type. The same CSS file in each.</li>
             </ul>
+            <p><a href="v2.html">Read the 2.0 contract</a>. <a href="download.html">Download the stylesheet</a>.</p>
         </div>
-        <footer class="card__footer"><a href="download.html">Download KUBU 2.0</a></footer>
     </article>
 
     <article class="card">
-        <header class="card__header">
-            <h2 class="card__title">KUBU 1.0</h2>
-            <span class="badge badge--dark">Archived</span>
+        <header>
+            <h2>1.0</h2>
+            <span class="badge">Archived</span>
         </header>
         <div class="card__body">
-            <p>The first release: atoms, molecules and organisms as separate CSS files with BEM class names, and a Vue site to show them.</p>
+            <ul>
+                <li>Separate CSS files, named with BEM.</li>
+                <li>A Vue site showed the components.</li>
+                <li>2.0 replaced that site with HTML pages.</li>
+            </ul>
         </div>
     </article>
 </main>

@@ -1,0 +1,38 @@
+<h2>Write to us</h2>
+                    <p>We answer within one working day.</p>
+                    <div class="form-group">
+                        <label class="form-label" for="cp-name">Your name <span class="form-label__hint">(required)</span></label>
+                        <input class="form-input" id="cp-name" name="name" type="text" autocomplete="name" required aria-describedby="cp-name-error">
+                        <p class="form-error form-error--live" id="cp-name-error">Enter your name so we know who to reply to.</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cp-email">Email <span class="form-label__hint">(required)</span></label>
+                        <input class="form-input" id="cp-email" name="email" type="email" autocomplete="email" required pattern=".+@.+\..+" placeholder="e.g. lerato@example.com" aria-describedby="cp-email-error">
+                        <p class="form-error form-error--live" id="cp-email-error">Enter an email address with an @ and a dot, like lerato@example.com.</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="cp-topic">Topic</label>
+                        <select class="form-select" id="cp-topic" name="topic">
+                            <option>An order</option>
+                            <option>Wholesale</option>
+                            <option>Something else</option>
+                        </select>
+                    </div>
+                    <details class="collapse-details">
+                        <summary>Add an order number or a phone number</summary>
+                        <div class="form-group">
+                            <label class="form-label" for="cp-order">Order number</label>
+                            <input class="form-input" id="cp-order" name="order" type="text" inputmode="numeric" pattern="[0-9]{4}" placeholder="e.g. 1042" aria-describedby="cp-order-error">
+                            <p class="form-error form-error--live" id="cp-order-error">Order numbers have 4 digits, like 1042.</p>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="cp-phone">Phone</label>
+                            <input class="form-input" id="cp-phone" name="phone" type="tel" autocomplete="tel">
+                        </div>
+                    </details>
+                    <div class="form-group section">
+                        <label class="form-label" for="cp-message">Message <span class="form-label__hint">(required, 20 characters or more)</span></label>
+                        <textarea class="form-textarea" id="cp-message" name="message" rows="5" required minlength="20" aria-describedby="cp-message-error"></textarea>
+                        <p class="form-error form-error--live" id="cp-message-error">Tell us a little more: at least 20 characters.</p>
+                    </div>
+                    <button class="form-submit" type="submit">Send message</button>

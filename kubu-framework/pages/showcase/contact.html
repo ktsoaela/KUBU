@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact · KUBU</title>
+    <meta name="description" content="A letter to the workshop.">
+    <link rel="icon" href="../../img/hippo-black.svg">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../../js/htmx.min.js" defer></script>
+    <script src="../../js/htmx-head-support.min.js" defer></script>
+    <script src="../../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="../news.html" hx-boost="false">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="../../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="../index.html" hx-boost="false">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../papers.html" hx-boost="false">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="../use-cases.html" hx-boost="false">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="../icons.html" hx-boost="false">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="../showcases.html" hx-boost="false">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="../news.html" hx-boost="false">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="../download.html" hx-boost="false">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout docs-layout--wide" id="frame">
+<main class="doc" id="main" tabindex="-1">
+    <p><a class="catalog-back" href="../showcases.html" hx-boost="false">All showcases</a></p>
+    <div class="device">
+        <div class="device__bar">
+            <h1 class="title">Contact</h1>
+            <fieldset class="catalog-filters">
+                <legend class="visually-hidden">Screen</legend>
+                <label>Desktop<input type="radio" name="screen" id="screen-desktop" checked></label>
+                <label>Tablet<input type="radio" name="screen" id="screen-tablet"></label>
+                <label>Mobile<input type="radio" name="screen" id="screen-mobile"></label>
+            </fieldset>
+            <a class="button" href="../../templates/showcase/contact.html" target="_blank" rel="noopener" hx-boost="false">Open in a new tab</a>
+        </div>
+        <div class="device__stage">
+            <div class="device__chrome">
+                <span class="device__dots" aria-hidden="true"></span>
+                <span class="device__url">basothocrafts.example/contact</span>
+            </div>
+            <iframe class="device__screen" title="Contact on its own" src="../../templates/showcase/contact.html"></iframe>
+        </div>
+    </div>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="../v2.html" hx-boost="false">KUBU 2.0</a>
+        <a class="footer__link" href="../papers.html" hx-boost="false">Papers</a>
+        <a class="footer__link" href="../start-contents.html" hx-boost="false">Contents</a>
+        <a class="footer__link" href="../download.html" hx-boost="false">Download</a>
+        <a class="footer__link" href="../start-javascript.html" hx-boost="false">JavaScript</a>
+        <a class="footer__link" href="../../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>
