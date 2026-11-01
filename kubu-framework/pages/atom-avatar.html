@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Avatar · KUBU</title>
+    <meta name="description" content="A photo or initials for a person or a shop.">
+    <link rel="icon" href="../img/hippo-black.svg">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="docs.css">
+    <script>try { var t = localStorage.getItem('kubu-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}</script>
+    <script src="../js/htmx.min.js" defer></script>
+    <script src="../js/htmx-head-support.min.js" defer></script>
+    <script src="../js/docs.js" defer></script>
+</head>
+<body hx-boost="true" hx-ext="head-support" hx-target="#frame" hx-select="#frame" hx-swap="outerHTML show:window:top" hx-push-url="true" hx-select-oob="#site-links" hx-indicator="#site-progress">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="header site-header">
+    <p class="announcement site-header__announcement">KUBU 2.0: dark-first tokens, a 12-column grid and htmx navigation. <a href="news.html">Read what's new</a></p>
+    <nav class="navbar site-header__bar" aria-label="Main">
+        <a class="logo site-header__logo" href="../index.html" hx-boost="false"><svg class="logo__mark" width="32" height="32" aria-hidden="true"><use href="../img/icons.svg#hippo"></use></svg><span>KUBU</span></a>
+        <input class="site-header__toggle" type="checkbox" id="site-menu">
+        <label class="site-header__menu" for="site-menu">Menu</label>
+        <ul class="navbar-nav site-header__links" id="site-links">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="papers.html">Papers</a></li>
+            <li class="nav-item"><a class="nav-link" href="use-cases.html">Use Cases</a></li>
+            <li class="nav-item"><a class="nav-link" href="icons.html">Icon Pack</a></li>
+            <li class="nav-item"><a class="nav-link" href="showcases.html">Showcases</a></li>
+            <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+            <li class="nav-item"><a class="nav-link" href="download.html">Download</a></li>
+        </ul>
+        <fieldset class="theme-switch">
+            <legend class="theme-switch__legend">Colour theme</legend>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="auto-mode" value="auto" checked><label class="theme-switch__label" for="auto-mode">Auto</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="dark-mode" value="dark"><label class="theme-switch__label" for="dark-mode">Dark</label>
+            <input class="theme-switch__input" type="radio" name="kubu-theme" id="light-mode" value="light"><label class="theme-switch__label" for="light-mode">Light</label>
+        </fieldset>
+    </nav>
+    <div class="ajax-progress htmx-indicator site-progress" id="site-progress" aria-hidden="true"></div>
+</header>
+<div class="docs-layout" id="frame">
+    <nav class="docs-sidebar" id="docs-sidebar" aria-label="Components">
+        <details class="docs-sidebar__group" id="nav-jumping-in">
+            <summary class="docs-sidebar__summary">Jumping In</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="start-intro.html">Intro</a></li>
+            <li><a class="list-item" href="v2.html">KUBU 2.0</a></li>
+            <li><a class="list-item" href="download.html">Download</a></li>
+            <li><a class="list-item" href="start-contents.html">Contents</a></li>
+            <li><a class="list-item" href="start-browsers.html">Browser &amp; Devices</a></li>
+            <li><a class="list-item" href="start-javascript.html">JavaScript</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-atoms" open>
+            <summary class="docs-sidebar__summary">Atoms</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="atom-reset.html">Reset</a></li>
+            <li><a class="list-item" href="atom-avatar.html" aria-current="page">Avatar</a></li>
+            <li><a class="list-item" href="atom-badge.html">Badge</a></li>
+            <li><a class="list-item" href="atom-buttons.html">Buttons</a></li>
+            <li><a class="list-item" href="atom-close.html">Close</a></li>
+            <li><a class="list-item" href="atom-colors.html">Colors</a></li>
+            <li><a class="list-item" href="atom-spacing.html">Spacing</a></li>
+            <li><a class="list-item" href="atom-spinners.html">Spinners</a></li>
+            <li><a class="list-item" href="atom-typography.html">Typography</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-molecules">
+            <summary class="docs-sidebar__summary">Molecules</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="molecule-announcements.html">Announcements</a></li>
+            <li><a class="list-item" href="molecule-breadcrumb.html">Breadcrumb</a></li>
+            <li><a class="list-item" href="molecule-button-groups.html">Button Groups</a></li>
+            <li><a class="list-item" href="molecule-dropdowns.html">Dropdowns</a></li>
+            <li><a class="list-item" href="molecule-form-groups.html">Form Groups</a></li>
+            <li><a class="list-item" href="molecule-list-groups.html">List Groups</a></li>
+            <li><a class="list-item" href="molecule-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="molecule-navs.html">Navs</a></li>
+            <li><a class="list-item" href="molecule-pagination.html">Pagination</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-organisms">
+            <summary class="docs-sidebar__summary">Organisms</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="organism-accordion.html">Accordion</a></li>
+            <li><a class="list-item" href="organism-alerts.html">Alerts</a></li>
+            <li><a class="list-item" href="organism-card.html">Card</a></li>
+            <li><a class="list-item" href="organism-carousel.html">Carousel</a></li>
+            <li><a class="list-item" href="organism-collapse.html">Collapse</a></li>
+            <li><a class="list-item" href="organism-datepicker.html">Date Picker</a></li>
+            <li><a class="list-item" href="organism-file-upload.html">File Upload</a></li>
+            <li><a class="list-item" href="organism-forms.html">Forms</a></li>
+            <li><a class="list-item" href="organism-list-groups.html">List Groups</a></li>
+            <li><a class="list-item" href="organism-modal.html">Modal</a></li>
+            <li><a class="list-item" href="organism-offcanvas.html">Offcanvas</a></li>
+            <li><a class="list-item" href="organism-popovers.html">Popovers</a></li>
+            <li><a class="list-item" href="organism-progress.html">Progress</a></li>
+            <li><a class="list-item" href="organism-scrollspy.html">Scrollspy</a></li>
+            <li><a class="list-item" href="organism-stepper.html">Stepper</a></li>
+            <li><a class="list-item" href="organism-tables.html">Tables</a></li>
+            <li><a class="list-item" href="organism-tabs.html">Tabs</a></li>
+            <li><a class="list-item" href="organism-toasts.html">Toasts</a></li>
+            <li><a class="list-item" href="organism-tooltips.html">Tooltips</a></li>
+            <li><a class="list-item" href="organism-rating.html">Rating</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-utilities">
+            <summary class="docs-sidebar__summary">Utilities</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="utility-ajax.html">Ajax</a></li>
+            <li><a class="list-item" href="utility-animations.html">Animations</a></li>
+            <li><a class="list-item" href="utility-event-delegation.html">Event Delegation</a></li>
+            <li><a class="list-item" href="utility-helpers.html">Helpers</a></li>
+            <li><a class="list-item" href="utility-notifications.html">Notifications</a></li>
+            <li><a class="list-item" href="utility-flexbox.html">Flexbox</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-pages">
+            <summary class="docs-sidebar__summary">Pages</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="page-home.html">Home Page</a></li>
+            <li><a class="list-item" href="page-about.html">About Page</a></li>
+            <li><a class="list-item" href="page-product.html">Product Page</a></li>
+            <li><a class="list-item" href="page-contact.html">Contact Page</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-snippets">
+            <summary class="docs-sidebar__summary">Snippets</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="snippet-forms.html">Forms</a></li>
+            <li><a class="list-item" href="snippet-navbar.html">Navbar</a></li>
+            <li><a class="list-item" href="snippet-footer.html">Footer</a></li>
+            </ul>
+        </details>
+        <details class="docs-sidebar__group" id="nav-templates">
+            <summary class="docs-sidebar__summary">Templates</summary>
+            <ul class="list-unstyled">
+            <li><a class="list-item" href="template-main.html">Main Template</a></li>
+            </ul>
+        </details>
+    </nav>
+<a class="doc__index-link" href="#docs-sidebar">Component menu</a>
+<main class="doc" id="main" tabindex="-1">
+    <h1>Avatar</h1>
+    <p class="doc__lead">A photo or initials for a person or a shop. It has the one radius and the one border, like a card. A presence dot only sits beside a word, so the state is never only a colour.</p>
+    <p class="doc__file">File: <code>css/atoms/Avatar.css</code></p>
+
+    <h2>Photo and initials</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview">
+            <img class="avatar avatar--sm" src="../img/hippo-black.svg" alt="KUBU blanket shop" width="32" height="32">
+            <span class="avatar" role="img" aria-label="Lerato Mokoena">LM</span>
+            <span class="avatar avatar--lg" role="img" aria-label="Thabo Ramakatane">TR</span>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;img</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar avatar--sm"</span> <span class="doc-code__attr">src</span>=<span class="doc-code__string">"../img/hippo-black.svg"</span> <span class="doc-code__attr">alt</span>=<span class="doc-code__string">"KUBU blanket shop"</span> <span class="doc-code__attr">width</span>=<span class="doc-code__string">"32"</span> <span class="doc-code__attr">height</span>=<span class="doc-code__string">"32"</span><span class="doc-code__tag">&gt;</span>
+<span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"img"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Lerato Mokoena"</span><span class="doc-code__tag">&gt;</span>LM<span class="doc-code__tag">&lt;/span&gt;</span>
+<span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar avatar--lg"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"img"</span> <span class="doc-code__attr">aria-label</span>=<span class="doc-code__string">"Thabo Ramakatane"</span><span class="doc-code__tag">&gt;</span>TR<span class="doc-code__tag">&lt;/span&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>With a name and presence</h2>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <ul class="list-unstyled">
+                <li class="avatar-label">
+                    <span class="avatar" aria-hidden="true">LM</span>
+                    <span>Lerato Mokoena <span class="presence presence--on"><span class="presence__dot" aria-hidden="true"></span>In the shop</span></span>
+                </li>
+                <li class="avatar-label">
+                    <span class="avatar" aria-hidden="true">TR</span>
+                    <span>Thabo Ramakatane <span class="presence presence--away"><span class="presence__dot" aria-hidden="true"></span>At the loom</span></span>
+                </li>
+            </ul>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;ul</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"list-unstyled"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar-label"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span>LM<span class="doc-code__tag">&lt;/span&gt;</span>
+        <span class="doc-code__tag">&lt;span&gt;</span>Lerato Mokoena <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"presence presence--on"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"presence__dot"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>In the shop<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>
+    <span class="doc-code__tag">&lt;/li&gt;</span>
+    <span class="doc-code__tag">&lt;li</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar-label"</span><span class="doc-code__tag">&gt;</span>
+        <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"avatar"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span>TR<span class="doc-code__tag">&lt;/span&gt;</span>
+        <span class="doc-code__tag">&lt;span&gt;</span>Thabo Ramakatane <span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"presence presence--away"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;span</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"presence__dot"</span> <span class="doc-code__attr">aria-hidden</span>=<span class="doc-code__string">"true"</span><span class="doc-code__tag">&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>At the loom<span class="doc-code__tag">&lt;/span&gt;</span><span class="doc-code__tag">&lt;/span&gt;</span>
+    <span class="doc-code__tag">&lt;/li&gt;</span>
+<span class="doc-code__tag">&lt;/ul&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>Parts</h2>
+    <table class="doc-table">
+        <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
+        <tbody>
+            <tr><td><code>.avatar</code></td><td>Block: an <code>img</code>, or a span of initials, 40px square with the one radius.</td></tr>
+            <tr><td><code>.avatar--sm</code>, <code>--lg</code></td><td>Modifier: 32px or 64px. Or set <code>--avatar-size</code>.</td></tr>
+            <tr><td><code>.avatar-label</code></td><td>Block: an avatar and a name side by side.</td></tr>
+            <tr><td><code>.presence</code>, <code>.presence__dot</code></td><td>Block and element: a word such as "In the shop", with a dot before it.</td></tr>
+            <tr><td><code>.presence--on</code>, <code>--away</code></td><td>Modifier: the dot's tone. The word still says the state.</td></tr>
+        </tbody>
+    </table>
+
+    <h2>Accessibility</h2>
+    <ul>
+        <li>A photo needs <code>alt</code> with the person's name. Initials alone need <code>role="img"</code> and an <code>aria-label</code>.</li>
+        <li>When the name is written next to the avatar, hide the avatar with <code>aria-hidden="true"</code> so the name is not read twice.</li>
+        <li>Never show presence as a dot alone. Write the word.</li>
+    </ul>
+</main>
+</div>
+<footer class="footer site-footer">
+    <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="v2.html">KUBU 2.0</a>
+        <a class="footer__link" href="papers.html">Papers</a>
+        <a class="footer__link" href="start-contents.html">Contents</a>
+        <a class="footer__link" href="download.html">Download</a>
+        <a class="footer__link" href="start-javascript.html">JavaScript</a>
+        <a class="footer__link" href="../packages/js/index.html" hx-boost="false">JS layer demo</a>
+        <a class="footer__link" href="https://github.com/ktsoaela/KUBU">GitHub</a>
+    </nav>
+    <p class="copyright">&copy; 2026 KUBU, a product of Tsoaela Industries. MIT licence.</p>
+</footer>
+</body>
+</html>

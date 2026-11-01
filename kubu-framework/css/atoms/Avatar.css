@@ -1,0 +1,53 @@
+/* Avatar: a picture or initials for a person or a shop. The one radius, not a circle.
+   A photo is an <img> with alt text; initials are text with an aria-label or a name beside them.
+   <img class="avatar" src="lerato.jpg" alt="Lerato Mokoena" width="40" height="40">
+   <span class="avatar" role="img" aria-label="Lerato Mokoena">LM</span> */
+.avatar {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: var(--avatar-size, 2.5rem);
+    height: var(--avatar-size, 2.5rem);
+    overflow: hidden;
+    border: var(--kubu-line);
+    border-radius: var(--kubu-radius);
+    background-color: var(--kubu-surface-2);
+    color: var(--kubu-heading);
+    font-size: calc(var(--avatar-size, 2.5rem) * 0.4);
+    font-weight: var(--font-weight-bold);
+    line-height: 1;
+    text-transform: uppercase;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.avatar--sm { --avatar-size: 2rem; }
+.avatar--lg { --avatar-size: 4rem; }
+
+/* A name next to the avatar. */
+.avatar-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+/* Presence: a dot that only ever sits beside a word, so colour is never the only signal.
+   <span class="presence presence--on"><span class="presence__dot" aria-hidden="true"></span>In the shop</span> */
+.presence {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--font-size-sm);
+    color: var(--kubu-text-muted);
+}
+
+.presence__dot {
+    flex: none;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--kubu-text-muted);
+}
+
+.presence--on .presence__dot { background-color: var(--color-safe); }
+.presence--away .presence__dot { background-color: var(--color-hazard); }

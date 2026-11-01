@@ -4,6 +4,7 @@ import { story } from './docs.js';
 export default { title: 'Atoms' };
 
 export const Reset = story('atom-reset.html');
+export const Avatar = story('atom-avatar.html');
 export const Badge = story('atom-badge.html');
 export const Buttons = story('atom-buttons.html');
 export const Close = story('atom-close.html');

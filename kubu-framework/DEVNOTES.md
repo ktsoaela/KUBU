@@ -7,6 +7,7 @@ Each Atomic Design name, the file that holds it, and its docs page in `pages/`. 
 | Name | CSS | Page |
 | --- | --- | --- |
 | Reset | `css/atoms/Reset.css` | `atom-reset.html` |
+| Avatar | `css/atoms/Avatar.css` | `atom-avatar.html` |
 | Badge | `css/atoms/Badge.css` | `atom-badge.html` |
 | Buttons | `css/atoms/Buttons.css` | `atom-buttons.html` |
 | Close | `css/atoms/Close.css` | `atom-close.html` |

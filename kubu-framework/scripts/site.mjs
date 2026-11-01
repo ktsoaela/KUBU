@@ -31,6 +31,7 @@ export const sidebar = [
         title: 'Atoms',
         items: [
             ['Reset', 'atom-reset.html', 'Page colours, the focus ring and reduced motion.', 'atoms/Reset.css'],
+            ['Avatar', 'atom-avatar.html', 'A photo or initials for a person or a shop.', 'atoms/Avatar.css'],
             ['Badge', 'atom-badge.html', 'A short label for a count or a status.', 'atoms/Badge.css'],
             ['Buttons', 'atom-buttons.html', 'Actions in every state: hover, active, disabled and loading.', 'atoms/Buttons.css'],
             ['Close', 'atom-close.html', 'The labelled close control for dialogs, panels and alerts.', 'atoms/Close.css'],
