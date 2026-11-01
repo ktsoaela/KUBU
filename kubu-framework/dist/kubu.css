@@ -4254,6 +4254,21 @@ input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]), tex
   cursor: not-allowed;
 }
 
+:where(fieldset) {
+  min-width: 0;
+  margin: 0 0 var(--space-md);
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  border: var(--kubu-line);
+  border-radius: var(--kubu-radius);
+}
+
+:where(legend) {
+  padding-inline: var(--space-xs);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-bold);
+  color: var(--kubu-heading);
+}
+
 .header {
   color: var(--kubu-text);
   background-color: var(--kubu-surface);

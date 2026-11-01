@@ -200,6 +200,33 @@
         </details>
     </div>
 
+    <h2>Fieldset and legend</h2>
+    <p>Group a set of radios, or any related fields, in a <code>&lt;fieldset&gt;</code>. The <code>&lt;legend&gt;</code> is the question, and a screen reader reads it before each choice.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form action="snippet-forms.html" method="get">
+                <fieldset>
+                    <legend>Delivery</legend>
+                    <label><input type="radio" name="delivery" value="collect" checked> Collect from the shop in Maseru</label>
+                    <label><input type="radio" name="delivery" value="courier"> Courier to my door, M60</label>
+                    <label><input type="radio" name="delivery" value="post"> Post office, M25</label>
+                </fieldset>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"snippet-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;fieldset&gt;</span>
+        <span class="doc-code__tag">&lt;legend&gt;</span>Delivery<span class="doc-code__tag">&lt;/legend&gt;</span>
+        <span class="doc-code__tag">&lt;label&gt;</span><span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"delivery"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"collect"</span> <span class="doc-code__attr">checked</span><span class="doc-code__tag">&gt;</span> Collect from the shop in Maseru<span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label&gt;</span><span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"delivery"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"courier"</span><span class="doc-code__tag">&gt;</span> Courier to my door, M60<span class="doc-code__tag">&lt;/label&gt;</span>
+        <span class="doc-code__tag">&lt;label&gt;</span><span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"radio"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"delivery"</span> <span class="doc-code__attr">value</span>=<span class="doc-code__string">"post"</span><span class="doc-code__tag">&gt;</span> Post office, M25<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;/fieldset&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
     <h2>What it styles</h2>
     <table class="doc-table">
         <thead><tr><th scope="col">Selector</th><th scope="col">Style</th></tr></thead>
@@ -207,6 +234,7 @@
             <tr><td>Text-like <code>input</code>s, <code>textarea</code>, <code>select</code></td><td>Full width, a token border, 44px tall.</td></tr>
             <tr><td><code>label</code></td><td>Bold, on its own line.</td></tr>
             <tr><td><code>[type="checkbox"]</code>, <code>[type="radio"]</code></td><td>A token border, a tick, dash or dot when on. A label around one is a 44px row. Zero specificity, so tabs and rating still hide their radios.</td></tr>
+            <tr><td><code>fieldset</code>, <code>legend</code></td><td>The one border and radius around a group. The legend is bold body text.</td></tr>
             <tr><td><code>button</code>, <code>[type="submit"]</code>, <code>[type="reset"]</code></td><td>The primary colour, 44px tall. A <code>.button</code> class overrides it.</td></tr>
             <tr><td><code>.error-message</code></td><td>Plain error text. Prefer <code>.form-error</code>, which adds the icon.</td></tr>
         </tbody>
