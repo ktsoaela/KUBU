@@ -120,7 +120,7 @@ button {
 }
 
 /* The label around a choice: the whole row is the target. */
-:where(label:has(> input[type="checkbox"], > input[type="radio"])) {
+label:where(:has(> input[type="checkbox"], > input[type="radio"])) {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
@@ -129,7 +129,7 @@ button {
     cursor: pointer;
 }
 
-:where(label:has(> input:disabled)) {
+label:where(:has(> input:disabled)) {
     color: var(--kubu-text-muted);
     cursor: not-allowed;
 }

@@ -4475,7 +4475,7 @@ input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]), tex
   }
 }
 
-:where(label:has( > input[type="checkbox"],  > input[type="radio"])) {
+label:where(:has( > input[type="checkbox"],  > input[type="radio"])) {
   align-items: center;
   gap: var(--space-sm);
   min-height: var(--kubu-target, 44px);
@@ -4484,7 +4484,7 @@ input:not([type="checkbox"], [type="radio"], [type="file"], [type="range"]), tex
   display: flex;
 }
 
-:where(label:has( > input:disabled)) {
+label:where(:has( > input:disabled)) {
   color: var(--kubu-text-muted);
   cursor: not-allowed;
 }
