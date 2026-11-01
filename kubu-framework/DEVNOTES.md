@@ -77,6 +77,7 @@ Each Atomic Design name, the file that holds it, and its docs page in `pages/`. 
 | Forms snippet | `css/snippets/Forms.css` | `snippet-forms.html` |
 | Navbar snippet (the site header) | `css/snippets/Header.css` | `snippet-navbar.html` |
 | Footer snippet | `css/snippets/Footer.css` | `snippet-footer.html` |
+| Dock snippet | `css/snippets/Dock.css` | `snippet-dock.html` |
 | main-template | `templates/main-template.html` | `template-main.html` |
 | HomePage | built from the header, card and footer | `page-home.html` |
 | AboutPage | cards, a list group and a table | `page-about.html` |

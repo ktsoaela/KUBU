@@ -107,6 +107,7 @@ export const sidebar = [
             ['Forms', 'snippet-forms.html', 'Base styles for bare form elements.', 'snippets/Forms.css'],
             ['Navbar', 'snippet-navbar.html', 'The site header: logo, labelled menu and a utility row.', 'snippets/Header.css'],
             ['Footer', 'snippet-footer.html', 'Footer links and the copyright line.', 'snippets/Footer.css'],
+            ['Dock', 'snippet-dock.html', 'The navbar at the bottom of a phone screen.', 'snippets/Dock.css'],
         ],
     },
     {

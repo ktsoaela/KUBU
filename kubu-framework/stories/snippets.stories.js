@@ -6,3 +6,4 @@ export default { title: 'Snippets' };
 export const Forms = story('snippet-forms.html');
 export const Navbar = story('snippet-navbar.html');
 export const Footer = story('snippet-footer.html');
+export const Dock = story('snippet-dock.html');
