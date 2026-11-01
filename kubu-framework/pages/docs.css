@@ -161,6 +161,114 @@
     max-width: none;
 }
 
+/* Product homepage. The title is the hippo line. The live card sits beside the HTML
+   that made it. Reasons and screens use the same named parts as the docs. */
+.home-hero .title {
+    max-width: 18em;
+    font-size: clamp(2.25rem, 1.4rem + 3vw, 3.75rem);
+    line-height: 1.05;
+    text-wrap: balance;
+}
+
+.home-hero h3 {
+    margin-top: 0;
+    max-width: 22em;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-normal);
+    line-height: 1.4;
+}
+
+.home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-lg);
+}
+
+.home-pair {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    gap: var(--space-lg);
+    align-items: start;
+    margin-top: var(--space-lg);
+}
+
+.home-pair .card,
+.home-reason {
+    margin-bottom: 0;
+}
+
+.home-pair .grid {
+    align-items: center;
+}
+
+.home-pair .grid > :first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 10rem;
+}
+
+.home-pair .card p {
+    margin-bottom: var(--space-xs);
+}
+
+.home-pair .card .button {
+    margin-top: var(--space-md);
+}
+
+.home .card__title,
+.home-reason h3 {
+    margin-top: 0;
+}
+
+.home-reasons {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+.home-reason .doc-code:last-child {
+    margin-bottom: 0;
+}
+
+.home .doc-code {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    margin-bottom: 0;
+}
+
+.home .doc-code__copy {
+    position: static;
+    align-self: flex-end;
+    border-left: 0;
+    border-bottom: var(--kubu-line);
+    border-radius: 0;
+}
+
+.home .doc-code__block {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.home-screens {
+    margin-top: var(--space-lg);
+}
+
+@media (max-width: 64rem) {
+    .home-reasons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 56rem) {
+    .home-pair {
+        grid-template-columns: 1fr;
+    }
+}
+
 .icon-row {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));

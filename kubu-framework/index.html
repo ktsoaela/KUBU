@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KUBU</title>
-    <meta name="description" content="Kubu is the hippo. It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.">
+    <meta name="description" content="Kubu means hippo. It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.">
     <link rel="icon" href="img/hippo-black.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="pages/docs.css">
@@ -37,36 +37,135 @@
     </nav>
 </header>
 <div class="docs-layout docs-layout--wide">
-<main class="doc" id="main" tabindex="-1">
-    <h1 class="title">KUBU</h1>
-    <p class="doc__lead">Kubu is the hippo. It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.</p>
-    <p><a class="button button--primary button--large" href="dist/kubu.min.css" download>Download kubu.min.css</a></p>
-    <details class="doc-code">
-        <summary class="doc-code__summary">The one line</summary>
-        <pre class="doc-code__pre"><code class="doc-code__block">&lt;link rel="stylesheet" href="/css/kubu.min.css"&gt;</code></pre>
-    </details>
-    <div class="case-grid">
-        <article class="card">
-            <h2 class="card__title">Docs</h2>
-            <p>The named parts, with a page for each one. Home in the menu opens this.</p>
-            <footer class="card__footer"><a class="button button--outline" href="pages/index.html">Open Home</a></footer>
-        </article>
-        <article class="card">
-            <h2 class="card__title">A page you can copy</h2>
-            <p>Four finished screens: an invoice, a server swap, an admin row, and a public page.</p>
-            <footer class="card__footer"><a class="button button--outline" href="pages/use-cases.html">Use cases</a></footer>
-        </article>
-        <article class="card">
-            <h2 class="card__title">Pages that are only Kubu</h2>
-            <p>Home, product, contact, and about, rendered from the same stylesheet.</p>
-            <footer class="card__footer"><a class="button button--outline" href="pages/showcases.html">Showcases</a></footer>
-        </article>
-        <article class="card">
-            <h2 class="card__title">2.0 is current</h2>
-            <p>31 October 2026. One file, dark as the master theme, and the layout without a script.</p>
-            <footer class="card__footer"><a class="button button--outline" href="pages/news.html">News</a></footer>
-        </article>
-    </div>
+<main class="doc home" id="main" tabindex="-1">
+    <header class="home-hero">
+        <p class="catalog-kicker">KUBU</p>
+        <h1 class="title">Kubu means hippo.</h1>
+        <h3>It holds the page: one stylesheet, named parts, and a layout that still works when the script is gone.</h3>
+        <div class="home-actions">
+            <a class="button button--primary button--large" href="dist/kubu.min.css" download>Download kubu.min.css</a>
+            <a class="button button--outline button--large" href="pages/index.html">Open the Docs</a>
+        </div>
+    </header>
+
+    <section aria-labelledby="home-piece">
+        <h2 id="home-piece">The page, written in the HTML.</h2>
+        <p class="doc__lead">A cover, a title, a badge, and a button. The markup beside it is the same piece.</p>
+        <div class="home-pair">
+            <article class="card">
+                <div class="grid">
+                    <div class="col-12 md:col-4">
+                        <svg class="logo__mark" width="128" height="128" aria-hidden="true"><use href="img/icons.svg#hippo"></use></svg>
+                    </div>
+                    <div class="col-12 md:col-8">
+                        <h2 class="card__title">Victoria blanket</h2>
+                        <p class="subtitle">The crown pattern</p>
+                        <p><small>No. 4 · 2026</small></p>
+                        <span class="badge badge--safe">In stock</span>
+                        <p><a class="button button--primary" href="pages/showcase/product.html">View the blanket</a></p>
+                    </div>
+                </div>
+            </article>
+            <div class="doc-code">
+                <button type="button" class="doc-code__copy" hidden>Copy code</button>
+                <pre class="doc-code__pre"><code class="doc-code__block">&lt;article class="card"&gt;
+  &lt;div class="grid"&gt;
+    &lt;div class="col-12 md:col-4"&gt;
+      &lt;svg class="logo__mark" width="128" height="128" aria-hidden="true"&gt;
+        &lt;use href="img/icons.svg#hippo"&gt;&lt;/use&gt;
+      &lt;/svg&gt;
+    &lt;/div&gt;
+    &lt;div class="col-12 md:col-8"&gt;
+      &lt;h2 class="card__title"&gt;Victoria blanket&lt;/h2&gt;
+      &lt;p class="subtitle"&gt;The crown pattern&lt;/p&gt;
+      &lt;p&gt;&lt;small&gt;No. 4 · 2026&lt;/small&gt;&lt;/p&gt;
+      &lt;span class="badge badge--safe"&gt;In stock&lt;/span&gt;
+      &lt;p&gt;
+        &lt;a class="button button--primary" href="pages/showcase/product.html"&gt;
+          View the blanket
+        &lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/article&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="home-reasons">
+        <h2 id="home-reasons">Three things the page is made of.</h2>
+        <div class="home-reasons">
+            <article class="card home-reason">
+                <h3>Named parts</h3>
+                <p>A button is <code>.button.button--primary</code>. A title on a card is <code>.card__title</code>.</p>
+                <div class="doc-code">
+                    <button type="button" class="doc-code__copy" hidden>Copy code</button>
+                    <pre class="doc-code__pre"><code class="doc-code__block">&lt;button class="button button--primary"&gt;Pay invoice&lt;/button&gt;
+&lt;h2 class="card__title"&gt;Invoice 1042&lt;/h2&gt;</code></pre>
+                </div>
+            </article>
+            <article class="card home-reason">
+                <h3>The page still works</h3>
+                <p>A disclosure opens on its own. There is no script to load.</p>
+                <details class="collapse-details">
+                    <summary>Tracking note</summary>
+                    <p>Shipped. We will send the tracking note today.</p>
+                </details>
+                <div class="doc-code">
+                    <button type="button" class="doc-code__copy" hidden>Copy code</button>
+                    <pre class="doc-code__pre"><code class="doc-code__block">&lt;details class="collapse-details"&gt;
+  &lt;summary&gt;Tracking note&lt;/summary&gt;
+  &lt;p&gt;Shipped. We will send the tracking note today.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+                </div>
+            </article>
+            <article class="card home-reason">
+                <h3>One file</h3>
+                <p>Link the stylesheet. The same file is on npm and pip.</p>
+                <div class="doc-code">
+                    <button type="button" class="doc-code__copy" hidden>Copy code</button>
+                    <pre class="doc-code__pre"><code class="doc-code__block">&lt;link rel="stylesheet" href="/css/kubu.min.css"&gt;
+
+npm install kubu-css
+pip install kubu-css</code></pre>
+                </div>
+                <p><a href="pages/download.html">Open Download</a></p>
+            </article>
+        </div>
+    </section>
+
+    <section aria-labelledby="home-screens">
+        <h2 id="home-screens">Five pages from the same stylesheet.</h2>
+        <p class="doc__lead">Storefront, product, contact, about, and the desk. Open a thumbnail.</p>
+        <div class="catalog-grid home-screens">
+            <div class="catalog-card catalog-card--shot">
+                <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="templates/showcase/storefront.html" title=""></iframe></div>
+                <a class="catalog-card__link" href="pages/showcase/storefront.html"><span class="catalog-card__head"><span><span class="catalog-card__title">Storefront</span><span class="catalog-card__note">Shop homepage</span></span></span></a>
+            </div>
+            <div class="catalog-card catalog-card--shot">
+                <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="templates/showcase/product.html" title=""></iframe></div>
+                <a class="catalog-card__link" href="pages/showcase/product.html"><span class="catalog-card__head"><span><span class="catalog-card__title">Product</span><span class="catalog-card__note">A blanket for sale</span></span></span></a>
+            </div>
+            <div class="catalog-card catalog-card--shot">
+                <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="templates/showcase/contact.html" title=""></iframe></div>
+                <a class="catalog-card__link" href="pages/showcase/contact.html"><span class="catalog-card__head"><span><span class="catalog-card__title">Contact</span><span class="catalog-card__note">A letter to the workshop</span></span></span></a>
+            </div>
+            <div class="catalog-card catalog-card--shot">
+                <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="templates/showcase/about.html" title=""></iframe></div>
+                <a class="catalog-card__link" href="pages/showcase/about.html"><span class="catalog-card__head"><span><span class="catalog-card__title">About</span><span class="catalog-card__note">The people who weave</span></span></span></a>
+            </div>
+            <div class="catalog-card catalog-card--shot">
+                <div class="shot shot--live" aria-hidden="true"><iframe class="shot__frame" tabindex="-1" loading="lazy" src="templates/showcase/dashboard.html" title=""></iframe></div>
+                <a class="catalog-card__link" href="pages/showcase/dashboard.html"><span class="catalog-card__head"><span><span class="catalog-card__title">Dashboard</span><span class="catalog-card__note">The desk</span></span></span></a>
+            </div>
+        </div>
+    </section>
+
+    <section aria-labelledby="home-news">
+        <h2 id="home-news">2.0 is current.</h2>
+        <p class="doc__lead">31 October 2026. One file, dark as the master theme, and the layout without a script.</p>
+        <p><a class="button button--outline" href="pages/news.html">Read the News</a></p>
+    </section>
 </main>
 </div>
 <footer class="footer site-footer">
