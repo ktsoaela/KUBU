@@ -110,3 +110,55 @@
 .form-submit:active {
     filter: brightness(0.92);
 }
+
+/* Toggle: a checkbox that reads as on or off. Same input, same form value, so it posts
+   without a script. The track has the one radius, not a pill; the knob moves from left
+   to right, so the state is a position as well as a colour. The label says what it does.
+   <label><input class="toggle" type="checkbox" role="switch" name="notify"> Email me when it ships</label> */
+.toggle {
+    appearance: none;
+    flex: none;
+    width: 2.75rem;
+    height: 1.5rem;
+    margin: 0;
+    border: 2px solid var(--kubu-text-muted);
+    border-radius: var(--kubu-radius);
+    background-color: var(--kubu-surface);
+    background-image: linear-gradient(var(--kubu-text-muted), var(--kubu-text-muted));
+    background-size: 0.875rem 0.875rem;
+    background-position: 0.1875rem center;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.toggle:checked {
+    border-color: var(--kubu-primary);
+    background-color: var(--kubu-primary);
+    background-image: linear-gradient(var(--kubu-on-primary), var(--kubu-on-primary));
+    background-position: calc(100% - 0.1875rem) center;
+}
+
+.toggle:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+@media (forced-colors: active) {
+    .toggle {
+        appearance: auto;
+    }
+}
+
+/* One-time code: one field, not six boxes. autocomplete="one-time-code" lets the phone
+   offer the code from the message, and a paste fills it in one go.
+   <input class="form-input form-input--otp" id="code" name="code" type="text"
+          inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6"> */
+.form-input--otp {
+    width: calc(6ch + 3em + 2 * var(--space-sm));
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-lg);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.5em;
+    text-align: center;
+}

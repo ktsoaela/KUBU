@@ -230,6 +230,46 @@
         </details>
     </div>
 
+    <h2>Toggle</h2>
+    <p>A toggle is a checkbox with <code>role="switch"</code>. It posts like any checkbox, so it needs no script. The knob moves to the right when it is on, and the label says what turns on.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form action="organism-forms.html" method="get">
+                <label><input class="toggle" type="checkbox" role="switch" name="notify" checked> Email me when the order ships</label>
+                <label><input class="toggle" type="checkbox" role="switch" name="sms"> Send me a text on delivery day</label>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"organism-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label&gt;</span><span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"toggle"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"checkbox"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"switch"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"notify"</span> <span class="doc-code__attr">checked</span><span class="doc-code__tag">&gt;</span> Email me when the order ships<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;label&gt;</span><span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"toggle"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"checkbox"</span> <span class="doc-code__attr">role</span>=<span class="doc-code__string">"switch"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"sms"</span><span class="doc-code__tag">&gt;</span> Send me a text on delivery day<span class="doc-code__tag">&lt;/label&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
+    <h2>One-time code</h2>
+    <p>Use one field, not six boxes. Six boxes that move focus need a script. One field with <code>autocomplete="one-time-code"</code> lets the phone offer the code from the message, and a paste fills it all at once.</p>
+    <div class="doc-example">
+        <div class="doc-example__preview doc-example__preview--block">
+            <form class="form-group" action="organism-forms.html" method="get">
+                <label class="form-label" for="otp-code">Code from the text message</label>
+                <input class="form-input form-input--otp" id="otp-code" name="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="[0-9]{6}" maxlength="6" required aria-describedby="otp-hint">
+                <p><small id="otp-hint">Six digits. It works for ten minutes.</small></p>
+            </form>
+        </div>
+        <details class="doc-code">
+            <summary class="doc-code__summary">Code</summary>
+            <button type="button" class="doc-code__copy" hidden>Copy code</button>
+            <pre class="doc-code__pre"><code class="doc-code__block"><span class="doc-code__tag">&lt;form</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-group"</span> <span class="doc-code__attr">action</span>=<span class="doc-code__string">"organism-forms.html"</span> <span class="doc-code__attr">method</span>=<span class="doc-code__string">"get"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;label</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-label"</span> <span class="doc-code__attr">for</span>=<span class="doc-code__string">"otp-code"</span><span class="doc-code__tag">&gt;</span>Code from the text message<span class="doc-code__tag">&lt;/label&gt;</span>
+    <span class="doc-code__tag">&lt;input</span> <span class="doc-code__attr">class</span>=<span class="doc-code__string">"form-input form-input--otp"</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"otp-code"</span> <span class="doc-code__attr">name</span>=<span class="doc-code__string">"code"</span> <span class="doc-code__attr">type</span>=<span class="doc-code__string">"text"</span> <span class="doc-code__attr">inputmode</span>=<span class="doc-code__string">"numeric"</span> <span class="doc-code__attr">autocomplete</span>=<span class="doc-code__string">"one-time-code"</span> <span class="doc-code__attr">pattern</span>=<span class="doc-code__string">"[0-9]{6}"</span> <span class="doc-code__attr">maxlength</span>=<span class="doc-code__string">"6"</span> <span class="doc-code__attr">required</span> <span class="doc-code__attr">aria-describedby</span>=<span class="doc-code__string">"otp-hint"</span><span class="doc-code__tag">&gt;</span>
+    <span class="doc-code__tag">&lt;p&gt;</span><span class="doc-code__tag">&lt;small</span> <span class="doc-code__attr">id</span>=<span class="doc-code__string">"otp-hint"</span><span class="doc-code__tag">&gt;</span>Six digits. It works for ten minutes.<span class="doc-code__tag">&lt;/small&gt;</span><span class="doc-code__tag">&lt;/p&gt;</span>
+<span class="doc-code__tag">&lt;/form&gt;</span></code></pre>
+        </details>
+    </div>
+
     <h2>Parts</h2>
     <table class="doc-table">
         <thead><tr><th scope="col">Class</th><th scope="col">Role</th></tr></thead>
@@ -240,6 +280,8 @@
             <tr><td><code>.form-error</code></td><td>Element: icon, danger colour and a sentence that names the fix.</td></tr>
             <tr><td><code>.form-error--live</code></td><td>Modifier: hidden until the field is <code>:user-invalid</code>.</td></tr>
             <tr><td><code>.form-submit</code></td><td>Element: a full-width, 48px send button.</td></tr>
+            <tr><td><code>.toggle</code></td><td>Block: a checkbox drawn as an on and off track, with the one radius. Add <code>role="switch"</code>.</td></tr>
+            <tr><td><code>.form-input--otp</code></td><td>Modifier: a one-time code field, monospaced and spaced out. One field, not six.</td></tr>
         </tbody>
     </table>
 
