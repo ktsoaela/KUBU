@@ -1598,6 +1598,28 @@ li {
   background-color: var(--kubu-primary-hover);
 }
 
+:where(kbd) {
+  font-family: var(--font-family-mono);
+  color: var(--kubu-text);
+  background-color: var(--kubu-surface-2);
+  border: var(--kubu-line);
+  border-radius: var(--kubu-radius);
+  white-space: nowrap;
+  border-bottom-width: 2px;
+  padding: .0625rem .375rem;
+  font-size: .875em;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+:where(hr) {
+  height: 0;
+  margin: var(--space-lg) 0;
+  border: 0;
+  border-top: var(--kubu-line);
+  color: inherit;
+}
+
 .announcement {
   background-color: var(--kubu-surface-2);
   color: var(--kubu-text);
@@ -3687,6 +3709,7 @@ summary.datepicker__input {
 
 .border-hr {
   background-color: var(--color-primary);
+  border: 0;
   border-radius: 9999px;
   width: 4em;
   height: .25rem;

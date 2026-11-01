@@ -255,3 +255,27 @@ li {
 .list-item.active:hover {
     background-color: var(--kubu-primary-hover);
 }
+/* Keyboard keys: one element, the one border, the one radius.
+   Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search. */
+:where(kbd) {
+    display: inline-block;
+    padding: 0.0625rem 0.375rem;
+    font-family: var(--font-family-mono);
+    font-size: 0.875em;
+    line-height: 1.4;
+    color: var(--kubu-text);
+    background-color: var(--kubu-surface-2);
+    border: var(--kubu-line);
+    border-bottom-width: 2px;
+    border-radius: var(--kubu-radius);
+    white-space: nowrap;
+}
+
+/* Divider: a thematic break drawn with the one border. .border-hr is the brand bar, not this. */
+:where(hr) {
+    height: 0;
+    margin: var(--space-lg) 0;
+    border: 0;
+    border-top: var(--kubu-line);
+    color: inherit;
+}

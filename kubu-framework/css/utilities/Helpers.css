@@ -66,6 +66,7 @@
 
 
 .border-hr {
+    border: 0;
     background-color: var(--color-primary);
     border-radius: 9999px;
     height: .25rem;
